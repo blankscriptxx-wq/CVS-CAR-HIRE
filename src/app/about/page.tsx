@@ -29,7 +29,7 @@ export default function AboutPage() {
       <section className="shell grid gap-12 py-16 lg:grid-cols-2 lg:items-center md:py-20">
         <Reveal className="relative order-2 aspect-[4/3] overflow-hidden border border-line lg:order-1">
           <Media
-            asset={{ src: "/images/about/story.jpg", alt: "The CVS Car Hire fleet", placeholder: true }}
+            asset={{ src: "/images/about/story.jpg", alt: "The CVS Car Hire fleet", placeholder: false }}
             label="Est. 2014"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />

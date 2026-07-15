@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { footerNav } from "@/lib/nav";
 import { siteConfig, phoneDisplay } from "@/lib/siteConfig";
 import { CallLink, WhatsAppLink } from "@/components/ActionLinks";
@@ -12,8 +13,17 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_2fr]">
           {/* Brand */}
           <div>
-            <Link href="/" className="font-display text-3xl text-warm-white">
-              CVS <span className="text-champagne">Car Hire</span>
+            <Link href="/" className="flex items-center gap-3" aria-label="CVS Car Hire home">
+              <Image
+                src="/brand/cvs-icon.png"
+                alt=""
+                width={52}
+                height={55}
+                className="h-12 w-auto"
+              />
+              <span className="font-display text-3xl text-warm-white">
+                CVS <span className="text-champagne">Car Hire</span>
+              </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-silver">
               {siteConfig.description}

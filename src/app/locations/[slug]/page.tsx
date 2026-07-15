@@ -78,7 +78,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
         image={{
           src: `/images/locations/${location.slug}.jpg`,
           alt: `Luxury car hire in ${location.city}`,
-          placeholder: true,
+          placeholder: false,
         }}
       />
       <Breadcrumbs

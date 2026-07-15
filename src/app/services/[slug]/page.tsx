@@ -76,7 +76,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         image={{
           src: `/images/services/${service.slug}.jpg`,
           alt: `${service.name} from CVS Car Hire`,
-          placeholder: true,
+          placeholder: false,
         }}
       />
       <Breadcrumbs

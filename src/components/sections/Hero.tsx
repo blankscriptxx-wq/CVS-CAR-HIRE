@@ -13,7 +13,7 @@ export function Hero() {
   const heroImage: ImageAsset = {
     src: "/images/home/hero.jpg",
     alt: "A luxury supercar from the CVS Car Hire fleet at dusk",
-    placeholder: true,
+    placeholder: false,
   };
 
   return (

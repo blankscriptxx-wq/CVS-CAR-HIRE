@@ -11,7 +11,7 @@ import type { Vehicle, ImageAsset } from "@/lib/types";
 /** Build a hero/gallery image slot that renders the branded placeholder until
  *  real photography is dropped in at the given path. */
 function img(slug: string, name: string, alt: string, caption?: string): ImageAsset {
-  return { src: `/images/fleet/${slug}/${name}`, alt, caption, placeholder: true };
+  return { src: `/images/fleet/${slug}/${name}`, alt, caption, placeholder: false };
 }
 
 export const vehicles: Vehicle[] = [

@@ -21,7 +21,7 @@ export function FinalCTA({
           asset={{
             src: "/images/home/final-cta.jpg",
             alt: "A luxury vehicle on a city street at night",
-            placeholder: true,
+            placeholder: false,
           }}
           plain
           sizes="100vw"

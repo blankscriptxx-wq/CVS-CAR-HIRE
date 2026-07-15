@@ -32,7 +32,9 @@ const EMPTY: Fields = {
 };
 
 const inputClass =
-  "w-full min-h-[48px] bg-black/40 border border-line px-4 text-warm-white placeholder:text-silver/60 focus:border-champagne focus:outline-none";
+  "w-full min-w-0 min-h-[48px] bg-black/40 border border-line px-4 text-warm-white placeholder:text-silver/60 focus:border-champagne focus:outline-none";
+// Date/native inputs: strip iOS intrinsic sizing so they don't overflow the grid.
+const dateClass = `${inputClass} appearance-none [&::-webkit-date-and-time-value]:text-left`;
 const labelClass = "block text-[11px] uppercase tracking-wide2 text-silver mb-2";
 
 /**
@@ -163,26 +165,26 @@ export function EnquiryPanel({
               </select>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div>
+              <div className="min-w-0">
                 <label className={labelClass} htmlFor="q-start">
                   Start date
                 </label>
                 <input
                   id="q-start"
                   type="date"
-                  className={inputClass}
+                  className={dateClass}
                   value={fields.start}
                   onChange={(e) => set("start", e.target.value)}
                 />
               </div>
-              <div>
+              <div className="min-w-0">
                 <label className={labelClass} htmlFor="q-end">
                   End date
                 </label>
                 <input
                   id="q-end"
                   type="date"
-                  className={inputClass}
+                  className={dateClass}
                   value={fields.end}
                   onChange={(e) => set("end", e.target.value)}
                 />
@@ -209,7 +211,7 @@ export function EnquiryPanel({
               </select>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div>
+              <div className="min-w-0">
                 <label className={labelClass} htmlFor="q-age">
                   Driver age
                 </label>
@@ -225,7 +227,7 @@ export function EnquiryPanel({
                   onChange={(e) => set("age", e.target.value)}
                 />
               </div>
-              <div>
+              <div className="min-w-0">
                 <label className={labelClass} htmlFor="q-occasion">
                   Occasion
                 </label>

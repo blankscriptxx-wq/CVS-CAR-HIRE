@@ -13,7 +13,7 @@ export const journalPosts: JournalPost[] = [
     heroImage: {
       src: "/images/journal/best-wedding-cars-birmingham/hero.jpg",
       alt: "A luxury wedding car outside a Birmingham venue",
-      placeholder: true,
+      placeholder: false,
     },
     body: [
       { type: "p", text: "Your wedding car is more than transport — it's part of the story. It sets the tone of your arrival, frames some of the day's most memorable photographs, and gives you a rare quiet moment together between the ceremony and the celebration. In Birmingham, with its wealth of beautiful venues, the right car completes the picture." },
@@ -41,7 +41,7 @@ export const journalPosts: JournalPost[] = [
     heroImage: {
       src: "/images/journal/how-to-hire-a-supercar/hero.jpg",
       alt: "A supercar prepared for self-drive hire",
-      placeholder: true,
+      placeholder: false,
     },
     body: [
       { type: "p", text: "Hiring a supercar for the first time should be exciting, not daunting. Whether it's a landmark birthday, a bucket-list drive or simply a treat, a little preparation makes the day even better. Here's what to know before you go." },
@@ -69,7 +69,7 @@ export const journalPosts: JournalPost[] = [
     heroImage: {
       src: "/images/journal/luxury-cars-for-music-videos/hero.jpg",
       alt: "A luxury car on a production set",
-      placeholder: true,
+      placeholder: false,
     },
     body: [
       { type: "p", text: "In music videos and branded content, a car is never just a car. It's a statement of status, style and intent — an instantly readable symbol that adds production value to every frame. That's why our fleet is a regular fixture on shoots across the UK." },

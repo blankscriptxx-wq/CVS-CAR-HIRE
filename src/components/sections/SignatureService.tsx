@@ -21,7 +21,7 @@ export function SignatureService() {
             asset={{
               src: "/images/home/signature-service.jpg",
               alt: "A CVS Car Hire vehicle prepared and presented for handover",
-              placeholder: true,
+              placeholder: false,
             }}
             label="The Handover"
             sizes="(max-width: 1024px) 100vw, 50vw"

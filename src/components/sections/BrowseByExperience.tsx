@@ -6,12 +6,12 @@ import { ArrowRight } from "@/components/ui/Icons";
 
 /** Experience-led categories (broader than fleet filters — an editorial edit). */
 const experiences = [
-  { label: "Supercars", href: "/services/supercar-hire", blurb: "Ferrari, Lamborghini and the icons of speed." },
-  { label: "Luxury 4x4s", href: "/services/luxury-4x4-hire", blurb: "Cullinan, G 63, Range Rover — presence and comfort." },
-  { label: "Chauffeur", href: "/services/chauffeur-hire", blurb: "Be driven. Compose yourself for the occasion." },
-  { label: "Weddings", href: "/services/wedding-car-hire", blurb: "The car that carries you into the next chapter." },
-  { label: "Prom", href: "/services/prom-car-hire", blurb: "The entrance everyone remembers." },
-  { label: "Production & Events", href: "/services/production-car-hire", blurb: "Vehicles that command the frame." },
+  { label: "Supercars", img: "supercars", href: "/services/supercar-hire", blurb: "Ferrari, Lamborghini and the icons of speed." },
+  { label: "Luxury 4x4s", img: "luxury-4x4s", href: "/services/luxury-4x4-hire", blurb: "Cullinan, G 63, Range Rover — presence and comfort." },
+  { label: "Chauffeur", img: "chauffeur", href: "/services/chauffeur-hire", blurb: "Be driven. Compose yourself for the occasion." },
+  { label: "Weddings", img: "weddings", href: "/services/wedding-car-hire", blurb: "The car that carries you into the next chapter." },
+  { label: "Prom", img: "prom", href: "/services/prom-car-hire", blurb: "The entrance everyone remembers." },
+  { label: "Production & Events", img: "production-events", href: "/services/production-car-hire", blurb: "Vehicles that command the frame." },
 ];
 
 export function BrowseByExperience() {
@@ -34,9 +34,9 @@ export function BrowseByExperience() {
                 <div className="absolute inset-0 transition-transform duration-800 ease-luxe group-hover:scale-105">
                   <Media
                     asset={{
-                      src: `/images/experiences/${exp.label.toLowerCase().replace(/[^a-z]+/g, "-")}.jpg`,
+                      src: `/images/experiences/${exp.img}.jpg`,
                       alt: `${exp.label} hire`,
-                      placeholder: true,
+                      placeholder: false,
                     }}
                     label={exp.label}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

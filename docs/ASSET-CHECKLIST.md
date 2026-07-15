@@ -1,7 +1,13 @@
 # Asset Replacement Checklist
 
-The site ships with elegant on-brand **placeholders** so every layout looks finished. Replace them
-with real, rights-cleared photography for launch. Vehicle photos already exist on the current Wix
+> **Current state:** temporary **stock photography** (from Unsplash — free for commercial use) is now
+> wired into every image slot so the site looks complete. These are generic/brand-representative shots,
+> **not CVS's own vehicles**. Replace them with real, rights-cleared photography of the actual fleet for
+> launch — overwrite the files at the same paths below (no code change needed). The gold CVS logo
+> (`public/brand/`) and favicon are the real brand assets.
+
+The layouts also support elegant on-brand **placeholders** (set `placeholder: true` on any asset to show
+one) so nothing ever looks broken while you swap imagery. Vehicle photos already exist on the current Wix
 site (static.wixstatic.com) — export the originals at full resolution and drop them in at the paths
 below. (We deliberately did **not** auto-scrape and assign those images, because the source files are
 hash-named and could be mismatched to the wrong vehicle — always match by eye.)

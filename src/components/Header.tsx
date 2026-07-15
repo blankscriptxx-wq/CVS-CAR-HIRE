@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { primaryNav } from "@/lib/nav";
@@ -18,6 +19,30 @@ import {
   ArrowRight,
 } from "@/components/ui/Icons";
 
+/** Brand lockup: gold pin icon + wordmark. */
+function Brand({ onClick }: { onClick?: () => void }) {
+  return (
+    <Link
+      href="/"
+      onClick={onClick}
+      className="flex items-center gap-2.5"
+      aria-label={`${siteConfig.name} home`}
+    >
+      <Image
+        src="/brand/cvs-icon.png"
+        alt=""
+        width={44}
+        height={46}
+        priority
+        className="h-9 w-auto"
+      />
+      <span className="font-display text-xl leading-none tracking-wide text-warm-white">
+        CVS <span className="hidden text-silver sm:inline">Car Hire</span>
+      </span>
+    </Link>
+  );
+}
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -32,11 +57,12 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close menu on route change and lock body scroll when open.
+  // Close menu on route change.
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
+  // Lock body scroll while the menu is open.
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -49,17 +75,11 @@ export function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-400 ease-luxe ${
-        solid ? "bg-black/90 backdrop-blur border-b border-line" : "bg-transparent"
+        solid ? "border-b border-line bg-black/90 backdrop-blur" : "bg-transparent"
       }`}
     >
       <div className="shell flex h-[var(--header-h)] items-center justify-between gap-4">
-        {/* Wordmark (logo image can replace this — see /public/brand) */}
-        <Link href="/" className="flex items-center gap-3" aria-label={`${siteConfig.name} home`}>
-          <span className="font-display text-2xl tracking-wide text-warm-white">CVS</span>
-          <span className="hidden text-[10px] uppercase tracking-luxe text-silver sm:inline">
-            Car Hire
-          </span>
-        </Link>
+        <Brand />
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
@@ -96,27 +116,41 @@ export function Header() {
           </ButtonLink>
           <button
             type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen(true)}
+            aria-label="Open menu"
             aria-expanded={open}
             className="flex h-11 w-11 items-center justify-center text-warm-white lg:hidden"
           >
-            {open ? <CloseIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
+            <MenuIcon className="h-6 w-6" />
           </button>
         </div>
       </div>
 
-      {/* Mobile full-screen menu */}
+      {/* Mobile full-screen menu — self-contained overlay above everything */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: reduce ? 0 : -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: reduce ? 0 : -8 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 top-[var(--header-h)] z-40 overflow-y-auto bg-black lg:hidden"
+            key="mobile-menu"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: reduce ? 0 : 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-[70] flex h-[100dvh] w-full flex-col overflow-y-auto bg-black lg:hidden"
           >
-            <div className="shell flex min-h-full flex-col py-8">
+            {/* Menu top bar */}
+            <div className="shell flex h-[var(--header-h)] shrink-0 items-center justify-between gap-4 border-b border-line">
+              <Brand onClick={() => setOpen(false)} />
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label="Close menu"
+                className="flex h-11 w-11 items-center justify-center text-warm-white"
+              >
+                <CloseIcon className="h-6 w-6" />
+              </button>
+            </div>
+
+            <div className="shell flex flex-1 flex-col py-6">
               <nav className="flex flex-col" aria-label="Mobile">
                 {primaryNav.map((item) => (
                   <div key={item.href} className="border-b border-line">
@@ -131,7 +165,7 @@ export function Header() {
                           aria-expanded={openGroup === item.label}
                         >
                           {item.label}
-                          <span className="text-champagne text-lg">
+                          <span className="text-lg text-champagne">
                             {openGroup === item.label ? "–" : "+"}
                           </span>
                         </button>
@@ -141,7 +175,7 @@ export function Header() {
                               initial={{ height: 0, opacity: 0 }}
                               animate={{ height: "auto", opacity: 1 }}
                               exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.25 }}
+                              transition={{ duration: reduce ? 0 : 0.25 }}
                               className="overflow-hidden"
                             >
                               <div className="flex flex-col pb-3">

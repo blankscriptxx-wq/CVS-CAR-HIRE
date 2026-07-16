@@ -129,11 +129,18 @@ export function QuoteForm() {
     return selfDriveQuote(days, rates);
   }, [sdVehicle, days]);
 
+  const chRate = chauffeurRates.find((r) => r.slug === chVehicle);
+  const maxPassengers = chRate?.maxPassengers ?? 4;
+
+  // Keep passengers within the selected vehicle's capacity.
+  useEffect(() => {
+    setPassengers((p) => Math.min(p, maxPassengers));
+  }, [maxPassengers]);
+
   const chQuote = useMemo(() => {
-    const rate = chauffeurRates.find((r) => r.slug === chVehicle);
-    if (!rate) return null;
-    return chauffeurQuote({ serviceType, journey, distanceMiles, hours, stops }, rate);
-  }, [chVehicle, serviceType, journey, distanceMiles, hours, stops]);
+    if (!chRate) return null;
+    return chauffeurQuote({ serviceType, journey, distanceMiles, hours, stops }, chRate);
+  }, [chRate, serviceType, journey, distanceMiles, hours, stops]);
 
   const activeQuote = mode === "self-drive" ? selfQuote : chQuote;
 
@@ -559,17 +566,19 @@ export function QuoteForm() {
               ) : (
                 <div className="min-w-0">
                   <label className={labelClass} htmlFor="ch-pax">
-                    Passengers
+                    Passengers (max {maxPassengers})
                   </label>
                   <input
                     id="ch-pax"
                     type="number"
                     min={1}
-                    max={8}
+                    max={maxPassengers}
                     inputMode="numeric"
                     className={inputClass}
                     value={passengers}
-                    onChange={(e) => setPassengers(Number(e.target.value))}
+                    onChange={(e) =>
+                      setPassengers(Math.min(maxPassengers, Math.max(1, Number(e.target.value))))
+                    }
                   />
                 </div>
               )}
@@ -579,17 +588,19 @@ export function QuoteForm() {
             {serviceType === "as-directed" && (
               <div className="min-w-0">
                 <label className={labelClass} htmlFor="ch-pax2">
-                  Number of passengers
+                  Number of passengers (max {maxPassengers})
                 </label>
                 <input
                   id="ch-pax2"
                   type="number"
                   min={1}
-                  max={8}
+                  max={maxPassengers}
                   inputMode="numeric"
                   className={inputClass}
                   value={passengers}
-                  onChange={(e) => setPassengers(Number(e.target.value))}
+                  onChange={(e) =>
+                    setPassengers(Math.min(maxPassengers, Math.max(1, Number(e.target.value))))
+                  }
                 />
               </div>
             )}

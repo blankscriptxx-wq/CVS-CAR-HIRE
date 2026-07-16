@@ -26,6 +26,7 @@ export interface ChauffeurRate {
   perMileRate: number; // £/mile (transfers, and extra miles on as-directed)
   transferMinFare: number; // £ minimum for a point-to-point transfer
   perStopFee: number; // £ per additional stop
+  maxPassengers: number; // seating capacity for a chauffeured hire
 }
 
 /**
@@ -43,6 +44,7 @@ export const chauffeurRates: ChauffeurRate[] = [
     perMileRate: 3.5,
     transferMinFare: 200,
     perStopFee: 20,
+    maxPassengers: 4,
   },
   {
     slug: "rolls-royce-ghost-hire",
@@ -53,6 +55,7 @@ export const chauffeurRates: ChauffeurRate[] = [
     perMileRate: 2.5,
     transferMinFare: 150,
     perStopFee: 20,
+    maxPassengers: 4,
   },
   {
     slug: "rolls-royce-cullinan-hire",
@@ -63,6 +66,7 @@ export const chauffeurRates: ChauffeurRate[] = [
     perMileRate: 3.0,
     transferMinFare: 180,
     perStopFee: 20,
+    maxPassengers: 4,
   },
   {
     slug: "lamborghini-urus-performante-hire",
@@ -73,6 +77,7 @@ export const chauffeurRates: ChauffeurRate[] = [
     perMileRate: 2.75,
     transferMinFare: 160,
     perStopFee: 20,
+    maxPassengers: 4,
   },
   {
     slug: "mercedes-amg-g63-hire",
@@ -83,6 +88,7 @@ export const chauffeurRates: ChauffeurRate[] = [
     perMileRate: 2.5,
     transferMinFare: 130,
     perStopFee: 20,
+    maxPassengers: 4,
   },
   {
     slug: "mercedes-v-class-hire",
@@ -93,6 +99,7 @@ export const chauffeurRates: ChauffeurRate[] = [
     perMileRate: 2.0,
     transferMinFare: 120,
     perStopFee: 15,
+    maxPassengers: 8,
   },
 ];
 

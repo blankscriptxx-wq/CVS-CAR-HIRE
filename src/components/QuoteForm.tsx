@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { vehicles } from "@/lib/data/vehicles";
 import { vehicleName } from "@/lib/vehicleDisplay";
 import { formatPrice } from "@/lib/data/pricing";
@@ -14,6 +14,7 @@ import {
   type ChauffeurJourney,
 } from "@/lib/quote";
 import { chauffeurRates, chauffeurEventTypes } from "@/lib/data/chauffeur";
+import { airports } from "@/lib/data/airports";
 import { whatsappLink } from "@/lib/whatsapp";
 import { track, captureUtm } from "@/lib/analytics";
 import { openLiveChat } from "@/components/ActionLinks";
@@ -26,7 +27,6 @@ const inputClass =
 const dateClass = `${inputClass} appearance-none`;
 const labelClass = "block text-[11px] uppercase tracking-wide2 text-silver mb-2";
 
-// Vehicles that have a full self-drive rate set (quotable).
 const selfDriveVehicles = vehicles.filter((v) => selfDriveRatesFor(v) !== null);
 
 function Breakdown({ quote }: { quote: QuoteResult }) {
@@ -56,6 +56,8 @@ function Breakdown({ quote }: { quote: QuoteResult }) {
   );
 }
 
+type DistStatus = "idle" | "loading" | "ok" | "error";
+
 export function QuoteForm() {
   const [mode, setMode] = useState<Mode>("self-drive");
 
@@ -66,19 +68,57 @@ export function QuoteForm() {
 
   // Chauffeur state
   const [chVehicle, setChVehicle] = useState(chauffeurRates[0]?.slug ?? "");
-  const [chDate, setChDate] = useState("");
   const [eventType, setEventType] = useState<string>(chauffeurEventTypes[0]);
+  const [chDate, setChDate] = useState("");
+  const [chTime, setChTime] = useState("");
+  const [pickup, setPickup] = useState("");
+  const [dropoff, setDropoff] = useState("");
+  const [airportCode, setAirportCode] = useState("");
   const [serviceType, setServiceType] = useState<ChauffeurServiceType>("as-directed");
   const [journey, setJourney] = useState<ChauffeurJourney>("return");
-  const [distanceMiles, setDistanceMiles] = useState<number>(20);
+  const [distanceMiles, setDistanceMiles] = useState<number>(0);
+  const [distStatus, setDistStatus] = useState<DistStatus>("idle");
   const [hours, setHours] = useState(4);
   const [stops, setStops] = useState(0);
+  const [passengers, setPassengers] = useState(2);
+  const [requests, setRequests] = useState("");
 
   // Contact
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
   const [done, setDone] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
+  // Airport transfers default to a point-to-point transfer.
+  useEffect(() => {
+    if (eventType === "Airport transfer") setServiceType("transfer");
+  }, [eventType]);
+
+  // Auto-estimate mileage from pickup + drop-off postcodes (debounced).
+  useEffect(() => {
+    if (!pickup.trim() || !dropoff.trim()) {
+      setDistStatus("idle");
+      return;
+    }
+    setDistStatus("loading");
+    const t = setTimeout(async () => {
+      try {
+        const res = await fetch(
+          `/api/distance?from=${encodeURIComponent(pickup)}&to=${encodeURIComponent(dropoff)}`
+        );
+        const data = await res.json();
+        if (data.ok && typeof data.miles === "number") {
+          setDistanceMiles(data.miles);
+          setDistStatus("ok");
+        } else {
+          setDistStatus("error");
+        }
+      } catch {
+        setDistStatus("error");
+      }
+    }, 700);
+    return () => clearTimeout(t);
+  }, [pickup, dropoff]);
 
   const days = useMemo(() => (start && end ? daysBetween(start, end) : 0), [start, end]);
 
@@ -105,13 +145,21 @@ export function QuoteForm() {
     }
     const rate = chauffeurRates.find((r) => r.slug === chVehicle);
     if (!rate || !chQuote) return "";
+    const when = [chDate, chTime].filter(Boolean).join(" ");
     const svc =
       serviceType === "as-directed"
         ? `as directed for ${Math.max(rate.minHours, hours)} hours`
         : `${journey} transfer`;
+    const route = pickup && dropoff ? ` ${pickup} → ${dropoff}` : "";
     const stopsTxt = stops > 0 ? `, ${stops} stop${stops === 1 ? "" : "s"}` : "";
-    return `${eventType} chauffeur hire of the ${rate.label}${chDate ? ` on ${chDate}` : ""} — ${svc}, ~${distanceMiles} miles${stopsTxt}. Indicative total: from ${formatPrice(chQuote.total)}.`;
-  }, [mode, sdVehicle, selfQuote, days, start, end, chVehicle, chQuote, chDate, hours, eventType, serviceType, journey, distanceMiles, stops]);
+    const pax = ` for ${passengers} passenger${passengers === 1 ? "" : "s"}`;
+    const req = requests ? ` Special requests: ${requests}.` : "";
+    return `${eventType} chauffeur hire of the ${rate.label}${when ? ` on ${when}` : ""} —${route} ${svc}, ~${distanceMiles} miles${stopsTxt}${pax}. Indicative total: from ${formatPrice(chQuote.total)}.${req}`;
+  }, [
+    mode, sdVehicle, selfQuote, days, start, end,
+    chVehicle, chQuote, chDate, chTime, hours, eventType, serviceType,
+    journey, distanceMiles, stops, pickup, dropoff, passengers, requests,
+  ]);
 
   const waMessage = `Hi CVS Car Hire, I'd like to confirm this quote — ${summary}${name ? ` My name is ${name}.` : ""}`;
 
@@ -129,6 +177,9 @@ export function QuoteForm() {
           source: `quote-${mode}`,
           message: summary,
           vehicle: mode === "self-drive" ? sdVehicle : chVehicle,
+          ...(mode === "chauffeur"
+            ? { pickup, dropoff, date: chDate, time: chTime, passengers, requests, eventType }
+            : { start, end }),
           ...captureUtm(),
         }),
       });
@@ -289,7 +340,117 @@ export function QuoteForm() {
               </div>
             </div>
 
-            {/* Does the car stay with you? */}
+            {/* Date + time */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="min-w-0">
+                <label className={labelClass} htmlFor="ch-date">
+                  Date of hire
+                </label>
+                <input
+                  id="ch-date"
+                  type="date"
+                  className={dateClass}
+                  value={chDate}
+                  onChange={(e) => setChDate(e.target.value)}
+                />
+              </div>
+              <div className="min-w-0">
+                <label className={labelClass} htmlFor="ch-time">
+                  Pick-up time
+                </label>
+                <input
+                  id="ch-time"
+                  type="time"
+                  className={dateClass}
+                  value={chTime}
+                  onChange={(e) => setChTime(e.target.value)}
+                />
+              </div>
+            </div>
+
+            {/* Airport picker (fills drop-off for airport transfers) */}
+            {eventType === "Airport transfer" && (
+              <div>
+                <label className={labelClass} htmlFor="ch-airport">
+                  Airport
+                </label>
+                <select
+                  id="ch-airport"
+                  className={inputClass}
+                  value={airportCode}
+                  onChange={(e) => {
+                    setAirportCode(e.target.value);
+                    const a = airports.find((x) => x.code === e.target.value);
+                    if (a) setDropoff(a.postcode);
+                  }}
+                >
+                  <option value="">Select an airport…</option>
+                  {airports.map((a) => (
+                    <option key={a.code} value={a.code}>
+                      {a.name} ({a.code})
+                    </option>
+                  ))}
+                </select>
+                <p className="mt-2 text-[11px] text-silver/80">
+                  Selecting an airport fills the drop-off location. Swap pick-up/drop-off for arrivals.
+                </p>
+              </div>
+            )}
+
+            {/* Pick-up / drop-off postcodes */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="min-w-0">
+                <label className={labelClass} htmlFor="ch-pickup">
+                  Pick-up postcode
+                </label>
+                <input
+                  id="ch-pickup"
+                  type="text"
+                  autoComplete="postal-code"
+                  placeholder="e.g. B1 1AA"
+                  className={inputClass}
+                  value={pickup}
+                  onChange={(e) => setPickup(e.target.value.toUpperCase())}
+                />
+              </div>
+              <div className="min-w-0">
+                <label className={labelClass} htmlFor="ch-dropoff">
+                  Drop-off postcode
+                </label>
+                <input
+                  id="ch-dropoff"
+                  type="text"
+                  autoComplete="postal-code"
+                  placeholder="e.g. TW6 1EW"
+                  className={inputClass}
+                  value={dropoff}
+                  onChange={(e) => setDropoff(e.target.value.toUpperCase())}
+                />
+              </div>
+            </div>
+
+            {/* Distance status */}
+            <div className="text-[11px]">
+              {distStatus === "loading" && <span className="text-silver">Calculating mileage…</span>}
+              {distStatus === "ok" && (
+                <span className="text-champagne-soft">
+                  ≈ {distanceMiles} miles one-way by road (estimated){" "}
+                  <span className="text-silver">— confirmed on enquiry</span>
+                </span>
+              )}
+              {distStatus === "error" && (
+                <span className="text-silver">
+                  Couldn&rsquo;t find those postcodes — you can set the distance below manually.
+                </span>
+              )}
+              {distStatus === "idle" && (
+                <span className="text-silver/70">
+                  Enter both postcodes for an automatic mileage estimate.
+                </span>
+              )}
+            </div>
+
+            {/* Service type */}
             <div>
               <span className={labelClass}>Does the car stay with you?</span>
               <div className="grid grid-cols-2 gap-2 border border-line p-1">
@@ -359,21 +520,24 @@ export function QuoteForm() {
               </div>
             </div>
 
-            {/* Distance + (as-directed) hours + date */}
+            {/* Distance (auto/manual) + hours/passengers */}
             <div className="grid grid-cols-2 gap-4">
               <div className="min-w-0">
                 <label className={labelClass} htmlFor="ch-miles">
-                  Est. distance (miles, one-way)
+                  Distance (miles, one-way)
                 </label>
                 <input
                   id="ch-miles"
                   type="number"
                   min={0}
-                  max={500}
+                  max={600}
                   inputMode="numeric"
                   className={inputClass}
                   value={distanceMiles}
-                  onChange={(e) => setDistanceMiles(Number(e.target.value))}
+                  onChange={(e) => {
+                    setDistanceMiles(Number(e.target.value));
+                    setDistStatus("idle");
+                  }}
                 />
               </div>
               {serviceType === "as-directed" ? (
@@ -394,37 +558,54 @@ export function QuoteForm() {
                 </div>
               ) : (
                 <div className="min-w-0">
-                  <label className={labelClass} htmlFor="ch-date">
-                    Date
+                  <label className={labelClass} htmlFor="ch-pax">
+                    Passengers
                   </label>
                   <input
-                    id="ch-date"
-                    type="date"
-                    className={dateClass}
-                    value={chDate}
-                    onChange={(e) => setChDate(e.target.value)}
+                    id="ch-pax"
+                    type="number"
+                    min={1}
+                    max={8}
+                    inputMode="numeric"
+                    className={inputClass}
+                    value={passengers}
+                    onChange={(e) => setPassengers(Number(e.target.value))}
                   />
                 </div>
               )}
             </div>
+
+            {/* Passengers (as-directed) + special requests */}
             {serviceType === "as-directed" && (
-              <div>
-                <label className={labelClass} htmlFor="ch-date2">
-                  Date
+              <div className="min-w-0">
+                <label className={labelClass} htmlFor="ch-pax2">
+                  Number of passengers
                 </label>
                 <input
-                  id="ch-date2"
-                  type="date"
-                  className={dateClass}
-                  value={chDate}
-                  onChange={(e) => setChDate(e.target.value)}
+                  id="ch-pax2"
+                  type="number"
+                  min={1}
+                  max={8}
+                  inputMode="numeric"
+                  className={inputClass}
+                  value={passengers}
+                  onChange={(e) => setPassengers(Number(e.target.value))}
                 />
               </div>
             )}
-
-            <p className="text-[11px] text-silver/80">
-              Distance is an estimate — we confirm exact mileage on enquiry.
-            </p>
+            <div>
+              <label className={labelClass} htmlFor="ch-req">
+                Any special requests
+              </label>
+              <textarea
+                id="ch-req"
+                rows={2}
+                placeholder="Ribbons, champagne, child seat, specific route…"
+                className={`${inputClass} min-h-[72px] py-3`}
+                value={requests}
+                onChange={(e) => setRequests(e.target.value)}
+              />
+            </div>
 
             {chQuote && <Breakdown quote={chQuote} />}
           </>
@@ -490,8 +671,8 @@ export function QuoteForm() {
       <p className="mt-4 text-[11px] leading-relaxed text-silver/70">
         This is an indicative quote. Final pricing, deposit and availability are confirmed by our
         team before booking. Self-drive rates follow our published pricing guide; chauffeur rates
-        are calculated from the vehicle, hours and mileage, and are benchmarked to typical UK
-        luxury-chauffeur pricing (inclusive of chauffeur, fuel and parking).
+        are calculated from the vehicle, hours and mileage (estimated from your postcodes), and are
+        benchmarked to typical UK luxury-chauffeur pricing (inclusive of chauffeur, fuel and parking).
       </p>
     </div>
   );

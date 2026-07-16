@@ -31,6 +31,14 @@ prices, minimum ages, excess-mileage rates. Still to confirm **per vehicle**:
 - [ ] Analytics ids: GA4 / GTM / Meta Pixel / TikTok Pixel / Google Ads.
 - [ ] Confirm the WhatsApp number (`NEXT_PUBLIC_CVS_WHATSAPP_NUMBER`, currently 447772233314).
 
+## Chauffeur pricing (`src/lib/data/chauffeur.ts`)
+The Get a Quote tool includes Rolls-Royce chauffeur pricing. Self-drive rates come from your
+confirmed pricing guide, but chauffeur rates are **estimates** based on typical UK luxury-chauffeur
+pricing so the tool works end-to-end. Please review and confirm:
+- [ ] Hourly rate + minimum hours per Rolls-Royce (currently Ghost £95/hr, Cullinan £110/hr, min 3 hrs).
+- [ ] Travel surcharges from Birmingham by distance band (currently £0 local → from £600 nationwide).
+- [ ] Whether to add chauffeur pricing for other vehicles (only the Rolls-Royce collection for now).
+
 ## Reviews (`src/lib/data/testimonials.ts`)
 - [ ] Provide **genuine** testimonials (with permission) or connect a live Google Reviews feed.
       The array is intentionally empty — we do not fabricate reviews. The Reviews section degrades

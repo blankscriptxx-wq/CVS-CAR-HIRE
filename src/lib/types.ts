@@ -83,7 +83,9 @@ export interface Vehicle {
   // Commercials — UNCONFIRMED unless owner sets them (see CONTENT-TODO.md).
   minimumAge?: number;
   dailyPriceFrom?: number; // GBP
-  weekendPriceFrom?: number; // GBP
+  weekendPriceFrom?: number; // GBP (3-day rate)
+  weeklyPriceFrom?: number; // GBP (7-day rate)
+  monthlyPriceFrom?: number; // GBP (28-day rate)
   deposit?: number; // GBP
   includedMileage?: number; // miles/day
   excessMileageCharge?: number; // GBP/mile

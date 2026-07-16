@@ -21,6 +21,7 @@ export const primaryNav: NavLink[] = [
   },
   { label: "Chauffeur", href: "/services/chauffeur-hire" },
   { label: "Weddings & Events", href: "/services/wedding-car-hire" },
+  { label: "Get a Quote", href: "/quote" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -31,6 +32,7 @@ export const footerNav: { title: string; links: NavLink[] }[] = [
     title: "Explore",
     links: [
       { label: "Our Fleet", href: "/fleet" },
+      { label: "Get a Quote", href: "/quote" },
       { label: "Services", href: "/services" },
       { label: "How It Works", href: "/how-it-works" },
       { label: "Delivery", href: "/delivery" },

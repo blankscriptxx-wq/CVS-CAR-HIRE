@@ -17,7 +17,7 @@ export const metadata: Metadata = buildMetadata({
 const points = [
   "Instant indicative pricing from our published rate guide",
   "Self-drive daily, weekend, weekly and monthly rates",
-  "Rolls-Royce chauffeur hire, Birmingham to nationwide",
+  "Chauffeur hire priced on hours and mileage, Birmingham to nationwide",
   "No obligation — we confirm availability before booking",
 ];
 

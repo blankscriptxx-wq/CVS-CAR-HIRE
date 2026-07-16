@@ -28,8 +28,22 @@ export interface ChauffeurRate {
   perStopFee: number; // £ per additional stop
 }
 
-/** Rolls-Royce chauffeur rate card (indicative, benchmarked to UK market). */
+/**
+ * Chauffeur rate card (indicative, benchmarked to UK market). Positioned by
+ * tier: the Rolls-Royce Phantom flagship at the top, down to the Mercedes
+ * V-Class executive people-carrier as the value / group option.
+ */
 export const chauffeurRates: ChauffeurRate[] = [
+  {
+    slug: "rolls-royce-phantom-hire",
+    label: "Rolls-Royce Phantom",
+    hourlyRate: 200,
+    minHours: 3,
+    includedMilesPerHour: 15,
+    perMileRate: 3.5,
+    transferMinFare: 200,
+    perStopFee: 20,
+  },
   {
     slug: "rolls-royce-ghost-hire",
     label: "Rolls-Royce Ghost",
@@ -49,6 +63,36 @@ export const chauffeurRates: ChauffeurRate[] = [
     perMileRate: 3.0,
     transferMinFare: 180,
     perStopFee: 20,
+  },
+  {
+    slug: "lamborghini-urus-performante-hire",
+    label: "Lamborghini Urus",
+    hourlyRate: 160,
+    minHours: 3,
+    includedMilesPerHour: 15,
+    perMileRate: 2.75,
+    transferMinFare: 160,
+    perStopFee: 20,
+  },
+  {
+    slug: "mercedes-amg-g63-hire",
+    label: "Mercedes-AMG G 63 (G-Wagon)",
+    hourlyRate: 120,
+    minHours: 3,
+    includedMilesPerHour: 15,
+    perMileRate: 2.5,
+    transferMinFare: 130,
+    perStopFee: 20,
+  },
+  {
+    slug: "mercedes-v-class-hire",
+    label: "Mercedes V-Class (up to 8)",
+    hourlyRate: 75,
+    minHours: 3,
+    includedMilesPerHour: 15,
+    perMileRate: 2.0,
+    transferMinFare: 120,
+    perStopFee: 15,
   },
 ];
 

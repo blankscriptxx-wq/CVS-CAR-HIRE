@@ -37,14 +37,22 @@ confirmed pricing guide; chauffeur rates are **benchmarked to typical UK luxury-
 (2025/26)** and priced on **hours + mileage** with the same rate card for every event type. The
 model asks whether the car stays with you: *stays = hourly (as directed)*, *drop-off = per-mile
 transfer*. Please review and confirm:
-- [ ] Hourly rate + min hours per Rolls-Royce (currently Ghost £150/hr, Cullinan £180/hr, min 3 hrs;
-      UK regional Rolls-Royce hourly benchmarks ~£150–220/hr, London higher).
-- [ ] Per-mile rate (Ghost £2.50/mi, Cullinan £3.00/mi; UK luxury per-mile ~£1.50–£3.50).
-- [ ] Included mileage allowance on as-directed hires (currently 15 mi/hour).
-- [ ] Transfer minimum fare (Ghost £150, Cullinan £180) and per-stop fee (£20; UK £15–£30).
-- [ ] Whether prices should be VAT-inclusive (assumed yes, UK convention) and what's included
-      (chauffeur, fuel, parking — congestion/ULEZ where applicable).
-- [ ] Whether to add chauffeur pricing for other vehicles (Rolls-Royce collection only for now).
+Available chauffeur vehicles (hourly / per-mile / transfer min fare — indicative):
+- [ ] Rolls-Royce Phantom — £200/hr · £3.50/mi · £200 min
+- [ ] Rolls-Royce Ghost — £150/hr · £2.50/mi · £150 min
+- [ ] Rolls-Royce Cullinan — £180/hr · £3.00/mi · £180 min
+- [ ] Lamborghini Urus — £160/hr · £2.75/mi · £160 min
+- [ ] Mercedes-AMG G 63 (G-Wagon) — £120/hr · £2.50/mi · £130 min
+- [ ] Mercedes V-Class (up to 8) — £75/hr · £2.00/mi · £120 min
+
+Shared settings to confirm:
+- [ ] Minimum hours (3) and included mileage allowance (15 mi/hour) on as-directed hires.
+- [ ] Per-stop fee (£20, or £15 for the V-Class; UK norm £15–£30).
+- [ ] VAT-inclusive assumed (UK convention), inclusive of chauffeur, fuel and parking
+      (congestion/ULEZ where applicable).
+- [ ] UK benchmarks used: regional Rolls-Royce hourly ~£150–220/hr (London higher); luxury
+      per-mile ~£1.50–£3.50. Note: the Phantom does not yet have a fleet page — add one if you
+      want it browsable, or keep it chauffeur-only.
 
 ## Reviews (`src/lib/data/testimonials.ts`)
 - [ ] Provide **genuine** testimonials (with permission) or connect a live Google Reviews feed.

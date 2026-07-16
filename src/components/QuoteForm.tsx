@@ -423,8 +423,7 @@ export function QuoteForm() {
             )}
 
             <p className="text-[11px] text-silver/80">
-              Chauffeur hire currently available for our Rolls-Royce collection. Distance is an
-              estimate — we confirm exact mileage on enquiry.
+              Distance is an estimate — we confirm exact mileage on enquiry.
             </p>
 
             {chQuote && <Breakdown quote={chQuote} />}

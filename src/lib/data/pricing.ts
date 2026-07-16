@@ -24,9 +24,13 @@ export const deliveryPricing = {
   ],
 };
 
-/** Format a GBP amount without decimals, e.g. 1200 → "£1,200". */
+/** Format a GBP amount — no decimals for whole pounds, pennies otherwise. */
 export function formatPrice(amount: number): string {
-  return `£${amount.toLocaleString("en-GB")}`;
+  const hasFraction = Math.round(amount) !== amount;
+  return `£${amount.toLocaleString("en-GB", {
+    minimumFractionDigits: hasFraction ? 2 : 0,
+    maximumFractionDigits: 2,
+  })}`;
 }
 
 /** Format a per-mile charge, e.g. 1.8 → "£1.80". */

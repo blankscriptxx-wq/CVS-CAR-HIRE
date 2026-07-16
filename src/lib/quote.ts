@@ -1,6 +1,6 @@
 import type { Vehicle } from "@/lib/types";
 import { formatPrice } from "@/lib/data/pricing";
-import type { ChauffeurVehicleRate, ChauffeurDistanceBand } from "@/lib/data/chauffeur";
+import type { ChauffeurRate } from "@/lib/data/chauffeur";
 
 /**
  * Quote engine. Turns the confirmed pricing guide into indicative quotes.
@@ -118,29 +118,79 @@ export function selfDriveRatesFor(v: Vehicle): SelfDriveRates | null {
   return null;
 }
 
-/** Chauffeur quote: time (hourly, with a minimum) + travel from Birmingham. */
-export function chauffeurQuote(
-  hours: number,
-  rate: ChauffeurVehicleRate,
-  band: ChauffeurDistanceBand
-): QuoteResult {
-  const billable = Math.max(rate.minimumHours, Math.floor(hours) || rate.minimumHours);
-  const timeCost = billable * rate.hourlyRate;
-  const lines: QuoteLine[] = [
-    {
-      label: `Chauffeur service — ${billable} hours`,
-      detail: `${formatPrice(rate.hourlyRate)} per hour${
-        billable === rate.minimumHours ? ` (min ${rate.minimumHours} hrs)` : ""
+export type ChauffeurServiceType = "as-directed" | "transfer";
+export type ChauffeurJourney = "one-way" | "return";
+
+export interface ChauffeurInput {
+  serviceType: ChauffeurServiceType;
+  journey: ChauffeurJourney;
+  distanceMiles: number; // estimated one-way distance
+  hours: number; // duration (as-directed)
+  stops: number; // additional stops
+}
+
+/**
+ * Chauffeur quote — priced on HOURS and MILEAGE (same rate card for all events).
+ *
+ *  • as-directed: hours × hourly rate (min hours), with a mileage allowance;
+ *    only extra miles are charged. The car stays with you throughout.
+ *  • transfer:    total miles × per-mile rate (min fare). One-way or return.
+ *
+ * Return doubles the mileage. Additional stops add a flat per-stop fee.
+ */
+export function chauffeurQuote(input: ChauffeurInput, rate: ChauffeurRate): QuoteResult {
+  const oneWay = Math.max(0, Math.round(input.distanceMiles) || 0);
+  const totalMiles = oneWay * (input.journey === "return" ? 2 : 1);
+  const stops = Math.max(0, Math.floor(input.stops) || 0);
+  const lines: QuoteLine[] = [];
+
+  if (input.serviceType === "as-directed") {
+    const billableHours = Math.max(rate.minHours, Math.floor(input.hours) || rate.minHours);
+    const timeCost = billableHours * rate.hourlyRate;
+    lines.push({
+      label: `Chauffeur — ${billableHours} hours (as directed)`,
+      detail: `${formatPrice(rate.hourlyRate)}/hr${
+        billableHours === rate.minHours ? ` · min ${rate.minHours} hrs` : ""
       }`,
       amount: timeCost,
-    },
-  ];
-  if (band.surcharge > 0) {
+    });
+
+    const includedMiles = rate.includedMilesPerHour * billableHours;
+    const extraMiles = Math.max(0, totalMiles - includedMiles);
+    if (extraMiles > 0) {
+      lines.push({
+        label: `Additional mileage — ${extraMiles} mi`,
+        detail: `${totalMiles} mi total, ${includedMiles} mi included · ${formatPrice(rate.perMileRate)}/mi`,
+        amount: extraMiles * rate.perMileRate,
+      });
+    } else {
+      lines.push({
+        label: `Mileage included (${totalMiles} mi)`,
+        detail: `up to ${includedMiles} mi included`,
+        amount: 0,
+      });
+    }
+  } else {
+    const mileageCost = totalMiles * rate.perMileRate;
+    const charged = Math.max(rate.transferMinFare, mileageCost);
     lines.push({
-      label: `Travel from Birmingham — ${band.label}`,
-      detail: band.from ? "from" : undefined,
-      amount: band.surcharge,
+      label: `Transfer — ${totalMiles} mi ${input.journey === "return" ? "(return)" : "(one-way)"}`,
+      detail:
+        mileageCost < rate.transferMinFare
+          ? `minimum fare ${formatPrice(rate.transferMinFare)}`
+          : `${formatPrice(rate.perMileRate)}/mi`,
+      amount: charged,
     });
   }
-  return { total: timeCost + band.surcharge, from: Boolean(band.from), lines };
+
+  if (stops > 0) {
+    lines.push({
+      label: `Additional stops × ${stops}`,
+      detail: `${formatPrice(rate.perStopFee)} each`,
+      amount: stops * rate.perStopFee,
+    });
+  }
+
+  const total = lines.reduce((sum, l) => sum + l.amount, 0);
+  return { total, from: true, lines };
 }

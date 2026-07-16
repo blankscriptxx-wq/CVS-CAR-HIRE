@@ -1,55 +1,67 @@
 /**
- * Chauffeur pricing — Rolls-Royce only for now (as requested).
+ * Chauffeur pricing — Rolls-Royce only for now.
  *
- * These figures are ESTIMATES based on typical UK luxury-chauffeur pricing,
- * provided so the quote tool works end-to-end. CVS should review and confirm
- * them (see docs/CONTENT-TODO.md). Everything here is configurable.
+ * Rates are benchmarked against typical UK luxury-chauffeur pricing (2025/26),
+ * positioned for a Birmingham/regional operator rather than central London.
+ * They are INDICATIVE and fully configurable — CVS can adjust in one place
+ * (see docs/CONTENT-TODO.md). By UK convention these are treated as inclusive
+ * of the chauffeur, fuel and parking.
  *
- * Model: a chauffeured hire is billed on time (an hourly rate with a minimum
- * number of hours), plus a travel charge based on distance from the Birmingham
- * base — because a nationwide job requires the chauffeur to position the car
- * out and back. This keeps local Birmingham hires affordable while fairly
- * pricing longer-distance work.
+ * Pricing is driven by two dimensions — HOURS and MILEAGE — and the same rate
+ * card applies to every event type (weddings, proms, airport, corporate, etc.).
+ * Which dimension leads depends on one question: does the car stay with you?
+ *
+ *   • Stays with you ("as directed") → billed on HOURS (hourly rate, minimum
+ *     hours), with a generous mileage allowance; only extra miles are charged.
+ *   • Drop-off ("transfer / point-to-point") → billed on MILEAGE (per mile),
+ *     with a minimum fare. One-way or return, plus any additional stops.
  */
 
-export interface ChauffeurVehicleRate {
-  /** Vehicle slug this rate applies to. */
+export interface ChauffeurRate {
   slug: string;
   label: string;
-  hourlyRate: number; // £ per hour
-  minimumHours: number; // minimum billable hours
+  hourlyRate: number; // £/hour (as-directed)
+  minHours: number; // minimum billable hours
+  includedMilesPerHour: number; // mileage allowance within an as-directed hire
+  perMileRate: number; // £/mile (transfers, and extra miles on as-directed)
+  transferMinFare: number; // £ minimum for a point-to-point transfer
+  perStopFee: number; // £ per additional stop
 }
 
-export interface ChauffeurDistanceBand {
-  id: string;
-  label: string;
-  /** Additional travel charge from the Birmingham base (£). "from" when noted. */
-  surcharge: number;
-  from?: boolean; // surcharge is a starting point (e.g. nationwide)
-}
-
-/** Rolls-Royce chauffeur rates (estimates — owner to confirm). */
-export const chauffeurRates: ChauffeurVehicleRate[] = [
-  { slug: "rolls-royce-ghost-hire", label: "Rolls-Royce Ghost", hourlyRate: 95, minimumHours: 3 },
-  { slug: "rolls-royce-cullinan-hire", label: "Rolls-Royce Cullinan", hourlyRate: 110, minimumHours: 3 },
+/** Rolls-Royce chauffeur rate card (indicative, benchmarked to UK market). */
+export const chauffeurRates: ChauffeurRate[] = [
+  {
+    slug: "rolls-royce-ghost-hire",
+    label: "Rolls-Royce Ghost",
+    hourlyRate: 150,
+    minHours: 3,
+    includedMilesPerHour: 15,
+    perMileRate: 2.5,
+    transferMinFare: 150,
+    perStopFee: 20,
+  },
+  {
+    slug: "rolls-royce-cullinan-hire",
+    label: "Rolls-Royce Cullinan",
+    hourlyRate: 180,
+    minHours: 3,
+    includedMilesPerHour: 15,
+    perMileRate: 3.0,
+    transferMinFare: 180,
+    perStopFee: 20,
+  },
 ];
 
-/**
- * Travel bands from Birmingham. Surcharges cover the chauffeur's positioning
- * time and mileage out from — and back to — the West Midlands base.
- */
-export const chauffeurDistanceBands: ChauffeurDistanceBand[] = [
-  { id: "local", label: "Birmingham & West Midlands", surcharge: 0 },
-  { id: "50", label: "Up to 50 miles (e.g. Cotswolds, Stoke)", surcharge: 120 },
-  { id: "100", label: "Up to 100 miles (e.g. Manchester, London fringe)", surcharge: 250 },
-  { id: "150", label: "Up to 150 miles (e.g. London, Leeds)", surcharge: 400 },
-  { id: "nationwide", label: "Nationwide (150+ miles)", surcharge: 600, from: true },
-];
+/** Event types — captured for context/routing only; they do NOT change price. */
+export const chauffeurEventTypes = [
+  "Wedding",
+  "Prom",
+  "Airport transfer",
+  "Corporate / business",
+  "Night out / event",
+  "Other",
+] as const;
 
-export function getChauffeurRate(slug: string): ChauffeurVehicleRate | undefined {
+export function getChauffeurRate(slug: string): ChauffeurRate | undefined {
   return chauffeurRates.find((r) => r.slug === slug);
-}
-
-export function getDistanceBand(id: string): ChauffeurDistanceBand | undefined {
-  return chauffeurDistanceBands.find((b) => b.id === id);
 }

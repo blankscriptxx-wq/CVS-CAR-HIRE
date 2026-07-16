@@ -10,8 +10,10 @@ import {
   chauffeurQuote,
   daysBetween,
   type QuoteResult,
+  type ChauffeurServiceType,
+  type ChauffeurJourney,
 } from "@/lib/quote";
-import { chauffeurRates, chauffeurDistanceBands, getDistanceBand } from "@/lib/data/chauffeur";
+import { chauffeurRates, chauffeurEventTypes } from "@/lib/data/chauffeur";
 import { whatsappLink } from "@/lib/whatsapp";
 import { track, captureUtm } from "@/lib/analytics";
 import { openLiveChat } from "@/components/ActionLinks";
@@ -65,8 +67,12 @@ export function QuoteForm() {
   // Chauffeur state
   const [chVehicle, setChVehicle] = useState(chauffeurRates[0]?.slug ?? "");
   const [chDate, setChDate] = useState("");
-  const [hours, setHours] = useState(3);
-  const [bandId, setBandId] = useState(chauffeurDistanceBands[0]?.id ?? "local");
+  const [eventType, setEventType] = useState<string>(chauffeurEventTypes[0]);
+  const [serviceType, setServiceType] = useState<ChauffeurServiceType>("as-directed");
+  const [journey, setJourney] = useState<ChauffeurJourney>("return");
+  const [distanceMiles, setDistanceMiles] = useState<number>(20);
+  const [hours, setHours] = useState(4);
+  const [stops, setStops] = useState(0);
 
   // Contact
   const [name, setName] = useState("");
@@ -85,10 +91,9 @@ export function QuoteForm() {
 
   const chQuote = useMemo(() => {
     const rate = chauffeurRates.find((r) => r.slug === chVehicle);
-    const band = getDistanceBand(bandId);
-    if (!rate || !band) return null;
-    return chauffeurQuote(hours, rate, band);
-  }, [chVehicle, hours, bandId]);
+    if (!rate) return null;
+    return chauffeurQuote({ serviceType, journey, distanceMiles, hours, stops }, rate);
+  }, [chVehicle, serviceType, journey, distanceMiles, hours, stops]);
 
   const activeQuote = mode === "self-drive" ? selfQuote : chQuote;
 
@@ -99,10 +104,14 @@ export function QuoteForm() {
       return `Self-drive hire of the ${vehicleName(v)} for ${days} day${days === 1 ? "" : "s"} (${start} to ${end}). Indicative total: ${formatPrice(selfQuote.total)}.`;
     }
     const rate = chauffeurRates.find((r) => r.slug === chVehicle);
-    const band = getDistanceBand(bandId);
-    if (!rate || !band || !chQuote) return "";
-    return `Chauffeur hire of the ${rate.label}${chDate ? ` on ${chDate}` : ""}, ${Math.max(rate.minimumHours, hours)} hours, ${band.label}. Indicative total: ${chQuote.from ? "from " : ""}${formatPrice(chQuote.total)}.`;
-  }, [mode, sdVehicle, selfQuote, days, start, end, chVehicle, bandId, chQuote, chDate, hours]);
+    if (!rate || !chQuote) return "";
+    const svc =
+      serviceType === "as-directed"
+        ? `as directed for ${Math.max(rate.minHours, hours)} hours`
+        : `${journey} transfer`;
+    const stopsTxt = stops > 0 ? `, ${stops} stop${stops === 1 ? "" : "s"}` : "";
+    return `${eventType} chauffeur hire of the ${rate.label}${chDate ? ` on ${chDate}` : ""} — ${svc}, ~${distanceMiles} miles${stopsTxt}. Indicative total: from ${formatPrice(chQuote.total)}.`;
+  }, [mode, sdVehicle, selfQuote, days, start, end, chVehicle, chQuote, chDate, hours, eventType, serviceType, journey, distanceMiles, stops]);
 
   const waMessage = `Hi CVS Car Hire, I'd like to confirm this quote — ${summary}${name ? ` My name is ${name}.` : ""}`;
 
@@ -243,72 +252,181 @@ export function QuoteForm() {
           </>
         ) : (
           <>
-            <div>
-              <label className={labelClass} htmlFor="ch-vehicle">
-                Vehicle
-              </label>
-              <select
-                id="ch-vehicle"
-                className={inputClass}
-                value={chVehicle}
-                onChange={(e) => setChVehicle(e.target.value)}
-              >
-                {chauffeurRates.map((r) => (
-                  <option key={r.slug} value={r.slug}>
-                    {r.label}
-                  </option>
-                ))}
-              </select>
-              <p className="mt-2 text-[11px] text-silver/80">
-                Chauffeur hire currently available for our Rolls-Royce collection.
-              </p>
-            </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="min-w-0">
-                <label className={labelClass} htmlFor="ch-date">
+                <label className={labelClass} htmlFor="ch-event">
+                  Event type
+                </label>
+                <select
+                  id="ch-event"
+                  className={inputClass}
+                  value={eventType}
+                  onChange={(e) => setEventType(e.target.value)}
+                >
+                  {chauffeurEventTypes.map((t) => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="min-w-0">
+                <label className={labelClass} htmlFor="ch-vehicle">
+                  Vehicle
+                </label>
+                <select
+                  id="ch-vehicle"
+                  className={inputClass}
+                  value={chVehicle}
+                  onChange={(e) => setChVehicle(e.target.value)}
+                >
+                  {chauffeurRates.map((r) => (
+                    <option key={r.slug} value={r.slug}>
+                      {r.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Does the car stay with you? */}
+            <div>
+              <span className={labelClass}>Does the car stay with you?</span>
+              <div className="grid grid-cols-2 gap-2 border border-line p-1">
+                {(
+                  [
+                    ["as-directed", "Yes — as directed"],
+                    ["transfer", "No — drop-off"],
+                  ] as [ChauffeurServiceType, string][]
+                ).map(([val, label]) => (
+                  <button
+                    key={val}
+                    type="button"
+                    onClick={() => setServiceType(val)}
+                    className={`min-h-[44px] px-2 text-[11px] font-medium uppercase tracking-wide2 transition-colors ${
+                      serviceType === val ? "bg-champagne text-black" : "text-silver hover:text-warm-white"
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+              <p className="mt-2 text-[11px] text-silver/80">
+                {serviceType === "as-directed"
+                  ? "The chauffeur waits and stays with you throughout — billed by the hour."
+                  : "Point-to-point drop-off — billed by mileage."}
+              </p>
+            </div>
+
+            {/* Journey + stops */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="min-w-0">
+                <span className={labelClass}>Journey</span>
+                <div className="grid grid-cols-2 gap-2 border border-line p-1">
+                  {(
+                    [
+                      ["one-way", "One-way"],
+                      ["return", "Return"],
+                    ] as [ChauffeurJourney, string][]
+                  ).map(([val, label]) => (
+                    <button
+                      key={val}
+                      type="button"
+                      onClick={() => setJourney(val)}
+                      className={`min-h-[44px] text-[11px] font-medium uppercase tracking-wide2 transition-colors ${
+                        journey === val ? "bg-champagne text-black" : "text-silver hover:text-warm-white"
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="min-w-0">
+                <label className={labelClass} htmlFor="ch-stops">
+                  Extra stops
+                </label>
+                <input
+                  id="ch-stops"
+                  type="number"
+                  min={0}
+                  max={10}
+                  inputMode="numeric"
+                  className={inputClass}
+                  value={stops}
+                  onChange={(e) => setStops(Number(e.target.value))}
+                />
+              </div>
+            </div>
+
+            {/* Distance + (as-directed) hours + date */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="min-w-0">
+                <label className={labelClass} htmlFor="ch-miles">
+                  Est. distance (miles, one-way)
+                </label>
+                <input
+                  id="ch-miles"
+                  type="number"
+                  min={0}
+                  max={500}
+                  inputMode="numeric"
+                  className={inputClass}
+                  value={distanceMiles}
+                  onChange={(e) => setDistanceMiles(Number(e.target.value))}
+                />
+              </div>
+              {serviceType === "as-directed" ? (
+                <div className="min-w-0">
+                  <label className={labelClass} htmlFor="ch-hours">
+                    Hours (min 3)
+                  </label>
+                  <input
+                    id="ch-hours"
+                    type="number"
+                    min={3}
+                    max={24}
+                    inputMode="numeric"
+                    className={inputClass}
+                    value={hours}
+                    onChange={(e) => setHours(Number(e.target.value))}
+                  />
+                </div>
+              ) : (
+                <div className="min-w-0">
+                  <label className={labelClass} htmlFor="ch-date">
+                    Date
+                  </label>
+                  <input
+                    id="ch-date"
+                    type="date"
+                    className={dateClass}
+                    value={chDate}
+                    onChange={(e) => setChDate(e.target.value)}
+                  />
+                </div>
+              )}
+            </div>
+            {serviceType === "as-directed" && (
+              <div>
+                <label className={labelClass} htmlFor="ch-date2">
                   Date
                 </label>
                 <input
-                  id="ch-date"
+                  id="ch-date2"
                   type="date"
                   className={dateClass}
                   value={chDate}
                   onChange={(e) => setChDate(e.target.value)}
                 />
               </div>
-              <div className="min-w-0">
-                <label className={labelClass} htmlFor="ch-hours">
-                  Hours (min 3)
-                </label>
-                <input
-                  id="ch-hours"
-                  type="number"
-                  min={3}
-                  max={24}
-                  inputMode="numeric"
-                  className={inputClass}
-                  value={hours}
-                  onChange={(e) => setHours(Number(e.target.value))}
-                />
-              </div>
-            </div>
-            <div>
-              <label className={labelClass} htmlFor="ch-band">
-                Destination (from Birmingham)
-              </label>
-              <select
-                id="ch-band"
-                className={inputClass}
-                value={bandId}
-                onChange={(e) => setBandId(e.target.value)}
-              >
-                {chauffeurDistanceBands.map((b) => (
-                  <option key={b.id} value={b.id}>
-                    {b.label}
-                  </option>
-                ))}
-              </select>
-            </div>
+            )}
+
+            <p className="text-[11px] text-silver/80">
+              Chauffeur hire currently available for our Rolls-Royce collection. Distance is an
+              estimate — we confirm exact mileage on enquiry.
+            </p>
+
             {chQuote && <Breakdown quote={chQuote} />}
           </>
         )}
@@ -372,8 +490,9 @@ export function QuoteForm() {
 
       <p className="mt-4 text-[11px] leading-relaxed text-silver/70">
         This is an indicative quote. Final pricing, deposit and availability are confirmed by our
-        team before booking. Self-drive rates follow our published pricing guide; chauffeur rates are
-        a guide based on the vehicle, hours and distance from Birmingham.
+        team before booking. Self-drive rates follow our published pricing guide; chauffeur rates
+        are calculated from the vehicle, hours and mileage, and are benchmarked to typical UK
+        luxury-chauffeur pricing (inclusive of chauffeur, fuel and parking).
       </p>
     </div>
   );

@@ -33,11 +33,18 @@ prices, minimum ages, excess-mileage rates. Still to confirm **per vehicle**:
 
 ## Chauffeur pricing (`src/lib/data/chauffeur.ts`)
 The Get a Quote tool includes Rolls-Royce chauffeur pricing. Self-drive rates come from your
-confirmed pricing guide, but chauffeur rates are **estimates** based on typical UK luxury-chauffeur
-pricing so the tool works end-to-end. Please review and confirm:
-- [ ] Hourly rate + minimum hours per Rolls-Royce (currently Ghost £95/hr, Cullinan £110/hr, min 3 hrs).
-- [ ] Travel surcharges from Birmingham by distance band (currently £0 local → from £600 nationwide).
-- [ ] Whether to add chauffeur pricing for other vehicles (only the Rolls-Royce collection for now).
+confirmed pricing guide; chauffeur rates are **benchmarked to typical UK luxury-chauffeur pricing
+(2025/26)** and priced on **hours + mileage** with the same rate card for every event type. The
+model asks whether the car stays with you: *stays = hourly (as directed)*, *drop-off = per-mile
+transfer*. Please review and confirm:
+- [ ] Hourly rate + min hours per Rolls-Royce (currently Ghost £150/hr, Cullinan £180/hr, min 3 hrs;
+      UK regional Rolls-Royce hourly benchmarks ~£150–220/hr, London higher).
+- [ ] Per-mile rate (Ghost £2.50/mi, Cullinan £3.00/mi; UK luxury per-mile ~£1.50–£3.50).
+- [ ] Included mileage allowance on as-directed hires (currently 15 mi/hour).
+- [ ] Transfer minimum fare (Ghost £150, Cullinan £180) and per-stop fee (£20; UK £15–£30).
+- [ ] Whether prices should be VAT-inclusive (assumed yes, UK convention) and what's included
+      (chauffeur, fuel, parking — congestion/ULEZ where applicable).
+- [ ] Whether to add chauffeur pricing for other vehicles (Rolls-Royce collection only for now).
 
 ## Reviews (`src/lib/data/testimonials.ts`)
 - [ ] Provide **genuine** testimonials (with permission) or connect a live Google Reviews feed.

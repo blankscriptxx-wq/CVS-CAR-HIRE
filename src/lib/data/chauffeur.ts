@@ -7,24 +7,24 @@
  * (see docs/CONTENT-TODO.md). By UK convention these are treated as inclusive
  * of the chauffeur, fuel and parking.
  *
- * Pricing is driven by two dimensions — HOURS and MILEAGE — and the same rate
- * card applies to every event type (weddings, proms, airport, corporate, etc.).
- * Which dimension leads depends on one question: does the car stay with you?
+ * Priced on MILEAGE, with a waiting charge when the car stays. Same rate card
+ * for every event type (weddings, proms, airport, corporate, etc.).
  *
- *   • Stays with you ("as directed") → billed on HOURS (hourly rate, minimum
- *     hours), with a generous mileage allowance; only extra miles are charged.
- *   • Drop-off ("transfer / point-to-point") → billed on MILEAGE (per mile),
- *     with a minimum fare. One-way or return, plus any additional stops.
+ *   • One-way → the car drops off and leaves: one-way mileage only.
+ *   • Return, drop-off → the car returns to collect later: return mileage (2×).
+ *   • Return, car waits → return mileage (2×) PLUS a waiting charge
+ *     (waiting hours × hourly rate) for the time the car stays with you.
+ *
+ * A minimum fare applies to the mileage; additional stops add a per-stop fee.
  */
 
 export interface ChauffeurRate {
   slug: string;
   label: string;
-  hourlyRate: number; // £/hour (as-directed)
-  minHours: number; // minimum billable hours
-  includedMilesPerHour: number; // mileage allowance within an as-directed hire
-  perMileRate: number; // £/mile (transfers, and extra miles on as-directed)
-  transferMinFare: number; // £ minimum for a point-to-point transfer
+  hourlyRate: number; // £/hour — used for waiting time when the car stays
+  minHours: number; // minimum billable waiting hours
+  perMileRate: number; // £/mile
+  transferMinFare: number; // £ minimum fare for the mileage
   perStopFee: number; // £ per additional stop
   maxPassengers: number; // seating capacity for a chauffeured hire
 }
@@ -40,7 +40,6 @@ export const chauffeurRates: ChauffeurRate[] = [
     label: "Rolls-Royce Phantom",
     hourlyRate: 200,
     minHours: 3,
-    includedMilesPerHour: 15,
     perMileRate: 3.5,
     transferMinFare: 200,
     perStopFee: 20,
@@ -51,7 +50,6 @@ export const chauffeurRates: ChauffeurRate[] = [
     label: "Rolls-Royce Ghost",
     hourlyRate: 150,
     minHours: 3,
-    includedMilesPerHour: 15,
     perMileRate: 2.5,
     transferMinFare: 150,
     perStopFee: 20,
@@ -62,7 +60,6 @@ export const chauffeurRates: ChauffeurRate[] = [
     label: "Rolls-Royce Cullinan",
     hourlyRate: 180,
     minHours: 3,
-    includedMilesPerHour: 15,
     perMileRate: 3.0,
     transferMinFare: 180,
     perStopFee: 20,
@@ -73,7 +70,6 @@ export const chauffeurRates: ChauffeurRate[] = [
     label: "Lamborghini Urus",
     hourlyRate: 160,
     minHours: 3,
-    includedMilesPerHour: 15,
     perMileRate: 2.75,
     transferMinFare: 160,
     perStopFee: 20,
@@ -84,7 +80,6 @@ export const chauffeurRates: ChauffeurRate[] = [
     label: "Mercedes-AMG G 63 (G-Wagon)",
     hourlyRate: 120,
     minHours: 3,
-    includedMilesPerHour: 15,
     perMileRate: 2.5,
     transferMinFare: 130,
     perStopFee: 20,
@@ -95,7 +90,6 @@ export const chauffeurRates: ChauffeurRate[] = [
     label: "Mercedes V-Class (up to 8)",
     hourlyRate: 75,
     minHours: 3,
-    includedMilesPerHour: 15,
     perMileRate: 2.0,
     transferMinFare: 120,
     perStopFee: 15,

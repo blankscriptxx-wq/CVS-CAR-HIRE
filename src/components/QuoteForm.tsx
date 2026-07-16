@@ -10,7 +10,6 @@ import {
   chauffeurQuote,
   daysBetween,
   type QuoteResult,
-  type ChauffeurServiceType,
   type ChauffeurJourney,
 } from "@/lib/quote";
 import { chauffeurRates, chauffeurEventTypes } from "@/lib/data/chauffeur";
@@ -74,11 +73,11 @@ export function QuoteForm() {
   const [pickup, setPickup] = useState("");
   const [dropoff, setDropoff] = useState("");
   const [airportCode, setAirportCode] = useState("");
-  const [serviceType, setServiceType] = useState<ChauffeurServiceType>("as-directed");
   const [journey, setJourney] = useState<ChauffeurJourney>("return");
+  const [stays, setStays] = useState(false);
   const [distanceMiles, setDistanceMiles] = useState<number>(0);
   const [distStatus, setDistStatus] = useState<DistStatus>("idle");
-  const [hours, setHours] = useState(4);
+  const [waitingHours, setWaitingHours] = useState(4);
   const [stops, setStops] = useState(0);
   const [passengers, setPassengers] = useState(2);
   const [requests, setRequests] = useState("");
@@ -88,11 +87,6 @@ export function QuoteForm() {
   const [mobile, setMobile] = useState("");
   const [done, setDone] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-
-  // Airport transfers default to a point-to-point transfer.
-  useEffect(() => {
-    if (eventType === "Airport transfer") setServiceType("transfer");
-  }, [eventType]);
 
   // Auto-estimate mileage from pickup + drop-off postcodes (debounced).
   useEffect(() => {
@@ -139,8 +133,8 @@ export function QuoteForm() {
 
   const chQuote = useMemo(() => {
     if (!chRate) return null;
-    return chauffeurQuote({ serviceType, journey, distanceMiles, hours, stops }, chRate);
-  }, [chRate, serviceType, journey, distanceMiles, hours, stops]);
+    return chauffeurQuote({ journey, stays, distanceMiles, waitingHours, stops }, chRate);
+  }, [chRate, journey, stays, distanceMiles, waitingHours, stops]);
 
   const activeQuote = mode === "self-drive" ? selfQuote : chQuote;
 
@@ -154,17 +148,19 @@ export function QuoteForm() {
     if (!rate || !chQuote) return "";
     const when = [chDate, chTime].filter(Boolean).join(" ");
     const svc =
-      serviceType === "as-directed"
-        ? `as directed for ${Math.max(rate.minHours, hours)} hours`
-        : `${journey} transfer`;
+      journey === "return"
+        ? stays
+          ? `return, car waits ${Math.max(rate.minHours, waitingHours)} hours`
+          : "return, drop-off"
+        : "one-way drop-off";
     const route = pickup && dropoff ? ` ${pickup} → ${dropoff}` : "";
     const stopsTxt = stops > 0 ? `, ${stops} stop${stops === 1 ? "" : "s"}` : "";
     const pax = ` for ${passengers} passenger${passengers === 1 ? "" : "s"}`;
     const req = requests ? ` Special requests: ${requests}.` : "";
-    return `${eventType} chauffeur hire of the ${rate.label}${when ? ` on ${when}` : ""} —${route} ${svc}, ~${distanceMiles} miles${stopsTxt}${pax}. Indicative total: from ${formatPrice(chQuote.total)}.${req}`;
+    return `${eventType} chauffeur hire of the ${rate.label}${when ? ` on ${when}` : ""} —${route} ${svc}, ~${distanceMiles} miles one-way${stopsTxt}${pax}. Indicative total: from ${formatPrice(chQuote.total)}.${req}`;
   }, [
     mode, sdVehicle, selfQuote, days, start, end,
-    chVehicle, chQuote, chDate, chTime, hours, eventType, serviceType,
+    chVehicle, chQuote, chDate, chTime, waitingHours, eventType, stays,
     journey, distanceMiles, stops, pickup, dropoff, passengers, requests,
   ]);
 
@@ -457,35 +453,6 @@ export function QuoteForm() {
               )}
             </div>
 
-            {/* Service type */}
-            <div>
-              <span className={labelClass}>Does the car stay with you?</span>
-              <div className="grid grid-cols-2 gap-2 border border-line p-1">
-                {(
-                  [
-                    ["as-directed", "Yes — as directed"],
-                    ["transfer", "No — drop-off"],
-                  ] as [ChauffeurServiceType, string][]
-                ).map(([val, label]) => (
-                  <button
-                    key={val}
-                    type="button"
-                    onClick={() => setServiceType(val)}
-                    className={`min-h-[44px] px-2 text-[11px] font-medium uppercase tracking-wide2 transition-colors ${
-                      serviceType === val ? "bg-champagne text-black" : "text-silver hover:text-warm-white"
-                    }`}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-              <p className="mt-2 text-[11px] text-silver/80">
-                {serviceType === "as-directed"
-                  ? "The chauffeur waits and stays with you throughout — billed by the hour."
-                  : "Point-to-point drop-off — billed by mileage."}
-              </p>
-            </div>
-
             {/* Journey + stops */}
             <div className="grid grid-cols-2 gap-4">
               <div className="min-w-0">
@@ -527,7 +494,44 @@ export function QuoteForm() {
               </div>
             </div>
 
-            {/* Distance (auto/manual) + hours/passengers */}
+            {/* Does the car wait? — only for return journeys */}
+            {journey === "return" && (
+              <div>
+                <span className={labelClass}>Does the car wait with you?</span>
+                <div className="grid grid-cols-2 gap-2 border border-line p-1">
+                  {(
+                    [
+                      [false, "No — drop & return"],
+                      [true, "Yes — car waits"],
+                    ] as [boolean, string][]
+                  ).map(([val, label]) => (
+                    <button
+                      key={String(val)}
+                      type="button"
+                      onClick={() => setStays(val)}
+                      className={`min-h-[44px] px-2 text-[11px] font-medium uppercase tracking-wide2 transition-colors ${
+                        stays === val ? "bg-champagne text-black" : "text-silver hover:text-warm-white"
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+                <p className="mt-2 text-[11px] text-silver/80">
+                  {stays
+                    ? "The car and chauffeur wait with you — a waiting charge is added for the time they stay."
+                    : "The car drops you off and returns to collect you later — mileage only."}
+                </p>
+              </div>
+            )}
+            {journey === "one-way" && (
+              <p className="text-[11px] text-silver/80">
+                One-way drop-off — the car doesn&rsquo;t wait. Choose Return above if you need the car
+                to bring you back or wait with you.
+              </p>
+            )}
+
+            {/* Distance + passengers */}
             <div className="grid grid-cols-2 gap-4">
               <div className="min-w-0">
                 <label className={labelClass} htmlFor="ch-miles">
@@ -547,51 +551,12 @@ export function QuoteForm() {
                   }}
                 />
               </div>
-              {serviceType === "as-directed" ? (
-                <div className="min-w-0">
-                  <label className={labelClass} htmlFor="ch-hours">
-                    Hours (min 3)
-                  </label>
-                  <input
-                    id="ch-hours"
-                    type="number"
-                    min={3}
-                    max={24}
-                    inputMode="numeric"
-                    className={inputClass}
-                    value={hours}
-                    onChange={(e) => setHours(Number(e.target.value))}
-                  />
-                </div>
-              ) : (
-                <div className="min-w-0">
-                  <label className={labelClass} htmlFor="ch-pax">
-                    Passengers (max {maxPassengers})
-                  </label>
-                  <input
-                    id="ch-pax"
-                    type="number"
-                    min={1}
-                    max={maxPassengers}
-                    inputMode="numeric"
-                    className={inputClass}
-                    value={passengers}
-                    onChange={(e) =>
-                      setPassengers(Math.min(maxPassengers, Math.max(1, Number(e.target.value))))
-                    }
-                  />
-                </div>
-              )}
-            </div>
-
-            {/* Passengers (as-directed) + special requests */}
-            {serviceType === "as-directed" && (
               <div className="min-w-0">
-                <label className={labelClass} htmlFor="ch-pax2">
-                  Number of passengers (max {maxPassengers})
+                <label className={labelClass} htmlFor="ch-pax">
+                  Passengers (max {maxPassengers})
                 </label>
                 <input
-                  id="ch-pax2"
+                  id="ch-pax"
                   type="number"
                   min={1}
                   max={maxPassengers}
@@ -601,6 +566,25 @@ export function QuoteForm() {
                   onChange={(e) =>
                     setPassengers(Math.min(maxPassengers, Math.max(1, Number(e.target.value))))
                   }
+                />
+              </div>
+            </div>
+
+            {/* Waiting hours — only when the car waits on a return */}
+            {journey === "return" && stays && (
+              <div className="min-w-0">
+                <label className={labelClass} htmlFor="ch-hours">
+                  How long does the car wait? (hours, min 3)
+                </label>
+                <input
+                  id="ch-hours"
+                  type="number"
+                  min={3}
+                  max={24}
+                  inputMode="numeric"
+                  className={inputClass}
+                  value={waitingHours}
+                  onChange={(e) => setWaitingHours(Number(e.target.value))}
                 />
               </div>
             )}

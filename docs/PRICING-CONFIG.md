@@ -50,23 +50,28 @@ add rates if you want them quotable).
 
 ## 2. Chauffeur rates — `src/lib/data/chauffeur.ts`
 
-Priced on **hours + mileage**, same rate card for every event type. "As directed" (car stays) uses
-the hourly rate with a mileage allowance; "Transfer" (drop-off) uses the per-mile rate with a
-minimum fare.
+Priced on **mileage**, with a **waiting charge** added only when the car waits with you on a return.
+Same rate card for every event type. How the journey works:
+- **One-way** → the car drops off and leaves: one-way mileage only.
+- **Return, drop-off** → the car returns to collect you later: return mileage (2× one-way).
+- **Return, car waits** → return mileage (2×) **plus** a waiting charge (waiting hours × hourly rate).
 
-| Vehicle | Hourly (as-directed) | Per mile | Min hours | Incl. miles/hr | Transfer min fare | Per stop | Max passengers | New values / notes |
-|---|---|---|---|---|---|---|---|---|
-| Rolls-Royce Phantom | £200 | £3.50 | 3 | 15 | £200 | £20 | 4 | |
-| Rolls-Royce Ghost | £150 | £2.50 | 3 | 15 | £150 | £20 | 4 | |
-| Rolls-Royce Cullinan | £180 | £3.00 | 3 | 15 | £180 | £20 | 4 | |
-| Lamborghini Urus | £160 | £2.75 | 3 | 15 | £160 | £20 | 4 | |
-| Mercedes-AMG G 63 (G-Wagon) | £120 | £2.50 | 3 | 15 | £130 | £20 | 4 | |
-| Mercedes V-Class (up to 8) | £75 | £2.00 | 3 | 15 | £120 | £15 | 8 | |
+The **hourly rate** is used only for waiting time. The **per-mile rate** and **min fare** drive the
+journey cost.
+
+| Vehicle | Hourly (waiting) | Per mile | Min waiting hrs | Min fare | Per stop | Max passengers | New values / notes |
+|---|---|---|---|---|---|---|---|
+| Rolls-Royce Phantom | £200 | £3.50 | 3 | £200 | £20 | 4 | |
+| Rolls-Royce Ghost | £150 | £2.50 | 3 | £150 | £20 | 4 | |
+| Rolls-Royce Cullinan | £180 | £3.00 | 3 | £180 | £20 | 4 | |
+| Lamborghini Urus | £160 | £2.75 | 3 | £160 | £20 | 4 | |
+| Mercedes-AMG G 63 (G-Wagon) | £120 | £2.50 | 3 | £130 | £20 | 4 | |
+| Mercedes V-Class (up to 8) | £75 | £2.00 | 3 | £120 | £15 | 8 | |
 
 **Worked examples (so you can sanity-check):**
-- As-directed Ghost, 4 hrs, 40 mi total: 4 × £150 = £600, mileage within allowance → **£600** (+£20/stop).
-- Transfer Cullinan, 121 mi one-way return (242 mi): 242 × £3.00 → **£726**.
-- Transfer V-Class, 20 mi return (40 mi): 40 × £2.00 = £80 → below min, so **£120**.
+- One-way transfer, Cullinan, 30 mi: 30 × £3.00 = £90 → below min fare → **£180**.
+- Return drop-off, Cullinan, 121 mi one-way (242 mi): 242 × £3.00 → **£726**.
+- Return + car waits, Ghost, 20 mi one-way (40 mi) + 5 hrs waiting: (40 × £2.50 = £100 → min fare £150) + (5 × £150 = £750) → **£900** (+£20/stop).
 
 **Mileage estimate factor** — `src/lib/distance.ts`
 Distance between postcodes is estimated as straight-line × **1.3** (road-detour factor). Raise it for

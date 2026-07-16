@@ -118,68 +118,55 @@ export function selfDriveRatesFor(v: Vehicle): SelfDriveRates | null {
   return null;
 }
 
-export type ChauffeurServiceType = "as-directed" | "transfer";
 export type ChauffeurJourney = "one-way" | "return";
 
 export interface ChauffeurInput {
-  serviceType: ChauffeurServiceType;
   journey: ChauffeurJourney;
+  /** Car waits with you (only applies to a return journey). */
+  stays: boolean;
   distanceMiles: number; // estimated one-way distance
-  hours: number; // duration (as-directed)
+  waitingHours: number; // hours the car stays (return + stays)
   stops: number; // additional stops
 }
 
 /**
- * Chauffeur quote — priced on HOURS and MILEAGE (same rate card for all events).
+ * Chauffeur quote — priced on MILEAGE, with a waiting charge when the car stays.
+ * Same rate card for every event type.
  *
- *  • as-directed: hours × hourly rate (min hours), with a mileage allowance;
- *    only extra miles are charged. The car stays with you throughout.
- *  • transfer:    total miles × per-mile rate (min fare). One-way or return.
+ *  • One-way: the car drops off and leaves — one-way mileage only.
+ *  • Return, drop-off: the car returns to collect later — return mileage (2×).
+ *  • Return, car waits: return mileage (2×) PLUS a waiting charge (hours ×
+ *    hourly rate) for the time the car stays with you.
  *
- * Return doubles the mileage. Additional stops add a flat per-stop fee.
+ * A minimum fare applies to the mileage. Additional stops add a per-stop fee.
  */
 export function chauffeurQuote(input: ChauffeurInput, rate: ChauffeurRate): QuoteResult {
   const oneWay = Math.max(0, Math.round(input.distanceMiles) || 0);
-  const totalMiles = oneWay * (input.journey === "return" ? 2 : 1);
+  const isReturn = input.journey === "return";
+  const totalMiles = oneWay * (isReturn ? 2 : 1);
   const stops = Math.max(0, Math.floor(input.stops) || 0);
+  const stays = isReturn && input.stays;
   const lines: QuoteLine[] = [];
 
-  if (input.serviceType === "as-directed") {
-    const billableHours = Math.max(rate.minHours, Math.floor(input.hours) || rate.minHours);
-    const timeCost = billableHours * rate.hourlyRate;
-    lines.push({
-      label: `Chauffeur — ${billableHours} hours (as directed)`,
-      detail: `${formatPrice(rate.hourlyRate)}/hr${
-        billableHours === rate.minHours ? ` · min ${rate.minHours} hrs` : ""
-      }`,
-      amount: timeCost,
-    });
+  // Mileage (with a minimum fare).
+  const mileageCost = totalMiles * rate.perMileRate;
+  const journeyCost = Math.max(rate.transferMinFare, mileageCost);
+  lines.push({
+    label: `${isReturn ? "Return" : "One-way"} journey — ${totalMiles} mi`,
+    detail:
+      mileageCost < rate.transferMinFare
+        ? `minimum fare ${formatPrice(rate.transferMinFare)}`
+        : `${formatPrice(rate.perMileRate)}/mi`,
+    amount: journeyCost,
+  });
 
-    const includedMiles = rate.includedMilesPerHour * billableHours;
-    const extraMiles = Math.max(0, totalMiles - includedMiles);
-    if (extraMiles > 0) {
-      lines.push({
-        label: `Additional mileage — ${extraMiles} mi`,
-        detail: `${totalMiles} mi total, ${includedMiles} mi included · ${formatPrice(rate.perMileRate)}/mi`,
-        amount: extraMiles * rate.perMileRate,
-      });
-    } else {
-      lines.push({
-        label: `Mileage included (${totalMiles} mi)`,
-        detail: `up to ${includedMiles} mi included`,
-        amount: 0,
-      });
-    }
-  } else {
-    const mileageCost = totalMiles * rate.perMileRate;
-    const charged = Math.max(rate.transferMinFare, mileageCost);
+  // Waiting charge — only when the car stays for a return journey.
+  if (stays) {
+    const wait = Math.max(rate.minHours, Math.floor(input.waitingHours) || rate.minHours);
     lines.push({
-      label: `Transfer — ${totalMiles} mi ${input.journey === "return" ? "(return)" : "(one-way)"}`,
-      detail:
-        mileageCost < rate.transferMinFare
-          ? `minimum fare ${formatPrice(rate.transferMinFare)}`
-          : `${formatPrice(rate.perMileRate)}/mi`,
-      amount: charged,
+      label: `Waiting time — ${wait} hours (car stays)`,
+      detail: `${formatPrice(rate.hourlyRate)}/hr · min ${rate.minHours} hrs`,
+      amount: wait * rate.hourlyRate,
     });
   }
 

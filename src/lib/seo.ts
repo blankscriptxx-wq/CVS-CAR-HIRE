@@ -16,7 +16,9 @@ export function buildMetadata(opts: {
   images?: string[];
 }): Metadata {
   const url = absoluteUrl(opts.path);
-  const images = opts.images?.map((i) => (i.startsWith("http") ? i : absoluteUrl(i)));
+  const provided = opts.images?.map((i) => (i.startsWith("http") ? i : absoluteUrl(i)));
+  // Fall back to the brand social image so every page has a valid share preview.
+  const images = provided && provided.length ? provided : [absoluteUrl("/brand/cvs-og.jpg")];
   return {
     // `absolute` prevents the root layout's "%s | CVS Car Hire" template from
     // doubling the brand — our metaTitle strings already include it.
@@ -44,19 +46,33 @@ export function buildMetadata(opts: {
 // ── JSON-LD builders ─────────────────────────────────────────
 // Never emit fake prices, review scores or availability.
 
+// Stable entity IDs so Organization / LocalBusiness / WebSite reference one
+// another instead of creating contradictory duplicate entities.
+export const ORG_ID = `${BASE}/#organization`;
+export const LOCALBUSINESS_ID = `${BASE}/#localbusiness`;
+export const WEBSITE_ID = `${BASE}/#website`;
+
+const TEL = `+44${siteConfig.phone.raw.replace(/^0/, "")}`;
+const SAME_AS = [siteConfig.social.instagram, siteConfig.social.googleBusinessProfile].filter(Boolean);
+
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": ORG_ID,
     name: siteConfig.name,
+    legalName: siteConfig.legalName,
     url: BASE,
     logo: absoluteUrl("/brand/cvs-logo.png"),
+    image: absoluteUrl("/brand/cvs-og.jpg"),
+    description: siteConfig.description,
     foundingDate: String(siteConfig.foundedYear),
-    sameAs: [siteConfig.social.instagram].filter(Boolean),
+    ...(siteConfig.email ? { email: siteConfig.email } : {}),
+    sameAs: SAME_AS,
     memberOf: siteConfig.memberships.map((m) => ({ "@type": "Organization", name: m })),
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: `+44${siteConfig.phone.raw.replace(/^0/, "")}`,
+      telephone: TEL,
       contactType: "customer service",
       areaServed: "GB",
       availableLanguage: "English",
@@ -68,19 +84,44 @@ export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "AutoRental",
+    "@id": LOCALBUSINESS_ID,
     name: siteConfig.name,
     url: BASE,
     image: absoluteUrl("/brand/cvs-og.jpg"),
-    telephone: `+44${siteConfig.phone.raw.replace(/^0/, "")}`,
+    logo: absoluteUrl("/brand/cvs-logo.png"),
+    description: siteConfig.description,
+    telephone: TEL,
+    ...(siteConfig.email ? { email: siteConfig.email } : {}),
     priceRange: "£££",
+    parentOrganization: { "@id": ORG_ID },
     address: {
       "@type": "PostalAddress",
       addressLocality: siteConfig.address.locality,
       addressRegion: siteConfig.address.region,
       addressCountry: "GB",
     },
-    areaServed: { "@type": "Country", name: "United Kingdom" },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: siteConfig.geo.lat,
+      longitude: siteConfig.geo.lng,
+    },
+    areaServed: [
+      { "@type": "City", name: "Birmingham" },
+      { "@type": "Country", name: "United Kingdom" },
+    ],
+    sameAs: SAME_AS,
     memberOf: siteConfig.memberships.map((m) => ({ "@type": "Organization", name: m })),
+    // Opening hours only emitted when the owner supplies them (no invented hours).
+    ...(siteConfig.openingHours.length
+      ? {
+          openingHoursSpecification: siteConfig.openingHours.map((h) => ({
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: h.days,
+            opens: h.opens,
+            closes: h.closes,
+          })),
+        }
+      : {}),
   };
 }
 
@@ -88,8 +129,11 @@ export function websiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": WEBSITE_ID,
     name: siteConfig.name,
     url: BASE,
+    inLanguage: "en-GB",
+    publisher: { "@id": ORG_ID },
   };
 }
 
@@ -126,7 +170,7 @@ export function serviceSchema(opts: { name: string; description: string; path: s
     name: opts.name,
     description: opts.description,
     url: absoluteUrl(opts.path),
-    provider: { "@type": "Organization", name: siteConfig.name, url: BASE },
+    provider: { "@id": ORG_ID },
     areaServed: { "@type": "Country", name: "United Kingdom" },
   };
 }

@@ -45,8 +45,19 @@ export const metadata: Metadata = {
     locale: "en_GB",
     siteName: siteConfig.name,
     url: siteConfig.url,
+    images: [{ url: "/brand/cvs-og.jpg", width: 1200, height: 630, alt: siteConfig.name }],
   },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} | Luxury, Supercar & Prestige Car Hire Birmingham`,
+    description: siteConfig.description,
+    images: ["/brand/cvs-og.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
   alternates: { canonical: siteConfig.url },
 };
 

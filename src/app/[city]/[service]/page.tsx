@@ -14,7 +14,7 @@ import { EnquiryPanel } from "@/components/EnquiryPanel";
 import { StickyActionBar } from "@/components/StickyActionBar";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { buildMetadata, serviceSchema, faqSchema, breadcrumbSchema } from "@/lib/seo";
+import { buildMetadata, serviceSchema, faqSchema } from "@/lib/seo";
 
 /** Only the 75 valid city × service combinations render; everything else 404s. */
 export const dynamicParams = false;
@@ -97,7 +97,6 @@ export default async function CityServicePage({
             path: `/${loc.slug}/${svc.slug}`,
           }),
           faqSchema(svc.faqs(loc)),
-          breadcrumbSchema(crumbs),
         ]}
       />
 

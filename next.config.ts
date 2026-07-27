@@ -88,6 +88,28 @@ const nextConfig: NextConfig = {
   async redirects() {
     return legacyRedirects;
   },
+  async headers() {
+    // Safe, non-breaking security headers. No CSP here (would need per-asset
+    // auditing with the chat/analytics embeds); can be layered on later.
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+          },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

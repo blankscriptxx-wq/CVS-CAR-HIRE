@@ -58,11 +58,21 @@ export const siteConfig = {
     ],
   },
 
+  // Approx service-centre geo (Birmingham). Used for LocalBusiness schema only;
+  // no precise/visitable street address is published (service-area business).
+  geo: { lat: 52.4862, lng: -1.8904 },
+
+  // Opening hours — [OWNER TO PROVIDE]. Populate to emit openingHoursSpecification.
+  // Example: [{ days: ["Mo","Tu","We","Th","Fr"], opens: "09:00", closes: "18:00" }]
+  openingHours: [] as { days: string[]; opens: string; closes: string }[],
+
   // ── Socials ────────────────────────────────────────────────
   social: {
     instagram:
       process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/cvshire",
     instagramHandle: "@cvshire",
+    // Google Business Profile URL — [OWNER TO PROVIDE] (maps share link). Added to sameAs when set.
+    googleBusinessProfile: process.env.NEXT_PUBLIC_GBP_URL || "",
   },
 
   // ── Analytics ids (consent-gated, optional) ────────────────

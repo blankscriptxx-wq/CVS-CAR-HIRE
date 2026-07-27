@@ -29,7 +29,7 @@ hash-named and could be mismatched to the wrong vehicle — always match by eye.
 | --- | --- |
 | `public/brand/cvs-logo.png` | Logo (white/transparent) for schema + header |
 | `public/brand/cvs-og.jpg` | 1200×630 social share image |
-| `public/images/home/hero.jpg` | Homepage hero — hero vehicle, cinematic, dark |
+| `public/images/home/hero.jpg` | Homepage hero — Rolls-Royce Cullinan & G 63 fleet shot |
 | `public/images/home/signature-service.jpg` | Handover / service portrait (4:5) |
 | `public/images/home/final-cta.jpg` | Night city + vehicle, full-width |
 | `public/images/about/story.jpg` | Fleet/brand image for About |
@@ -51,7 +51,7 @@ context where relevant).
 | `lamborghini-urus-performante-hire` | hero.jpg, front.jpg, interior.jpg, rear.jpg |
 | `mercedes-amg-g63-hire` | hero.jpg, front.jpg, front-angle.jpg, side.jpg, rear.jpg, interior.jpg, cockpit.jpg, console.jpg, door.jpg, lineup.jpg (full gallery from cvshire.co.uk) |
 | `rolls-royce-cullinan-hire` | hero.jpg (coach doors open), front-3q.jpg, front.jpg, side.jpg, rear.jpg, rear-angle.jpg, dashboard.jpg, cockpit.jpg, rear-seats.jpg, rear-cabin.jpg, lineup-fleet.jpg, lineup-g-wagon.jpg (full gallery from cvshire.co.uk) |
-| `range-rover-sport-hire` | hero.jpg, front.jpg, interior.jpg |
+| `range-rover-sport-hire` | hero.jpg, front.jpg, front-brick.jpg, rear.jpg, interior.jpg, cockpit.jpg, infotainment.jpg (full gallery from cvshire.co.uk) |
 | `range-rover-svr-hire` | hero.jpg, front.jpg, interior.jpg |
 | `bmw-x5-hire` | hero.jpg |
 | `audi-rs3-hire` | hero.jpg |

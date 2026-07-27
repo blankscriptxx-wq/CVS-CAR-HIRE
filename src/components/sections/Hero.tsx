@@ -12,7 +12,7 @@ import type { ImageAsset } from "@/lib/types";
 export function Hero() {
   const heroImage: ImageAsset = {
     src: "/images/home/hero.jpg",
-    alt: "A luxury supercar from the CVS Car Hire fleet at dusk",
+    alt: "A black Rolls-Royce Cullinan and Mercedes-AMG G 63 from the CVS Car Hire fleet",
     placeholder: false,
   };
 

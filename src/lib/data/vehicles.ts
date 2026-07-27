@@ -273,10 +273,14 @@ export const vehicles: Vehicle[] = [
     year: 2023,
     category: "luxury-4x4",
     bodyType: "suv",
-    heroImage: img("range-rover-sport-hire", "hero.jpg", "Range Rover Sport for luxury 4x4 hire at CVS Car Hire Birmingham"),
+    heroImage: img("range-rover-sport-hire", "hero.jpg", "White 2023 Range Rover Sport for luxury 4x4 hire at CVS Car Hire Birmingham"),
     gallery: [
-      img("range-rover-sport-hire", "front.jpg", "Front of the Range Rover Sport"),
-      img("range-rover-sport-hire", "interior.jpg", "Range Rover Sport interior"),
+      img("range-rover-sport-hire", "front.jpg", "Front three-quarter view of the white Range Rover Sport"),
+      img("range-rover-sport-hire", "front-brick.jpg", "Front of the white Range Rover Sport"),
+      img("range-rover-sport-hire", "rear.jpg", "Rear three-quarter view of the Range Rover Sport"),
+      img("range-rover-sport-hire", "interior.jpg", "Range Rover Sport cabin with burgundy leather interior"),
+      img("range-rover-sport-hire", "cockpit.jpg", "Range Rover Sport steering wheel and digital cockpit"),
+      img("range-rover-sport-hire", "infotainment.jpg", "Range Rover Sport curved infotainment display"),
     ],
     shortDescription:
       "Modern British luxury — refined, versatile and quietly confident.",

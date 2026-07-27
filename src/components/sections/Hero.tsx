@@ -20,7 +20,7 @@ export function Hero() {
     <section className="relative flex min-h-[100svh] items-end overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <Media asset={heroImage} plain sizes="100vw" priority />
+        <Media asset={heroImage} plain sizes="100vw" priority imgClassName="object-[50%_82%]" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/30" />
         <div className="vignette absolute inset-0" />
       </div>

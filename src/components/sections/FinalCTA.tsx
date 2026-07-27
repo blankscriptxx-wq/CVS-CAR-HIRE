@@ -20,13 +20,13 @@ export function FinalCTA({
         <Media
           asset={{
             src: "/images/home/final-cta.jpg",
-            alt: "A luxury vehicle on a city street at night",
+            alt: "Two Lamborghini Huracáns from the CVS Car Hire fleet",
             placeholder: false,
           }}
           plain
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       <div className="shell relative z-10 flex flex-col items-center py-24 text-center md:py-32">

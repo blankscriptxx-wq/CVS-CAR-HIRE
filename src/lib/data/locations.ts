@@ -198,6 +198,222 @@ export const locations: LocationContent[] = [
       "Luxury, wedding and prom car hire in Wolverhampton & the Black Country. Local delivery from our Birmingham base. Self-drive and chauffeur. Check availability.",
     geo: { lat: 52.5862, lng: -2.1288 },
   },
+  {
+    slug: "leeds",
+    city: "Leeds",
+    region: "West Yorkshire",
+    nation: "England",
+    intro:
+      "Leeds is Yorkshire's commercial capital, and CVS Car Hire brings its collection of supercars, luxury 4x4s and prestige vehicles to the city through nationwide delivery — your chosen car delivered to your home, hotel or venue, subject to availability.",
+    serving:
+      "From a Lamborghini for a weekend in Roundhay to a Rolls-Royce for a wedding at Rudding Park, or a chauffeur-driven arrival at Wellington Place, we make luxury hire in Leeds effortless. Tell us the occasion and location and we'll confirm delivery.",
+    delivery:
+      "Leeds is served through our nationwide delivery service, subject to vehicle and location. Collection is arranged to suit you.",
+    motorways: ["M1", "M62", "A1(M)"],
+    airports: ["Leeds Bradford (LBA)"],
+    weddingVenues: ["Rudding Park", "Oulton Hall", "Denton Hall"],
+    businessDistricts: ["Wellington Place", "Park Square", "Leeds city centre"],
+    landmarks: ["Leeds Corn Exchange", "Roundhay Park", "Trinity Leeds"],
+    occasions: ["Weddings", "Proms", "Corporate events", "Celebrations"],
+    recommendedVehicles: ["lamborghini-huracan-performante-spyder-hire", "rolls-royce-ghost-hire", "range-rover-sport-hire", "mercedes-amg-g63-hire"],
+    nearbyLocations: ["manchester", "sheffield"],
+    faqs: [
+      { question: "Do you deliver luxury cars to Leeds?", answer: "Yes — Leeds is covered by our nationwide delivery service, subject to vehicle and location. Share your dates and address and we'll confirm." },
+    ],
+    metaTitle: "Luxury Car Hire Leeds | Supercar, Wedding & Prom | CVS Car Hire",
+    metaDescription:
+      "Luxury, supercar, wedding and prom car hire in Leeds. Nationwide delivery from CVS Car Hire, self-drive and chauffeur. Check availability.",
+    geo: { lat: 53.8008, lng: -1.5491 },
+  },
+  {
+    slug: "liverpool",
+    city: "Liverpool",
+    region: "Merseyside",
+    nation: "England",
+    intro:
+      "Liverpool wears its style with confidence, and CVS Car Hire matches it. We bring supercars, luxury 4x4s and prestige vehicles to the city through our nationwide delivery service, delivered to your chosen address, subject to availability.",
+    serving:
+      "From a supercar for a waterfront weekend to a Rolls-Royce for a wedding at 30 James Street, or a chauffeur-driven arrival at the Royal Albert Dock, we make luxury hire in Liverpool simple. Tell us the occasion and we'll confirm delivery.",
+    delivery:
+      "Liverpool is served through our nationwide delivery service, subject to vehicle and location. Collection is arranged to suit you.",
+    motorways: ["M62", "M57", "M58"],
+    airports: ["Liverpool John Lennon (LPL)", "Manchester (MAN)"],
+    weddingVenues: ["Titanic Hotel", "30 James Street", "Leverhulme Hotel"],
+    businessDistricts: ["Liverpool Business District", "Royal Albert Dock", "Liverpool ONE"],
+    landmarks: ["Royal Albert Dock", "Royal Liver Building", "Anfield", "Sefton Park"],
+    occasions: ["Weddings", "Proms", "Corporate events", "Celebrations"],
+    recommendedVehicles: ["ferrari-roma-hire", "rolls-royce-cullinan-hire", "lamborghini-urus-performante-hire", "audi-r8-spyder-hire"],
+    nearbyLocations: ["manchester", "leeds"],
+    faqs: [
+      { question: "Do you deliver to Liverpool?", answer: "Yes — Liverpool is covered by our nationwide delivery service, subject to vehicle and location. Get in touch with your date and address to confirm." },
+    ],
+    metaTitle: "Luxury Car Hire Liverpool | Supercar, Wedding & Prom | CVS Car Hire",
+    metaDescription:
+      "Luxury, supercar, wedding and prom car hire in Liverpool. Nationwide delivery from CVS Car Hire, self-drive and chauffeur. Check availability.",
+    geo: { lat: 53.4084, lng: -2.9916 },
+  },
+  {
+    slug: "sheffield",
+    city: "Sheffield",
+    region: "South Yorkshire",
+    nation: "England",
+    intro:
+      "On the edge of the Peak District, Sheffield pairs city life with some of England's finest driving roads — and CVS Car Hire brings the cars to match, delivered across the city through our nationwide service, subject to availability.",
+    serving:
+      "From a supercar for a Peak District drive to a Rolls-Royce for a wedding at Whitley Hall, or a chauffeur-driven arrival in the city centre, we make luxury hire in Sheffield straightforward. Tell us the occasion and we'll confirm delivery.",
+    delivery:
+      "Sheffield is served through our nationwide delivery service, subject to vehicle and location. Collection is arranged to suit you.",
+    motorways: ["M1", "Sheffield Parkway", "A57 Snake Pass"],
+    airports: ["East Midlands (EMA)", "Manchester (MAN)"],
+    weddingVenues: ["Whitley Hall", "Kenwood Hall", "Tankersley Manor"],
+    businessDistricts: ["Sheffield city centre", "Digital Campus"],
+    landmarks: ["Peak District", "Winter Garden", "Bramall Lane", "Meadowhall"],
+    occasions: ["Weddings", "Proms", "Driving experiences", "Celebrations"],
+    recommendedVehicles: ["lamborghini-huracan-performante-spyder-hire", "audi-r8-spyder-hire", "range-rover-sport-hire", "rolls-royce-ghost-hire"],
+    nearbyLocations: ["leeds", "nottingham"],
+    faqs: [
+      { question: "Can I hire a supercar to drive in the Peak District?", answer: "Yes — Sheffield sits right on the Peak District, a favourite for driving days. We deliver across the city, subject to vehicle and location. Get in touch to check availability." },
+    ],
+    metaTitle: "Luxury Car Hire Sheffield | Supercar, Wedding & Prom | CVS Car Hire",
+    metaDescription:
+      "Luxury, supercar, wedding and prom car hire in Sheffield & the Peak District. Nationwide delivery from CVS Car Hire. Check availability.",
+    geo: { lat: 53.3811, lng: -1.4701 },
+  },
+  {
+    slug: "bristol",
+    city: "Bristol",
+    region: "South West England",
+    nation: "England",
+    intro:
+      "Bristol is the cultural heart of the South West, and CVS Car Hire brings its collection of supercars, luxury 4x4s and prestige vehicles to the city through nationwide delivery, to your chosen address, subject to availability.",
+    serving:
+      "From a supercar for a Clifton weekend to a Rolls-Royce for a wedding at Ashton Court, or a chauffeur-driven arrival at Temple Quay, we make luxury hire in Bristol effortless. Tell us the occasion and we'll confirm delivery.",
+    delivery:
+      "Bristol is served through our nationwide delivery service, subject to vehicle and location. Collection is arranged to suit you.",
+    motorways: ["M4", "M5", "M32"],
+    airports: ["Bristol Airport (BRS)"],
+    weddingVenues: ["Ashton Court Estate", "Berkeley Square Hotel", "The Bristol Hotel"],
+    businessDistricts: ["Temple Quay", "Bristol Harbourside", "Cabot Circus"],
+    landmarks: ["Clifton Suspension Bridge", "Bristol Harbourside", "SS Great Britain"],
+    occasions: ["Weddings", "Proms", "Corporate events", "Celebrations"],
+    recommendedVehicles: ["ferrari-roma-hire", "lamborghini-urus-performante-hire", "rolls-royce-cullinan-hire", "mercedes-amg-g63-hire"],
+    nearbyLocations: ["cardiff"],
+    faqs: [
+      { question: "Do you deliver luxury cars to Bristol?", answer: "Yes — Bristol is covered by our nationwide delivery service, subject to vehicle and location. Share your date and address and we'll confirm." },
+    ],
+    metaTitle: "Luxury Car Hire Bristol | Supercar, Wedding & Prom | CVS Car Hire",
+    metaDescription:
+      "Luxury, supercar, wedding and prom car hire in Bristol. Nationwide delivery from CVS Car Hire, self-drive and chauffeur. Check availability.",
+    geo: { lat: 51.4545, lng: -2.5879 },
+  },
+  {
+    slug: "newcastle",
+    city: "Newcastle upon Tyne",
+    region: "Tyne and Wear",
+    nation: "England",
+    intro:
+      "Newcastle brings unmistakable energy to the North East, and CVS Car Hire brings the cars to match — supercars, luxury 4x4s and prestige vehicles delivered to the city through our nationwide service, subject to availability.",
+    serving:
+      "From a supercar for a Quayside weekend to a Rolls-Royce for a wedding at Jesmond Dene House, or a chauffeur-driven arrival in the city centre, we make luxury hire in Newcastle simple. Tell us the occasion and we'll confirm delivery.",
+    delivery:
+      "Newcastle is served through our nationwide delivery service, subject to vehicle and location. Collection is arranged to suit you.",
+    motorways: ["A1(M)", "A19", "A167(M)"],
+    airports: ["Newcastle International (NCL)"],
+    weddingVenues: ["Jesmond Dene House", "Matfen Hall", "Newcastle Civic Centre"],
+    businessDistricts: ["Quayside", "Newcastle city centre"],
+    landmarks: ["Tyne Bridge", "Newcastle Quayside", "St James' Park", "Grey's Monument"],
+    occasions: ["Weddings", "Proms", "Corporate events", "Celebrations"],
+    recommendedVehicles: ["lamborghini-urus-performante-hire", "rolls-royce-ghost-hire", "mercedes-amg-g63-hire", "range-rover-sport-hire"],
+    nearbyLocations: ["leeds"],
+    faqs: [
+      { question: "Do you deliver to Newcastle and the North East?", answer: "Yes — Newcastle is covered by our nationwide delivery service, subject to vehicle and location. Get in touch with your date and address to confirm." },
+    ],
+    metaTitle: "Luxury Car Hire Newcastle | Supercar, Wedding & Prom | CVS Car Hire",
+    metaDescription:
+      "Luxury, supercar, wedding and prom car hire in Newcastle upon Tyne. Nationwide delivery from CVS Car Hire. Check availability.",
+    geo: { lat: 54.9783, lng: -1.6178 },
+  },
+  {
+    slug: "cardiff",
+    city: "Cardiff",
+    region: "South Wales",
+    nation: "Wales",
+    intro:
+      "Cardiff is the Welsh capital and a city built for occasions, and CVS Car Hire brings its collection of supercars, luxury 4x4s and prestige vehicles to it through nationwide delivery, to your chosen address, subject to availability.",
+    serving:
+      "From a supercar for a weekend in Pontcanna to a Rolls-Royce for a wedding at Cardiff Castle, or a chauffeur-driven arrival at Cardiff Bay, we make luxury hire in Cardiff effortless. Tell us the occasion and we'll confirm delivery.",
+    delivery:
+      "Cardiff is served through our nationwide delivery service, subject to vehicle and location. Collection is arranged to suit you.",
+    motorways: ["M4", "A470", "A48(M)"],
+    airports: ["Cardiff Airport (CWL)"],
+    weddingVenues: ["Cardiff Castle", "Hensol Castle", "The Exchange Hotel"],
+    businessDistricts: ["Cardiff Bay", "Callaghan Square", "Cardiff city centre"],
+    landmarks: ["Principality Stadium", "Cardiff Castle", "Cardiff Bay", "Bute Park"],
+    occasions: ["Weddings", "Proms", "Corporate events", "Celebrations"],
+    recommendedVehicles: ["ferrari-roma-hire", "rolls-royce-cullinan-hire", "lamborghini-huracan-performante-spyder-hire", "mercedes-amg-g63-hire"],
+    nearbyLocations: ["bristol"],
+    faqs: [
+      { question: "Do you deliver luxury cars to Cardiff and South Wales?", answer: "Yes — Cardiff is covered by our nationwide delivery service, subject to vehicle and location. Share your date and address and we'll confirm." },
+    ],
+    metaTitle: "Luxury Car Hire Cardiff | Supercar, Wedding & Prom | CVS Car Hire",
+    metaDescription:
+      "Luxury, supercar, wedding and prom car hire in Cardiff. Nationwide delivery from CVS Car Hire, self-drive and chauffeur. Check availability.",
+    geo: { lat: 51.4816, lng: -3.1791 },
+  },
+  {
+    slug: "derby",
+    city: "Derby",
+    region: "Derbyshire",
+    nation: "England",
+    intro:
+      "Derby sits on the doorstep of the Peak District and within easy reach of our Birmingham base, so CVS Car Hire delivers its supercars, luxury 4x4s and prestige vehicles across the city quickly and easily, subject to availability.",
+    serving:
+      "From a supercar for a Peak District drive to a Rolls-Royce for a wedding at Morley Hayes, or a chauffeur-driven arrival at Pride Park, we make luxury hire in Derby straightforward. Tell us the occasion and we'll confirm delivery.",
+    delivery:
+      "Derby is within comfortable reach of our Birmingham base, with delivery across the city and nationwide delivery available, subject to vehicle and location.",
+    motorways: ["A38", "A50", "M1"],
+    airports: ["East Midlands (EMA)", "Birmingham (BHX)"],
+    weddingVenues: ["Morley Hayes", "Donington Manor", "Kedleston Hall"],
+    businessDistricts: ["Pride Park", "Derby city centre"],
+    landmarks: ["Derby Cathedral", "Pride Park Stadium", "Peak District"],
+    occasions: ["Weddings", "Proms", "Driving experiences", "Celebrations"],
+    recommendedVehicles: ["lamborghini-urus-performante-hire", "range-rover-sport-hire", "audi-r8-spyder-hire", "rolls-royce-ghost-hire"],
+    nearbyLocations: ["nottingham", "leicester"],
+    faqs: [
+      { question: "Do you deliver to Derby?", answer: "Yes — Derby is within easy reach of our Birmingham base, so delivery and collection are quick. Nationwide delivery is also available, subject to vehicle and location." },
+    ],
+    metaTitle: "Luxury Car Hire Derby | Supercar, Wedding & Prom | CVS Car Hire",
+    metaDescription:
+      "Luxury, supercar, wedding and prom car hire in Derby. Delivery from our Birmingham base, self-drive and chauffeur. Check availability.",
+    geo: { lat: 52.9228, lng: -1.4767 },
+  },
+  {
+    slug: "stoke-on-trent",
+    city: "Stoke-on-Trent",
+    region: "Staffordshire",
+    nation: "England",
+    intro:
+      "Stoke-on-Trent sits on the M6 within easy reach of our Birmingham base, so CVS Car Hire delivers its supercars, luxury 4x4s and prestige vehicles across the city and Staffordshire quickly and easily, subject to availability.",
+    serving:
+      "From a supercar for a weekend to a Rolls-Royce for a wedding at Trentham Estate, or a chauffeur-driven arrival at Festival Park, we make luxury hire in Stoke-on-Trent simple. Tell us the occasion and we'll confirm delivery.",
+    delivery:
+      "Stoke-on-Trent is within comfortable reach of our Birmingham base via the M6, with delivery across the city and nationwide delivery available, subject to vehicle and location.",
+    motorways: ["M6", "A50", "A500"],
+    airports: ["Manchester (MAN)", "East Midlands (EMA)", "Birmingham (BHX)"],
+    weddingVenues: ["Trentham Estate", "The Upper House", "The Ashes"],
+    businessDistricts: ["Festival Park", "Stoke-on-Trent city centre"],
+    landmarks: ["Trentham Gardens", "bet365 Stadium", "Emma Bridgewater Factory"],
+    occasions: ["Weddings", "Proms", "Corporate", "Celebrations"],
+    recommendedVehicles: ["mercedes-amg-g63-hire", "range-rover-sport-hire", "lamborghini-urus-performante-hire", "rolls-royce-ghost-hire"],
+    nearbyLocations: ["wolverhampton", "derby"],
+    faqs: [
+      { question: "Do you deliver to Stoke-on-Trent?", answer: "Yes — Stoke sits on the M6 within easy reach of our Birmingham base, so delivery and collection are quick. Nationwide delivery is also available, subject to vehicle and location." },
+    ],
+    metaTitle: "Luxury Car Hire Stoke-on-Trent | Supercar, Wedding & Prom | CVS Car Hire",
+    metaDescription:
+      "Luxury, supercar, wedding and prom car hire in Stoke-on-Trent & Staffordshire. Delivery from our Birmingham base. Check availability.",
+    geo: { lat: 53.0027, lng: -2.1794 },
+  },
 ];
 
 export function getLocationBySlug(slug: string): LocationContent | undefined {

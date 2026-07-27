@@ -3,6 +3,7 @@ import { vehicles } from "@/lib/data/vehicles";
 import { services } from "@/lib/data/services";
 import { locations } from "@/lib/data/locations";
 import { journalPosts } from "@/lib/data/journal";
+import { CITY_SERVICES } from "@/lib/data/cityServices";
 import { absoluteUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -59,5 +60,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...vehicleRoutes, ...serviceRoutes, ...locationRoutes, ...journalRoutes];
+  // City × service local landing pages (/[city]/[service]).
+  const cityServiceRoutes = locations.flatMap((l) =>
+    CITY_SERVICES.map((s) => ({
+      url: absoluteUrl(`/${l.slug}/${s.slug}`),
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }))
+  );
+
+  return [
+    ...staticRoutes,
+    ...vehicleRoutes,
+    ...serviceRoutes,
+    ...locationRoutes,
+    ...cityServiceRoutes,
+    ...journalRoutes,
+  ];
 }

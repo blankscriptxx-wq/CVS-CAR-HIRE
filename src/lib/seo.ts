@@ -18,7 +18,9 @@ export function buildMetadata(opts: {
   const url = absoluteUrl(opts.path);
   const images = opts.images?.map((i) => (i.startsWith("http") ? i : absoluteUrl(i)));
   return {
-    title: opts.title,
+    // `absolute` prevents the root layout's "%s | CVS Car Hire" template from
+    // doubling the brand — our metaTitle strings already include it.
+    title: { absolute: opts.title },
     description: opts.description,
     alternates: { canonical: url },
     openGraph: {

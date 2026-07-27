@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { locations, getLocationBySlug } from "@/lib/data/locations";
+import { CITY_SERVICES } from "@/lib/data/cityServices";
 import { getVehicleBySlug, getFeaturedVehicles } from "@/lib/data/vehicles";
 import type { Vehicle } from "@/lib/types";
 import { PageHero } from "@/components/ui/PageHero";
@@ -143,6 +144,30 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
                 vehicle={v}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services in this city */}
+      <section className="border-t border-line py-16 md:py-20">
+        <div className="shell">
+          <span className="eyebrow">Popular services</span>
+          <h2 className="mt-4 text-display-sm font-display text-warm-white">
+            {location.city} car hire services
+          </h2>
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {CITY_SERVICES.map((s) => (
+              <Link
+                key={s.slug}
+                href={`/${location.slug}/${s.slug}`}
+                className="group border border-line p-6 transition-colors hover:border-champagne"
+              >
+                <span className="text-lg font-display text-warm-white group-hover:text-champagne">
+                  {s.name} in {location.city}
+                </span>
+                <span className="mt-2 block text-sm text-silver">{s.eyebrow}</span>
+              </Link>
             ))}
           </div>
         </div>

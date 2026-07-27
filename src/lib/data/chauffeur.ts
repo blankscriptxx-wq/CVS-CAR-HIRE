@@ -3,51 +3,48 @@
  *
  * Two products, one rate card per vehicle:
  *
- *  • Chauffeured DAY HIRE (car waits with you) — priced by a DAY RATE that
- *    varies by destination zone (Local Birmingham / Regional UK / London).
- *    Covers a standard day (up to STANDARD_DAY_HOURS); longer days add an
- *    hourly extension. This mirrors how CVS actually quotes full-day trips.
+ *  • Chauffeured DAY HIRE (car waits with you) — priced by a FAIR DISTANCE
+ *    FORMULA so every UK city is costed by how far it is from the Birmingham
+ *    base, not lumped into flat zones:
+ *
+ *        day rate = dayBase + (miles from Birmingham × dayPerMile)
+ *                            + (destination in London ? londonPremium : 0)
+ *
+ *    rounded to the nearest £10. Covers a standard day (STANDARD_DAY_HOURS);
+ *    longer days add the extra-hour rate. Calibrated to CVS's rough estimates
+ *    (e.g. Cullinan ≈ £1,400 to a ~100-mile city, ≈ £1,500 to London).
  *
  *  • TRANSFER (one-way, or return drop-off where the car doesn't wait) — priced
  *    on mileage (per mile, with a minimum fare).
  *
- * The same card also carries per-stop and passenger info. Day rates for London
- * and Regional are CVS-supplied; Local rates and the transfer/extension figures
- * are indicative and marked for confirmation (docs/CONTENT-TODO.md).
+ * These are indicative and fully configurable (docs/PRICING-CONFIG.md).
  */
 
 /** Hours covered by a day rate before the hourly extension applies. */
 export const STANDARD_DAY_HOURS = 8;
 
-export type ChauffeurZone = "local" | "regional" | "london";
-
-export const zoneLabels: Record<ChauffeurZone, string> = {
-  local: "Local (Birmingham & West Midlands)",
-  regional: "Regional (rest of UK)",
-  london: "London",
-};
-
 export interface ChauffeurRate {
   slug: string;
   label: string;
-  /** Full-day (car waits) rate by destination zone. */
-  dayRate: Record<ChauffeurZone, number>;
+  // ── Day hire (car waits) — fair distance formula ──
+  dayBase: number; // £ at the Birmingham base (0 miles)
+  dayPerMile: number; // £ per mile of distance from Birmingham to the destination
+  londonPremium: number; // £ added when the destination is in London
   extraHourRate: number; // £/hour beyond the standard day
-  perMileRate: number; // £/mile (transfers)
+  // ── Transfer (drop-off) ──
+  perMileRate: number; // £/mile
   transferMinFare: number; // £ minimum fare for a transfer
   perStopFee: number; // £ per additional stop
   maxPassengers: number;
 }
 
-/**
- * Rate card. London & Regional day rates from CVS's own pricing examples;
- * Local day rates + transfer/extension rates are indicative (to confirm).
- */
 export const chauffeurRates: ChauffeurRate[] = [
   {
     slug: "rolls-royce-phantom-hire",
     label: "Rolls-Royce Phantom",
-    dayRate: { local: 650, regional: 750, london: 900 },
+    dayBase: 600,
+    dayPerMile: 1.5,
+    londonPremium: 100,
     extraHourRate: 150,
     perMileRate: 3.5,
     transferMinFare: 250,
@@ -57,7 +54,9 @@ export const chauffeurRates: ChauffeurRate[] = [
   {
     slug: "rolls-royce-ghost-hire",
     label: "Rolls-Royce Ghost",
-    dayRate: { local: 650, regional: 750, london: 900 },
+    dayBase: 600,
+    dayPerMile: 1.5,
+    londonPremium: 100,
     extraHourRate: 150,
     perMileRate: 2.5,
     transferMinFare: 200,
@@ -67,7 +66,9 @@ export const chauffeurRates: ChauffeurRate[] = [
   {
     slug: "rolls-royce-cullinan-hire",
     label: "Rolls-Royce Cullinan",
-    dayRate: { local: 1250, regional: 1400, london: 1500 },
+    dayBase: 1200,
+    dayPerMile: 2.0,
+    londonPremium: 40,
     extraHourRate: 180,
     perMileRate: 3.0,
     transferMinFare: 250,
@@ -77,7 +78,9 @@ export const chauffeurRates: ChauffeurRate[] = [
   {
     slug: "lamborghini-urus-performante-hire",
     label: "Lamborghini Urus",
-    dayRate: { local: 1350, regional: 1500, london: 1600 },
+    dayBase: 1300,
+    dayPerMile: 2.0,
+    londonPremium: 40,
     extraHourRate: 180,
     perMileRate: 2.75,
     transferMinFare: 250,
@@ -87,7 +90,9 @@ export const chauffeurRates: ChauffeurRate[] = [
   {
     slug: "mercedes-amg-g63-hire",
     label: "Mercedes-AMG G 63 (G-Wagon)",
-    dayRate: { local: 850, regional: 900, london: 900 },
+    dayBase: 820,
+    dayPerMile: 0.8,
+    londonPremium: 0,
     extraHourRate: 120,
     perMileRate: 2.5,
     transferMinFare: 180,
@@ -97,7 +102,9 @@ export const chauffeurRates: ChauffeurRate[] = [
   {
     slug: "mercedes-v-class-hire",
     label: "Mercedes V-Class (up to 8)",
-    dayRate: { local: 550, regional: 650, london: 750 },
+    dayBase: 550,
+    dayPerMile: 1.2,
+    londonPremium: 60,
     extraHourRate: 90,
     perMileRate: 2.0,
     transferMinFare: 150,
@@ -105,6 +112,13 @@ export const chauffeurRates: ChauffeurRate[] = [
     maxPassengers: 8,
   },
 ];
+
+/** Fair distance-based day rate (rounded to the nearest £10). */
+export function dayRateFor(rate: ChauffeurRate, milesFromBase: number, isLondon: boolean): number {
+  const raw =
+    rate.dayBase + Math.max(0, milesFromBase) * rate.dayPerMile + (isLondon ? rate.londonPremium : 0);
+  return Math.round(raw / 10) * 10;
+}
 
 /** Event types — captured for context/routing only; they do NOT change price. */
 export const chauffeurEventTypes = [

@@ -12,12 +12,7 @@ import {
   type QuoteResult,
   type ChauffeurJourney,
 } from "@/lib/quote";
-import {
-  chauffeurRates,
-  chauffeurEventTypes,
-  zoneLabels,
-  type ChauffeurZone,
-} from "@/lib/data/chauffeur";
+import { chauffeurRates, chauffeurEventTypes } from "@/lib/data/chauffeur";
 import { airports } from "@/lib/data/airports";
 import { whatsappLink } from "@/lib/whatsapp";
 import { track, captureUtm } from "@/lib/analytics";
@@ -81,7 +76,8 @@ export function QuoteForm() {
   const [journey, setJourney] = useState<ChauffeurJourney>("return");
   const [stays, setStays] = useState(false);
   const [distanceMiles, setDistanceMiles] = useState<number>(0);
-  const [zone, setZone] = useState<ChauffeurZone>("regional");
+  const [milesFromBase, setMilesFromBase] = useState<number>(0);
+  const [isLondon, setIsLondon] = useState(false);
   const [distStatus, setDistStatus] = useState<DistStatus>("idle");
   const [waitingHours, setWaitingHours] = useState(8);
   const [stops, setStops] = useState(0);
@@ -109,7 +105,8 @@ export function QuoteForm() {
         const data = await res.json();
         if (data.ok && typeof data.miles === "number") {
           setDistanceMiles(data.miles);
-          if (data.zone) setZone(data.zone as ChauffeurZone);
+          if (typeof data.milesFromBase === "number") setMilesFromBase(data.milesFromBase);
+          setIsLondon(Boolean(data.isLondon));
           setDistStatus("ok");
         } else {
           setDistStatus("error");
@@ -141,10 +138,10 @@ export function QuoteForm() {
   const chQuote = useMemo(() => {
     if (!chRate) return null;
     return chauffeurQuote(
-      { journey, stays, distanceMiles, hours: waitingHours, zone, stops },
+      { journey, stays, distanceMiles, milesFromBase, isLondon, hours: waitingHours, stops },
       chRate
     );
-  }, [chRate, journey, stays, distanceMiles, waitingHours, zone, stops]);
+  }, [chRate, journey, stays, distanceMiles, milesFromBase, isLondon, waitingHours, stops]);
 
   const activeQuote = mode === "self-drive" ? selfQuote : chQuote;
 
@@ -159,7 +156,7 @@ export function QuoteForm() {
     const when = [chDate, chTime].filter(Boolean).join(" ");
     const svc =
       journey === "return" && stays
-        ? `full day, car waits (${waitingHours}h, ${zoneLabels[zone]})`
+        ? `full day, car waits (${waitingHours}h${isLondon ? ", London" : ""})`
         : journey === "return"
           ? "return drop-off"
           : "one-way drop-off";
@@ -172,7 +169,7 @@ export function QuoteForm() {
   }, [
     mode, sdVehicle, selfQuote, days, start, end,
     chVehicle, chQuote, chDate, chTime, waitingHours, eventType, stays,
-    journey, distanceMiles, zone, stops, pickup, dropoff, passengers, requests,
+    journey, distanceMiles, isLondon, stops, pickup, dropoff, passengers, requests,
   ]);
 
   const waMessage = `Hi CVS Car Hire, I'd like to confirm this quote — ${summary}${name ? ` My name is ${name}.` : ""}`;
@@ -448,7 +445,8 @@ export function QuoteForm() {
               {distStatus === "loading" && <span className="text-silver">Calculating mileage…</span>}
               {distStatus === "ok" && (
                 <span className="text-champagne-soft">
-                  ≈ {distanceMiles} miles one-way · {zoneLabels[zone]}{" "}
+                  ≈ {distanceMiles} mi journey · ~{milesFromBase} mi from Birmingham
+                  {isLondon ? " · London" : ""}{" "}
                   <span className="text-silver">— estimated, confirmed on enquiry</span>
                 </span>
               )}
@@ -530,7 +528,7 @@ export function QuoteForm() {
                 </div>
                 <p className="mt-2 text-[11px] text-silver/80">
                   {stays
-                    ? `Full-day chauffeured hire — the car stays with you all day. Priced at the ${zoneLabels[zone].toLowerCase()} day rate.`
+                    ? "Full-day chauffeured hire — the car stays with you all day. Priced by distance from Birmingham (London carries a small premium)."
                     : "The car drops you off and returns to collect you later — priced on mileage."}
                 </p>
               </div>

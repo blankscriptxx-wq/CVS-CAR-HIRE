@@ -1,11 +1,6 @@
 import type { Vehicle } from "@/lib/types";
 import { formatPrice } from "@/lib/data/pricing";
-import {
-  type ChauffeurRate,
-  type ChauffeurZone,
-  STANDARD_DAY_HOURS,
-  zoneLabels,
-} from "@/lib/data/chauffeur";
+import { type ChauffeurRate, STANDARD_DAY_HOURS, dayRateFor } from "@/lib/data/chauffeur";
 
 /**
  * Quote engine. Turns the confirmed pricing guide into indicative quotes.
@@ -129,9 +124,10 @@ export interface ChauffeurInput {
   journey: ChauffeurJourney;
   /** Car waits with you all day (only applies to a return journey). */
   stays: boolean;
-  distanceMiles: number; // estimated one-way distance
+  distanceMiles: number; // pick-up → drop-off (for transfers)
+  milesFromBase: number; // Birmingham → destination (drives the day rate)
+  isLondon: boolean; // destination in London (day-rate premium)
   hours: number; // duration of a day hire (car stays)
-  zone: ChauffeurZone; // destination zone (drives the day rate)
   stops: number; // additional stops
 }
 
@@ -151,11 +147,11 @@ export function chauffeurQuote(input: ChauffeurInput, rate: ChauffeurRate): Quot
   const lines: QuoteLine[] = [];
 
   if (stays) {
-    // Day hire — zone day rate (+ hourly extension beyond the standard day).
-    const dayRate = rate.dayRate[input.zone];
+    // Day hire — fair distance-based day rate (+ hourly extension beyond the day).
+    const dayRate = dayRateFor(rate, input.milesFromBase, input.isLondon);
     lines.push({
-      label: `Chauffeured day — ${zoneLabels[input.zone]}`,
-      detail: `up to ${STANDARD_DAY_HOURS} hours`,
+      label: `Chauffeured day${input.isLondon ? " — London" : ""}`,
+      detail: `up to ${STANDARD_DAY_HOURS} hours · ~${input.milesFromBase} mi from base`,
       amount: dayRate,
     });
     const hours = Math.max(0, Math.floor(input.hours) || 0);

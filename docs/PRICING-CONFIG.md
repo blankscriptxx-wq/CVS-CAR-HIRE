@@ -53,20 +53,25 @@ add rates if you want them quotable).
 Two products on one card. Destination **zone** is detected automatically from the drop-off postcode
 (London / Regional = rest of UK / Local = near Birmingham).
 
-### 2a. Full-day hire (car waits) — DAY RATE by zone
-Covers a standard day of **8 hours**; longer days add the extra-hour rate. *(London & Regional are
-your figures; Local rates are indicative — please confirm.)*
+### 2a. Full-day hire (car waits) — FAIR DISTANCE FORMULA
+Instead of flat zones, the day rate scales with how far the destination is from Birmingham, so every
+UK city is priced fairly:
 
-| Vehicle | Local day | Regional day | London day | Extra £/hr (beyond 8) | Max pax | New values / notes |
+> **day rate = base + (miles from Birmingham × per-mile) + London premium**, rounded to nearest £10.
+> Covers a standard **8-hour** day; longer days add the extra-hour rate.
+
+| Vehicle | Base (£) | Per mile (£) | London premium (£) | Extra £/hr (beyond 8) | Max pax | New values / notes |
 |---|---|---|---|---|---|---|
-| Rolls-Royce Phantom | £650 | £750 | £900 | £150 | 4 | |
-| Rolls-Royce Ghost | £650 | £750 | £900 | £150 | 4 | |
-| Rolls-Royce Cullinan | £1,250 | £1,400 | £1,500 | £180 | 4 | |
-| Lamborghini Urus | £1,350 | £1,500 | £1,600 | £180 | 4 | |
-| Mercedes-AMG G 63 (G-Wagon) | £850 | £900 | £900 | £120 | 4 | |
-| Mercedes V-Class (up to 8) | £550 | £650 | £750 | £90 | 8 | |
+| Rolls-Royce Phantom | 600 | 1.50 | 100 | 150 | 4 | |
+| Rolls-Royce Ghost | 600 | 1.50 | 100 | 150 | 4 | |
+| Rolls-Royce Cullinan | 1,200 | 2.00 | 40 | 180 | 4 | |
+| Lamborghini Urus | 1,300 | 2.00 | 40 | 180 | 4 | |
+| Mercedes-AMG G 63 (G-Wagon) | 820 | 0.80 | 0 | 120 | 4 | |
+| Mercedes V-Class (up to 8) | 550 | 1.20 | 60 | 90 | 8 | |
 
-*Matches your data: Cullinan London day = £1,500 · Cullinan Manchester/Cardiff/Bradford (regional) = £1,400 · Cullinan London 10 hrs = £1,860 (£1,500 + 2×£180).*
+*Calibrated to your rough estimates. Example — Cullinan day rate: Birmingham £1,210 · Manchester (~91 mi) £1,380 · Cardiff/Bradford (~115 mi) £1,430 · London (~131 mi) £1,500 · Newcastle (~223 mi) £1,650 · Glasgow (~327 mi) £1,850. A 10-hour London day = £1,500 + 2×£180 = £1,860.*
+
+*The **base** ≈ a Birmingham-local day; adjust **per-mile** to make distant cities cheaper/dearer, and **London premium** for the capital. Tell me the numbers you'd like at, say, 100 miles and in London and I'll re-fit the formula.*
 
 ### 2b. Transfer (one-way, or return drop-off — car doesn't wait) — per mile
 | Vehicle | Per mile | Min fare | Per stop | New values / notes |

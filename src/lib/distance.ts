@@ -66,14 +66,9 @@ export async function geocodePostcode(postcode: string): Promise<LatLng | null> 
   return null;
 }
 
-export type ChauffeurZone = "local" | "regional" | "london";
-
-/** Destination zone: London (premium), Local (near Birmingham), else Regional. */
-export function zoneFor(dest: LatLng): ChauffeurZone {
-  if (dest.region === "London") return "london";
-  const milesFromBase = haversineMiles(BIRMINGHAM, dest) * ROAD_FACTOR;
-  if (milesFromBase <= 25) return "local";
-  return "regional";
+/** Estimated road miles from the Birmingham base to a destination. */
+export function milesFromBirmingham(dest: LatLng): number {
+  return Math.max(0, Math.round(haversineMiles(BIRMINGHAM, dest) * ROAD_FACTOR));
 }
 
 /** Great-circle distance in miles. */
@@ -102,11 +97,14 @@ export async function roadMilesBetween(
   return Math.max(1, Math.round(haversineMiles(a, b) * ROAD_FACTOR));
 }
 
-/** Miles (pick-up → drop-off) plus the destination zone (from the drop-off). */
-export async function distanceAndZone(
+/**
+ * Chauffeur distance info: pick-up → drop-off miles (for transfers), plus the
+ * drop-off's distance from Birmingham and whether it's in London (for day rates).
+ */
+export async function distanceInfo(
   fromPostcode: string,
   toPostcode: string
-): Promise<{ miles: number; zone: ChauffeurZone } | null> {
+): Promise<{ miles: number; milesFromBase: number; isLondon: boolean } | null> {
   const [a, b] = await Promise.all([
     geocodePostcode(fromPostcode),
     geocodePostcode(toPostcode),
@@ -114,6 +112,7 @@ export async function distanceAndZone(
   if (!a || !b) return null;
   return {
     miles: Math.max(1, Math.round(haversineMiles(a, b) * ROAD_FACTOR)),
-    zone: zoneFor(b),
+    milesFromBase: milesFromBirmingham(b),
+    isLondon: b.region === "London",
   };
 }

@@ -152,8 +152,14 @@ export const vehicles: Vehicle[] = [
     heroImage: img("lamborghini-urus-performante-hire", "hero.jpg", "Lamborghini Urus Performante for luxury SUV hire at CVS Car Hire Birmingham"),
     gallery: [
       img("lamborghini-urus-performante-hire", "front.jpg", "Front of the Lamborghini Urus Performante"),
-      img("lamborghini-urus-performante-hire", "interior.jpg", "Lamborghini Urus Performante interior"),
+      img("lamborghini-urus-performante-hire", "front-angle.jpg", "Front three-quarter view of the Lamborghini Urus Performante"),
+      img("lamborghini-urus-performante-hire", "front-trees.jpg", "Lamborghini Urus Performante with orange accents"),
       img("lamborghini-urus-performante-hire", "rear.jpg", "Rear quarter of the Lamborghini Urus Performante"),
+      img("lamborghini-urus-performante-hire", "cockpit.jpg", "Lamborghini Urus Performante steering wheel and cockpit"),
+      img("lamborghini-urus-performante-hire", "interior.jpg", "Lamborghini Urus Performante seats with orange stitching"),
+      img("lamborghini-urus-performante-hire", "seat-detail.jpg", "Lamborghini Urus Performante seat detail"),
+      img("lamborghini-urus-performante-hire", "wheel.jpg", "Lamborghini Urus Performante wheel with orange brake caliper"),
+      img("lamborghini-urus-performante-hire", "vent.jpg", "Lamborghini Urus Performante air vent detail"),
     ],
     shortDescription:
       "Supercar presence with everyday practicality — designed to dominate every arrival.",
@@ -317,7 +323,8 @@ export const vehicles: Vehicle[] = [
     heroImage: img("range-rover-svr-hire", "hero.jpg", "Range Rover Sport SVR for performance 4x4 hire at CVS Car Hire"),
     gallery: [
       img("range-rover-svr-hire", "front.jpg", "Front of the Range Rover Sport SVR"),
-      img("range-rover-svr-hire", "interior.jpg", "Range Rover Sport SVR sports interior"),
+      img("range-rover-svr-hire", "interior.jpg", "Range Rover Sport SVR centre console"),
+      img("range-rover-svr-hire", "infotainment.jpg", "Range Rover Sport SVR infotainment display"),
     ],
     shortDescription:
       "A supercharged V8 in a luxury SUV suit — luxury with a harder edge.",
@@ -412,7 +419,11 @@ export const vehicles: Vehicle[] = [
     model: "GLC 43",
     category: "performance",
     bodyType: "suv",
-    heroImage: img("mercedes-glc-43-amg-hire", "hero.jpg", "Mercedes-AMG GLC 43 for performance SUV hire at CVS Car Hire"),
+    heroImage: img("mercedes-glc-43-amg-hire", "hero.jpg", "Grey Mercedes-AMG GLC 43 Coupé for performance SUV hire at CVS Car Hire"),
+    gallery: [
+      img("mercedes-glc-43-amg-hire", "front.jpg", "Front three-quarter view of the Mercedes-AMG GLC 43"),
+      img("mercedes-glc-43-amg-hire", "interior.jpg", "Mercedes-AMG GLC 43 steering wheel and interior"),
+    ],
     shortDescription:
       "AMG performance in a usable, refined SUV package.",
     fullDescription:
@@ -445,7 +456,11 @@ export const vehicles: Vehicle[] = [
     model: "Golf R",
     category: "performance",
     bodyType: "hatchback",
-    heroImage: img("vw-golf-r-hire", "hero.jpg", "Volkswagen Golf R for performance car hire at CVS Car Hire Birmingham"),
+    heroImage: img("vw-golf-r-hire", "hero.jpg", "Blue Volkswagen Golf R for performance car hire at CVS Car Hire Birmingham"),
+    gallery: [
+      img("vw-golf-r-hire", "front.jpg", "Front of the blue Volkswagen Golf R"),
+      img("vw-golf-r-hire", "rear.jpg", "Rear three-quarter view of the Volkswagen Golf R"),
+    ],
     shortDescription:
       "The everyday hot hatch benchmark — fast, four-wheel-drive and discreet.",
     fullDescription:
@@ -479,8 +494,10 @@ export const vehicles: Vehicle[] = [
     model: "Ghost",
     category: "prestige",
     bodyType: "saloon",
-    heroImage: img("rolls-royce-ghost-hire", "hero.jpg", "Rolls-Royce Ghost for prestige and wedding car hire at CVS Car Hire"),
+    heroImage: img("rolls-royce-ghost-hire", "hero.jpg", "Black and champagne Rolls-Royce Ghosts from the CVS Car Hire fleet"),
     gallery: [
+      img("rolls-royce-ghost-hire", "pair.jpg", "A pair of Rolls-Royce Ghosts in black and champagne"),
+      img("rolls-royce-ghost-hire", "rear.jpg", "Rear three-quarter view of the champagne Rolls-Royce Ghost"),
       img("rolls-royce-ghost-hire", "interior.jpg", "Rolls-Royce Ghost rear cabin with starlight headliner"),
     ],
     shortDescription:
@@ -497,44 +514,11 @@ export const vehicles: Vehicle[] = [
     availabilityStatus: "available",
     featured: true,
     recommendedOccasions: ["wedding", "chauffeur", "corporate", "self-drive"],
-    relatedVehicles: ["rolls-royce-cullinan-hire", "mercedes-e-class-hire", "mercedes-v-class-hire"],
+    relatedVehicles: ["rolls-royce-cullinan-hire", "rolls-royce-ghost-hire", "mercedes-v-class-hire"],
     metaTitle: "Rolls-Royce Ghost Hire Birmingham | Wedding & Prestige Car | CVS Car Hire",
     metaDescription:
       "Hire the Rolls-Royce Ghost in Birmingham with CVS Car Hire. Chauffeur-driven and self-drive options for weddings and occasions. Check availability today.",
   },
-  {
-    id: "mercedes-e-class",
-    slug: "mercedes-e-class-hire",
-    manufacturer: "Mercedes-Benz",
-    model: "E-Class",
-    category: "prestige",
-    bodyType: "saloon",
-    heroImage: img("mercedes-e-class-hire", "hero.jpg", "Mercedes-Benz E-Class for executive and chauffeur hire at CVS Car Hire"),
-    shortDescription:
-      "The executive standard — composed, comfortable and quietly impressive.",
-    fullDescription:
-      "The Mercedes-Benz E-Class is the executive saloon by which others are judged. Refined, spacious and beautifully finished, it is the natural choice for business travel, airport transfers and chauffeur-driven journeys where comfort and composure matter most. It carries you and your guests in quiet, understated class — professional, dependable and always appropriate.",
-    seats: 5,
-    doors: 4,
-    transmission: "automatic",
-    fuelType: "diesel",
-    drivetrain: "rwd",
-    selfDriveAvailable: true,
-    chauffeurAvailable: true,
-    availabilityStatus: "available",
-    minimumAge: 21,
-    dailyPriceFrom: 250,
-    weekendPriceFrom: 650,
-    weeklyPriceFrom: 800,
-    monthlyPriceFrom: 1800,
-    excessMileageCharge: 0.5,
-    recommendedOccasions: ["corporate", "airport", "chauffeur", "self-drive"],
-    relatedVehicles: ["mercedes-v-class-hire", "rolls-royce-ghost-hire", "bmw-x5-hire"],
-    metaTitle: "Mercedes E-Class Hire Birmingham | Executive & Chauffeur | CVS Car Hire",
-    metaDescription:
-      "Hire the Mercedes-Benz E-Class in Birmingham with CVS Car Hire. Executive self-drive and chauffeur options, nationwide UK delivery. Check availability today.",
-  },
-
   // ── Convertibles ───────────────────────────────────────────
   {
     id: "bmw-4-series-convertible",
@@ -558,7 +542,7 @@ export const vehicles: Vehicle[] = [
     availabilityStatus: "available",
     featured: true,
     recommendedOccasions: ["self-drive", "weekend", "birthday"],
-    relatedVehicles: ["audi-r8-spyder-hire", "mercedes-e-class-hire", "vw-golf-r-hire"],
+    relatedVehicles: ["audi-r8-spyder-hire", "audi-rs3-hire", "vw-golf-r-hire"],
     metaTitle: "BMW 4 Series Convertible Hire Birmingham | Open-Top Car Hire | CVS Car Hire",
     metaDescription:
       "Hire the BMW 4 Series Convertible in Birmingham with CVS Car Hire. Self-drive open-top hire, nationwide UK delivery available. Check availability today.",
@@ -572,7 +556,10 @@ export const vehicles: Vehicle[] = [
     model: "V-Class",
     category: "group-travel",
     bodyType: "mpv",
-    heroImage: img("mercedes-v-class-hire", "hero.jpg", "Mercedes-Benz V-Class for group travel and chauffeur hire at CVS Car Hire"),
+    heroImage: img("mercedes-v-class-hire", "hero.jpg", "Black Mercedes-Benz V-Class for group travel and chauffeur hire at CVS Car Hire"),
+    gallery: [
+      img("mercedes-v-class-hire", "front-angle.jpg", "Front three-quarter view of the black Mercedes-Benz V-Class"),
+    ],
     shortDescription:
       "Luxury for the whole party — space, comfort and refinement together.",
     fullDescription:
@@ -593,7 +580,7 @@ export const vehicles: Vehicle[] = [
     monthlyPriceFrom: 2500,
     excessMileageCharge: 0.8,
     recommendedOccasions: ["airport", "wedding", "corporate", "chauffeur"],
-    relatedVehicles: ["mercedes-e-class-hire", "range-rover-sport-hire", "bmw-x5-hire"],
+    relatedVehicles: ["mercedes-v-class-hire", "range-rover-sport-hire", "bmw-x5-hire"],
     metaTitle: "Mercedes V-Class Hire Birmingham | Group Travel & Chauffeur | CVS Car Hire",
     metaDescription:
       "Hire the Mercedes-Benz V-Class in Birmingham with CVS Car Hire. Group travel, airport transfers and chauffeur options. Check availability today.",

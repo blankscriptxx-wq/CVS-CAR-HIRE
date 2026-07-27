@@ -48,19 +48,18 @@ context where relevant).
 | `ferrari-roma-hire` | hero.jpg, front.jpg, interior.jpg, rear.jpg |
 | `lamborghini-huracan-performante-spyder-hire` | hero.jpg, front.jpg, front-angle.jpg, rear.jpg, cockpit.jpg, interior.jpg, seats.jpg, seat-detail.jpg, door.jpg, wheel.jpg, sill.jpg, lineup.jpg (full gallery from cvshire.co.uk) |
 | `audi-r8-spyder-hire` | hero.jpg, front.jpg, front-city.jpg, front-angle.jpg, rear.jpg, rear-angle.jpg, front-3q.jpg, interior.jpg, cockpit.jpg, seats.jpg (full gallery from cvshire.co.uk) |
-| `lamborghini-urus-performante-hire` | hero.jpg, front.jpg, interior.jpg, rear.jpg |
+| `lamborghini-urus-performante-hire` | hero.jpg, front.jpg, front-angle.jpg, front-trees.jpg, rear.jpg, cockpit.jpg, interior.jpg, seat-detail.jpg, wheel.jpg, vent.jpg (full gallery from cvshire.co.uk) |
 | `mercedes-amg-g63-hire` | hero.jpg, front.jpg, front-angle.jpg, side.jpg, rear.jpg, interior.jpg, cockpit.jpg, console.jpg, door.jpg, lineup.jpg (full gallery from cvshire.co.uk) |
 | `rolls-royce-cullinan-hire` | hero.jpg (coach doors open), front-3q.jpg, front.jpg, side.jpg, rear.jpg, rear-angle.jpg, dashboard.jpg, cockpit.jpg, rear-seats.jpg, rear-cabin.jpg, lineup-fleet.jpg, lineup-g-wagon.jpg (full gallery from cvshire.co.uk) |
 | `range-rover-sport-hire` | hero.jpg, front.jpg, front-brick.jpg, rear.jpg, interior.jpg, cockpit.jpg, infotainment.jpg (full gallery from cvshire.co.uk) |
-| `range-rover-svr-hire` | hero.jpg, front.jpg, interior.jpg |
+| `range-rover-svr-hire` | hero.jpg, front.jpg, interior.jpg, infotainment.jpg (from cvshire.co.uk) |
 | `bmw-x5-hire` | hero.jpg |
 | `audi-rs3-hire` | hero.jpg |
-| `mercedes-glc-43-amg-hire` | hero.jpg |
-| `vw-golf-r-hire` | hero.jpg |
-| `rolls-royce-ghost-hire` | hero.jpg, interior.jpg |
-| `mercedes-e-class-hire` | hero.jpg |
+| `mercedes-glc-43-amg-hire` | hero.jpg, front.jpg, interior.jpg (from cvshire.co.uk) |
+| `vw-golf-r-hire` | hero.jpg, front.jpg, rear.jpg (from cvshire.co.uk) |
+| `rolls-royce-ghost-hire` | hero.jpg, pair.jpg, rear.jpg, interior.jpg (from cvshire.co.uk) |
 | `bmw-4-series-convertible-hire` | hero.jpg |
-| `mercedes-v-class-hire` | hero.jpg |
+| `mercedes-v-class-hire` | hero.jpg, front-angle.jpg (from cvshire.co.uk) |
 
 > Filenames are defined by the `img()` helper and `gallery` arrays in `src/lib/data/vehicles.ts` —
 > adjust there if you prefer different names.

@@ -19,7 +19,6 @@ add rates if you want them quotable).
 
 | Vehicle | Daily | Weekend (3d) | Weekly (7d) | Monthly (28d) | Min age | Excess £/mile | New values / notes |
 |---|---|---|---|---|---|---|---|
-| Mercedes E-Class | £250 | £650 | £800 | £1,800 | 21 | £0.50 | |
 | BMW X5 (7 seat) | £250 | £650 | £1,000 | £2,300 | 23 | £0.65 | |
 | Mercedes GLC 43 AMG | £350 | £900 | £1,500 | £3,500 | 23 | £0.75 | |
 | Range Rover Sport | £350 | £900 | £1,500 | £3,500 | 23 | £1.00 | |

@@ -75,16 +75,45 @@ export default function ContactPage() {
             </a>
           </div>
 
-          <div className="mt-8 border-t border-line pt-6 text-sm text-silver">
-            <p className="text-warm-white">CVS Car Hire</p>
-            <p className="mt-1">
-              {siteConfig.address.locality}, {siteConfig.address.region}, {siteConfig.address.country}
-            </p>
-            <p className="mt-3 text-xs">
-              Established {siteConfig.foundedYear} · BVRLA member · Nationwide UK delivery available,
-              subject to vehicle and location.
-            </p>
+          <div className="mt-8 grid gap-8 border-t border-line pt-6 text-sm text-silver sm:grid-cols-2">
+            <div>
+              <h2 className="eyebrow">Visit or write to us</h2>
+              <address className="mt-3 not-italic">
+                <p className="text-warm-white">CVS Car Hire</p>
+                <p className="mt-1">{siteConfig.address.streetAddress}</p>
+                <p>
+                  {siteConfig.address.locality}, {siteConfig.address.region}
+                </p>
+                <p>{siteConfig.address.postalCode}</p>
+                <p className="mt-3">
+                  <a href={`mailto:${siteConfig.email}`} className="link-underline text-warm-white">
+                    {siteConfig.email}
+                  </a>
+                </p>
+              </address>
+            </div>
+            <div>
+              <h2 className="eyebrow">Opening hours</h2>
+              <dl className="mt-3 space-y-1">
+                {siteConfig.openingHours.map((h) => (
+                  <div key={h.days.join()} className="flex justify-between gap-4">
+                    <dt>
+                      {h.days[0].slice(0, 3)}
+                      {h.days.length > 1 ? `–${h.days[h.days.length - 1].slice(0, 3)}` : ""}
+                    </dt>
+                    <dd className="text-warm-white">
+                      {h.opens}–{h.closes}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
+          <p className="mt-6 text-xs text-silver/70">
+            Established {siteConfig.foundedYear} · BVRLA member · Nationwide UK delivery available,
+            subject to vehicle and location. {siteConfig.legalName} (trading as {siteConfig.tradingName}),
+            company no. {siteConfig.companyNumber}.
+          </p>
         </Reveal>
 
         {/* Enquiry form */}

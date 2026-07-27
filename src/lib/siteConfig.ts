@@ -9,7 +9,9 @@
 
 export const siteConfig = {
   name: "CVS Car Hire",
-  legalName: "CVS Car Hire",
+  legalName: "Central Vehicle Solutions Ltd",
+  tradingName: "CVS Hire",
+  companyNumber: "09119432", // Companies House
   tagline: "Luxury Without Compromise",
   description:
     "Birmingham's leading collection of luxury, prestige and performance vehicles — available for self-drive, chauffeur hire and nationwide UK delivery.",
@@ -25,15 +27,14 @@ export const siteConfig = {
   },
   // WhatsApp in international format (no +, no spaces) for wa.me links.
   whatsappNumber: process.env.NEXT_PUBLIC_CVS_WHATSAPP_NUMBER || "447772233314",
-  email: process.env.NEXT_PUBLIC_CVS_EMAIL || "", // owner to confirm — not rendered when empty
+  email: process.env.NEXT_PUBLIC_CVS_EMAIL || "info@cvshire.co.uk",
 
   address: {
+    streetAddress: "70 Glover Street",
     locality: "Birmingham",
     region: "West Midlands",
+    postalCode: "B9 4EN",
     country: "United Kingdom",
-    // Street address to be confirmed by owner — left blank so it is not rendered.
-    streetAddress: "",
-    postalCode: "",
   },
 
   coverage:
@@ -58,21 +59,25 @@ export const siteConfig = {
     ],
   },
 
-  // Approx service-centre geo (Birmingham). Used for LocalBusiness schema only;
-  // no precise/visitable street address is published (service-area business).
-  geo: { lat: 52.4862, lng: -1.8904 },
+  // Geo of the Birmingham premises (B9 4EN, 70 Glover Street).
+  geo: { lat: 52.475219, lng: -1.875752 },
 
-  // Opening hours — [OWNER TO PROVIDE]. Populate to emit openingHoursSpecification.
-  // Example: [{ days: ["Mo","Tu","We","Th","Fr"], opens: "09:00", closes: "18:00" }]
-  openingHours: [] as { days: string[]; opens: string; closes: string }[],
+  // Opening hours (visible on the Contact page; also emitted as schema).
+  openingHours: [
+    { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "10:00", closes: "17:00" },
+    { days: ["Saturday", "Sunday"], opens: "11:00", closes: "14:00" },
+  ] as { days: string[]; opens: string; closes: string }[],
 
   // ── Socials ────────────────────────────────────────────────
   social: {
     instagram:
       process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/cvshire",
     instagramHandle: "@cvshire",
-    // Google Business Profile URL — [OWNER TO PROVIDE] (maps share link). Added to sameAs when set.
-    googleBusinessProfile: process.env.NEXT_PUBLIC_GBP_URL || "",
+    tiktok: "https://www.tiktok.com/@cvshire",
+    facebook: "https://www.facebook.com/cvshire",
+    // Google Business Profile (Maps) — used for sameAs and "read our reviews" links.
+    googleBusinessProfile:
+      process.env.NEXT_PUBLIC_GBP_URL || "https://share.google/tr4X6xW6fMtZPtNne",
   },
 
   // ── Analytics ids (consent-gated, optional) ────────────────

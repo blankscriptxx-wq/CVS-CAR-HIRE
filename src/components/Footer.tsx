@@ -44,11 +44,28 @@ export function Footer() {
                 <InstagramIcon className="h-4 w-4 text-champagne" />{" "}
                 {siteConfig.social.instagramHandle}
               </a>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="inline-flex items-center gap-2 text-warm-white hover:text-champagne"
+              >
+                {siteConfig.email}
+              </a>
             </div>
-            <p className="mt-6 text-xs text-silver">
-              {siteConfig.address.locality}, {siteConfig.address.region},{" "}
-              {siteConfig.address.country}
-            </p>
+            <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-silver">
+              <a href={siteConfig.social.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-warm-white">
+                TikTok
+              </a>
+              <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-warm-white">
+                Facebook
+              </a>
+              <a href={siteConfig.social.googleBusinessProfile} target="_blank" rel="noopener noreferrer" className="hover:text-warm-white">
+                Google reviews
+              </a>
+            </div>
+            <address className="mt-6 text-xs not-italic text-silver">
+              {siteConfig.address.streetAddress}, {siteConfig.address.locality},{" "}
+              {siteConfig.address.region} {siteConfig.address.postalCode}
+            </address>
           </div>
 
           {/* Link columns */}
@@ -87,7 +104,8 @@ export function Footer() {
             <span>Birmingham &amp; nationwide UK</span>
           </div>
           <p className="text-xs text-silver">
-            © {year} {siteConfig.legalName}. All rights reserved.
+            © {year} {siteConfig.legalName} (t/a {siteConfig.tradingName}), company no.{" "}
+            {siteConfig.companyNumber}. All rights reserved.
           </p>
         </div>
       </div>

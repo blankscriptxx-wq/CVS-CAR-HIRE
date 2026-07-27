@@ -56,9 +56,8 @@ export function SocialProof() {
               and follow the latest handovers on Instagram.
             </p>
             <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-              {/* Owner to connect the live Google Business Profile reviews URL. */}
               <a
-                href="https://www.google.com/search?q=CVS+Car+Hire+Birmingham+reviews"
+                href={siteConfig.social.googleBusinessProfile}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[48px] items-center justify-center gap-2 border border-line px-6 text-xs uppercase tracking-wide2 text-warm-white hover:border-champagne"

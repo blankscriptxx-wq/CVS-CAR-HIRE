@@ -53,7 +53,21 @@ export const LOCALBUSINESS_ID = `${BASE}/#localbusiness`;
 export const WEBSITE_ID = `${BASE}/#website`;
 
 const TEL = `+44${siteConfig.phone.raw.replace(/^0/, "")}`;
-const SAME_AS = [siteConfig.social.instagram, siteConfig.social.googleBusinessProfile].filter(Boolean);
+const SAME_AS = [
+  siteConfig.social.instagram,
+  siteConfig.social.facebook,
+  siteConfig.social.tiktok,
+  siteConfig.social.googleBusinessProfile,
+].filter(Boolean);
+
+const POSTAL_ADDRESS = {
+  "@type": "PostalAddress",
+  ...(siteConfig.address.streetAddress ? { streetAddress: siteConfig.address.streetAddress } : {}),
+  addressLocality: siteConfig.address.locality,
+  addressRegion: siteConfig.address.region,
+  ...(siteConfig.address.postalCode ? { postalCode: siteConfig.address.postalCode } : {}),
+  addressCountry: "GB",
+} as const;
 
 export function organizationSchema() {
   return {
@@ -68,11 +82,19 @@ export function organizationSchema() {
     description: siteConfig.description,
     foundingDate: String(siteConfig.foundedYear),
     ...(siteConfig.email ? { email: siteConfig.email } : {}),
+    telephone: TEL,
+    address: POSTAL_ADDRESS,
+    identifier: {
+      "@type": "PropertyValue",
+      propertyID: "Companies House",
+      value: siteConfig.companyNumber,
+    },
     sameAs: SAME_AS,
     memberOf: siteConfig.memberships.map((m) => ({ "@type": "Organization", name: m })),
     contactPoint: {
       "@type": "ContactPoint",
       telephone: TEL,
+      email: siteConfig.email,
       contactType: "customer service",
       areaServed: "GB",
       availableLanguage: "English",
@@ -94,12 +116,7 @@ export function localBusinessSchema() {
     ...(siteConfig.email ? { email: siteConfig.email } : {}),
     priceRange: "£££",
     parentOrganization: { "@id": ORG_ID },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: siteConfig.address.locality,
-      addressRegion: siteConfig.address.region,
-      addressCountry: "GB",
-    },
+    address: POSTAL_ADDRESS,
     geo: {
       "@type": "GeoCoordinates",
       latitude: siteConfig.geo.lat,

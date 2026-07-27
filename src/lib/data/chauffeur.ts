@@ -1,26 +1,22 @@
 /**
  * Chauffeur pricing.
  *
- * Three products, priced fairly by distance from the Birmingham base. Within a
- * LOCAL_RADIUS the price is exactly the Birmingham anchor; beyond it, only the
- * mileage above the radius is charged, so local jobs match CVS's firm Birmingham
- * rates and distant jobs scale fairly.
+ * Three products, priced by the journey's REACH — how far the furthest point of
+ * the trip (pick-up OR drop-off) is from the Birmingham base. So "Coventry →
+ * Birmingham" is priced on the Coventry distance (~22 mi), not the Birmingham
+ * drop-off. Price = base + reach × perMile (+ London premium for a day hire),
+ * rounded to £10.
  *
- *   • One-way (drop-off): oneWayBase + excessMiles × oneWayPerMile
- *   • Return, drop & collect later (LOCAL only, car does two jobs):
- *       returnDropBase + excessMiles × returnDropPerMile
- *   • Return, car waits (day hire — the sensible option once out of town):
- *       dayBase + excessMiles × dayPerMile (+ London premium), plus extra hours
+ *   • One-way (drop-off):        oneWayBase + reach × oneWayPerMile
+ *   • Return, drop & collect:    returnDropBase + reach × returnDropPerMile  (≤30 mi)
+ *   • Return, car waits (day):   dayBase + reach × dayPerMile (+ London premium)
  *
- * Birmingham anchors are CVS-supplied and firm; distance scaling + London
- * premium are calibrated estimates the team can adjust (docs/PRICING-CONFIG.md).
- * The quote is presented as an instant estimate for the team to review/confirm.
+ * Bases are tuned so Birmingham jobs (reach ≈ a few miles) hit CVS's firm
+ * anchors and nearby towns scale up (e.g. Phantom return: Birmingham £400,
+ * Coventry £500). The team reviews every instant quote and can adjust.
  */
 
-/** Jobs within this many miles of Birmingham are priced at the local anchor. */
-export const LOCAL_RADIUS_MILES = 15;
-
-/** Beyond this distance, "drop & return" is not offered — the car waits. */
+/** Beyond this reach, "drop & return" is not offered — the car waits. */
 export const DROP_RETURN_MAX_MILES = 30;
 
 /** Hours covered by a day rate before the hourly extension applies. */
@@ -47,14 +43,16 @@ export interface ChauffeurRate {
   maxPassengers: number;
 }
 
+// Bases below are the "at Birmingham base" figures minus a few miles of reach,
+// so the Birmingham anchor lands exactly once ~4 miles of reach is added.
 export const chauffeurRates: ChauffeurRate[] = [
   {
     slug: "rolls-royce-phantom-hire",
     label: "Rolls-Royce Phantom",
-    oneWayBase: 300,
-    oneWayPerMile: 3,
-    returnDropBase: 400,
-    returnDropPerMile: 4,
+    oneWayBase: 284,
+    oneWayPerMile: 4,
+    returnDropBase: 378,
+    returnDropPerMile: 5.5,
     dayBase: 620,
     dayPerMile: 1.5,
     londonPremium: 100,
@@ -65,10 +63,10 @@ export const chauffeurRates: ChauffeurRate[] = [
   {
     slug: "rolls-royce-ghost-hire",
     label: "Rolls-Royce Ghost",
-    oneWayBase: 300,
-    oneWayPerMile: 3,
-    returnDropBase: 400,
-    returnDropPerMile: 4,
+    oneWayBase: 284,
+    oneWayPerMile: 4,
+    returnDropBase: 378,
+    returnDropPerMile: 5.5,
     dayBase: 620,
     dayPerMile: 1.5,
     londonPremium: 100,
@@ -79,10 +77,10 @@ export const chauffeurRates: ChauffeurRate[] = [
   {
     slug: "rolls-royce-cullinan-hire",
     label: "Rolls-Royce Cullinan",
-    oneWayBase: 500,
-    oneWayPerMile: 4,
-    returnDropBase: 800,
-    returnDropPerMile: 6,
+    oneWayBase: 472,
+    oneWayPerMile: 7,
+    returnDropBase: 756,
+    returnDropPerMile: 11,
     dayBase: 1200,
     dayPerMile: 2,
     londonPremium: 40,
@@ -93,10 +91,10 @@ export const chauffeurRates: ChauffeurRate[] = [
   {
     slug: "lamborghini-urus-performante-hire",
     label: "Lamborghini Urus",
-    oneWayBase: 600,
-    oneWayPerMile: 4,
-    returnDropBase: 1000,
-    returnDropPerMile: 6,
+    oneWayBase: 568,
+    oneWayPerMile: 8,
+    returnDropBase: 944,
+    returnDropPerMile: 14,
     dayBase: 1300,
     dayPerMile: 2,
     londonPremium: 40,
@@ -107,10 +105,10 @@ export const chauffeurRates: ChauffeurRate[] = [
   {
     slug: "mercedes-amg-g63-hire",
     label: "Mercedes-AMG G 63 (G-Wagon)",
-    oneWayBase: 500,
-    oneWayPerMile: 3,
-    returnDropBase: 700,
-    returnDropPerMile: 5,
+    oneWayBase: 472,
+    oneWayPerMile: 7,
+    returnDropBase: 660,
+    returnDropPerMile: 10,
     dayBase: 820,
     dayPerMile: 0.8,
     londonPremium: 0,
@@ -121,10 +119,10 @@ export const chauffeurRates: ChauffeurRate[] = [
   {
     slug: "mercedes-v-class-hire",
     label: "Mercedes V-Class (up to 8)",
-    oneWayBase: 300,
-    oneWayPerMile: 2.5,
-    returnDropBase: 500,
-    returnDropPerMile: 4,
+    oneWayBase: 284,
+    oneWayPerMile: 4,
+    returnDropBase: 472,
+    returnDropPerMile: 7,
     dayBase: 550,
     dayPerMile: 1.2,
     londonPremium: 60,
@@ -143,11 +141,6 @@ export const chauffeurEventTypes = [
   "Night out / event",
   "Other",
 ] as const;
-
-/** Chargeable miles beyond the free local radius. */
-export function excessMiles(milesFromBase: number): number {
-  return Math.max(0, milesFromBase - LOCAL_RADIUS_MILES);
-}
 
 export function getChauffeurRate(slug: string): ChauffeurRate | undefined {
   return chauffeurRates.find((r) => r.slug === slug);

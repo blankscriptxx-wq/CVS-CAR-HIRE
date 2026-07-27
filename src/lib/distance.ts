@@ -99,7 +99,10 @@ export async function roadMilesBetween(
 
 /**
  * Chauffeur distance info: pick-up → drop-off miles (for transfers), plus the
- * drop-off's distance from Birmingham and whether it's in London (for day rates).
+ * journey's REACH from Birmingham — the furthest of the pick-up or drop-off from
+ * base — and whether EITHER endpoint is in London (for day-rate premium). Pricing
+ * on the reach means "Coventry → Birmingham" is charged on the Coventry leg, not
+ * the (local) Birmingham drop-off.
  */
 export async function distanceInfo(
   fromPostcode: string,
@@ -112,7 +115,7 @@ export async function distanceInfo(
   if (!a || !b) return null;
   return {
     miles: Math.max(1, Math.round(haversineMiles(a, b) * ROAD_FACTOR)),
-    milesFromBase: milesFromBirmingham(b),
-    isLondon: b.region === "London",
+    milesFromBase: Math.max(milesFromBirmingham(a), milesFromBirmingham(b)),
+    isLondon: a.region === "London" || b.region === "London",
   };
 }

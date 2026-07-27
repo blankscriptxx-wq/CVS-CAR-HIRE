@@ -50,38 +50,44 @@ add rates if you want them quotable).
 
 ## 2. Chauffeur rates — `src/lib/data/chauffeur.ts`
 
-Three products, all scaled by **distance from Birmingham**. Jobs within a **15-mile local radius**
-are priced at the Birmingham anchor exactly; beyond that, only the mileage above 15 is charged, so
-local jobs match your firm Birmingham rates and distant jobs scale fairly. All figures round to £10.
+Three products, all scaled by the journey's **reach from Birmingham** — the distance of the
+**furthest** point of the trip (pick-up *or* drop-off) from base. This means a job like
+"Coventry → Birmingham" is priced on the Coventry leg (~22 mi), not the local Birmingham drop-off.
+A Birmingham-area job has a reach of only a few miles, so it lands on your firm anchor; towns further
+out scale up fairly. All figures round to £10.
 
-> **price = base + max(0, milesFromBirmingham − 15) × perMile ( + London premium for day hire )**
+> **price = base + reach × perMile ( + London premium for the car-waits day rate )**
+>
+> where **reach = the greater of {pick-up, drop-off} distance from Birmingham**.
+> A pure Birmingham job ≈ 4 mi of reach, which is baked into the anchors below.
 
-**"Drop & return" is only offered within 30 miles** — beyond that the car waits (it can't sensibly
-return to base mid-job). London is auto-detected from the drop-off postcode.
+**"Drop & return" is only offered within 30 miles** of base — beyond that the car waits (it can't
+sensibly return to base mid-job). London is auto-detected if **either** endpoint is in London.
 
 ### 2a. One-way (drop-off)
-| Vehicle | Birmingham (base) | Per mile | New values / notes |
+Birmingham column = the anchor a local job produces (reach ≈ 4 mi).
+| Vehicle | Birmingham (anchor) | Per mile | New values / notes |
 |---|---|---|---|
-| Rolls-Royce Phantom | £300 | £3.00 | |
-| Rolls-Royce Ghost | £300 | £3.00 | |
-| Rolls-Royce Cullinan | £500 | £4.00 | |
-| Lamborghini Urus | £600 | £4.00 | |
-| Mercedes-AMG G 63 (G-Wagon) | £500 | £3.00 | |
-| Mercedes V-Class (up to 8) | £300 | £2.50 | |
+| Rolls-Royce Phantom | £300 | £4.00 | |
+| Rolls-Royce Ghost | £300 | £4.00 | |
+| Rolls-Royce Cullinan | £500 | £7.00 | |
+| Lamborghini Urus | £600 | £8.00 | |
+| Mercedes-AMG G 63 (G-Wagon) | £500 | £7.00 | |
+| Mercedes V-Class (up to 8) | £300 | £4.00 | |
 
 ### 2b. Return — drop off & collect later (local only, ≤30 mi)
-| Vehicle | Birmingham (base) | Per mile | New values / notes |
+| Vehicle | Birmingham (anchor) | Per mile | New values / notes |
 |---|---|---|---|
-| Rolls-Royce Phantom | £400 | £4.00 | |
-| Rolls-Royce Ghost | £400 | £4.00 | |
-| Rolls-Royce Cullinan | £800 | £6.00 | |
-| Lamborghini Urus | £1,000 | £6.00 | |
-| Mercedes-AMG G 63 (G-Wagon) | £700 | £5.00 | |
-| Mercedes V-Class (up to 8) | £500 | £4.00 | |
+| Rolls-Royce Phantom | £400 | £5.50 | Coventry (~22 mi) → £500 |
+| Rolls-Royce Ghost | £400 | £5.50 | |
+| Rolls-Royce Cullinan | £800 | £11.00 | |
+| Lamborghini Urus | £1,000 | £14.00 | |
+| Mercedes-AMG G 63 (G-Wagon) | £700 | £10.00 | |
+| Mercedes V-Class (up to 8) | £500 | £7.00 | |
 
 ### 2c. Return — car waits (full day)
 Covers a standard **8-hour** day; longer days add the extra-hour rate. London adds a premium.
-| Vehicle | Birmingham (base) | Per mile | London premium | Extra £/hr | Max pax | New values / notes |
+| Vehicle | Birmingham (anchor) | Per mile | London premium | Extra £/hr | Max pax | New values / notes |
 |---|---|---|---|---|---|---|
 | Rolls-Royce Phantom | £620 | £1.50 | £100 | £150 | 4 | |
 | Rolls-Royce Ghost | £620 | £1.50 | £100 | £150 | 4 | |
@@ -90,8 +96,10 @@ Covers a standard **8-hour** day; longer days add the extra-hour rate. London ad
 | Mercedes-AMG G 63 (G-Wagon) | £820 | £0.80 | £0 | £120 | 4 | |
 | Mercedes V-Class (up to 8) | £550 | £1.20 | £60 | £90 | 8 | |
 
-*Verified against your anchors: Cullinan Birmingham one-way £500 · Birmingham return (drop) £800 · London return (car waits, ~131 mi) £1,470 · Urus Birmingham return £1,000 · Ghost Birmingham one-way £300.*
-**Mileage factor** (`src/lib/distance.ts`): straight-line × **1.3**. **Local radius / drop-return cut-off**: 15 / 30 miles (`chauffeur.ts`).
+*Verified against your anchors (Birmingham reach ≈ 4 mi): Phantom one-way £300 · return £400 ·
+Cullinan one-way £500 · return £800 · Urus one-way £600 · return £1,000 · G-Wagon one-way £500 ·
+return £700 · Ghost one-way £300. Coventry → Birmingham Phantom return £500.*
+**Mileage factor** (`src/lib/distance.ts`): straight-line × **1.3**. **Drop-return cut-off**: 30 miles (`chauffeur.ts`).
 
 ---
 

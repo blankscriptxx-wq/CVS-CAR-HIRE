@@ -1,11 +1,6 @@
 import type { Vehicle } from "@/lib/types";
 import { formatPrice } from "@/lib/data/pricing";
-import {
-  type ChauffeurRate,
-  type ChauffeurMode,
-  STANDARD_DAY_HOURS,
-  excessMiles,
-} from "@/lib/data/chauffeur";
+import { type ChauffeurRate, type ChauffeurMode, STANDARD_DAY_HOURS } from "@/lib/data/chauffeur";
 
 const round10 = (n: number) => Math.round(n / 10) * 10;
 
@@ -129,44 +124,43 @@ export type ChauffeurJourney = "one-way" | "return";
 
 export interface ChauffeurInput {
   mode: ChauffeurMode; // one-way | return-drop | return-wait
-  milesFromBase: number; // Birmingham → destination (drives distance scaling)
-  isLondon: boolean; // destination in London (day-rate premium)
+  milesFromBase: number; // reach: furthest point of the trip from Birmingham
+  isLondon: boolean; // pick-up or drop-off in London (day-rate premium)
   hours: number; // duration of a day hire (car waits)
   stops: number; // additional stops
 }
 
 /**
- * Chauffeur quote — distance-scaled from Birmingham, three modes:
+ * Chauffeur quote — scaled by the trip's REACH from Birmingham, three modes:
  *
- *  • one-way:      oneWayBase + excessMiles × oneWayPerMile
- *  • return-drop:  returnDropBase + excessMiles × returnDropPerMile (local only)
- *  • return-wait:  dayBase + excessMiles × dayPerMile (+ London premium), plus
- *                  any hours beyond the standard day
+ *  • one-way:      oneWayBase + reach × oneWayPerMile
+ *  • return-drop:  returnDropBase + reach × returnDropPerMile (local only)
+ *  • return-wait:  dayBase + reach × dayPerMile (+ London premium), plus any
+ *                  hours beyond the standard day
  *
- * "excessMiles" is the mileage beyond the free local radius, so Birmingham jobs
- * hit the local anchor exactly. Additional stops add a per-stop fee.
+ * Bases are tuned so Birmingham jobs hit CVS's firm anchors. Stops add a fee.
  */
 export function chauffeurQuote(input: ChauffeurInput, rate: ChauffeurRate): QuoteResult {
   const stops = Math.max(0, Math.floor(input.stops) || 0);
-  const extra = excessMiles(input.milesFromBase);
+  const reach = Math.max(0, input.milesFromBase);
   const lines: QuoteLine[] = [];
 
   if (input.mode === "one-way") {
     lines.push({
       label: "One-way (drop-off)",
-      detail: `~${input.milesFromBase} mi from Birmingham`,
-      amount: round10(rate.oneWayBase + extra * rate.oneWayPerMile),
+      detail: `~${reach} mi reach from Birmingham`,
+      amount: round10(rate.oneWayBase + reach * rate.oneWayPerMile),
     });
   } else if (input.mode === "return-drop") {
     lines.push({
       label: "Return — drop off & collect later",
-      detail: `~${input.milesFromBase} mi from Birmingham`,
-      amount: round10(rate.returnDropBase + extra * rate.returnDropPerMile),
+      detail: `~${reach} mi reach from Birmingham`,
+      amount: round10(rate.returnDropBase + reach * rate.returnDropPerMile),
     });
   } else {
     // return-wait — day hire (car stays with you)
     const day = round10(
-      rate.dayBase + extra * rate.dayPerMile + (input.isLondon ? rate.londonPremium : 0)
+      rate.dayBase + reach * rate.dayPerMile + (input.isLondon ? rate.londonPremium : 0)
     );
     lines.push({
       label: `Chauffeured day — car waits${input.isLondon ? " (London)" : ""}`,

@@ -50,33 +50,37 @@ add rates if you want them quotable).
 
 ## 2. Chauffeur rates — `src/lib/data/chauffeur.ts`
 
-Priced on **mileage**, with a **waiting charge** added only when the car waits with you on a return.
-Same rate card for every event type. How the journey works:
-- **One-way** → the car drops off and leaves: one-way mileage only.
-- **Return, drop-off** → the car returns to collect you later: return mileage (2× one-way).
-- **Return, car waits** → return mileage (2×) **plus** a waiting charge (waiting hours × hourly rate).
+Two products on one card. Destination **zone** is detected automatically from the drop-off postcode
+(London / Regional = rest of UK / Local = near Birmingham).
 
-The **hourly rate** is used only for waiting time. The **per-mile rate** and **min fare** drive the
-journey cost.
+### 2a. Full-day hire (car waits) — DAY RATE by zone
+Covers a standard day of **8 hours**; longer days add the extra-hour rate. *(London & Regional are
+your figures; Local rates are indicative — please confirm.)*
 
-| Vehicle | Hourly (waiting) | Per mile | Min waiting hrs | Min fare | Per stop | Max passengers | New values / notes |
-|---|---|---|---|---|---|---|---|
-| Rolls-Royce Phantom | £200 | £3.50 | 3 | £200 | £20 | 4 | |
-| Rolls-Royce Ghost | £150 | £2.50 | 3 | £150 | £20 | 4 | |
-| Rolls-Royce Cullinan | £180 | £3.00 | 3 | £180 | £20 | 4 | |
-| Lamborghini Urus | £160 | £2.75 | 3 | £160 | £20 | 4 | |
-| Mercedes-AMG G 63 (G-Wagon) | £120 | £2.50 | 3 | £130 | £20 | 4 | |
-| Mercedes V-Class (up to 8) | £75 | £2.00 | 3 | £120 | £15 | 8 | |
+| Vehicle | Local day | Regional day | London day | Extra £/hr (beyond 8) | Max pax | New values / notes |
+|---|---|---|---|---|---|---|
+| Rolls-Royce Phantom | £650 | £750 | £900 | £150 | 4 | |
+| Rolls-Royce Ghost | £650 | £750 | £900 | £150 | 4 | |
+| Rolls-Royce Cullinan | £1,250 | £1,400 | £1,500 | £180 | 4 | |
+| Lamborghini Urus | £1,350 | £1,500 | £1,600 | £180 | 4 | |
+| Mercedes-AMG G 63 (G-Wagon) | £850 | £900 | £900 | £120 | 4 | |
+| Mercedes V-Class (up to 8) | £550 | £650 | £750 | £90 | 8 | |
 
-**Worked examples (so you can sanity-check):**
-- One-way transfer, Cullinan, 30 mi: 30 × £3.00 = £90 → below min fare → **£180**.
-- Return drop-off, Cullinan, 121 mi one-way (242 mi): 242 × £3.00 → **£726**.
-- Return + car waits, Ghost, 20 mi one-way (40 mi) + 5 hrs waiting: (40 × £2.50 = £100 → min fare £150) + (5 × £150 = £750) → **£900** (+£20/stop).
+*Matches your data: Cullinan London day = £1,500 · Cullinan Manchester/Cardiff/Bradford (regional) = £1,400 · Cullinan London 10 hrs = £1,860 (£1,500 + 2×£180).*
 
-**Mileage estimate factor** — `src/lib/distance.ts`
-Distance between postcodes is estimated as straight-line × **1.3** (road-detour factor). Raise it for
-a more conservative (higher) mileage estimate, lower it for a tighter one. Exact mileage is always
-confirmed on enquiry.
+### 2b. Transfer (one-way, or return drop-off — car doesn't wait) — per mile
+| Vehicle | Per mile | Min fare | Per stop | New values / notes |
+|---|---|---|---|---|
+| Rolls-Royce Phantom | £3.50 | £250 | £20 | |
+| Rolls-Royce Ghost | £2.50 | £200 | £20 | |
+| Rolls-Royce Cullinan | £3.00 | £250 | £20 | |
+| Lamborghini Urus | £2.75 | £250 | £20 | |
+| Mercedes-AMG G 63 (G-Wagon) | £2.50 | £180 | £20 | |
+| Mercedes V-Class (up to 8) | £2.00 | £150 | £15 | |
+
+**Transfer pricing:** One-way = one-way miles × per-mile (min fare). · Return drop-off = 2× miles × per-mile (min fare).
+**Zone rules:** drop-off in London → London; within ~25 mi of Birmingham → Local; otherwise Regional.
+**Mileage factor** (`src/lib/distance.ts`): straight-line × **1.3** — raise for higher estimates, lower for tighter. Exact mileage confirmed on enquiry.
 
 ---
 

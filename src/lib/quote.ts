@@ -1,6 +1,11 @@
 import type { Vehicle } from "@/lib/types";
 import { formatPrice } from "@/lib/data/pricing";
-import type { ChauffeurRate } from "@/lib/data/chauffeur";
+import {
+  type ChauffeurRate,
+  type ChauffeurZone,
+  STANDARD_DAY_HOURS,
+  zoneLabels,
+} from "@/lib/data/chauffeur";
 
 /**
  * Quote engine. Turns the confirmed pricing guide into indicative quotes.
@@ -122,51 +127,60 @@ export type ChauffeurJourney = "one-way" | "return";
 
 export interface ChauffeurInput {
   journey: ChauffeurJourney;
-  /** Car waits with you (only applies to a return journey). */
+  /** Car waits with you all day (only applies to a return journey). */
   stays: boolean;
   distanceMiles: number; // estimated one-way distance
-  waitingHours: number; // hours the car stays (return + stays)
+  hours: number; // duration of a day hire (car stays)
+  zone: ChauffeurZone; // destination zone (drives the day rate)
   stops: number; // additional stops
 }
 
 /**
- * Chauffeur quote — priced on MILEAGE, with a waiting charge when the car stays.
- * Same rate card for every event type.
+ * Chauffeur quote — two products on one rate card:
  *
- *  • One-way: the car drops off and leaves — one-way mileage only.
- *  • Return, drop-off: the car returns to collect later — return mileage (2×).
- *  • Return, car waits: return mileage (2×) PLUS a waiting charge (hours ×
- *    hourly rate) for the time the car stays with you.
+ *  • Car waits (day hire): a DAY RATE by destination zone (Local / Regional /
+ *    London), covering a standard day; longer days add an hourly extension.
+ *  • Transfer (one-way, or return drop-off): MILEAGE × per-mile rate, with a
+ *    minimum fare. Return doubles the mileage.
  *
- * A minimum fare applies to the mileage. Additional stops add a per-stop fee.
+ * Additional stops add a per-stop fee to either.
  */
 export function chauffeurQuote(input: ChauffeurInput, rate: ChauffeurRate): QuoteResult {
-  const oneWay = Math.max(0, Math.round(input.distanceMiles) || 0);
-  const isReturn = input.journey === "return";
-  const totalMiles = oneWay * (isReturn ? 2 : 1);
   const stops = Math.max(0, Math.floor(input.stops) || 0);
-  const stays = isReturn && input.stays;
+  const stays = input.journey === "return" && input.stays;
   const lines: QuoteLine[] = [];
 
-  // Mileage (with a minimum fare).
-  const mileageCost = totalMiles * rate.perMileRate;
-  const journeyCost = Math.max(rate.transferMinFare, mileageCost);
-  lines.push({
-    label: `${isReturn ? "Return" : "One-way"} journey — ${totalMiles} mi`,
-    detail:
-      mileageCost < rate.transferMinFare
-        ? `minimum fare ${formatPrice(rate.transferMinFare)}`
-        : `${formatPrice(rate.perMileRate)}/mi`,
-    amount: journeyCost,
-  });
-
-  // Waiting charge — only when the car stays for a return journey.
   if (stays) {
-    const wait = Math.max(rate.minHours, Math.floor(input.waitingHours) || rate.minHours);
+    // Day hire — zone day rate (+ hourly extension beyond the standard day).
+    const dayRate = rate.dayRate[input.zone];
     lines.push({
-      label: `Waiting time — ${wait} hours (car stays)`,
-      detail: `${formatPrice(rate.hourlyRate)}/hr · min ${rate.minHours} hrs`,
-      amount: wait * rate.hourlyRate,
+      label: `Chauffeured day — ${zoneLabels[input.zone]}`,
+      detail: `up to ${STANDARD_DAY_HOURS} hours`,
+      amount: dayRate,
+    });
+    const hours = Math.max(0, Math.floor(input.hours) || 0);
+    const extra = Math.max(0, hours - STANDARD_DAY_HOURS);
+    if (extra > 0) {
+      lines.push({
+        label: `Additional hours × ${extra}`,
+        detail: `${formatPrice(rate.extraHourRate)}/hr beyond ${STANDARD_DAY_HOURS} hrs`,
+        amount: extra * rate.extraHourRate,
+      });
+    }
+  } else {
+    // Transfer — mileage with a minimum fare.
+    const oneWay = Math.max(0, Math.round(input.distanceMiles) || 0);
+    const isReturn = input.journey === "return";
+    const totalMiles = oneWay * (isReturn ? 2 : 1);
+    const mileageCost = totalMiles * rate.perMileRate;
+    const journeyCost = Math.max(rate.transferMinFare, mileageCost);
+    lines.push({
+      label: `${isReturn ? "Return" : "One-way"} transfer — ${totalMiles} mi`,
+      detail:
+        mileageCost < rate.transferMinFare
+          ? `minimum fare ${formatPrice(rate.transferMinFare)}`
+          : `${formatPrice(rate.perMileRate)}/mi`,
+      amount: journeyCost,
     });
   }
 

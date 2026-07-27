@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { roadMilesBetween } from "@/lib/distance";
+import { distanceAndZone } from "@/lib/distance";
 
 /**
  * Estimates road mileage between two UK postcodes for the chauffeur quote tool.
@@ -19,14 +19,14 @@ export async function GET(request: Request) {
   }
 
   try {
-    const miles = await roadMilesBetween(from, to);
-    if (miles == null) {
+    const result = await distanceAndZone(from, to);
+    if (result == null) {
       return NextResponse.json(
         { ok: false, error: "Could not locate one or both postcodes" },
         { status: 200 }
       );
     }
-    return NextResponse.json({ ok: true, miles });
+    return NextResponse.json({ ok: true, miles: result.miles, zone: result.zone });
   } catch {
     return NextResponse.json({ ok: false, error: "Lookup failed" }, { status: 200 });
   }

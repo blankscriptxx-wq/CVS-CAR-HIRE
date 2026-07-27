@@ -12,7 +12,12 @@ import {
   type QuoteResult,
   type ChauffeurJourney,
 } from "@/lib/quote";
-import { chauffeurRates, chauffeurEventTypes } from "@/lib/data/chauffeur";
+import {
+  chauffeurRates,
+  chauffeurEventTypes,
+  zoneLabels,
+  type ChauffeurZone,
+} from "@/lib/data/chauffeur";
 import { airports } from "@/lib/data/airports";
 import { whatsappLink } from "@/lib/whatsapp";
 import { track, captureUtm } from "@/lib/analytics";
@@ -76,8 +81,9 @@ export function QuoteForm() {
   const [journey, setJourney] = useState<ChauffeurJourney>("return");
   const [stays, setStays] = useState(false);
   const [distanceMiles, setDistanceMiles] = useState<number>(0);
+  const [zone, setZone] = useState<ChauffeurZone>("regional");
   const [distStatus, setDistStatus] = useState<DistStatus>("idle");
-  const [waitingHours, setWaitingHours] = useState(4);
+  const [waitingHours, setWaitingHours] = useState(8);
   const [stops, setStops] = useState(0);
   const [passengers, setPassengers] = useState(2);
   const [requests, setRequests] = useState("");
@@ -103,6 +109,7 @@ export function QuoteForm() {
         const data = await res.json();
         if (data.ok && typeof data.miles === "number") {
           setDistanceMiles(data.miles);
+          if (data.zone) setZone(data.zone as ChauffeurZone);
           setDistStatus("ok");
         } else {
           setDistStatus("error");
@@ -133,8 +140,11 @@ export function QuoteForm() {
 
   const chQuote = useMemo(() => {
     if (!chRate) return null;
-    return chauffeurQuote({ journey, stays, distanceMiles, waitingHours, stops }, chRate);
-  }, [chRate, journey, stays, distanceMiles, waitingHours, stops]);
+    return chauffeurQuote(
+      { journey, stays, distanceMiles, hours: waitingHours, zone, stops },
+      chRate
+    );
+  }, [chRate, journey, stays, distanceMiles, waitingHours, zone, stops]);
 
   const activeQuote = mode === "self-drive" ? selfQuote : chQuote;
 
@@ -148,20 +158,21 @@ export function QuoteForm() {
     if (!rate || !chQuote) return "";
     const when = [chDate, chTime].filter(Boolean).join(" ");
     const svc =
-      journey === "return"
-        ? stays
-          ? `return, car waits ${Math.max(rate.minHours, waitingHours)} hours`
-          : "return, drop-off"
-        : "one-way drop-off";
+      journey === "return" && stays
+        ? `full day, car waits (${waitingHours}h, ${zoneLabels[zone]})`
+        : journey === "return"
+          ? "return drop-off"
+          : "one-way drop-off";
     const route = pickup && dropoff ? ` ${pickup} → ${dropoff}` : "";
+    const milesTxt = stays ? "" : `, ~${distanceMiles} miles one-way`;
     const stopsTxt = stops > 0 ? `, ${stops} stop${stops === 1 ? "" : "s"}` : "";
     const pax = ` for ${passengers} passenger${passengers === 1 ? "" : "s"}`;
     const req = requests ? ` Special requests: ${requests}.` : "";
-    return `${eventType} chauffeur hire of the ${rate.label}${when ? ` on ${when}` : ""} —${route} ${svc}, ~${distanceMiles} miles one-way${stopsTxt}${pax}. Indicative total: from ${formatPrice(chQuote.total)}.${req}`;
+    return `${eventType} chauffeur hire of the ${rate.label}${when ? ` on ${when}` : ""} —${route} ${svc}${milesTxt}${stopsTxt}${pax}. Indicative total: from ${formatPrice(chQuote.total)}.${req}`;
   }, [
     mode, sdVehicle, selfQuote, days, start, end,
     chVehicle, chQuote, chDate, chTime, waitingHours, eventType, stays,
-    journey, distanceMiles, stops, pickup, dropoff, passengers, requests,
+    journey, distanceMiles, zone, stops, pickup, dropoff, passengers, requests,
   ]);
 
   const waMessage = `Hi CVS Car Hire, I'd like to confirm this quote — ${summary}${name ? ` My name is ${name}.` : ""}`;
@@ -437,8 +448,8 @@ export function QuoteForm() {
               {distStatus === "loading" && <span className="text-silver">Calculating mileage…</span>}
               {distStatus === "ok" && (
                 <span className="text-champagne-soft">
-                  ≈ {distanceMiles} miles one-way by road (estimated){" "}
-                  <span className="text-silver">— confirmed on enquiry</span>
+                  ≈ {distanceMiles} miles one-way · {zoneLabels[zone]}{" "}
+                  <span className="text-silver">— estimated, confirmed on enquiry</span>
                 </span>
               )}
               {distStatus === "error" && (
@@ -519,8 +530,8 @@ export function QuoteForm() {
                 </div>
                 <p className="mt-2 text-[11px] text-silver/80">
                   {stays
-                    ? "The car and chauffeur wait with you — a waiting charge is added for the time they stay."
-                    : "The car drops you off and returns to collect you later — mileage only."}
+                    ? `Full-day chauffeured hire — the car stays with you all day. Priced at the ${zoneLabels[zone].toLowerCase()} day rate.`
+                    : "The car drops you off and returns to collect you later — priced on mileage."}
                 </p>
               </div>
             )}
@@ -570,16 +581,16 @@ export function QuoteForm() {
               </div>
             </div>
 
-            {/* Waiting hours — only when the car waits on a return */}
+            {/* Duration — only for a full-day (car waits) hire */}
             {journey === "return" && stays && (
               <div className="min-w-0">
                 <label className={labelClass} htmlFor="ch-hours">
-                  How long does the car wait? (hours, min 3)
+                  Duration (hours) — day rate covers 8
                 </label>
                 <input
                   id="ch-hours"
                   type="number"
-                  min={3}
+                  min={1}
                   max={24}
                   inputMode="numeric"
                   className={inputClass}

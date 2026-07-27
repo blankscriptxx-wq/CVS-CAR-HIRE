@@ -1,10 +1,15 @@
 # Asset Replacement Checklist
 
-> **Current state:** temporary **stock photography** (from Unsplash — free for commercial use) is now
-> wired into every image slot so the site looks complete. These are generic/brand-representative shots,
-> **not CVS's own vehicles**. Replace them with real, rights-cleared photography of the actual fleet for
-> launch — overwrite the files at the same paths below (no code change needed). The gold CVS logo
-> (`public/brand/`) and favicon are the real brand assets.
+> **Current state:** the site now uses **CVS's own photography**, pulled from the live cvshire.co.uk
+> product pages — real, correctly-matched fleet photos for all 16 vehicles (hero + galleries), and
+> those same photos reused across the home, services, experiences, journal and location sections.
+> (The London location page keeps a London skyline photo.) The gold CVS logo and favicon are the
+> real brand assets.
+>
+> To refresh or upgrade any image, just overwrite the file at the path below (no code change needed).
+> Higher-resolution or bespoke photography can be dropped in the same way. Note: if you replace an
+> image and still see the old one locally, clear `.next/cache/images`; production (Vercel) optimises
+> fresh on each deploy.
 
 The layouts also support elegant on-brand **placeholders** (set `placeholder: true` on any asset to show
 one) so nothing ever looks broken while you swap imagery. Vehicle photos already exist on the current Wix

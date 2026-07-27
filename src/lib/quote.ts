@@ -1,6 +1,13 @@
 import type { Vehicle } from "@/lib/types";
 import { formatPrice } from "@/lib/data/pricing";
-import { type ChauffeurRate, STANDARD_DAY_HOURS, dayRateFor } from "@/lib/data/chauffeur";
+import {
+  type ChauffeurRate,
+  type ChauffeurMode,
+  STANDARD_DAY_HOURS,
+  excessMiles,
+} from "@/lib/data/chauffeur";
+
+const round10 = (n: number) => Math.round(n / 10) * 10;
 
 /**
  * Quote engine. Turns the confirmed pricing guide into indicative quotes.
@@ -121,63 +128,60 @@ export function selfDriveRatesFor(v: Vehicle): SelfDriveRates | null {
 export type ChauffeurJourney = "one-way" | "return";
 
 export interface ChauffeurInput {
-  journey: ChauffeurJourney;
-  /** Car waits with you all day (only applies to a return journey). */
-  stays: boolean;
-  distanceMiles: number; // pick-up → drop-off (for transfers)
-  milesFromBase: number; // Birmingham → destination (drives the day rate)
+  mode: ChauffeurMode; // one-way | return-drop | return-wait
+  milesFromBase: number; // Birmingham → destination (drives distance scaling)
   isLondon: boolean; // destination in London (day-rate premium)
-  hours: number; // duration of a day hire (car stays)
+  hours: number; // duration of a day hire (car waits)
   stops: number; // additional stops
 }
 
 /**
- * Chauffeur quote — two products on one rate card:
+ * Chauffeur quote — distance-scaled from Birmingham, three modes:
  *
- *  • Car waits (day hire): a DAY RATE by destination zone (Local / Regional /
- *    London), covering a standard day; longer days add an hourly extension.
- *  • Transfer (one-way, or return drop-off): MILEAGE × per-mile rate, with a
- *    minimum fare. Return doubles the mileage.
+ *  • one-way:      oneWayBase + excessMiles × oneWayPerMile
+ *  • return-drop:  returnDropBase + excessMiles × returnDropPerMile (local only)
+ *  • return-wait:  dayBase + excessMiles × dayPerMile (+ London premium), plus
+ *                  any hours beyond the standard day
  *
- * Additional stops add a per-stop fee to either.
+ * "excessMiles" is the mileage beyond the free local radius, so Birmingham jobs
+ * hit the local anchor exactly. Additional stops add a per-stop fee.
  */
 export function chauffeurQuote(input: ChauffeurInput, rate: ChauffeurRate): QuoteResult {
   const stops = Math.max(0, Math.floor(input.stops) || 0);
-  const stays = input.journey === "return" && input.stays;
+  const extra = excessMiles(input.milesFromBase);
   const lines: QuoteLine[] = [];
 
-  if (stays) {
-    // Day hire — fair distance-based day rate (+ hourly extension beyond the day).
-    const dayRate = dayRateFor(rate, input.milesFromBase, input.isLondon);
+  if (input.mode === "one-way") {
     lines.push({
-      label: `Chauffeured day${input.isLondon ? " — London" : ""}`,
-      detail: `up to ${STANDARD_DAY_HOURS} hours · ~${input.milesFromBase} mi from base`,
-      amount: dayRate,
+      label: "One-way (drop-off)",
+      detail: `~${input.milesFromBase} mi from Birmingham`,
+      amount: round10(rate.oneWayBase + extra * rate.oneWayPerMile),
+    });
+  } else if (input.mode === "return-drop") {
+    lines.push({
+      label: "Return — drop off & collect later",
+      detail: `~${input.milesFromBase} mi from Birmingham`,
+      amount: round10(rate.returnDropBase + extra * rate.returnDropPerMile),
+    });
+  } else {
+    // return-wait — day hire (car stays with you)
+    const day = round10(
+      rate.dayBase + extra * rate.dayPerMile + (input.isLondon ? rate.londonPremium : 0)
+    );
+    lines.push({
+      label: `Chauffeured day — car waits${input.isLondon ? " (London)" : ""}`,
+      detail: `up to ${STANDARD_DAY_HOURS} hours · ~${input.milesFromBase} mi from Birmingham`,
+      amount: day,
     });
     const hours = Math.max(0, Math.floor(input.hours) || 0);
-    const extra = Math.max(0, hours - STANDARD_DAY_HOURS);
-    if (extra > 0) {
+    const over = Math.max(0, hours - STANDARD_DAY_HOURS);
+    if (over > 0) {
       lines.push({
-        label: `Additional hours × ${extra}`,
+        label: `Additional hours × ${over}`,
         detail: `${formatPrice(rate.extraHourRate)}/hr beyond ${STANDARD_DAY_HOURS} hrs`,
-        amount: extra * rate.extraHourRate,
+        amount: over * rate.extraHourRate,
       });
     }
-  } else {
-    // Transfer — mileage with a minimum fare.
-    const oneWay = Math.max(0, Math.round(input.distanceMiles) || 0);
-    const isReturn = input.journey === "return";
-    const totalMiles = oneWay * (isReturn ? 2 : 1);
-    const mileageCost = totalMiles * rate.perMileRate;
-    const journeyCost = Math.max(rate.transferMinFare, mileageCost);
-    lines.push({
-      label: `${isReturn ? "Return" : "One-way"} transfer — ${totalMiles} mi`,
-      detail:
-        mileageCost < rate.transferMinFare
-          ? `minimum fare ${formatPrice(rate.transferMinFare)}`
-          : `${formatPrice(rate.perMileRate)}/mi`,
-      amount: journeyCost,
-    });
   }
 
   if (stops > 0) {

@@ -15,10 +15,10 @@ export const metadata: Metadata = buildMetadata({
 });
 
 const points = [
-  "Instant indicative pricing from our published rate guide",
-  "Self-drive daily, weekend, weekly and monthly rates",
-  "Chauffeur hire priced on hours and mileage, Birmingham to nationwide",
-  "No obligation — we confirm availability before booking",
+  "Instant estimate in under a minute — self-drive or chauffeur",
+  "Self-drive: daily, weekend, weekly and monthly rates",
+  "Chauffeur: priced by vehicle, journey and distance, Birmingham to nationwide",
+  "Reviewed by our team — we'll confirm your final quote personally",
 ];
 
 export default function QuotePage() {
@@ -27,7 +27,7 @@ export default function QuotePage() {
       <PageHero
         eyebrow="Request a Quote"
         title={<>Get a Quote</>}
-        intro="Build an instant, indicative quote for self-drive or chauffeur hire. Choose your vehicle and dates, and we'll confirm availability and finalise the details."
+        intro="Get an instant estimate for self-drive or chauffeur hire. Tell us a few details and see your indicative price in seconds — our team then reviews every request and confirms your final quote."
       />
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Get a Quote", path: "/quote" }]} />
 
@@ -35,12 +35,13 @@ export default function QuotePage() {
         <Reveal className="lg:pt-4">
           <span className="eyebrow">How It Works</span>
           <h2 className="mt-4 text-display-sm font-display text-warm-white">
-            Transparent pricing, no surprises.
+            An instant quote, personally confirmed.
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-silver">
-            Our self-drive quotes follow the same clear rate structure for every vehicle — daily, a
-            three-day rate, weekly and monthly — and always give you the best combination. Longer
-            hires automatically benefit from the better rate.
+            Self-drive follows our clear published rates and always gives you the best combination.
+            Chauffeur hire is priced by the vehicle, your journey and the distance from Birmingham —
+            a one-way drop-off, a local drop-and-return, or a full day with the car at your side.
+            Whatever you choose, our team reviews it and confirms your final price.
           </p>
           <ul className="mt-8 space-y-3">
             {points.map((p) => (

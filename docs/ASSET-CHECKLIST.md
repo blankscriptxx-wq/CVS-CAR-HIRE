@@ -46,10 +46,10 @@ context where relevant).
 | Vehicle slug | Files expected |
 | --- | --- |
 | `ferrari-roma-hire` | hero.jpg, front.jpg, interior.jpg, rear.jpg |
-| `lamborghini-huracan-performante-spyder-hire` | hero.jpg, roof-down.jpg, interior.jpg |
+| `lamborghini-huracan-performante-spyder-hire` | hero.jpg, front.jpg, front-angle.jpg, rear.jpg, cockpit.jpg, interior.jpg, seats.jpg, seat-detail.jpg, door.jpg, wheel.jpg, sill.jpg, lineup.jpg (full gallery from cvshire.co.uk) |
 | `audi-r8-spyder-hire` | hero.jpg, front.jpg, front-city.jpg, front-angle.jpg, rear.jpg, rear-angle.jpg, front-3q.jpg, interior.jpg, cockpit.jpg, seats.jpg (full gallery from cvshire.co.uk) |
 | `lamborghini-urus-performante-hire` | hero.jpg, front.jpg, interior.jpg, rear.jpg |
-| `mercedes-amg-g63-hire` | hero.jpg, front.jpg, interior.jpg |
+| `mercedes-amg-g63-hire` | hero.jpg, front.jpg, front-angle.jpg, side.jpg, rear.jpg, interior.jpg, cockpit.jpg, console.jpg, door.jpg, lineup.jpg (full gallery from cvshire.co.uk) |
 | `rolls-royce-cullinan-hire` | hero.jpg (coach doors open), front-3q.jpg, front.jpg, side.jpg, rear.jpg, rear-angle.jpg, dashboard.jpg, cockpit.jpg, rear-seats.jpg, rear-cabin.jpg, lineup-fleet.jpg, lineup-g-wagon.jpg (full gallery from cvshire.co.uk) |
 | `range-rover-sport-hire` | hero.jpg, front.jpg, interior.jpg |
 | `range-rover-svr-hire` | hero.jpg, front.jpg, interior.jpg |

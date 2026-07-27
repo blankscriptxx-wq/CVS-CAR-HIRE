@@ -220,7 +220,6 @@ export const vehicles: Vehicle[] = [
       img("rolls-royce-cullinan-hire", "cockpit.jpg", "Rolls-Royce Cullinan steering wheel and controls"),
       img("rolls-royce-cullinan-hire", "rear-seats.jpg", "Rolls-Royce Cullinan rear seats in black and white leather"),
       img("rolls-royce-cullinan-hire", "rear-cabin.jpg", "Rolls-Royce Cullinan hand-finished rear cabin"),
-      img("rolls-royce-cullinan-hire", "lineup-ghost.jpg", "Rolls-Royce Cullinan alongside a Rolls-Royce Ghost"),
       img("rolls-royce-cullinan-hire", "lineup-fleet.jpg", "Rolls-Royce Cullinan with the CVS luxury fleet"),
       img("rolls-royce-cullinan-hire", "lineup-g-wagon.jpg", "Rolls-Royce Cullinan alongside a Mercedes-AMG G 63"),
     ],

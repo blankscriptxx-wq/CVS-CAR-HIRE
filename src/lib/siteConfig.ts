@@ -80,6 +80,12 @@ export const siteConfig = {
       process.env.NEXT_PUBLIC_GBP_URL || "https://share.google/tr4X6xW6fMtZPtNne",
   },
 
+  // ── Aniro.ai chat widget ───────────────────────────────────
+  aniro: {
+    widgetKey:
+      process.env.NEXT_PUBLIC_ANIRO_WIDGET_KEY || "wgt_d880cbef-97dd-4ddd-9ca2-0e67645ecac3",
+  },
+
   // ── Analytics ids (consent-gated, optional) ────────────────
   analytics: {
     ga4: process.env.NEXT_PUBLIC_GA4_ID || "",

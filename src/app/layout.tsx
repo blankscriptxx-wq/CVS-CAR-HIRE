@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { RespondWidget } from "@/components/RespondWidget";
+import { AniroChat } from "@/components/AniroChat";
 import { Analytics } from "@/components/Analytics";
 import { CookieConsent } from "@/components/CookieConsent";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -84,6 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Spacer so content is never hidden behind the mobile action bar */}
         <div className="h-14 md:hidden" aria-hidden />
         <RespondWidget />
+        <AniroChat />
         <CookieConsent />
         <Analytics />
       </body>

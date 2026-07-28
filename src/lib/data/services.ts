@@ -42,6 +42,95 @@ export const services: ServiceContent[] = [
       "Self-drive supercar hire in Birmingham and across the UK. Ferrari, Lamborghini and more from CVS Car Hire. Nationwide delivery available. Check availability.",
   },
   {
+    slug: "short-term-supercar-hire",
+    name: "Short-Term Supercar Hire",
+    navLabel: "Short-Term Supercar Hire",
+    category: "supercar",
+    hero: {
+      eyebrow: "Flexible Self-Drive",
+      heading: "Short-Term Supercar Hire",
+      intro:
+        "A supercar for a day, a weekend or a week — flexible self-drive hire for birthdays, celebrations, road trips and the drive you have always promised yourself.",
+    },
+    overview:
+      "Short-term supercar hire is the fastest way to get behind the wheel of a genuine icon. Whether you want a Ferrari for a landmark birthday, a Lamborghini for a weekend away, or an Audi R8 for a driving day, we make it simple to hire a supercar for exactly as long as you need — a single day, a Friday-to-Monday weekend, or a full week. Every car is prepared to the highest standard and priced on clear published daily, weekend and weekly rates, so you know where you stand before you book. Collect from us in Birmingham or arrange nationwide delivery, and our team stays on hand from your first enquiry to the moment the keys come back.",
+    benefits: [
+      "Hire by the day, the weekend or the week",
+      "A curated collection of genuine supercar icons",
+      "Clear published daily, weekend and weekly rates",
+      "Ideal for birthdays, celebrations, road trips and content",
+      "Collection in Birmingham or nationwide delivery, subject to availability",
+      "Direct, human support from enquiry to return",
+    ],
+    occasions: ["Landmark birthdays", "Weekend escapes", "Driving days", "Photoshoots & content", "Special occasions"],
+    recommendedVehicles: [
+      "ferrari-roma-hire",
+      "lamborghini-huracan-performante-spyder-hire",
+      "audi-r8-spyder-hire",
+      "lamborghini-urus-performante-hire",
+    ],
+    process: [
+      { title: "Choose your car & dates", body: "Tell us the supercar you have in mind and whether you need it for a day, a weekend or a week — or let us recommend one." },
+      { title: "We confirm availability & rate", body: "We check the fleet and confirm the rate, mileage and everything you need to know before you commit." },
+      { title: "Collection or delivery", body: "Collect from us in Birmingham, or arrange delivery to your chosen location where available." },
+      { title: "Enjoy the drive", body: "We hand over a beautifully prepared car and stay on hand throughout your short-term hire." },
+    ],
+    faqs: [
+      { question: "Can I hire a supercar for just one day?", answer: "Yes — supercars are available for a single day, a weekend or a week. Tell us your dates and the car you want and we'll confirm availability and the rate." },
+      { question: "How much does it cost to hire a supercar for a weekend?", answer: "Weekend hire uses our published weekend (3-day) rate, which varies by vehicle. Use our instant quote tool or contact us with your dates and we'll confirm the price for your chosen car." },
+      { question: "What do I need to hire a supercar short-term?", answer: "Requirements such as minimum age, driving licence and deposit vary by vehicle. Start a conversation with our team and we'll talk you through exactly what's needed for the car you'd like." },
+      { question: "Can I have a supercar delivered for the weekend?", answer: "Yes — nationwide UK delivery is available on many vehicles, subject to the car and the location. Contact us with your address and dates and we'll confirm." },
+    ],
+    metaTitle: "Short-Term Supercar Hire | Daily & Weekend Ferrari & Lamborghini Hire | CVS Car Hire",
+    metaDescription:
+      "Short-term supercar hire in Birmingham and across the UK — hire a Ferrari, Lamborghini or Audi R8 for a day, a weekend or a week. Clear rates, nationwide delivery. Check availability.",
+  },
+  {
+    slug: "long-term-supercar-hire",
+    name: "Long-Term Supercar Hire",
+    navLabel: "Long-Term Supercar Hire",
+    category: "supercar",
+    hero: {
+      eyebrow: "Extended Self-Drive",
+      heading: "Long-Term Supercar Hire",
+      intro:
+        "A Ferrari, Lamborghini or Audi R8 for weeks or months at a time — the experience of ownership, without the deposit, the depreciation or a long finance commitment.",
+    },
+    overview:
+      "Long-term supercar hire gives you a genuine supercar for an extended period — a month, a season, or longer — on a single, straightforward rate. It suits anyone who wants the car without the ownership: a relocation or extended stay, a film or content project, a run of business travel, or simply the chance to live with a supercar before deciding whether to buy. There is no deposit against a purchase, no depreciation to absorb and no resale to worry about — you drive, and we take care of the rest. We tailor every extended hire around you: the right car (or a rotation of cars), the duration and the mileage that fits your plans, with delivery across Birmingham and the UK. Weekly and monthly rates apply, and our team is your single point of contact throughout.",
+    benefits: [
+      "Weekly and monthly rates for genuine supercars",
+      "The supercar experience without ownership, depreciation or resale",
+      "One car for a season or a project — or rotate between models",
+      "Flexible durations and mileage, arranged around your plans",
+      "Delivery across Birmingham and the UK, subject to availability",
+      "A single, dedicated point of contact from enquiry to return",
+    ],
+    occasions: ["Extended stays & relocations", "Film & content projects", "Business travel", "Try before you buy", "Seasonal driving"],
+    recommendedVehicles: [
+      "lamborghini-urus-performante-hire",
+      "lamborghini-huracan-performante-spyder-hire",
+      "audi-r8-spyder-hire",
+      "ferrari-roma-hire",
+    ],
+    process: [
+      { title: "Tell us your plans", body: "Share how long you need the car, the model you have in mind and roughly how many miles you'll cover." },
+      { title: "We tailor the terms", body: "We confirm the weekly or monthly rate, mileage and everything else before you commit — no long finance contract." },
+      { title: "Delivery or collection", body: "Take delivery at your chosen location, or collect from us in Birmingham." },
+      { title: "Drive, with support", body: "Enjoy the car for the full term, with our team on hand throughout and a simple return at the end." },
+    ],
+    faqs: [
+      { question: "Can I hire a supercar long-term in the UK?", answer: "Yes — we offer extended, long-term supercar hire by the week or month, tailored around your duration and mileage. Tell us your plans and we'll put together the right arrangement." },
+      { question: "How much does long-term supercar hire cost?", answer: "Long-term hire uses our weekly and monthly rates, which vary by vehicle. Some models have published monthly rates; others are quoted on enquiry. Contact us with the car and duration and we'll confirm the price." },
+      { question: "Is long-term supercar hire an alternative to leasing or buying?", answer: "For many people, yes. You get the car without a deposit against a purchase, without depreciation and without a long finance contract — you pay one rate for the period you need. Talk to us about what suits your situation." },
+      { question: "What is the longest I can hire a supercar for?", answer: "Extended hires of several weeks or months are arranged individually. Share your intended dates and we'll confirm availability for that period." },
+      { question: "Do you deliver long-term hire cars?", answer: "Yes — nationwide UK delivery and collection are available on many vehicles, subject to the car and location. We'll confirm for your area when you enquire." },
+    ],
+    metaTitle: "Long-Term Supercar Hire | Monthly Ferrari & Lamborghini Hire UK | CVS Car Hire",
+    metaDescription:
+      "Long-term supercar hire in Birmingham and across the UK — Ferrari, Lamborghini and more by the week or month. The supercar experience without ownership or depreciation. Check availability.",
+  },
+  {
     slug: "luxury-car-hire",
     name: "Luxury Car Hire",
     navLabel: "Luxury Car Hire",

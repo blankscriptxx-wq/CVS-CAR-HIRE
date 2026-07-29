@@ -1,96 +1,128 @@
 /**
- * Aniro chat widget control.
+ * Aniro chat widget control + programmatic message delivery.
  *
  * All chat + enquiry/quote hand-offs go through the Aniro widget (loaded in the
  * root layout). WhatsApp and Respond.io have been removed; Aniro is the single
  * conversational channel.
  *
- * NOTE: Aniro's public widget API method names are not documented to us, so
- * open()/send() try the common patterns and degrade gracefully (open the
- * launcher, stash a prefill the widget can read). If Aniro exposes specific
- * globals (e.g. window.aniro('open') / a sendMessage method), wire them here —
- * this is the single place to update and every button/form will pick it up.
+ * The widget (aniro.ai/widget.js) talks to a small REST API which we drive
+ * directly so a completed enquiry/quote is delivered into the SAME conversation
+ * the visitor sees — automatically, with no "send" tap required:
+ *
+ *   POST {origin}/api/widget/{key}/session   { sessionId }        -> { data: { sessionId, name?, welcome? } }
+ *   POST {origin}/api/widget/{key}/messages  { sessionId, body, clientMessageId }
+ *
+ * The widget stores its session id as a raw string in
+ * localStorage["omniagent_session_{key}"], so we read/create the exact same
+ * session — the visitor's message lands in the CVS Aniro inbox instantly and,
+ * if they open the widget, it continues the same thread.
  */
 
-type Callable = (...args: unknown[]) => void;
-type Widget = { open?: () => void; sendMessage?: (m: string) => void };
+import { siteConfig } from "@/lib/siteConfig";
 
-function win(): Record<string, unknown> | null {
-  if (typeof window === "undefined") return null;
-  return window as unknown as Record<string, unknown>;
+const WIDGET_KEY = siteConfig.aniro.widgetKey;
+const ORIGIN = "https://www.aniro.ai";
+const API = `${ORIGIN}/api/widget/${encodeURIComponent(WIDGET_KEY)}`;
+const STORAGE_KEY = `omniagent_session_${WIDGET_KEY}`;
+
+function getStoredSession(): string | null {
+  try {
+    return window.localStorage.getItem(STORAGE_KEY);
+  } catch {
+    return null;
+  }
 }
 
-/** Open the Aniro chat widget. Returns true if a launcher was found/triggered. */
-export function openAniro(): boolean {
-  const w = win();
-  if (!w) return false;
+function storeSession(id: string): void {
   try {
-    if (typeof w.aniro === "function") {
-      (w.aniro as Callable)("open");
-      return true;
-    }
-    const aniroObj = w.aniro as Widget | undefined;
-    if (aniroObj?.open) {
-      aniroObj.open();
-      return true;
-    }
-    const Aniro = w.Aniro as Widget | undefined;
-    if (Aniro?.open) {
-      Aniro.open();
-      return true;
-    }
-    const AniroWidget = w.AniroWidget as Widget | undefined;
-    if (AniroWidget?.open) {
-      AniroWidget.open();
-      return true;
+    window.localStorage.setItem(STORAGE_KEY, id);
+  } catch {
+    /* private mode / storage disabled — session still held in memory for this send */
+  }
+}
+
+/**
+ * Reuse the widget's existing session, or start a new one via the same endpoint
+ * the widget uses. Writing the id back to the widget's storage key means the
+ * live widget resumes this very conversation when opened.
+ */
+async function ensureSession(): Promise<string | null> {
+  const existing = getStoredSession();
+  if (existing) return existing;
+  try {
+    const res = await fetch(`${API}/session`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sessionId: null }),
+    });
+    const json = (await res.json()) as { data?: { sessionId?: string } };
+    const id = json?.data?.sessionId;
+    if (id) {
+      storeSession(id);
+      return id;
     }
   } catch {
-    /* fall through to DOM launcher */
+    /* network/CORS — fall back to the launcher */
   }
+  return null;
+}
+
+/** Defensive breadcrumb for the fallback path. */
+function stashPrefill(message: string): void {
+  try {
+    (window as unknown as Record<string, unknown>).__aniroPrefill = message;
+  } catch {
+    /* ignore */
+  }
+}
+
+/**
+ * Deliver a fully-composed message (customer + vehicle/journey details) straight
+ * into the Aniro conversation. Returns true when the lead was accepted by Aniro.
+ * On any failure it degrades gracefully by opening the widget with the details
+ * stashed, so nothing is lost.
+ */
+export async function sendToAniro(message: string): Promise<boolean> {
+  if (typeof window === "undefined" || !message.trim()) return false;
+
+  const sessionId = await ensureSession();
+  if (!sessionId) {
+    stashPrefill(message);
+    return openAniro();
+  }
+
+  try {
+    const res = await fetch(`${API}/messages`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        sessionId,
+        body: message,
+        clientMessageId: `c_${Date.now()}`,
+      }),
+    });
+    // Surface the widget so the visitor can carry on live — the team can reply
+    // and, where possible, offer a better price in the same thread.
+    openAniro();
+    return res.ok;
+  } catch {
+    stashPrefill(message);
+    return openAniro();
+  }
+}
+
+/**
+ * Open the Aniro chat widget UI. Returns true if a launcher was found/clicked.
+ * Used by "Chat with us" buttons and as the fallback for message delivery.
+ */
+export function openAniro(): boolean {
+  if (typeof window === "undefined") return false;
   const launcher = document.querySelector<HTMLElement>(
-    '[id*="aniro" i] button, button[class*="aniro" i], [class*="aniro" i] [role="button"], iframe[src*="aniro" i]'
+    '.oa-btn, [id*="aniro" i] button, button[class*="aniro" i], [class*="omniagent" i] button, iframe[src*="aniro" i]'
   );
   if (launcher) {
     launcher.click();
     return true;
   }
   return false;
-}
-
-/**
- * Open Aniro and pass a pre-composed message (customer + vehicle/service
- * details) into the conversation. Falls back to stashing the text and opening
- * the widget so the details aren't lost.
- */
-export function sendToAniro(message: string): boolean {
-  const w = win();
-  if (!w) return false;
-  try {
-    if (typeof w.aniro === "function") {
-      const aniroFn = w.aniro as Callable;
-      aniroFn("open");
-      aniroFn("sendMessage", message);
-      return true;
-    }
-    const Aniro = w.Aniro as Widget | undefined;
-    if (Aniro?.sendMessage) {
-      Aniro.open?.();
-      Aniro.sendMessage(message);
-      return true;
-    }
-    const AniroWidget = w.AniroWidget as Widget | undefined;
-    if (AniroWidget?.sendMessage) {
-      AniroWidget.open?.();
-      AniroWidget.sendMessage(message);
-      return true;
-    }
-  } catch {
-    /* fall through */
-  }
-  try {
-    w.__aniroPrefill = message; // widget may read this on open
-  } catch {
-    /* ignore */
-  }
-  return openAniro();
 }

@@ -19,7 +19,7 @@ import {
   type ChauffeurMode,
 } from "@/lib/data/chauffeur";
 import { airports } from "@/lib/data/airports";
-import { sendToAniro } from "@/lib/aniro";
+import { sendToAniro, openAniro } from "@/lib/aniro";
 import { track, captureUtm } from "@/lib/analytics";
 import { CallLink } from "@/components/ActionLinks";
 import { ArrowRight, ChatIcon, CheckIcon, RefreshIcon, PhoneIcon } from "@/components/ui/Icons";
@@ -221,8 +221,10 @@ export function QuoteForm() {
     } catch {
       /* non-blocking */
     }
-    // Hand the collected customer + vehicle details to the Aniro chat widget.
-    sendToAniro(leadMessage);
+    // Deliver the collected customer + vehicle details straight into the Aniro
+    // conversation — automatically, so the team receives every lead (and can
+    // offer a better price) without the visitor having to press send in chat.
+    await sendToAniro(leadMessage).catch(() => {});
     setSubmitting(false);
     setDone(true);
   }
@@ -265,13 +267,14 @@ export function QuoteForm() {
           <Breakdown quote={activeQuote} />
         </div>
         <p className="mt-4 text-[11px] leading-relaxed text-silver/80">
-          This is an instant estimate. Our team will review your request and confirm the final quote
-          &mdash; we may call to finalise the details and can tailor the price to your booking.
+          This is an instant estimate, and your details have already been sent to our team. We&rsquo;ll
+          review your request and confirm the final quote &mdash; we may call to finalise the details
+          and can often tailor the price to your booking.
         </p>
         <div className="mt-5 flex flex-col gap-3 sm:flex-row">
           <button
             type="button"
-            onClick={() => sendToAniro(leadMessage)}
+            onClick={() => openAniro()}
             className="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 bg-champagne px-6 text-xs font-medium uppercase tracking-wide2 text-black hover:bg-champagne-soft"
           >
             <ChatIcon className="h-4 w-4" /> Continue in chat

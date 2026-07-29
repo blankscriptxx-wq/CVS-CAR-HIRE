@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { track, captureUtm } from "@/lib/analytics";
-import { sendToAniro } from "@/lib/aniro";
+import { sendToAniro, openAniro } from "@/lib/aniro";
 import { CallLink } from "@/components/ActionLinks";
 import { ArrowRight, ChatIcon, CheckIcon, PhoneIcon } from "@/components/ui/Icons";
 import { vehicles } from "@/lib/data/vehicles";
@@ -88,8 +88,10 @@ export function EnquiryPanel({
     } catch {
       // Non-blocking: the chat hand-off still works.
     }
-    // Hand the collected customer + vehicle details to the Aniro chat widget.
-    sendToAniro(leadMessage);
+    // Deliver the collected customer + vehicle details straight into the Aniro
+    // conversation — automatically, so the team receives every lead without the
+    // visitor having to press send in chat.
+    await sendToAniro(leadMessage).catch(() => {});
     setSubmitting(false);
     setDone(true);
   }
@@ -102,13 +104,14 @@ export function EnquiryPanel({
           <h3 className="font-display text-2xl text-warm-white">Enquiry received</h3>
         </div>
         <p className="mt-3 text-sm text-silver">
-          Thank you{fields.name ? `, ${fields.name.split(" ")[0]}` : ""}. Our team will be in touch
-          shortly. For the fastest response, continue the conversation now:
+          Thank you{fields.name ? `, ${fields.name.split(" ")[0]}` : ""}. Your details have been sent
+          to our team and we&rsquo;ll be in touch shortly. For the fastest response, continue the
+          conversation now:
         </p>
         <div className="mt-5 flex flex-col gap-3 sm:flex-row">
           <button
             type="button"
-            onClick={() => sendToAniro(leadMessage)}
+            onClick={() => openAniro()}
             className="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 bg-champagne px-6 text-xs font-medium uppercase tracking-wide2 text-black hover:bg-champagne-soft"
           >
             <ChatIcon className="h-4 w-4" /> Continue in chat

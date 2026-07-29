@@ -16,7 +16,7 @@ export const metadata: Metadata = buildMetadata({
 });
 
 const steps = [
-  { title: "Enquire", body: "Start a conversation via live chat, WhatsApp, our quick enquiry form or a phone call. Tell us the vehicle or occasion, your dates and location." },
+  { title: "Enquire", body: "Start a conversation via live chat, our quick enquiry form or a phone call. Tell us the vehicle or occasion, your dates and location." },
   { title: "We confirm", body: "We check availability and confirm everything you need to know — the car, the requirements, delivery options and a clear quote." },
   { title: "Collection or delivery", body: "Collect from us in Birmingham, or we deliver your car to your door, hotel or venue — nationwide, subject to availability." },
   { title: "Enjoy & return", body: "We hand over an immaculately prepared car and stay on hand throughout. At the end of your hire, return or collection is just as simple." },

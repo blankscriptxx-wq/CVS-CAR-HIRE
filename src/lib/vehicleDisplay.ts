@@ -76,7 +76,7 @@ export function vehicleFaqs(v: Vehicle): FAQ[] {
 
   faqs.push({
     question: `How do I hire the ${name}?`,
-    answer: `Start a conversation with our team via live chat, WhatsApp, a quick enquiry or a phone call. Tell us your dates and location and we'll confirm availability for the ${name} and everything you need to know.`,
+    answer: `Start a conversation with our team via live chat, a quick enquiry or a phone call. Tell us your dates and location and we'll confirm availability for the ${name} and everything you need to know.`,
   });
 
   if (v.minimumAge) {

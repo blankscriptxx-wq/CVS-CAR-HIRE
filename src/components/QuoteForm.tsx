@@ -19,10 +19,10 @@ import {
   type ChauffeurMode,
 } from "@/lib/data/chauffeur";
 import { airports } from "@/lib/data/airports";
-import { whatsappLink } from "@/lib/whatsapp";
+import { sendToAniro } from "@/lib/aniro";
 import { track, captureUtm } from "@/lib/analytics";
-import { openLiveChat } from "@/components/ActionLinks";
-import { ArrowRight, WhatsAppIcon, ChatIcon, CheckIcon, RefreshIcon } from "@/components/ui/Icons";
+import { CallLink } from "@/components/ActionLinks";
+import { ArrowRight, ChatIcon, CheckIcon, RefreshIcon, PhoneIcon } from "@/components/ui/Icons";
 
 type Mode = "self-drive" | "chauffeur";
 
@@ -179,9 +179,18 @@ export function QuoteForm() {
   ]);
 
   const canSubmit = Boolean(activeQuote && name.trim() && mobile.trim());
-  const waMessage = `Hi CVS Car Hire, I'd like a quote — ${summary}${
-    activeQuote ? ` Estimated: from ${formatPrice(activeQuote.total)}.` : ""
-  }${name ? ` My name is ${name}.` : ""}`;
+
+  /** Full lead + vehicle details, composed for the Aniro chat hand-off. */
+  const leadMessage = [
+    "New website quote enquiry.",
+    `Name: ${name}`,
+    `Mobile: ${mobile}`,
+    email ? `Email: ${email}` : "",
+    `Details: ${summary}`,
+    activeQuote ? `Estimated: from ${formatPrice(activeQuote.total)}.` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
 
   async function submit() {
     if (!canSubmit || !activeQuote) return;
@@ -212,6 +221,8 @@ export function QuoteForm() {
     } catch {
       /* non-blocking */
     }
+    // Hand the collected customer + vehicle details to the Aniro chat widget.
+    sendToAniro(leadMessage);
     setSubmitting(false);
     setDone(true);
   }
@@ -258,22 +269,19 @@ export function QuoteForm() {
           &mdash; we may call to finalise the details and can tailor the price to your booking.
         </p>
         <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-          <a
-            href={whatsappLink(waMessage)}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => track("click_whatsapp", { source: "quote-success" })}
-            className="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 bg-champagne px-6 text-xs font-medium uppercase tracking-wide2 text-black hover:bg-champagne-soft"
-          >
-            <WhatsAppIcon className="h-4 w-4" /> Continue on WhatsApp
-          </a>
           <button
             type="button"
-            onClick={() => openLiveChat({ source: "quote-success" })}
+            onClick={() => sendToAniro(leadMessage)}
+            className="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 bg-champagne px-6 text-xs font-medium uppercase tracking-wide2 text-black hover:bg-champagne-soft"
+          >
+            <ChatIcon className="h-4 w-4" /> Continue in chat
+          </button>
+          <CallLink
+            context={{ source: "quote-success" }}
             className="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 border border-line px-6 text-xs uppercase tracking-wide2 text-warm-white hover:border-champagne"
           >
-            <ChatIcon className="h-4 w-4 text-champagne" /> Start Live Chat
-          </button>
+            <PhoneIcon className="h-4 w-4 text-champagne" /> Call us
+          </CallLink>
         </div>
         <button
           type="button"

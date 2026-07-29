@@ -2,8 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { footerNav } from "@/lib/nav";
 import { siteConfig, phoneDisplay } from "@/lib/siteConfig";
-import { CallLink, WhatsAppLink } from "@/components/ActionLinks";
-import { InstagramIcon, WhatsAppIcon, PhoneIcon } from "@/components/ui/Icons";
+import { CallLink } from "@/components/ActionLinks";
+import { InstagramIcon, PhoneIcon } from "@/components/ui/Icons";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -29,9 +29,6 @@ export function Footer() {
               <CallLink className="inline-flex items-center gap-2 text-warm-white hover:text-champagne">
                 <PhoneIcon className="h-4 w-4 text-champagne" /> {phoneDisplay}
               </CallLink>
-              <WhatsAppLink className="inline-flex items-center gap-2 text-warm-white hover:text-champagne">
-                <WhatsAppIcon className="h-4 w-4 text-champagne" /> WhatsApp us
-              </WhatsAppLink>
               <a
                 href={siteConfig.social.instagram}
                 target="_blank"

@@ -15,7 +15,6 @@ import { StickyActionBar } from "@/components/StickyActionBar";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { CheckIcon } from "@/components/ui/Icons";
 import { buildMetadata, serviceSchema, faqSchema } from "@/lib/seo";
-import { serviceWhatsAppMessage } from "@/lib/whatsapp";
 import { locations } from "@/lib/data/locations";
 
 export function generateStaticParams() {
@@ -54,7 +53,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   if (!service) notFound();
 
   const recommended = resolveVehicles(service);
-  const waMessage = serviceWhatsAppMessage(service.name.toLowerCase());
 
   return (
     <>
@@ -216,8 +214,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </section>
       )}
 
-      <FinalCTA whatsappMessage={waMessage} />
-      <StickyActionBar whatsappMessage={waMessage} context={{ page: "service", slug: service.slug }} />
+      <FinalCTA />
+      <StickyActionBar context={{ page: "service", slug: service.slug }} />
     </>
   );
 }

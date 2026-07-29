@@ -1,24 +1,24 @@
 "use client";
 
-import { WhatsAppLink, CallLink, LiveChatButton } from "@/components/ActionLinks";
-import { PhoneIcon, WhatsAppIcon, ChatIcon, ArrowRight } from "@/components/ui/Icons";
+import { CallLink, LiveChatButton } from "@/components/ActionLinks";
+import { PhoneIcon, ChatIcon, ArrowRight } from "@/components/ui/Icons";
 import Link from "next/link";
 
 /**
- * Sticky mobile action bar — Live Chat · WhatsApp · Call.
- * Hidden on desktop. On vehicle pages, pass a `checkAvailabilityHref` and a
- * `whatsappMessage` to prioritise Check Availability + WhatsApp per the brief.
+ * Sticky mobile action bar — Chat (Aniro) · Call. Hidden on desktop.
+ * On vehicle pages, pass `checkAvailabilityHref` to prioritise Check
+ * Availability + Call.
  */
 export function StickyActionBar({
-  whatsappMessage,
   checkAvailabilityHref,
   context,
 }: {
+  /** Accepted for backwards-compatible call sites; no longer rendered. */
   whatsappMessage?: string;
   checkAvailabilityHref?: string;
   context?: Record<string, string>;
 }) {
-  // Vehicle-page variant: Check Availability + WhatsApp emphasised.
+  // Vehicle-page variant: Check Availability + Call.
   if (checkAvailabilityHref) {
     return (
       <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-px border-t border-line bg-black/95 backdrop-blur md:hidden">
@@ -28,35 +28,26 @@ export function StickyActionBar({
         >
           Check Availability <ArrowRight className="h-4 w-4" />
         </Link>
-        <WhatsAppLink
-          message={whatsappMessage}
+        <CallLink
           context={context}
           className="flex min-h-[56px] items-center justify-center gap-2 text-warm-white text-xs font-medium uppercase tracking-wide2"
         >
-          <WhatsAppIcon className="h-5 w-5 text-champagne" /> WhatsApp
-        </WhatsAppLink>
+          <PhoneIcon className="h-5 w-5 text-champagne" /> Call
+        </CallLink>
       </div>
     );
   }
 
-  // Default: Live Chat · WhatsApp · Call.
+  // Default: Chat · Call.
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 gap-px border-t border-line bg-black/95 backdrop-blur md:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-px border-t border-line bg-black/95 backdrop-blur md:hidden">
       <LiveChatButton
         context={context}
         className="flex min-h-[56px] flex-col items-center justify-center gap-1 text-warm-white"
       >
         <ChatIcon className="h-5 w-5 text-champagne" />
-        <span className="text-[10px] uppercase tracking-wide2">Live Chat</span>
+        <span className="text-[10px] uppercase tracking-wide2">Chat</span>
       </LiveChatButton>
-      <WhatsAppLink
-        message={whatsappMessage}
-        context={context}
-        className="flex min-h-[56px] flex-col items-center justify-center gap-1 text-warm-white"
-      >
-        <WhatsAppIcon className="h-5 w-5 text-champagne" />
-        <span className="text-[10px] uppercase tracking-wide2">WhatsApp</span>
-      </WhatsAppLink>
       <CallLink
         context={context}
         className="flex min-h-[56px] flex-col items-center justify-center gap-1 text-warm-white"

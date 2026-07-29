@@ -1,17 +1,17 @@
 import { Media } from "@/components/ui/Media";
 import { Reveal } from "@/components/ui/Reveal";
-import { LiveChatButton, WhatsAppLink, CallLink } from "@/components/ActionLinks";
-import { ChatIcon, WhatsAppIcon, PhoneIcon } from "@/components/ui/Icons";
+import { LiveChatButton, CallLink } from "@/components/ActionLinks";
+import { ChatIcon, PhoneIcon } from "@/components/ui/Icons";
 import { phoneDisplay } from "@/lib/siteConfig";
 
 /** Dramatic full-width conversion section. */
 export function FinalCTA({
   heading = "Your Next Arrival Starts Here.",
   copy = "Tell us what you need. Our team will recommend the right vehicle and confirm availability.",
-  whatsappMessage,
 }: {
   heading?: string;
   copy?: string;
+  /** Accepted for backwards-compatible call sites; no longer used. */
   whatsappMessage?: string;
 }) {
   return (
@@ -36,15 +36,8 @@ export function FinalCTA({
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <LiveChatButton className="inline-flex min-h-[52px] items-center justify-center gap-2 bg-champagne px-8 text-xs font-medium uppercase tracking-wide2 text-black hover:bg-champagne-soft">
-              <ChatIcon className="h-4 w-4" /> Start Live Chat
+              <ChatIcon className="h-4 w-4" /> Chat with us
             </LiveChatButton>
-            <WhatsAppLink
-              message={whatsappMessage}
-              context={{ source: "final-cta" }}
-              className="inline-flex min-h-[52px] items-center justify-center gap-2 border border-line px-8 text-xs uppercase tracking-wide2 text-warm-white hover:border-champagne"
-            >
-              <WhatsAppIcon className="h-4 w-4 text-champagne" /> Chat on WhatsApp
-            </WhatsAppLink>
             <CallLink
               context={{ source: "final-cta" }}
               className="inline-flex min-h-[52px] items-center justify-center gap-2 border border-line px-8 text-xs uppercase tracking-wide2 text-warm-white hover:border-champagne"

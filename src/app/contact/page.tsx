@@ -4,15 +4,15 @@ import { Reveal } from "@/components/ui/Reveal";
 import { EnquiryPanel } from "@/components/EnquiryPanel";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StickyActionBar } from "@/components/StickyActionBar";
-import { WhatsAppLink, CallLink, LiveChatButton } from "@/components/ActionLinks";
-import { WhatsAppIcon, PhoneIcon, ChatIcon, InstagramIcon } from "@/components/ui/Icons";
+import { CallLink, LiveChatButton } from "@/components/ActionLinks";
+import { PhoneIcon, ChatIcon, InstagramIcon } from "@/components/ui/Icons";
 import { siteConfig, phoneDisplay } from "@/lib/siteConfig";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Contact CVS Car Hire | Speak to Our Team",
   description:
-    "Contact CVS Car Hire in Birmingham. Start a live chat, message us on WhatsApp, call our team or submit a quick enquiry. We're here to help you find the right car.",
+    "Contact CVS Car Hire in Birmingham. Start a live chat, call our team or submit a quick enquiry. We're here to help you find the right car.",
   path: "/contact",
 });
 
@@ -39,16 +39,6 @@ export default function ContactPage() {
                 <span className="text-sm text-silver">Chat with our team in real time</span>
               </span>
             </LiveChatButton>
-            <WhatsAppLink
-              context={{ page: "contact" }}
-              className="flex w-full items-center gap-4 border border-line p-5 text-left hover:border-champagne"
-            >
-              <WhatsAppIcon className="h-6 w-6 shrink-0 text-champagne" />
-              <span>
-                <span className="block font-display text-xl text-warm-white">WhatsApp</span>
-                <span className="text-sm text-silver">Message us anytime</span>
-              </span>
-            </WhatsAppLink>
             <CallLink
               context={{ page: "contact" }}
               className="flex w-full items-center gap-4 border border-line p-5 text-left hover:border-champagne"

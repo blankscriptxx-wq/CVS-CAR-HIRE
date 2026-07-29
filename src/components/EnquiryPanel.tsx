@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { availabilityWhatsAppMessage, whatsappLink } from "@/lib/whatsapp";
 import { track, captureUtm } from "@/lib/analytics";
-import { openLiveChat, WhatsAppLink } from "@/components/ActionLinks";
-import { ArrowRight, WhatsAppIcon, ChatIcon, CheckIcon } from "@/components/ui/Icons";
+import { sendToAniro } from "@/lib/aniro";
+import { CallLink } from "@/components/ActionLinks";
+import { ArrowRight, ChatIcon, CheckIcon, PhoneIcon } from "@/components/ui/Icons";
 import { vehicles } from "@/lib/data/vehicles";
 import { categories } from "@/lib/data/categories";
 import { vehicleName } from "@/lib/vehicleDisplay";
@@ -40,7 +40,7 @@ const labelClass = "block text-[11px] uppercase tracking-wide2 text-silver mb-2"
 /**
  * Staged, progressive quick-enquiry panel. On completion it POSTs to the secure
  * /api/enquiry route (CRM/Respond.io forwarding) and offers to continue on
- * WhatsApp or live chat with the collected context.
+ * the Aniro chat with the collected context.
  */
 export function EnquiryPanel({
   presetVehicle,
@@ -55,7 +55,20 @@ export function EnquiryPanel({
   const [submitting, setSubmitting] = useState(false);
 
   const set = (k: keyof Fields, v: string) => setFields((f) => ({ ...f, [k]: v }));
-  const waMessage = availabilityWhatsAppMessage(fields);
+
+  /** Full lead + vehicle details, composed for the Aniro chat hand-off. */
+  const leadMessage = [
+    "New website availability enquiry.",
+    fields.name ? `Name: ${fields.name}` : "",
+    fields.mobile ? `Mobile: ${fields.mobile}` : "",
+    fields.vehicle ? `Interested in: ${fields.vehicle}` : "Interested in: not sure yet",
+    fields.start ? `Dates: ${fields.start}${fields.end ? ` to ${fields.end}` : ""}` : "",
+    fields.collection ? `Collection/delivery: ${fields.collection}` : "",
+    fields.age ? `Driver age: ${fields.age}` : "",
+    fields.occasion ? `Occasion: ${fields.occasion}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
 
   const next = () => {
     if (step === 0) track("begin_enquiry", { vehicle: fields.vehicle || "unspecified" });
@@ -73,8 +86,10 @@ export function EnquiryPanel({
         body: JSON.stringify({ ...fields, ...captureUtm(), source: "quick-enquiry" }),
       });
     } catch {
-      // Non-blocking: the WhatsApp / chat handoff still works.
+      // Non-blocking: the chat hand-off still works.
     }
+    // Hand the collected customer + vehicle details to the Aniro chat widget.
+    sendToAniro(leadMessage);
     setSubmitting(false);
     setDone(true);
   }
@@ -91,22 +106,19 @@ export function EnquiryPanel({
           shortly. For the fastest response, continue the conversation now:
         </p>
         <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-          <a
-            href={whatsappLink(waMessage)}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => track("click_whatsapp", { source: "enquiry-success" })}
-            className="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 bg-champagne px-6 text-xs font-medium uppercase tracking-wide2 text-black hover:bg-champagne-soft"
-          >
-            <WhatsAppIcon className="h-4 w-4" /> Continue on WhatsApp
-          </a>
           <button
             type="button"
-            onClick={() => openLiveChat({ source: "enquiry-success" })}
+            onClick={() => sendToAniro(leadMessage)}
+            className="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 bg-champagne px-6 text-xs font-medium uppercase tracking-wide2 text-black hover:bg-champagne-soft"
+          >
+            <ChatIcon className="h-4 w-4" /> Continue in chat
+          </button>
+          <CallLink
+            context={{ source: "enquiry-success" }}
             className="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 border border-line px-6 text-xs uppercase tracking-wide2 text-warm-white hover:border-champagne"
           >
-            <ChatIcon className="h-4 w-4 text-champagne" /> Start Live Chat
-          </button>
+            <PhoneIcon className="h-4 w-4 text-champagne" /> Call us
+          </CallLink>
         </div>
       </div>
     );
@@ -320,15 +332,15 @@ export function EnquiryPanel({
         )}
       </div>
 
-      {/* Direct WhatsApp shortcut */}
+      {/* Direct chat shortcut */}
       <div className="mt-4 border-t border-line pt-4 text-center">
-        <WhatsAppLink
-          message={waMessage}
-          context={{ source: "enquiry-panel" }}
+        <button
+          type="button"
+          onClick={() => sendToAniro(leadMessage)}
           className="inline-flex items-center gap-2 text-xs uppercase tracking-wide2 text-silver hover:text-champagne"
         >
-          <WhatsAppIcon className="h-4 w-4 text-champagne" /> Prefer WhatsApp? Message us now
-        </WhatsAppLink>
+          <ChatIcon className="h-4 w-4 text-champagne" /> Prefer to chat? Message us now
+        </button>
       </div>
 
     </div>

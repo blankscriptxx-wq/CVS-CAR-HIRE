@@ -24,12 +24,11 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StickyActionBar } from "@/components/StickyActionBar";
 import { VehicleTracker } from "@/components/VehicleTracker";
 import { ShortlistButton } from "@/components/ShortlistButton";
-import { WhatsAppLink, CallLink, LiveChatButton } from "@/components/ActionLinks";
+import { CallLink, LiveChatButton } from "@/components/ActionLinks";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { ButtonLink } from "@/components/ui/Button";
-import { WhatsAppIcon, PhoneIcon, ChatIcon, ArrowRight } from "@/components/ui/Icons";
+import { PhoneIcon, ChatIcon, ArrowRight } from "@/components/ui/Icons";
 import { buildMetadata, vehicleSchema, faqSchema } from "@/lib/seo";
-import { vehicleWhatsAppMessage } from "@/lib/whatsapp";
 
 export function generateStaticParams() {
   return allVehicleSlugs.map((slug) => ({ slug }));
@@ -62,7 +61,6 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
   const faqs = vehicleFaqs(vehicle);
   const specs = specPairs(vehicle);
   const commercials = commercialPairs(vehicle);
-  const waMessage = vehicleWhatsAppMessage(name);
   const gallery = vehicle.gallery ?? [];
 
   return (
@@ -94,13 +92,12 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
               <ButtonLink href="#enquire" variant="primary" size="lg">
                 Check Availability <ArrowRight className="h-4 w-4" />
               </ButtonLink>
-              <WhatsAppLink
-                message={waMessage}
+              <CallLink
                 context={{ page: "vehicle", slug: vehicle.slug }}
                 className="inline-flex min-h-[56px] items-center gap-2 border border-line px-8 text-[13px] uppercase tracking-wide2 text-warm-white hover:border-champagne"
               >
-                <WhatsAppIcon className="h-4 w-4 text-champagne" /> WhatsApp
-              </WhatsAppLink>
+                <PhoneIcon className="h-4 w-4 text-champagne" /> Call
+              </CallLink>
               <span className="ml-1">
                 <ShortlistButton slug={vehicle.slug} name={name} />
               </span>
@@ -199,22 +196,15 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
               Enquire about the {vehicle.model}.
             </h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-silver">
-              Tell us your dates and we&rsquo;ll confirm availability, or reach us instantly on
-              WhatsApp, live chat or by phone.
+              Tell us your dates and we&rsquo;ll confirm availability, or reach us instantly by
+              live chat or phone.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <WhatsAppLink
-                message={waMessage}
-                context={{ page: "vehicle", slug: vehicle.slug }}
-                className="inline-flex min-h-[48px] items-center justify-center gap-2 border border-line px-6 text-xs uppercase tracking-wide2 text-warm-white hover:border-champagne"
-              >
-                <WhatsAppIcon className="h-4 w-4 text-champagne" /> WhatsApp
-              </WhatsAppLink>
               <LiveChatButton
                 context={{ page: "vehicle", slug: vehicle.slug }}
                 className="inline-flex min-h-[48px] items-center justify-center gap-2 border border-line px-6 text-xs uppercase tracking-wide2 text-warm-white hover:border-champagne"
               >
-                <ChatIcon className="h-4 w-4 text-champagne" /> Live Chat
+                <ChatIcon className="h-4 w-4 text-champagne" /> Chat with us
               </LiveChatButton>
               <CallLink
                 context={{ page: "vehicle", slug: vehicle.slug }}
@@ -267,7 +257,6 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
 
       <StickyActionBar
         checkAvailabilityHref="#enquire"
-        whatsappMessage={waMessage}
         context={{ page: "vehicle", slug: vehicle.slug }}
       />
     </>

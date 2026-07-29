@@ -9,7 +9,7 @@ export const generalFaqs: FAQ[] = [
   {
     question: "How do I hire a car with CVS?",
     answer:
-      "It starts with a conversation. Tell us the vehicle or occasion, your dates and where you are, and we'll confirm availability and everything you need to know. You can check availability through live chat, WhatsApp, a quick enquiry form or a phone call — whichever suits you.",
+      "It starts with a conversation. Tell us the vehicle or occasion, your dates and where you are, and we'll confirm availability and everything you need to know. You can check availability through live chat, a quick enquiry form or a phone call — whichever suits you.",
   },
   {
     question: "What is the minimum age to hire?",

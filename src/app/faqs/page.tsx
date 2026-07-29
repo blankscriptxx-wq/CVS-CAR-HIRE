@@ -22,7 +22,7 @@ export default function FaqsPage() {
       <PageHero
         eyebrow="Good to Know"
         title={<>Frequently Asked Questions</>}
-        intro="Everything you need to know about hiring with CVS. Can't find your answer? Start a live chat or message us on WhatsApp."
+        intro="Everything you need to know about hiring with CVS. Can't find your answer? Start a live chat or call our team."
       />
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "FAQs", path: "/faqs" }]} />
 

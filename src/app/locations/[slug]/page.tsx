@@ -15,7 +15,6 @@ import { StickyActionBar } from "@/components/StickyActionBar";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { buildMetadata, locationSchema, faqSchema } from "@/lib/seo";
-import { locationWhatsAppMessage } from "@/lib/whatsapp";
 import { LocationTracker } from "@/components/LocationTracker";
 
 export function generateStaticParams() {
@@ -65,7 +64,6 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
   const nearby = (location.nearbyLocations ?? [])
     .map(getLocationBySlug)
     .filter(Boolean);
-  const waMessage = locationWhatsAppMessage(location.city);
 
   return (
     <>
@@ -223,8 +221,8 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
         </section>
       )}
 
-      <FinalCTA whatsappMessage={waMessage} />
-      <StickyActionBar whatsappMessage={waMessage} context={{ page: "location", slug: location.slug }} />
+      <FinalCTA />
+      <StickyActionBar context={{ page: "location", slug: location.slug }} />
     </>
   );
 }

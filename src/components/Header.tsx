@@ -8,11 +8,10 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { primaryNav } from "@/lib/nav";
 import { siteConfig, phoneDisplay } from "@/lib/siteConfig";
 import { ButtonLink } from "@/components/ui/Button";
-import { WhatsAppLink, CallLink, LiveChatButton } from "@/components/ActionLinks";
+import { CallLink, LiveChatButton } from "@/components/ActionLinks";
 import {
   MenuIcon,
   CloseIcon,
-  WhatsAppIcon,
   PhoneIcon,
   ChatIcon,
   InstagramIcon,
@@ -215,15 +214,11 @@ export function Header() {
               </div>
 
               {/* Direct contact CTAs */}
-              <div className="mt-6 grid grid-cols-3 gap-3">
+              <div className="mt-6 grid grid-cols-2 gap-3">
                 <LiveChatButton className="flex flex-col items-center gap-2 border border-line py-4 text-warm-white">
                   <ChatIcon className="h-5 w-5 text-champagne" />
-                  <span className="text-[10px] uppercase tracking-wide2">Live Chat</span>
+                  <span className="text-[10px] uppercase tracking-wide2">Chat</span>
                 </LiveChatButton>
-                <WhatsAppLink className="flex flex-col items-center gap-2 border border-line py-4 text-warm-white">
-                  <WhatsAppIcon className="h-5 w-5 text-champagne" />
-                  <span className="text-[10px] uppercase tracking-wide2">WhatsApp</span>
-                </WhatsAppLink>
                 <CallLink className="flex flex-col items-center gap-2 border border-line py-4 text-warm-white">
                   <PhoneIcon className="h-5 w-5 text-champagne" />
                   <span className="text-[10px] uppercase tracking-wide2">Call</span>

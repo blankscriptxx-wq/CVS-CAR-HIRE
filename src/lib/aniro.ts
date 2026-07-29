@@ -1,21 +1,23 @@
 /**
- * Aniro chat widget control + programmatic message delivery.
+ * Aniro chat — API layer + event bus for our own on-brand chat panel.
  *
- * All chat + enquiry/quote hand-offs go through the Aniro widget (loaded in the
- * root layout). WhatsApp and Respond.io have been removed; Aniro is the single
- * conversational channel.
+ * Aniro is the single conversational channel (WhatsApp and Respond.io removed).
+ * Rather than embedding aniro.ai's default widget (fixed indigo styling, invisible
+ * input on a dark theme, no transcript memory, generic "Assistant is typing"),
+ * we render our own panel — <AniroChat /> — against Aniro's public widget REST API:
  *
- * The widget (aniro.ai/widget.js) talks to a small REST API which we drive
- * directly so a completed enquiry/quote is delivered into the SAME conversation
- * the visitor sees — automatically, with no "send" tap required:
- *
- *   POST {origin}/api/widget/{key}/session   { sessionId }        -> { data: { sessionId, name?, welcome? } }
+ *   POST {origin}/api/widget/{key}/session   { sessionId }  -> { data: { sessionId, name?, welcome? } }
+ *   GET  {origin}/api/widget/{key}/messages?sessionId=X[&since=Y] -> { data: { messages: [...] } }
  *   POST {origin}/api/widget/{key}/messages  { sessionId, body, clientMessageId }
  *
- * The widget stores its session id as a raw string in
- * localStorage["omniagent_session_{key}"], so we read/create the exact same
- * session — the visitor's message lands in the CVS Aniro inbox instantly and,
- * if they open the widget, it continues the same thread.
+ * The session id is stored (raw) in localStorage["omniagent_session_{key}"] —
+ * the SAME key the aniro.ai widget uses — so the visitor keeps ONE conversation:
+ * across page navigation, across minimising, and across return visits their full
+ * history stays in the CVS Aniro inbox and re-loads into the panel.
+ *
+ * NOTE: message "direction" is from the business's point of view —
+ *   inbound  = from the customer (render on the right, "you")
+ *   outbound = from CVS / the AI responder (render on the left, "CVS")
  */
 
 import { siteConfig } from "@/lib/siteConfig";
@@ -24,6 +26,39 @@ const WIDGET_KEY = siteConfig.aniro.widgetKey;
 const ORIGIN = "https://www.aniro.ai";
 const API = `${ORIGIN}/api/widget/${encodeURIComponent(WIDGET_KEY)}`;
 const STORAGE_KEY = `omniagent_session_${WIDGET_KEY}`;
+
+/** Custom-event names used to drive the panel from anywhere (forms, buttons). */
+export const ANIRO_OPEN_EVENT = "cvschat:open";
+export const ANIRO_MESSAGE_EVENT = "cvschat:message";
+
+export type AniroDirection = "inbound" | "outbound";
+export type AniroMessage = {
+  id: string;
+  direction: AniroDirection;
+  body: string;
+  createdAt: string;
+};
+export type AniroSession = { sessionId: string; name?: string; welcome?: string };
+
+const LEAD_KEY = "cvs_chat_lead_captured";
+
+/** Whether we've already captured this visitor's contact details (chat or form). */
+export function isLeadCaptured(): boolean {
+  try {
+    return window.localStorage.getItem(LEAD_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+/** Mark contact details captured so the chat never re-asks the same visitor. */
+export function markLeadCaptured(): void {
+  try {
+    window.localStorage.setItem(LEAD_KEY, "1");
+  } catch {
+    /* ignore */
+  }
+}
 
 function getStoredSession(): string | null {
   try {
@@ -37,92 +72,98 @@ function storeSession(id: string): void {
   try {
     window.localStorage.setItem(STORAGE_KEY, id);
   } catch {
-    /* private mode / storage disabled — session still held in memory for this send */
+    /* private mode / storage disabled — id still held in memory for this send */
   }
 }
 
 /**
- * Reuse the widget's existing session, or start a new one via the same endpoint
- * the widget uses. Writing the id back to the widget's storage key means the
- * live widget resumes this very conversation when opened.
+ * Resume the stored conversation, or start a new one via the same endpoint the
+ * widget uses. Always writes the id back so every surface shares one session.
  */
-async function ensureSession(): Promise<string | null> {
+export async function ensureSession(): Promise<AniroSession | null> {
+  if (typeof window === "undefined") return null;
   const existing = getStoredSession();
-  if (existing) return existing;
   try {
     const res = await fetch(`${API}/session`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sessionId: null }),
+      body: JSON.stringify({ sessionId: existing }),
     });
-    const json = (await res.json()) as { data?: { sessionId?: string } };
-    const id = json?.data?.sessionId;
-    if (id) {
-      storeSession(id);
-      return id;
+    const json = (await res.json()) as { data?: AniroSession };
+    const data = json?.data;
+    if (data?.sessionId) {
+      storeSession(data.sessionId);
+      return data;
     }
   } catch {
-    /* network/CORS — fall back to the launcher */
+    /* network/CORS — nothing we can do client-side */
   }
-  return null;
+  return existing ? { sessionId: existing } : null;
 }
 
-/** Defensive breadcrumb for the fallback path. */
-function stashPrefill(message: string): void {
+/** Full transcript (both directions), oldest first. */
+export async function fetchHistory(sessionId: string): Promise<AniroMessage[]> {
   try {
-    (window as unknown as Record<string, unknown>).__aniroPrefill = message;
+    const res = await fetch(`${API}/messages?sessionId=${encodeURIComponent(sessionId)}`);
+    const json = (await res.json()) as { data?: { messages?: AniroMessage[] } };
+    return json?.data?.messages ?? [];
   } catch {
-    /* ignore */
+    return [];
   }
 }
 
-/**
- * Deliver a fully-composed message (customer + vehicle/journey details) straight
- * into the Aniro conversation. Returns true when the lead was accepted by Aniro.
- * On any failure it degrades gracefully by opening the widget with the details
- * stashed, so nothing is lost.
- */
-export async function sendToAniro(message: string): Promise<boolean> {
-  if (typeof window === "undefined" || !message.trim()) return false;
-
-  const sessionId = await ensureSession();
-  if (!sessionId) {
-    stashPrefill(message);
-    return openAniro();
+/** New messages since a timestamp (ISO createdAt). */
+export async function pollSince(sessionId: string, since: string | null): Promise<AniroMessage[]> {
+  try {
+    let url = `${API}/messages?sessionId=${encodeURIComponent(sessionId)}`;
+    if (since) url += `&since=${encodeURIComponent(since)}`;
+    const res = await fetch(url);
+    const json = (await res.json()) as { data?: { messages?: AniroMessage[] } };
+    return json?.data?.messages ?? [];
+  } catch {
+    return [];
   }
+}
 
+/** Post a customer message into the conversation. Returns true when accepted. */
+export async function sendMessage(sessionId: string, body: string): Promise<boolean> {
   try {
     const res = await fetch(`${API}/messages`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         sessionId,
-        body: message,
+        body,
         clientMessageId: `c_${Date.now()}`,
       }),
     });
-    // Surface the widget so the visitor can carry on live — the team can reply
-    // and, where possible, offer a better price in the same thread.
-    openAniro();
     return res.ok;
   } catch {
-    stashPrefill(message);
-    return openAniro();
+    return false;
   }
 }
 
-/**
- * Open the Aniro chat widget UI. Returns true if a launcher was found/clicked.
- * Used by "Chat with us" buttons and as the fallback for message delivery.
- */
+/** Open the CVS chat panel (used by "Chat with us" buttons). */
 export function openAniro(): boolean {
   if (typeof window === "undefined") return false;
-  const launcher = document.querySelector<HTMLElement>(
-    '.oa-btn, [id*="aniro" i] button, button[class*="aniro" i], [class*="omniagent" i] button, iframe[src*="aniro" i]'
-  );
-  if (launcher) {
-    launcher.click();
-    return true;
-  }
-  return false;
+  window.dispatchEvent(new CustomEvent(ANIRO_OPEN_EVENT));
+  return true;
+}
+
+/**
+ * Deliver a fully-composed lead (customer + vehicle/journey details) straight
+ * into the conversation — automatically, no "send" tap — then open the panel so
+ * the visitor can carry on live. Used by the quote and enquiry forms.
+ */
+export async function sendToAniro(message: string): Promise<boolean> {
+  if (typeof window === "undefined" || !message.trim()) return false;
+  const session = await ensureSession();
+  if (!session?.sessionId) return false;
+  const ok = await sendMessage(session.sessionId, message);
+  // A form lead includes the customer's contact details — no need to re-ask in chat.
+  markLeadCaptured();
+  // Tell the panel to pull in the new message and open.
+  window.dispatchEvent(new CustomEvent(ANIRO_MESSAGE_EVENT));
+  window.dispatchEvent(new CustomEvent(ANIRO_OPEN_EVENT));
+  return ok;
 }

@@ -80,6 +80,13 @@ export const siteConfig = {
       process.env.NEXT_PUBLIC_GBP_URL || "https://share.google/tr4X6xW6fMtZPtNne",
   },
 
+  // ── Reviews widget (keyless Google reviews) ────────────────
+  // Featurable (featurable.com) shows genuine Google reviews with NO API key —
+  // connect the Google profile there, create a widget, paste its ID here.
+  reviews: {
+    featurableWidgetId: process.env.NEXT_PUBLIC_FEATURABLE_WIDGET_ID || "",
+  },
+
   // ── Aniro.ai chat widget ───────────────────────────────────
   aniro: {
     widgetKey:

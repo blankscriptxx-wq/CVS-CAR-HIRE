@@ -29,16 +29,13 @@ function Brand({ onClick }: { onClick?: () => void }) {
       aria-label={`${siteConfig.name} home`}
     >
       <Image
-        src="/brand/cvs-icon.png"
-        alt=""
-        width={44}
-        height={46}
+        src="/brand/cvs-logo-reverse.png"
+        alt={siteConfig.name}
+        width={210}
+        height={45}
         priority
-        className="h-9 w-auto"
+        className="h-8 w-auto sm:h-9"
       />
-      <span className="font-display text-xl leading-none tracking-wide text-warm-white">
-        CVS <span className="hidden text-silver sm:inline">Car Hire</span>
-      </span>
     </Link>
   );
 }

@@ -11,10 +11,12 @@ const config: Config = {
         soft: "#181818", // soft black
         "warm-white": "#F4F1EA",
         silver: "#A6A6A6",
+        // Official CVS Hire brand gold (from the brand pack): Gold #C9A227,
+        // Champagne #E8CB66, Bronze #96761A.
         champagne: {
-          DEFAULT: "#B49A67",
-          soft: "#C9B489",
-          dim: "#8C7A52",
+          DEFAULT: "#C9A227",
+          soft: "#E8CB66",
+          dim: "#96761A",
         },
         line: "rgba(244,241,234,0.12)", // hairline dividers
       },

@@ -13,17 +13,14 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_2fr]">
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-3" aria-label="CVS Car Hire home">
+            <Link href="/" className="inline-flex" aria-label="CVS Car Hire home">
               <Image
-                src="/brand/cvs-icon.png"
-                alt=""
-                width={52}
-                height={55}
-                className="h-12 w-auto"
+                src="/brand/cvs-logo-reverse.png"
+                alt={siteConfig.name}
+                width={260}
+                height={56}
+                className="h-11 w-auto"
               />
-              <span className="font-display text-3xl text-warm-white">
-                CVS <span className="text-champagne">Car Hire</span>
-              </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-silver">
               {siteConfig.description}

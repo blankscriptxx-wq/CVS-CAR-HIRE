@@ -37,7 +37,7 @@ const legacyRedirects = [
   { source: "/product-page/audi-rs3-saloon-vorsprung-hire", destination: "/fleet/audi-rs3-hire", permanent: true },
   { source: "/product-page/lamborghini-huracan-performante-spyder-hire", destination: "/fleet/lamborghini-huracan-performante-spyder-hire", permanent: true },
   { source: "/product-page/2023-range-rover-sport-arriving-july", destination: "/fleet/range-rover-sport-hire", permanent: true },
-  { source: "/product-page/2024-range-rover-sport-vogue-black", destination: "/fleet/range-rover-sport-hire", permanent: true },
+  { source: "/product-page/2024-range-rover-sport-vogue-black", destination: "/fleet/range-rover-vogue-hire", permanent: true },
   { source: "/product-page/bmw-4-series-convertible-m-spost", destination: "/fleet/bmw-4-series-convertible-hire", permanent: true },
   { source: "/product-page/mercedes-g63-hire", destination: "/fleet/mercedes-amg-g63-hire", permanent: true },
   { source: "/product-page/mercedes-g63-red", destination: "/fleet/mercedes-amg-g63-hire", permanent: true },

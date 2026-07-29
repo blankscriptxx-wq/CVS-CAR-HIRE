@@ -19,6 +19,17 @@ const hireTypes = [
   { key: "chauffeur", label: "Chauffeur" },
 ] as const;
 
+// Curated running order for the chauffeur line-up (applied to the default
+// "Featured" sort so the chauffeur fleet always reads in this exact sequence).
+const CHAUFFEUR_ORDER = [
+  "rolls-royce-cullinan-hire",
+  "rolls-royce-ghost-hire",
+  "mercedes-v-class-hire",
+  "range-rover-vogue-hire",
+  "lamborghini-urus-performante-hire",
+  "mercedes-amg-g63-hire",
+];
+
 export function FleetShowroom({ vehicles }: { vehicles: Vehicle[] }) {
   const params = useSearchParams();
   const initialCategory = (params.get("category") as VehicleCategory | null) ?? "all";
@@ -67,8 +78,20 @@ export function FleetShowroom({ vehicles }: { vehicles: Vehicle[] }) {
       case "price-desc":
         list.sort((a, b) => (b.dailyPriceFrom ?? -1) - (a.dailyPriceFrom ?? -1));
         break;
-      default:
-        list.sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)));
+      default: {
+        // In the chauffeur view, honour the curated running order; otherwise
+        // fall back to featured-first.
+        const chauffeurView = category === "chauffeur" || hire === "chauffeur";
+        if (chauffeurView) {
+          const rank = (v: Vehicle) => {
+            const i = CHAUFFEUR_ORDER.indexOf(v.slug);
+            return i === -1 ? CHAUFFEUR_ORDER.length : i;
+          };
+          list.sort((a, b) => rank(a) - rank(b));
+        } else {
+          list.sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)));
+        }
+      }
     }
     return list;
   }, [vehicles, category, manufacturer, hire, seats, query, sort, showShortlistOnly, shortlisted]);

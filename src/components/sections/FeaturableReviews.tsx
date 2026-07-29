@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { siteConfig } from "@/lib/siteConfig";
+import { siteConfig, googleReviewLinks } from "@/lib/siteConfig";
 
 /**
  * Keyless Google reviews via Featurable (featurable.com).
@@ -28,7 +28,7 @@ export function FeaturableReviews() {
             </h2>
           </div>
           <a
-            href={siteConfig.social.googleBusinessProfile}
+            href={googleReviewLinks.read}
             target="_blank"
             rel="noopener noreferrer"
             className="link-underline text-xs uppercase tracking-wide2"

@@ -76,14 +76,19 @@ export const siteConfig = {
     tiktok: "https://www.tiktok.com/@cvshire",
     facebook: "https://www.facebook.com/cvshire",
     // Google Business Profile (Maps) — used for sameAs and "read our reviews" links.
+    // Profile: "CVS Self Drive and Wedding Car Hire".
     googleBusinessProfile:
-      process.env.NEXT_PUBLIC_GBP_URL || "https://share.google/tr4X6xW6fMtZPtNne",
+      process.env.NEXT_PUBLIC_GBP_URL || "https://share.google/ImohPqIYRzeHmXBa3",
   },
 
-  // ── Reviews widget (keyless Google reviews) ────────────────
-  // Featurable (featurable.com) shows genuine Google reviews with NO API key —
-  // connect the Google profile there, create a widget, paste its ID here.
+  // ── Reviews (keyless Google reviews) ───────────────────────
+  // The Google Place ID powers keyless "read reviews" and "leave a review"
+  // deep-links (no API key needed). For inline review cards, either connect the
+  // profile on featurable.com and set the widget id below, or provide a Google
+  // Places API key server-side (GOOGLE_PLACES_API_KEY) — both use this Place ID.
   reviews: {
+    googlePlaceId:
+      process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "ChIJTz31FLu7cEgRv2o0D6e5URQ",
     featurableWidgetId: process.env.NEXT_PUBLIC_FEATURABLE_WIDGET_ID || "",
   },
 
@@ -109,3 +114,20 @@ export type SiteConfig = typeof siteConfig;
 export const phoneDisplay = siteConfig.phone.display;
 /** tel: href target. */
 export const phoneHref = `tel:+44${siteConfig.phone.raw.replace(/^0/, "")}`;
+
+/**
+ * Keyless Google review deep-links built from the Place ID (no API key needed).
+ * `read` opens the reviews panel; `write` opens the "leave a review" dialog.
+ * Falls back to the Google Business Profile link if no Place ID is set.
+ */
+export const googleReviewLinks = (() => {
+  const placeId = siteConfig.reviews.googlePlaceId;
+  if (!placeId) {
+    const gbp = siteConfig.social.googleBusinessProfile;
+    return { read: gbp, write: gbp };
+  }
+  return {
+    read: `https://search.google.com/local/reviews?placeid=${placeId}`,
+    write: `https://search.google.com/local/writereview?placeid=${placeId}`,
+  };
+})();

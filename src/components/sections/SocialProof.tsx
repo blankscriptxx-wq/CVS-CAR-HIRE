@@ -1,7 +1,7 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { testimonials } from "@/lib/data/testimonials";
-import { siteConfig } from "@/lib/siteConfig";
+import { siteConfig, googleReviewLinks } from "@/lib/siteConfig";
 import { StarIcon, InstagramIcon } from "@/components/ui/Icons";
 
 /**
@@ -57,12 +57,20 @@ export function SocialProof() {
             </p>
             <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
               <a
-                href={siteConfig.social.googleBusinessProfile}
+                href={googleReviewLinks.read}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[48px] items-center justify-center gap-2 border border-line px-6 text-xs uppercase tracking-wide2 text-warm-white hover:border-champagne"
               >
                 <StarIcon className="h-4 w-4 text-champagne" /> Read Google Reviews
+              </a>
+              <a
+                href={googleReviewLinks.write}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[48px] items-center justify-center gap-2 bg-champagne px-6 text-xs uppercase tracking-wide2 text-black hover:bg-champagne-soft"
+              >
+                <StarIcon className="h-4 w-4" /> Leave a review
               </a>
               <a
                 href={siteConfig.social.instagram}

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { consentDecided, setConsent } from "@/lib/analytics";
+import { consentDecided, setConsent, COOKIE_PREFS_EVENT } from "@/lib/analytics";
 
 /** Minimal, non-intrusive consent bar. Sits above the mobile action bar. */
 export function CookieConsent() {
@@ -10,6 +10,10 @@ export function CookieConsent() {
 
   useEffect(() => {
     if (!consentDecided()) setShow(true);
+    // Reopen on demand from the footer "Manage cookie preferences" link.
+    const reopen = () => setShow(true);
+    window.addEventListener(COOKIE_PREFS_EVENT, reopen);
+    return () => window.removeEventListener(COOKIE_PREFS_EVENT, reopen);
   }, []);
 
   if (!show) return null;

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { footerNav } from "@/lib/nav";
 import { siteConfig, phoneDisplay } from "@/lib/siteConfig";
 import { CallLink } from "@/components/ActionLinks";
+import { CookiePreferencesButton } from "@/components/CookiePreferencesButton";
 import { InstagramIcon, PhoneIcon } from "@/components/ui/Icons";
 
 export function Footer() {
@@ -97,10 +98,13 @@ export function Footer() {
             <span aria-hidden className="text-line">•</span>
             <span>Birmingham &amp; nationwide UK</span>
           </div>
-          <p className="text-xs text-silver">
-            © {year} {siteConfig.legalName} (t/a {siteConfig.tradingName}), company no.{" "}
-            {siteConfig.companyNumber}. All rights reserved.
-          </p>
+          <div className="flex flex-col gap-1 sm:items-end">
+            <CookiePreferencesButton className="text-xs text-silver underline transition-colors hover:text-warm-white" />
+            <p className="text-xs text-silver">
+              © {year} {siteConfig.legalName} (t/a {siteConfig.tradingName}), company no.{" "}
+              {siteConfig.companyNumber}. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

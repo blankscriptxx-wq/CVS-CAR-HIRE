@@ -17,6 +17,15 @@ export default function CookiePolicyPage() {
       intro="This Cookie Policy explains how CVS Hire uses cookies and similar technologies on our website, the categories of cookies we use, and how you can manage your preferences. It should be read alongside our Privacy Policy."
       sections={[
         {
+          heading: "About cookies and the law",
+          blocks: [
+            {
+              type: "p",
+              text: "Cookies are primarily regulated in the UK by the Privacy and Electronic Communications Regulations 2003 (PECR), alongside the UK GDPR where a cookie processes personal data.",
+            },
+          ],
+        },
+        {
           heading: "What are cookies?",
           blocks: [
             {
@@ -46,6 +55,32 @@ export default function CookiePolicyPage() {
                 "Marketing and targeting cookies — used to measure and improve our advertising and to show relevant content (for example, Meta and TikTok pixels and Google Ads). These are set only with your consent.",
               ],
             },
+            { type: "p", text: "The table below sets out the cookies used on our website:" },
+            {
+              type: "table",
+              head: ["Category", "Example cookie / provider", "Purpose", "Duration"],
+              rows: [
+                ["Strictly necessary", "cookie_consent", "Remembers your cookie choices", "12 months"],
+                [
+                  "Functional",
+                  "Aniro chat session cookie",
+                  "Remembers your chat conversation across pages and on return visits",
+                  "Session, or up to 12 months",
+                ],
+                [
+                  "Analytics and performance",
+                  "Google Analytics (_ga, _ga_*)",
+                  "Understands how visitors use the site so we can improve it",
+                  "Up to 24 months",
+                ],
+                [
+                  "Marketing and targeting",
+                  "Meta Pixel (_fbp), TikTok Pixel (ttclid/_ttp), Google Ads conversion cookies",
+                  "Measures and improves advertising, shows relevant content",
+                  "Up to 24 months (varies by provider)",
+                ],
+              ],
+            },
           ],
         },
         {
@@ -53,7 +88,11 @@ export default function CookiePolicyPage() {
           blocks: [
             {
               type: "p",
-              text: "When you first visit our website, our cookie banner lets you accept or decline non-essential cookies. Analytics and marketing technologies load only after you accept. You can change or withdraw your consent at any time by clearing cookies for this site or contacting us.",
+              text: "When you first visit our website, our cookie banner lets you accept or decline non-essential cookies. Analytics and marketing technologies load only after you accept.",
+            },
+            {
+              type: "p",
+              text: "You can change or withdraw your consent at any time using the “Manage cookie preferences” link in our website footer, or by clearing cookies for this site or contacting us.",
             },
             {
               type: "p",
@@ -75,7 +114,7 @@ export default function CookiePolicyPage() {
           blocks: [
             {
               type: "p",
-              text: "Cookies may be “session” cookies, which are deleted when you close your browser, or “persistent” cookies, which remain on your device for a set period or until you delete them. The duration varies by cookie and provider.",
+              text: "Cookies may be “session” cookies, which are deleted when you close your browser, or “persistent” cookies, which remain on your device for a set period or until you delete them. The duration varies by cookie and provider, as set out in the table above.",
             },
           ],
         },

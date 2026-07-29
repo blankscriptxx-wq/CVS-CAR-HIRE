@@ -41,6 +41,15 @@ export function consentDecided(): boolean {
   return window.localStorage.getItem(CONSENT_KEY) !== null;
 }
 
+/** Event the consent banner listens for to reopen (e.g. footer "Manage cookies"). */
+export const COOKIE_PREFS_EVENT = "cvs-cookie-preferences";
+
+/** Reopen the cookie consent banner so the visitor can change their choice. */
+export function openCookiePreferences(): void {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(new CustomEvent(COOKIE_PREFS_EVENT));
+}
+
 declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[];

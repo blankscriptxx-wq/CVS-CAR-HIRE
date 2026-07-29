@@ -1,6 +1,6 @@
 /**
  * Central site configuration. Single source of truth for contact details,
- * chat/WhatsApp settings, socials and analytics ids.
+ * chat, reviews, socials and analytics ids.
  *
  * Values fall back to confirmed public details from the existing CVS site,
  * but every field can be overridden with an environment variable so the
@@ -25,8 +25,6 @@ export const siteConfig = {
     raw: process.env.NEXT_PUBLIC_CVS_PHONE || "01215723422",
     display: "0121 572 3422",
   },
-  // WhatsApp in international format (no +, no spaces) for wa.me links.
-  whatsappNumber: process.env.NEXT_PUBLIC_CVS_WHATSAPP_NUMBER || "447772233314",
   email: process.env.NEXT_PUBLIC_CVS_EMAIL || "info@cvshire.co.uk",
 
   address: {
@@ -42,22 +40,6 @@ export const siteConfig = {
 
   // ── Trust ──────────────────────────────────────────────────
   memberships: ["BVRLA"],
-
-  // ── Live chat (Respond.io) ─────────────────────────────────
-  respondio: {
-    widgetId: process.env.NEXT_PUBLIC_RESPONDIO_WIDGET_ID || "",
-    welcomeMessage:
-      "Welcome to CVS Car Hire. Which vehicle or service are you interested in?",
-    quickReplies: [
-      "Check vehicle availability",
-      "Get a price",
-      "Browse the fleet",
-      "Chauffeur hire",
-      "Wedding or prom hire",
-      "Nationwide delivery",
-      "Speak to the team",
-    ],
-  },
 
   // Geo of the Birmingham premises (B9 4EN, 70 Glover Street).
   geo: { lat: 52.475219, lng: -1.875752 },

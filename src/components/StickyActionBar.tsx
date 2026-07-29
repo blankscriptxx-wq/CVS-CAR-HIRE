@@ -14,7 +14,6 @@ export function StickyActionBar({
   context,
 }: {
   /** Accepted for backwards-compatible call sites; no longer rendered. */
-  whatsappMessage?: string;
   checkAvailabilityHref?: string;
   context?: Record<string, string>;
 }) {

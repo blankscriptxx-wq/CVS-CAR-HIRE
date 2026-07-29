@@ -12,7 +12,6 @@ export function FinalCTA({
   heading?: string;
   copy?: string;
   /** Accepted for backwards-compatible call sites; no longer used. */
-  whatsappMessage?: string;
 }) {
   return (
     <section className="relative overflow-hidden border-t border-line">

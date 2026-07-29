@@ -3,10 +3,10 @@ import { NextResponse } from "next/server";
 /**
  * Secure server-side enquiry handler.
  *
- * Receives the quick-enquiry / contact form and forwards it to Respond.io / CRM
- * using SERVER-ONLY environment variables (never exposed to the client). If no
- * webhook is configured it validates and acknowledges so the frontend handoff
- * (WhatsApp / live chat) still works in development.
+ * Receives the quick-enquiry / contact form and, when configured, forwards it to
+ * a CRM/lead webhook using SERVER-ONLY environment variables (never exposed to
+ * the client). If no webhook is configured it validates and acknowledges — the
+ * primary lead delivery is the Aniro chat hand-off on the client.
  */
 
 export const runtime = "nodejs";
@@ -55,8 +55,8 @@ export async function POST(request: Request) {
     );
   }
 
-  const webhookUrl = process.env.RESPONDIO_WEBHOOK_URL;
-  const token = process.env.RESPONDIO_API_TOKEN;
+  const webhookUrl = process.env.LEAD_WEBHOOK_URL;
+  const token = process.env.LEAD_WEBHOOK_TOKEN;
 
   if (webhookUrl) {
     try {
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
       if (!res.ok) throw new Error(`Upstream ${res.status}`);
     } catch (err) {
       console.error("[enquiry] forward failed:", err);
-      // Don't fail the user journey — the client still offers WhatsApp/live chat.
+      // Don't fail the user journey — the client still delivers the lead via Aniro chat.
       return NextResponse.json({ ok: true, forwarded: false });
     }
     return NextResponse.json({ ok: true, forwarded: true });

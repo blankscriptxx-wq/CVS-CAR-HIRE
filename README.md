@@ -2,7 +2,7 @@
 
 A cinematic, mobile-first, **conversation-led** website for CVS Car Hire (Birmingham) —
 luxury, prestige, supercar and performance vehicle hire with self-drive, chauffeur and nationwide
-UK delivery. Built for qualified enquiries (Check Availability → live chat / WhatsApp / call / form),
+UK delivery. Built for qualified enquiries (Check Availability → Aniro chat / call / form),
 not e-commerce.
 
 Built with **Next.js (App Router) · TypeScript · Tailwind CSS · Framer Motion**, ready to deploy on
@@ -15,11 +15,13 @@ Built with **Next.js (App Router) · TypeScript · Tailwind CSS · Framer Motion
 - Cinematic, dark, editorial design system (mobile-first, WCAG 2.2 AA-minded)
 - Full site: home, digital-showroom fleet, individual vehicle pages, all service landing pages,
   location pages, About, How It Works, Delivery, FAQs, Reviews, Journal, Contact, legal pages
-- Staged/progressive quick-enquiry panel with WhatsApp / live-chat handoff
-- WhatsApp integration (page-aware, pre-filled messages, single config source)
-- Respond.io live-chat loader (public widget id) + secure server-side enquiry forwarding
-- Sticky mobile action bar (Live Chat · WhatsApp · Call), fleet filtering, shortlist & recently-viewed
-- Consent-aware analytics event layer (GA4 / GTM / Meta / TikTok ready)
+- Staged/progressive quick-enquiry & quote panels that deliver leads straight into the Aniro chat
+- Aniro chat: our own on-brand panel over Aniro's widget API (persistent session, transcript memory,
+  in-chat contact capture) — the single conversational channel; auto-sends form leads with no send tap
+- Keyless Google reviews — "Read reviews" / "Leave a review" deep-links from the Place ID (no API key);
+  optional Featurable or Places API path for on-page review cards
+- Sticky mobile action bar (Chat · Call), fleet filtering, shortlist & recently-viewed
+- Consent-aware analytics event layer (GA4 / GTM / Meta / TikTok ready) with a footer cookie-preferences control
 - SEO: per-page metadata, canonical, sitemap, robots, legacy redirects, rich JSON-LD structured data
 - Typed local content layer (CMS-migration-ready) — no external accounts needed to run
 
@@ -33,7 +35,7 @@ npm install
 
 # 2. Configure environment
 cp .env.example .env.local
-#    → fill in WhatsApp number, Respond.io widget id, analytics ids, etc.
+#    → optional: analytics ids, Aniro key override, reviews widget/key, lead webhook, etc.
 
 # 3. Run the dev server
 npm run dev        # http://localhost:3000
@@ -56,10 +58,11 @@ See [`.env.example`](./.env.example). Key ones:
 | Variable | Purpose | Secret? |
 | --- | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical/sitemap/OG base URL | No |
-| `NEXT_PUBLIC_CVS_WHATSAPP_NUMBER` | WhatsApp number (intl, no `+`) | No |
 | `NEXT_PUBLIC_CVS_PHONE` | Phone for `tel:` links | No |
-| `NEXT_PUBLIC_RESPONDIO_WIDGET_ID` | Respond.io web-chat widget id | No |
-| `RESPONDIO_WEBHOOK_URL` / `RESPONDIO_API_TOKEN` | Server-side enquiry forwarding | **Yes** |
+| `NEXT_PUBLIC_ANIRO_WIDGET_KEY` | Aniro chat widget key (has a built-in default) | No |
+| `NEXT_PUBLIC_GOOGLE_PLACE_ID` | Google Place ID for keyless review links | No |
+| `NEXT_PUBLIC_FEATURABLE_WIDGET_ID` / `GOOGLE_PLACES_API_KEY` | Optional on-page review cards | key is **Yes** |
+| `LEAD_WEBHOOK_URL` / `LEAD_WEBHOOK_TOKEN` | Optional server-side CRM lead backstop | **Yes** |
 | `NEXT_PUBLIC_GA4_ID` / `NEXT_PUBLIC_GTM_ID` / `NEXT_PUBLIC_META_PIXEL_ID` / `NEXT_PUBLIC_TIKTOK_PIXEL_ID` | Analytics (consent-gated) | No |
 
 > ⚠️ Never put private API keys in a `NEXT_PUBLIC_*` variable — those are exposed to the browser.
@@ -82,8 +85,8 @@ src/
 │  └─ fleet/               # FleetShowroom
 └─ lib/
    ├─ data/                # THE CONTENT LAYER (vehicles, services, locations, …)
-   ├─ siteConfig.ts        # contact / chat / analytics config (env-overridable)
-   ├─ whatsapp.ts          # wa.me link + message builders
+   ├─ siteConfig.ts        # contact / chat / reviews / analytics config (env-overridable)
+   ├─ aniro.ts             # Aniro chat API + lead delivery
    ├─ analytics.ts         # consent-aware event layer
    └─ seo.ts               # metadata + JSON-LD builders
 ```
@@ -110,9 +113,9 @@ See [`docs/CONTENT-TODO.md`](./docs/CONTENT-TODO.md) for fields awaiting owner c
 
 ## 🖼 Images
 
-Vehicle/section images use an on-brand **placeholder** component until real photography is added.
-Drop real files at the paths listed in `docs/ASSET-CHECKLIST.md` and set `placeholder: false` (or
-remove the flag) on the matching asset in the data files.
+Every vehicle ships with real photography under `public/images/fleet/`. New images drop in at the
+paths referenced in the data files; the `Media` component still falls back to an on-brand placeholder
+for any asset flagged `placeholder: true`.
 
 ---
 

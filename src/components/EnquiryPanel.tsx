@@ -39,7 +39,7 @@ const labelClass = "block text-[11px] uppercase tracking-wide2 text-silver mb-2"
 
 /**
  * Staged, progressive quick-enquiry panel. On completion it POSTs to the secure
- * /api/enquiry route (CRM/Respond.io forwarding) and offers to continue on
+ * /api/enquiry route (CRM/lead-webhook forwarding) and offers to continue on
  * the Aniro chat with the collected context.
  */
 export function EnquiryPanel({

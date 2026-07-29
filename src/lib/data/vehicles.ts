@@ -1,4 +1,4 @@
-import type { Vehicle, ImageAsset } from "@/lib/types";
+import type { Vehicle, ImageAsset, VehicleCategory } from "@/lib/types";
 
 /**
  * Fleet data. Copy is original and premium. Specifications are limited to
@@ -261,15 +261,15 @@ export const vehicles: Vehicle[] = [
     transmission: "automatic",
     fuelType: "petrol",
     drivetrain: "awd",
-    selfDriveAvailable: true,
+    selfDriveAvailable: false,
     chauffeurAvailable: true,
     availabilityStatus: "available",
     featured: true,
-    recommendedOccasions: ["wedding", "chauffeur", "corporate", "self-drive"],
+    recommendedOccasions: ["wedding", "chauffeur", "corporate"],
     relatedVehicles: ["rolls-royce-ghost-hire", "mercedes-amg-g63-hire", "lamborghini-urus-performante-hire"],
-    metaTitle: "Rolls-Royce Cullinan Hire Birmingham | Luxury SUV & Chauffeur | CVS Car Hire",
+    metaTitle: "Rolls-Royce Cullinan Chauffeur Hire Birmingham | Luxury SUV | CVS Car Hire",
     metaDescription:
-      "Hire the Rolls-Royce Cullinan in Birmingham with CVS Car Hire. Self-drive and chauffeur-driven options, nationwide UK delivery. Check availability today.",
+      "Chauffeur-driven Rolls-Royce Cullinan hire in Birmingham with CVS Car Hire — weddings, corporate and occasions. Nationwide UK delivery. Check availability today.",
   },
   {
     id: "range-rover-sport",
@@ -509,15 +509,15 @@ export const vehicles: Vehicle[] = [
     transmission: "automatic",
     fuelType: "petrol",
     drivetrain: "rwd",
-    selfDriveAvailable: true,
+    selfDriveAvailable: false,
     chauffeurAvailable: true,
     availabilityStatus: "available",
     featured: true,
-    recommendedOccasions: ["wedding", "chauffeur", "corporate", "self-drive"],
+    recommendedOccasions: ["wedding", "chauffeur", "corporate"],
     relatedVehicles: ["rolls-royce-cullinan-hire", "rolls-royce-ghost-hire", "mercedes-v-class-hire"],
-    metaTitle: "Rolls-Royce Ghost Hire Birmingham | Wedding & Prestige Car | CVS Car Hire",
+    metaTitle: "Rolls-Royce Ghost Chauffeur Hire Birmingham | Wedding & Prestige | CVS Car Hire",
     metaDescription:
-      "Hire the Rolls-Royce Ghost in Birmingham with CVS Car Hire. Chauffeur-driven and self-drive options for weddings and occasions. Check availability today.",
+      "Chauffeur-driven Rolls-Royce Ghost hire in Birmingham with CVS Car Hire — the definitive wedding and prestige car. Nationwide UK delivery. Check availability today.",
   },
   // ── Convertibles ───────────────────────────────────────────
   {
@@ -597,8 +597,40 @@ export function getFeaturedVehicles(): Vehicle[] {
   return vehicles.filter((v) => v.featured);
 }
 
+/**
+ * Vehicles that legitimately belong to more than one fleet category, so a car
+ * appears under every relevant filter (e.g. a Spyder is a supercar AND a
+ * convertible). Kept in one place rather than scattered through the data.
+ */
+const CATEGORY_OVERLAPS: Record<string, VehicleCategory[]> = {
+  "ferrari-roma-hire": ["prestige"],
+  "lamborghini-huracan-performante-spyder-hire": ["convertible"],
+  "audi-r8-spyder-hire": ["convertible"],
+  "lamborghini-urus-performante-hire": ["supercar", "performance"],
+  "mercedes-amg-g63-hire": ["performance"],
+  "rolls-royce-cullinan-hire": ["prestige"],
+  "range-rover-sport-hire": ["prestige"],
+  "range-rover-svr-hire": ["performance"],
+  "bmw-x5-hire": ["group-travel"],
+  "mercedes-glc-43-amg-hire": ["luxury-4x4"],
+  "bmw-4-series-convertible-hire": ["prestige"],
+};
+
+/**
+ * Does a vehicle belong to a fleet category? Matches the primary category, any
+ * declared secondary categories, and the overlap map above. The "chauffeur"
+ * category is resolved from chauffeurAvailable so chauffeur-driven cars always
+ * populate that filter without needing a separate tag.
+ */
+export function vehicleInCategory(v: Vehicle, category: string): boolean {
+  if (category === "chauffeur") return v.chauffeurAvailable;
+  if (v.category === category) return true;
+  if (v.categories?.includes(category as VehicleCategory)) return true;
+  return (CATEGORY_OVERLAPS[v.slug] ?? []).includes(category as VehicleCategory);
+}
+
 export function getVehiclesByCategory(category: string): Vehicle[] {
-  return vehicles.filter((v) => v.category === category);
+  return vehicles.filter((v) => vehicleInCategory(v, category));
 }
 
 export function getRelatedVehicles(vehicle: Vehicle, limit = 3): Vehicle[] {

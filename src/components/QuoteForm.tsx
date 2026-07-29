@@ -22,7 +22,7 @@ import { airports } from "@/lib/data/airports";
 import { whatsappLink } from "@/lib/whatsapp";
 import { track, captureUtm } from "@/lib/analytics";
 import { openLiveChat } from "@/components/ActionLinks";
-import { ArrowRight, WhatsAppIcon, ChatIcon, CheckIcon } from "@/components/ui/Icons";
+import { ArrowRight, WhatsAppIcon, ChatIcon, CheckIcon, RefreshIcon } from "@/components/ui/Icons";
 
 type Mode = "self-drive" | "chauffeur";
 
@@ -216,6 +216,29 @@ export function QuoteForm() {
     setDone(true);
   }
 
+  /** Reset the form so the visitor can run another quote. */
+  function newQuote() {
+    setDone(false);
+    setName("");
+    setMobile("");
+    setEmail("");
+    setStart("");
+    setEnd("");
+    setPickup("");
+    setDropoff("");
+    setChDate("");
+    setPickupTime("");
+    setReturnTime("");
+    setStops(0);
+    setPassengers(2);
+    setRequests("");
+    setDistanceMiles(0);
+    setMilesFromBase(0);
+    setIsLondon(false);
+    setDistStatus("idle");
+    track("begin_enquiry", { source: "quote-new" });
+  }
+
   // ── Success: reveal the instant estimate + team-review note ──
   if (done && activeQuote) {
     return (
@@ -252,6 +275,13 @@ export function QuoteForm() {
             <ChatIcon className="h-4 w-4 text-champagne" /> Start Live Chat
           </button>
         </div>
+        <button
+          type="button"
+          onClick={newQuote}
+          className="mt-4 inline-flex w-full items-center justify-center gap-2 text-xs uppercase tracking-wide2 text-silver transition-colors hover:text-champagne"
+        >
+          <RefreshIcon className="h-4 w-4" /> Start a new quote
+        </button>
       </div>
     );
   }

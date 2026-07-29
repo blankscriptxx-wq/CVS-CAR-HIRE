@@ -51,6 +51,15 @@ export function ArrowDown(p: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function RefreshIcon(p: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base} {...p}>
+      <path d="M20 11a8 8 0 1 0-.5 4" />
+      <path d="M20 4v7h-7" />
+    </svg>
+  );
+}
+
 export function CheckIcon(p: SVGProps<SVGSVGElement>) {
   return (
     <svg {...base} {...p}>

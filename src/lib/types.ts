@@ -56,7 +56,8 @@ export interface Vehicle {
   model: string;
   edition?: string;
   year?: number;
-  category: VehicleCategory;
+  category: VehicleCategory; // primary category
+  categories?: VehicleCategory[]; // additional categories this vehicle also appears under
   bodyType?: BodyType;
 
   heroImage: ImageAsset;

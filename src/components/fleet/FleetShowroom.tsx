@@ -7,6 +7,7 @@ import type { Vehicle, VehicleCategory } from "@/lib/types";
 import { VehicleCard } from "@/components/VehicleCard";
 import { categories, categoryLabel } from "@/lib/data/categories";
 import { vehicleName } from "@/lib/vehicleDisplay";
+import { vehicleInCategory } from "@/lib/data/vehicles";
 import { useShortlist } from "@/lib/useShortlist";
 import { track } from "@/lib/analytics";
 import { CloseIcon, HeartIcon } from "@/components/ui/Icons";
@@ -45,7 +46,7 @@ export function FleetShowroom({ vehicles }: { vehicles: Vehicle[] }) {
   const filtered = useMemo(() => {
     let list = vehicles.slice();
 
-    if (category !== "all") list = list.filter((v) => v.category === category);
+    if (category !== "all") list = list.filter((v) => vehicleInCategory(v, category));
     if (manufacturer) list = list.filter((v) => v.manufacturer === manufacturer);
     if (hire === "self-drive") list = list.filter((v) => v.selfDriveAvailable);
     if (hire === "chauffeur") list = list.filter((v) => v.chauffeurAvailable);

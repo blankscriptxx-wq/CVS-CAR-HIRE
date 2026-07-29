@@ -11,11 +11,12 @@ const config: Config = {
         soft: "#181818", // soft black
         "warm-white": "#F4F1EA",
         silver: "#A6A6A6",
-        // Official CVS Hire brand gold (from the brand pack): Gold #C9A227,
-        // Champagne #E8CB66, Bronze #96761A.
+        // CVS Hire brand gold (brand sheet). The flat CVS Gold #C9A227 reads
+        // harsh as a UI accent, so the softer Champagne #E8CB66 is the primary
+        // accent, with CVS Gold for hover depth and Bronze #96761A for dim.
         champagne: {
-          DEFAULT: "#C9A227",
-          soft: "#E8CB66",
+          DEFAULT: "#E8CB66",
+          soft: "#F1DE93",
           dim: "#96761A",
         },
         line: "rgba(244,241,234,0.12)", // hairline dividers

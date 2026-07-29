@@ -2,14 +2,18 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StickyActionBar } from "@/components/StickyActionBar";
 
+export type LegalBlock =
+  | { type: "p"; text: string }
+  | { type: "ul"; items: string[] };
+
 export interface LegalSection {
   heading: string;
-  paragraphs: string[];
+  blocks: LegalBlock[];
 }
 
 /**
- * Renders legal content with a prominent notice that the text is a draft
- * requiring approval by CVS Car Hire / a solicitor before going live.
+ * Renders legal content (Privacy, Cookies, Terms) in a clean, readable layout
+ * with a "last updated" date. Sections support paragraphs and bullet lists.
  */
 export function LegalPage({
   title,
@@ -30,16 +34,6 @@ export function LegalPage({
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: title, path: `/${slug}` }]} />
 
       <section className="shell max-w-prose py-14 md:py-20">
-        {/* Approval notice */}
-        <div className="mb-10 border border-champagne/40 bg-champagne/5 p-5">
-          <p className="text-xs leading-relaxed text-champagne-soft">
-            <strong className="text-champagne">Draft — requires approval.</strong> This is
-            placeholder legal content for layout purposes only. It must be reviewed and approved by
-            CVS Car Hire and, where appropriate, a qualified solicitor before publication. Do not
-            treat this as final legal terms.
-          </p>
-        </div>
-
         <p className="text-xs uppercase tracking-wide2 text-silver">Last updated: {updated}</p>
         <p className="mt-6 text-base leading-relaxed text-silver">{intro}</p>
 
@@ -48,11 +42,21 @@ export function LegalPage({
             <div key={s.heading}>
               <h2 className="font-display text-2xl text-warm-white">{s.heading}</h2>
               <div className="mt-3 space-y-4">
-                {s.paragraphs.map((p, i) => (
-                  <p key={i} className="text-sm leading-relaxed text-silver">
-                    {p}
-                  </p>
-                ))}
+                {s.blocks.map((b, i) =>
+                  b.type === "p" ? (
+                    <p key={i} className="text-sm leading-relaxed text-silver">
+                      {b.text}
+                    </p>
+                  ) : (
+                    <ul key={i} className="ml-5 list-disc space-y-2 text-sm leading-relaxed text-silver marker:text-champagne">
+                      {b.items.map((it, j) => (
+                        <li key={j} className="pl-1">
+                          {it}
+                        </li>
+                      ))}
+                    </ul>
+                  )
+                )}
               </div>
             </div>
           ))}

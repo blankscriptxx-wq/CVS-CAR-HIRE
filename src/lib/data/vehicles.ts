@@ -775,6 +775,46 @@ export const vehicles: Vehicle[] = [
     metaDescription:
       "Hire this striking red Mercedes-AMG G63 (G-Wagon) in Birmingham with CVS Car Hire. Self-drive luxury 4x4, nationwide UK delivery. Check availability today.",
   },
+  {
+    id: "bmw-3-series",
+    slug: "bmw-3-series-hire",
+    manufacturer: "BMW",
+    model: "3 Series",
+    edition: "M Sport",
+    category: "prestige",
+    bodyType: "saloon",
+    heroImage: img("bmw-3-series-hire", "hero.jpg", "Grey BMW 3 Series M Sport for prestige car hire at CVS Car Hire Birmingham"),
+    gallery: [
+      img("bmw-3-series-hire", "front.jpg", "Front three-quarter view of the BMW 3 Series M Sport"),
+      img("bmw-3-series-hire", "side.jpg", "Side profile of the BMW 3 Series M Sport"),
+      img("bmw-3-series-hire", "rear.jpg", "Rear three-quarter view of the BMW 3 Series"),
+      img("bmw-3-series-hire", "rear-angle.jpg", "Rear of the BMW 3 Series M Sport"),
+      img("bmw-3-series-hire", "cockpit.jpg", "BMW 3 Series steering wheel and curved display"),
+      img("bmw-3-series-hire", "console.jpg", "BMW 3 Series centre console and gear selector"),
+      img("bmw-3-series-hire", "badge.jpg", "BMW 320i rear badge"),
+      img("bmw-3-series-hire", "headlight.jpg", "BMW 3 Series M Sport front and headlight detail"),
+      img("bmw-3-series-hire", "wheel.jpg", "BMW 3 Series M Sport alloy wheel"),
+    ],
+    shortDescription:
+      "The definitive executive saloon — refined, understated and effortless.",
+    fullDescription:
+      "The BMW 3 Series has long set the benchmark for the executive saloon, and this M Sport example blends sharp looks with genuine everyday refinement. Comfortable, quiet and beautifully finished, with the latest curved display and BMW's polished driving manners, it is the ideal choice for business travel, an airport run or a quality weekend away. Understated where our supercars are loud, the 3 Series is prestige without the fuss.",
+    seats: 5,
+    doors: 4,
+    transmission: "automatic",
+    fuelType: "petrol",
+    selfDriveAvailable: true,
+    chauffeurAvailable: false,
+    availabilityStatus: "available",
+    featured: true,
+    newArrival: true,
+    minimumAge: 23,
+    recommendedOccasions: ["self-drive", "corporate", "weekend"],
+    relatedVehicles: ["bmw-4-series-convertible-hire", "mercedes-glc-43-amg-hire", "bmw-x5-hire"],
+    metaTitle: "BMW 3 Series M Sport Hire Birmingham | Prestige Car Hire | CVS Car Hire",
+    metaDescription:
+      "Hire the BMW 3 Series M Sport in Birmingham with CVS Car Hire. Self-drive prestige saloon, nationwide UK delivery available. Check availability today.",
+  },
 ];
 
 // ── Derived helpers ──────────────────────────────────────────

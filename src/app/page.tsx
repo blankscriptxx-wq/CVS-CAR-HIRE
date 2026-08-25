@@ -1,7 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { QuickEnquiry } from "@/components/sections/QuickEnquiry";
 import { FeaturedFleet } from "@/components/sections/FeaturedFleet";
-import { MarqueStrip } from "@/components/sections/MarqueStrip";
+// import { MarqueStrip } from "@/components/sections/MarqueStrip"; // hidden for now
 import { BrowseByExperience } from "@/components/sections/BrowseByExperience";
 import { WhyCVS } from "@/components/sections/WhyCVS";
 import { SignatureService } from "@/components/sections/SignatureService";
@@ -15,7 +15,7 @@ export default function HomePage() {
       <Hero />
       <QuickEnquiry />
       <FeaturedFleet />
-      <MarqueStrip />
+      {/* <MarqueStrip /> — hidden for now; re-enable when ready */}
       <BrowseByExperience />
       <WhyCVS />
       <SignatureService />

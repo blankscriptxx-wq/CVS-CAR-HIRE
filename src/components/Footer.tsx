@@ -101,8 +101,7 @@ export function Footer() {
           <div className="flex flex-col gap-1 sm:items-end">
             <CookiePreferencesButton className="text-xs text-silver underline transition-colors hover:text-warm-white" />
             <p className="text-xs text-silver">
-              © {year} {siteConfig.legalName} (t/a {siteConfig.tradingName}), company no.{" "}
-              {siteConfig.companyNumber}. All rights reserved.
+              © {year} CVS Hire. All rights reserved.
             </p>
           </div>
         </div>

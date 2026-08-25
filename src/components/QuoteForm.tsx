@@ -179,17 +179,51 @@ export function QuoteForm() {
 
   const canSubmit = Boolean(activeQuote && name.trim() && mobile.trim());
 
-  /** Full lead + vehicle details, pre-filled for the WhatsApp hand-off. */
-  const leadMessage = [
+  /**
+   * WhatsApp pre-fill for the quote. Structured as a field template so the team
+   * receives every detail in a consistent, scannable format. (The quote engine
+   * itself is unchanged — this only formats the hand-off message.)
+   */
+  const sdVehicleName = (() => {
+    const v = selfDriveVehicles.find((x) => x.slug === sdVehicle);
+    return v ? vehicleName(v) : "";
+  })();
+
+  const contactLines = [
     "New website quote enquiry.",
     `Name: ${name}`,
     `Mobile: ${mobile}`,
-    email ? `Email: ${email}` : "",
-    `Details: ${summary}`,
-    activeQuote ? `Estimated: from ${formatPrice(activeQuote.total)}.` : "",
+    email ? `Email: ${email}` : null,
+  ].filter(Boolean);
+
+  const detailLines =
+    mode === "chauffeur"
+      ? [
+          `Occasion: ${eventType}`,
+          `Date and time of hire: ${[chDate, pickupTime].filter(Boolean).join(" ") || "—"}${
+            returnTime ? ` – ${returnTime}` : ""
+          }`,
+          `Pick-up location: ${pickup || "—"}`,
+          `Drop-off location: ${dropoff || "—"}`,
+          `One-way or return journey: ${journey === "return" ? "Return" : "One-way"}`,
+          `Multiple stops (Yes/No): ${stops > 0 ? `Yes (${stops})` : "No"}`,
+          `Vehicle: ${chRate?.label ?? ""}`,
+          `Number of passengers: ${passengers}`,
+          `Any special requests: ${requests.trim() || "None"}`,
+        ]
+      : [
+          `Vehicle: ${sdVehicleName}`,
+          `Date and time of hire: ${start}${end ? ` to ${end}` : ""}`,
+          "Hire type: Self-drive",
+        ];
+
+  const leadMessage = [
+    contactLines.join("\n"),
+    detailLines.join("\n"),
+    activeQuote ? `Estimated: from ${formatPrice(activeQuote.total)}.` : null,
   ]
     .filter(Boolean)
-    .join("\n");
+    .join("\n\n");
 
   function submit() {
     if (!canSubmit || !activeQuote) return;

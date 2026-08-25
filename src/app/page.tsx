@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { QuickEnquiry } from "@/components/sections/QuickEnquiry";
 import { FeaturedFleet } from "@/components/sections/FeaturedFleet";
+import { MarqueStrip } from "@/components/sections/MarqueStrip";
 import { BrowseByExperience } from "@/components/sections/BrowseByExperience";
 import { WhyCVS } from "@/components/sections/WhyCVS";
 import { SignatureService } from "@/components/sections/SignatureService";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Hero />
       <QuickEnquiry />
       <FeaturedFleet />
+      <MarqueStrip />
       <BrowseByExperience />
       <WhyCVS />
       <SignatureService />

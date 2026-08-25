@@ -1,11 +1,11 @@
 "use client";
 
 import { CallLink, LiveChatButton } from "@/components/ActionLinks";
-import { PhoneIcon, ChatIcon, ArrowRight } from "@/components/ui/Icons";
+import { PhoneIcon, WhatsAppIcon, ArrowRight } from "@/components/ui/Icons";
 import Link from "next/link";
 
 /**
- * Sticky mobile action bar — Chat (Aniro) · Call. Hidden on desktop.
+ * Sticky mobile action bar — WhatsApp · Call. Hidden on desktop.
  * On vehicle pages, pass `checkAvailabilityHref` to prioritise Check
  * Availability + Call.
  */
@@ -37,15 +37,15 @@ export function StickyActionBar({
     );
   }
 
-  // Default: Chat · Call.
+  // Default: WhatsApp · Call.
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-px border-t border-line bg-black/95 backdrop-blur md:hidden">
       <LiveChatButton
         context={context}
         className="flex min-h-[56px] flex-col items-center justify-center gap-1 text-warm-white"
       >
-        <ChatIcon className="h-5 w-5 text-champagne" />
-        <span className="text-[10px] uppercase tracking-wide2">Chat</span>
+        <WhatsAppIcon className="h-5 w-5 text-champagne" />
+        <span className="text-[10px] uppercase tracking-wide2">WhatsApp</span>
       </LiveChatButton>
       <CallLink
         context={context}

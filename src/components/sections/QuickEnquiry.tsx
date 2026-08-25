@@ -1,7 +1,7 @@
 import { EnquiryPanel } from "@/components/EnquiryPanel";
 import { Reveal } from "@/components/ui/Reveal";
 import { LiveChatButton, CallLink } from "@/components/ActionLinks";
-import { ChatIcon, PhoneIcon } from "@/components/ui/Icons";
+import { WhatsAppIcon, PhoneIcon } from "@/components/ui/Icons";
 import { phoneDisplay } from "@/lib/siteConfig";
 
 /** Quick-enquiry band that partially overlaps the hero on larger screens. */
@@ -25,7 +25,7 @@ export function QuickEnquiry() {
 
             <div className="mt-8 flex flex-col gap-3">
               <LiveChatButton className="inline-flex min-h-[48px] items-center justify-center gap-3 border border-line px-6 text-xs uppercase tracking-wide2 text-warm-white hover:border-champagne sm:justify-start">
-                <ChatIcon className="h-4 w-4 text-champagne" /> Chat with us
+                <WhatsAppIcon className="h-4 w-4 text-champagne" /> WhatsApp us
               </LiveChatButton>
               <CallLink
                 context={{ source: "home-quick-enquiry" }}

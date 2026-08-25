@@ -26,6 +26,8 @@ export const siteConfig = {
     display: "0121 572 3422",
   },
   email: process.env.NEXT_PUBLIC_CVS_EMAIL || "info@cvshire.co.uk",
+  // WhatsApp in international format (no +, no spaces) for wa.me links.
+  whatsappNumber: process.env.NEXT_PUBLIC_CVS_WHATSAPP_NUMBER || "447772233314",
 
   address: {
     streetAddress: "70 Glover Street",

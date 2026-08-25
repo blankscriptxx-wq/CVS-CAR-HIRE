@@ -27,7 +27,8 @@ import { ShortlistButton } from "@/components/ShortlistButton";
 import { CallLink, LiveChatButton } from "@/components/ActionLinks";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { ButtonLink } from "@/components/ui/Button";
-import { PhoneIcon, ChatIcon, ArrowRight } from "@/components/ui/Icons";
+import { PhoneIcon, WhatsAppIcon, ArrowRight } from "@/components/ui/Icons";
+import { vehicleWhatsAppMessage } from "@/lib/whatsapp";
 import { buildMetadata, vehicleSchema, faqSchema } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -202,9 +203,10 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <LiveChatButton
                 context={{ page: "vehicle", slug: vehicle.slug }}
+                message={vehicleWhatsAppMessage(name)}
                 className="inline-flex min-h-[48px] items-center justify-center gap-2 border border-line px-6 text-xs uppercase tracking-wide2 text-warm-white hover:border-champagne"
               >
-                <ChatIcon className="h-4 w-4 text-champagne" /> Chat with us
+                <WhatsAppIcon className="h-4 w-4 text-champagne" /> WhatsApp us
               </LiveChatButton>
               <CallLink
                 context={{ page: "vehicle", slug: vehicle.slug }}

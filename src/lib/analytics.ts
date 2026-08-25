@@ -12,6 +12,7 @@ export type AnalyticsEvent =
   | "view_vehicle"
   | "select_vehicle"
   | "open_live_chat"
+  | "click_whatsapp"
   | "click_call"
   | "begin_enquiry"
   | "submit_enquiry"

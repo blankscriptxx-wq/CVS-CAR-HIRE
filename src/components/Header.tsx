@@ -13,7 +13,7 @@ import {
   MenuIcon,
   CloseIcon,
   PhoneIcon,
-  ChatIcon,
+  WhatsAppIcon,
   InstagramIcon,
   ArrowRight,
 } from "@/components/ui/Icons";
@@ -216,8 +216,8 @@ export function Header() {
               {/* Direct contact CTAs */}
               <div className="mt-6 grid grid-cols-2 gap-3">
                 <LiveChatButton className="flex flex-col items-center gap-2 border border-line py-4 text-warm-white">
-                  <ChatIcon className="h-5 w-5 text-champagne" />
-                  <span className="text-[10px] uppercase tracking-wide2">Chat</span>
+                  <WhatsAppIcon className="h-5 w-5 text-champagne" />
+                  <span className="text-[10px] uppercase tracking-wide2">WhatsApp</span>
                 </LiveChatButton>
                 <CallLink className="flex flex-col items-center gap-2 border border-line py-4 text-warm-white">
                   <PhoneIcon className="h-5 w-5 text-champagne" />

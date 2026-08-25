@@ -19,10 +19,10 @@ import {
   type ChauffeurMode,
 } from "@/lib/data/chauffeur";
 import { airports } from "@/lib/data/airports";
-import { sendToAniro, openAniro } from "@/lib/aniro";
+import { whatsappLink } from "@/lib/whatsapp";
 import { track, captureUtm } from "@/lib/analytics";
 import { CallLink } from "@/components/ActionLinks";
-import { ArrowRight, ChatIcon, CheckIcon, RefreshIcon, PhoneIcon } from "@/components/ui/Icons";
+import { ArrowRight, WhatsAppIcon, CheckIcon, RefreshIcon, PhoneIcon } from "@/components/ui/Icons";
 
 type Mode = "self-drive" | "chauffeur";
 
@@ -83,7 +83,6 @@ export function QuoteForm() {
   const [mobile, setMobile] = useState("");
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
 
   // Auto-estimate mileage + zone from pickup/drop-off postcodes.
   useEffect(() => {
@@ -180,7 +179,7 @@ export function QuoteForm() {
 
   const canSubmit = Boolean(activeQuote && name.trim() && mobile.trim());
 
-  /** Full lead + vehicle details, composed for the Aniro chat hand-off. */
+  /** Full lead + vehicle details, pre-filled for the WhatsApp hand-off. */
   const leadMessage = [
     "New website quote enquiry.",
     `Name: ${name}`,
@@ -192,40 +191,36 @@ export function QuoteForm() {
     .filter(Boolean)
     .join("\n");
 
-  async function submit() {
+  function submit() {
     if (!canSubmit || !activeQuote) return;
-    setSubmitting(true);
-    track("submit_enquiry", { source: "quote", mode, total: activeQuote.total });
-    try {
-      await fetch("/api/enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          mobile,
-          email,
-          source: `quote-${mode}`,
-          message: summary,
-          estimate: activeQuote.total,
-          vehicle: mode === "self-drive" ? sdVehicle : chVehicle,
-          ...(mode === "chauffeur"
-            ? {
-                eventType, pickup, dropoff, date: chDate, pickupTime, returnTime,
-                journey, carOption: chMode, passengers, stops, requests,
-                milesFromBase, isLondon,
-              }
-            : { start, end }),
-          ...captureUtm(),
-        }),
-      });
-    } catch {
-      /* non-blocking */
+    track("submit_enquiry", { source: "quote", mode, total: String(activeQuote.total) });
+    // Open WhatsApp with the full quote pre-filled — done inside the click gesture
+    // so it isn't blocked. This is the primary communication channel.
+    if (typeof window !== "undefined") {
+      window.open(whatsappLink(leadMessage), "_blank", "noopener");
     }
-    // Deliver the collected customer + vehicle details straight into the Aniro
-    // conversation — automatically, so the team receives every lead (and can
-    // offer a better price) without the visitor having to press send in chat.
-    await sendToAniro(leadMessage).catch(() => {});
-    setSubmitting(false);
+    // Record the lead server-side too (best-effort, non-blocking).
+    fetch("/api/enquiry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name,
+        mobile,
+        email,
+        source: `quote-${mode}`,
+        message: summary,
+        estimate: activeQuote.total,
+        vehicle: mode === "self-drive" ? sdVehicle : chVehicle,
+        ...(mode === "chauffeur"
+          ? {
+              eventType, pickup, dropoff, date: chDate, pickupTime, returnTime,
+              journey, carOption: chMode, passengers, stops, requests,
+              milesFromBase, isLondon,
+            }
+          : { start, end }),
+        ...captureUtm(),
+      }),
+    }).catch(() => {});
     setDone(true);
   }
 
@@ -267,18 +262,18 @@ export function QuoteForm() {
           <Breakdown quote={activeQuote} />
         </div>
         <p className="mt-4 text-[11px] leading-relaxed text-silver/80">
-          This is an instant estimate, and your details have already been sent to our team. We&rsquo;ll
-          review your request and confirm the final quote &mdash; we may call to finalise the details
-          and can often tailor the price to your booking.
+          This is an instant estimate. Send it to us on WhatsApp and our team will confirm the final
+          quote &mdash; we may call to finalise the details and can often tailor the price to your booking.
         </p>
         <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-          <button
-            type="button"
-            onClick={() => openAniro()}
+          <a
+            href={whatsappLink(leadMessage)}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 bg-champagne px-6 text-xs font-medium uppercase tracking-wide2 text-black hover:bg-champagne-soft"
           >
-            <ChatIcon className="h-4 w-4" /> Continue in chat
-          </button>
+            <WhatsAppIcon className="h-4 w-4" /> Send on WhatsApp
+          </a>
           <CallLink
             context={{ source: "quote-success" }}
             className="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 border border-line px-6 text-xs uppercase tracking-wide2 text-warm-white hover:border-champagne"
@@ -571,10 +566,10 @@ export function QuoteForm() {
       <button
         type="button"
         onClick={submit}
-        disabled={!canSubmit || submitting}
+        disabled={!canSubmit}
         className="mt-6 inline-flex min-h-[52px] w-full items-center justify-center gap-2 bg-champagne px-6 text-xs font-medium uppercase tracking-wide2 text-black hover:bg-champagne-soft disabled:opacity-50"
       >
-        {submitting ? "Getting your quote…" : "Get My Instant Quote"} <ArrowRight className="h-4 w-4" />
+        Get My Instant Quote <ArrowRight className="h-4 w-4" />
       </button>
       {!canSubmit && (
         <p className="mt-2 text-center text-[11px] text-silver/70">

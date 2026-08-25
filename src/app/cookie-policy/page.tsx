@@ -39,7 +39,7 @@ export default function CookiePolicyPage() {
           blocks: [
             {
               type: "p",
-              text: "We use cookies to make our website function correctly, to remember your chat conversation, and — only with your consent — to understand how our website is used and to support our marketing. Non-essential cookies are not set until you accept them via our cookie banner.",
+              text: "We use cookies to make our website function correctly and — only with your consent — to understand how our website is used and to support our marketing. Non-essential cookies are not set until you accept them via our cookie banner.",
             },
           ],
         },
@@ -50,7 +50,6 @@ export default function CookiePolicyPage() {
               type: "ul",
               items: [
                 "Strictly necessary cookies — required for the website to function and to remember your cookie choices. These are always active and do not require consent.",
-                "Functional cookies — used by our website chat provider (Aniro) to remember your conversation so you can continue it as you browse and on return visits.",
                 "Analytics and performance cookies — help us understand how visitors use our site so we can improve it (for example, Google Analytics). These are set only with your consent.",
                 "Marketing and targeting cookies — used to measure and improve our advertising and to show relevant content (for example, Meta and TikTok pixels and Google Ads). These are set only with your consent.",
               ],
@@ -61,12 +60,6 @@ export default function CookiePolicyPage() {
               head: ["Category", "Example cookie / provider", "Purpose", "Duration"],
               rows: [
                 ["Strictly necessary", "cookie_consent", "Remembers your cookie choices", "12 months"],
-                [
-                  "Functional",
-                  "Aniro chat session cookie",
-                  "Remembers your chat conversation across pages and on return visits",
-                  "Session, or up to 12 months",
-                ],
                 [
                   "Analytics and performance",
                   "Google Analytics (_ga, _ga_*)",

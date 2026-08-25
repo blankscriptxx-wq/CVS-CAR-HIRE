@@ -5,7 +5,7 @@ import { EnquiryPanel } from "@/components/EnquiryPanel";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StickyActionBar } from "@/components/StickyActionBar";
 import { CallLink, LiveChatButton } from "@/components/ActionLinks";
-import { PhoneIcon, ChatIcon, InstagramIcon } from "@/components/ui/Icons";
+import { PhoneIcon, WhatsAppIcon, InstagramIcon } from "@/components/ui/Icons";
 import { siteConfig, phoneDisplay } from "@/lib/siteConfig";
 import { buildMetadata } from "@/lib/seo";
 
@@ -33,10 +33,10 @@ export default function ContactPage() {
           <h2 className="mt-4 text-display-sm font-display text-warm-white">Ways to reach us.</h2>
           <div className="mt-8 space-y-3">
             <LiveChatButton className="flex w-full items-center gap-4 border border-line p-5 text-left hover:border-champagne">
-              <ChatIcon className="h-6 w-6 shrink-0 text-champagne" />
+              <WhatsAppIcon className="h-6 w-6 shrink-0 text-champagne" />
               <span>
-                <span className="block font-display text-xl text-warm-white">Live Chat</span>
-                <span className="text-sm text-silver">Chat with our team in real time</span>
+                <span className="block font-display text-xl text-warm-white">WhatsApp</span>
+                <span className="text-sm text-silver">Message our team with your enquiry</span>
               </span>
             </LiveChatButton>
             <CallLink

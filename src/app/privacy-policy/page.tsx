@@ -116,7 +116,7 @@ export default function PrivacyPolicyPage() {
             {
               type: "ul",
               items: [
-                "Our website chat provider (Aniro), which processes your messages and contact details so we can manage your conversation and respond to you.",
+                "WhatsApp (Meta Platforms Ireland Limited), when you contact us via the WhatsApp links on our website, so we can receive and respond to your enquiry.",
                 "Website hosting and IT providers who host and support our website.",
                 "Analytics and advertising providers (such as Google, Meta and TikTok) where you have consented to the relevant cookies.",
                 "Payment and financial service providers where applicable to a booking.",

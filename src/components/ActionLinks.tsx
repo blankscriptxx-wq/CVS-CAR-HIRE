@@ -2,19 +2,15 @@
 
 import type { ReactNode } from "react";
 import { phoneHref, phoneDisplay, siteConfig } from "@/lib/siteConfig";
-import { openAniro, sendToAniro } from "@/lib/aniro";
+import { whatsappLink, defaultWhatsAppMessage } from "@/lib/whatsapp";
 import { track } from "@/lib/analytics";
 
-/** Opens the Aniro chat widget. */
-export function openLiveChat(context?: Record<string, string>) {
-  track("open_live_chat", context);
-  openAniro();
-}
-
-/** Opens Aniro and passes a composed lead/vehicle message into the chat. */
-export function chatWithDetails(message: string, context?: Record<string, string>) {
-  track("submit_enquiry", context);
-  return sendToAniro(message);
+/** Open WhatsApp with a pre-filled message (all communication runs via WhatsApp). */
+export function openWhatsApp(message?: string, context?: Record<string, string>) {
+  track("click_whatsapp", context);
+  if (typeof window !== "undefined") {
+    window.open(whatsappLink(message ?? defaultWhatsAppMessage), "_blank", "noopener");
+  }
 }
 
 export function CallLink({
@@ -33,20 +29,31 @@ export function CallLink({
   );
 }
 
-/** Chat button — opens the Aniro widget. */
+/**
+ * WhatsApp button — opens WhatsApp with a pre-filled, page-aware message.
+ * (Named LiveChatButton for backwards compatibility with existing call sites.)
+ */
 export function LiveChatButton({
   children,
   className,
   context,
+  message,
 }: {
   children: ReactNode;
   className?: string;
   context?: Record<string, string>;
+  message?: string;
 }) {
   return (
-    <button type="button" className={className} onClick={() => openLiveChat(context)}>
+    <a
+      href={whatsappLink(message ?? defaultWhatsAppMessage)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}
+      onClick={() => track("click_whatsapp", context)}
+    >
       {children}
-    </button>
+    </a>
   );
 }
 

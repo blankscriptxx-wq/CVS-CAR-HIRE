@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
  * Receives the quick-enquiry / contact form and, when configured, forwards it to
  * a CRM/lead webhook using SERVER-ONLY environment variables (never exposed to
  * the client). If no webhook is configured it validates and acknowledges — the
- * primary lead delivery is the Aniro chat hand-off on the client.
+ * primary lead delivery is the WhatsApp hand-off on the client.
  */
 
 export const runtime = "nodejs";
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
       if (!res.ok) throw new Error(`Upstream ${res.status}`);
     } catch (err) {
       console.error("[enquiry] forward failed:", err);
-      // Don't fail the user journey — the client still delivers the lead via Aniro chat.
+      // Don't fail the user journey — the client still delivers the lead via WhatsApp.
       return NextResponse.json({ ok: true, forwarded: false });
     }
     return NextResponse.json({ ok: true, forwarded: true });

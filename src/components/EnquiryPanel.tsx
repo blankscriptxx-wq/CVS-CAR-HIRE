@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { track, captureUtm } from "@/lib/analytics";
-import { sendToAniro, openAniro } from "@/lib/aniro";
+import { whatsappLink } from "@/lib/whatsapp";
 import { CallLink } from "@/components/ActionLinks";
-import { ArrowRight, ChatIcon, CheckIcon, PhoneIcon } from "@/components/ui/Icons";
+import { ArrowRight, WhatsAppIcon, CheckIcon, PhoneIcon } from "@/components/ui/Icons";
 import { vehicles } from "@/lib/data/vehicles";
 import { categories } from "@/lib/data/categories";
 import { vehicleName } from "@/lib/vehicleDisplay";
@@ -38,9 +38,9 @@ const dateClass = `${inputClass} appearance-none [&::-webkit-date-and-time-value
 const labelClass = "block text-[11px] uppercase tracking-wide2 text-silver mb-2";
 
 /**
- * Staged, progressive quick-enquiry panel. On completion it POSTs to the secure
- * /api/enquiry route (CRM/lead-webhook forwarding) and offers to continue on
- * the Aniro chat with the collected context.
+ * Staged, progressive quick-enquiry panel. On completion it opens WhatsApp with
+ * the enquiry pre-filled (primary channel) and POSTs to the secure /api/enquiry
+ * route (CRM/lead-webhook forwarding) as a best-effort record.
  */
 export function EnquiryPanel({
   presetVehicle,
@@ -52,11 +52,10 @@ export function EnquiryPanel({
   const [step, setStep] = useState(0);
   const [fields, setFields] = useState<Fields>({ ...EMPTY, vehicle: presetVehicle ?? "" });
   const [done, setDone] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
 
   const set = (k: keyof Fields, v: string) => setFields((f) => ({ ...f, [k]: v }));
 
-  /** Full lead + vehicle details, composed for the Aniro chat hand-off. */
+  /** Full lead + vehicle details, pre-filled for the WhatsApp hand-off. */
   const leadMessage = [
     "New website availability enquiry.",
     fields.name ? `Name: ${fields.name}` : "",
@@ -76,23 +75,19 @@ export function EnquiryPanel({
   };
   const back = () => setStep((s) => Math.max(s - 1, 0));
 
-  async function submit() {
-    setSubmitting(true);
+  function submit() {
     track("submit_enquiry", { vehicle: fields.vehicle || "unspecified", occasion: fields.occasion });
-    try {
-      await fetch("/api/enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...fields, ...captureUtm(), source: "quick-enquiry" }),
-      });
-    } catch {
-      // Non-blocking: the chat hand-off still works.
+    // Open WhatsApp with the enquiry pre-filled — inside the click gesture so it
+    // isn't blocked. WhatsApp is the primary communication channel.
+    if (typeof window !== "undefined") {
+      window.open(whatsappLink(leadMessage), "_blank", "noopener");
     }
-    // Deliver the collected customer + vehicle details straight into the Aniro
-    // conversation — automatically, so the team receives every lead without the
-    // visitor having to press send in chat.
-    await sendToAniro(leadMessage).catch(() => {});
-    setSubmitting(false);
+    // Record the lead server-side too (best-effort, non-blocking).
+    fetch("/api/enquiry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...fields, ...captureUtm(), source: "quick-enquiry" }),
+    }).catch(() => {});
     setDone(true);
   }
 
@@ -104,18 +99,18 @@ export function EnquiryPanel({
           <h3 className="font-display text-2xl text-warm-white">Enquiry received</h3>
         </div>
         <p className="mt-3 text-sm text-silver">
-          Thank you{fields.name ? `, ${fields.name.split(" ")[0]}` : ""}. Your details have been sent
-          to our team and we&rsquo;ll be in touch shortly. For the fastest response, continue the
-          conversation now:
+          Thank you{fields.name ? `, ${fields.name.split(" ")[0]}` : ""}. Send your enquiry to us on
+          WhatsApp and we&rsquo;ll reply shortly — for the fastest response, message us now:
         </p>
         <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-          <button
-            type="button"
-            onClick={() => openAniro()}
+          <a
+            href={whatsappLink(leadMessage)}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 bg-champagne px-6 text-xs font-medium uppercase tracking-wide2 text-black hover:bg-champagne-soft"
           >
-            <ChatIcon className="h-4 w-4" /> Continue in chat
-          </button>
+            <WhatsAppIcon className="h-4 w-4" /> Send on WhatsApp
+          </a>
           <CallLink
             context={{ source: "enquiry-success" }}
             className="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 border border-line px-6 text-xs uppercase tracking-wide2 text-warm-white hover:border-champagne"
@@ -327,23 +322,23 @@ export function EnquiryPanel({
           <button
             type="button"
             onClick={submit}
-            disabled={submitting}
             className="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 bg-champagne px-6 text-xs font-medium uppercase tracking-wide2 text-black hover:bg-champagne-soft disabled:opacity-60"
           >
-            {submitting ? "Sending…" : "Submit Enquiry"} <ArrowRight className="h-4 w-4" />
+            Submit Enquiry <ArrowRight className="h-4 w-4" />
           </button>
         )}
       </div>
 
-      {/* Direct chat shortcut */}
+      {/* Direct WhatsApp shortcut */}
       <div className="mt-4 border-t border-line pt-4 text-center">
-        <button
-          type="button"
-          onClick={() => sendToAniro(leadMessage)}
+        <a
+          href={whatsappLink(leadMessage)}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-xs uppercase tracking-wide2 text-silver hover:text-champagne"
         >
-          <ChatIcon className="h-4 w-4 text-champagne" /> Prefer to chat? Message us now
-        </button>
+          <WhatsAppIcon className="h-4 w-4 text-champagne" /> Prefer to message? WhatsApp us now
+        </a>
       </div>
 
     </div>

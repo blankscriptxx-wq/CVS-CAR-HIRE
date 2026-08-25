@@ -103,6 +103,17 @@ export function Footer() {
             <p className="text-xs text-silver">
               © {year} CVS Hire. All rights reserved.
             </p>
+            <p className="text-xs text-silver">
+              Designed &amp; crafted by{" "}
+              <a
+                href="https://blancscript.com/"
+                target="_blank"
+                rel="noopener"
+                className="text-silver underline transition-colors hover:text-champagne"
+              >
+                Blanc Script
+              </a>
+            </p>
           </div>
         </div>
       </div>

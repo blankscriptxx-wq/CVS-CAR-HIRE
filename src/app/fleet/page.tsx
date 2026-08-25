@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { vehicles } from "@/lib/data/vehicles";
+import { collections } from "@/lib/data/collections";
 import { FleetShowroom } from "@/components/fleet/FleetShowroom";
 import { PageHero } from "@/components/ui/PageHero";
 import { FinalCTA } from "@/components/sections/FinalCTA";
@@ -25,6 +27,25 @@ export default function FleetPage() {
       <Suspense fallback={<div className="shell py-20 text-silver">Loading the fleet…</div>}>
         <FleetShowroom vehicles={vehicles} />
       </Suspense>
+
+      {/* Hire by marque — links to the collection landing pages */}
+      <section className="border-t border-line py-12">
+        <div className="shell">
+          <span className="eyebrow">Hire by marque</span>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {collections.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/hire/${c.slug}`}
+                className="border border-line px-4 py-2 text-xs uppercase tracking-wide2 text-silver hover:border-champagne hover:text-warm-white"
+              >
+                {c.heading}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <FinalCTA />
       <StickyActionBar context={{ page: "fleet" }} />
     </>

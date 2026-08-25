@@ -4,6 +4,7 @@ import { services } from "@/lib/data/services";
 import { locations } from "@/lib/data/locations";
 import { journalPosts } from "@/lib/data/journal";
 import { CITY_SERVICES } from "@/lib/data/cityServices";
+import { collections } from "@/lib/data/collections";
 import { absoluteUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -60,6 +61,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
+  // Marque / model-line collection pages (/hire/[collection]).
+  const collectionRoutes = collections.map((c) => ({
+    url: absoluteUrl(`/hire/${c.slug}`),
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   // City × service local landing pages (/[city]/[service]).
   const cityServiceRoutes = locations.flatMap((l) =>
     CITY_SERVICES.map((s) => ({
@@ -73,6 +82,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticRoutes,
     ...vehicleRoutes,
+    ...collectionRoutes,
     ...serviceRoutes,
     ...locationRoutes,
     ...cityServiceRoutes,

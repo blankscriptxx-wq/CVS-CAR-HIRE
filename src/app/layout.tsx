@@ -59,6 +59,11 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
   alternates: { canonical: siteConfig.url },
+  // Google Search Console HTML-tag verification. Set the token from GSC as
+  // NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION to render the verification meta tag.
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
 };
 
 export const viewport = {

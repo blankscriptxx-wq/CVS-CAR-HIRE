@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@/components/Analytics";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import { CookieConsent } from "@/components/CookieConsent";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { organizationSchema, websiteSchema, localBusinessSchema } from "@/lib/seo";
@@ -84,6 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="h-14 md:hidden" aria-hidden />
         <CookieConsent />
         <Analytics />
+        <VercelAnalytics />
       </body>
     </html>
   );

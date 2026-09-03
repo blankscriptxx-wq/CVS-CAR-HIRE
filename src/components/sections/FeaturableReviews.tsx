@@ -2,6 +2,8 @@ import { getFeaturableReviews } from "@/lib/reviews";
 import { siteConfig, googleReviewLinks } from "@/lib/siteConfig";
 import { StarIcon } from "@/components/ui/Icons";
 import { ReviewsCarousel } from "@/components/sections/ReviewsCarousel";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { reviewsRatingSchema } from "@/lib/seo";
 
 function Stars({ rating, className = "h-4 w-4" }: { rating: number; className?: string }) {
   return (
@@ -42,6 +44,21 @@ export async function FeaturableReviews() {
 
   return (
     <section className="border-t border-line py-20 md:py-28">
+      {/* AggregateRating + Review structured data — genuine reviews shown here. */}
+      {typeof data.rating === "number" && data.total ? (
+        <JsonLd
+          data={reviewsRatingSchema({
+            rating: data.rating,
+            count: data.total,
+            reviews: cards.map((r) => ({
+              author: r.author,
+              rating: r.rating,
+              text: r.text,
+              datePublished: r.time ? new Date(r.time).toISOString().slice(0, 10) : undefined,
+            })),
+          })}
+        />
+      ) : null}
       <div className="shell">
         {/* Header */}
         <div className="flex flex-col gap-8 border-b border-line pb-10 md:flex-row md:items-end md:justify-between">

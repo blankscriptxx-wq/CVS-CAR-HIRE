@@ -205,6 +205,47 @@ export function itemListSchema(opts: {
   };
 }
 
+/**
+ * AggregateRating + Review markup for the business, built ONLY from genuine
+ * reviews that are actually displayed on the page (never fabricated). Attaches
+ * to the existing AutoRental/LocalBusiness entity via its @id so Google merges
+ * the rating onto the real business node rather than creating a duplicate.
+ */
+export function reviewsRatingSchema(opts: {
+  rating: number;
+  count: number;
+  reviews?: { author: string; rating: number; text: string; datePublished?: string }[];
+}) {
+  const node: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "AutoRental",
+    "@id": LOCALBUSINESS_ID,
+    name: siteConfig.name,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: Number(opts.rating.toFixed(1)),
+      reviewCount: opts.count,
+      bestRating: 5,
+      worstRating: 1,
+    },
+  };
+  if (opts.reviews && opts.reviews.length) {
+    node.review = opts.reviews.slice(0, 12).map((r) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: r.author },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: r.rating,
+        bestRating: 5,
+        worstRating: 1,
+      },
+      reviewBody: r.text,
+      ...(r.datePublished ? { datePublished: r.datePublished } : {}),
+    }));
+  }
+  return node;
+}
+
 export function serviceSchema(opts: { name: string; description: string; path: string }) {
   return {
     "@context": "https://schema.org",

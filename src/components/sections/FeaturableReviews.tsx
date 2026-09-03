@@ -1,15 +1,20 @@
 import { getFeaturableReviews } from "@/lib/reviews";
 import { siteConfig, googleReviewLinks } from "@/lib/siteConfig";
 import { StarIcon } from "@/components/ui/Icons";
-import { Reveal } from "@/components/ui/Reveal";
+import { ReviewsCarousel } from "@/components/sections/ReviewsCarousel";
+
+// Gold that reads with enough contrast on a light background (the champagne
+// accent used elsewhere is tuned for the dark theme and washes out on cream).
+const GOLD = "#B8894B";
 
 function Stars({ rating, className = "h-4 w-4" }: { rating: number; className?: string }) {
   return (
-    <span className="inline-flex gap-0.5" aria-label={`${rating} out of 5`}>
+    <span className="inline-flex gap-0.5" aria-label={`${rating} out of 5`} style={{ color: GOLD }}>
       {[1, 2, 3, 4, 5].map((i) => (
         <StarIcon
           key={i}
-          className={`${className} ${i <= Math.round(rating) ? "text-champagne" : "text-line"}`}
+          className={className}
+          style={{ opacity: i <= Math.round(rating) ? 1 : 0.2 }}
         />
       ))}
     </span>
@@ -30,27 +35,29 @@ function GoogleG({ className = "h-4 w-4" }: { className?: string }) {
 
 /**
  * Genuine Google reviews synced by Featurable, fetched from its widget API and
- * rendered NATIVELY in the site's own luxury design — no embed script, no
- * iframe, no layout shift. Renders nothing until the Google Business Profile is
- * connected and real reviews have synced (example/placeholder reviews are never
+ * rendered NATIVELY in a light panel (black text) that contrasts the dark site.
+ * Renders nothing until real reviews have synced (example reviews are never
  * shown). Honours Featurable's free-plan attribution via `showBranding`.
  */
 export async function FeaturableReviews() {
   const data = await getFeaturableReviews(siteConfig.reviews.featurableWidgetId);
   if (!data || data.reviews.length === 0) return null;
 
-  const cards = data.reviews.slice(0, 6);
+  const cards = data.reviews.slice(0, 12);
 
   return (
-    <section className="border-t border-line bg-charcoal/20 py-20 md:py-28">
+    <section className="bg-warm-white py-20 text-black md:py-28">
       <div className="shell">
         {/* Header */}
-        <div className="flex flex-col gap-8 border-b border-line pb-10 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-8 border-b border-black/10 pb-10 md:flex-row md:items-end md:justify-between">
           <div>
-            <span className="eyebrow inline-flex items-center gap-2">
+            <span
+              className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-luxe"
+              style={{ color: GOLD }}
+            >
               <GoogleG className="h-3.5 w-3.5" /> Verified Google Reviews
             </span>
-            <h2 className="mt-4 max-w-xl text-display-sm font-display text-warm-white">
+            <h2 className="mt-4 max-w-xl font-display text-display-sm text-black">
               Loved by our customers.
             </h2>
           </div>
@@ -58,12 +65,12 @@ export async function FeaturableReviews() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
             {typeof data.rating === "number" && (
               <div className="flex items-center gap-4">
-                <span className="font-display text-5xl leading-none text-champagne">
+                <span className="font-display text-5xl leading-none" style={{ color: GOLD }}>
                   {data.rating.toFixed(1)}
                 </span>
                 <div>
                   <Stars rating={data.rating} className="h-4 w-4" />
-                  <p className="mt-1 text-xs uppercase tracking-wide2 text-silver">
+                  <p className="mt-1 text-xs uppercase tracking-wide2 text-neutral-500">
                     {data.total ? `${data.total} Google reviews` : "on Google"}
                   </p>
                 </div>
@@ -74,7 +81,8 @@ export async function FeaturableReviews() {
                 href={data.writeUri || googleReviewLinks.write}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[44px] items-center gap-2 border border-champagne px-5 text-xs uppercase tracking-wide2 text-champagne hover:bg-champagne hover:text-black"
+                className="inline-flex min-h-[44px] items-center gap-2 px-5 text-xs uppercase tracking-wide2 text-white"
+                style={{ backgroundColor: GOLD }}
               >
                 Leave a review
               </a>
@@ -82,7 +90,7 @@ export async function FeaturableReviews() {
                 href={googleReviewLinks.read}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[44px] items-center gap-2 border border-line px-5 text-xs uppercase tracking-wide2 text-warm-white hover:border-champagne"
+                className="inline-flex min-h-[44px] items-center gap-2 border border-black/15 px-5 text-xs uppercase tracking-wide2 text-black transition-colors hover:border-black/40"
               >
                 See all on Google
               </a>
@@ -90,63 +98,18 @@ export async function FeaturableReviews() {
           </div>
         </div>
 
-        {/* Review cards */}
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map((r, i) => (
-            <Reveal
-              key={`${r.author}-${r.time}`}
-              delay={(i % 3) * 0.06}
-              className="group relative flex flex-col border border-line bg-black/40 p-7 transition-colors duration-300 hover:border-champagne/60"
-            >
-              {/* Decorative quote glyph */}
-              <span
-                aria-hidden
-                className="pointer-events-none absolute right-5 top-2 select-none font-display text-7xl leading-none text-champagne/10"
-              >
-                &rdquo;
-              </span>
-
-              <Stars rating={r.rating} />
-              <blockquote className="mt-5 flex-1 text-sm leading-relaxed text-silver">
-                {r.text.length > 300 ? `${r.text.slice(0, 297)}…` : r.text}
-              </blockquote>
-
-              <figcaption className="mt-6 flex items-center gap-3 border-t border-line pt-5">
-                {r.photo ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={r.photo}
-                    alt=""
-                    width={36}
-                    height={36}
-                    loading="lazy"
-                    className="h-9 w-9 shrink-0 rounded-full border border-champagne/30 object-cover"
-                  />
-                ) : (
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-champagne/30 font-display text-sm text-champagne">
-                    {r.author.charAt(0)}
-                  </span>
-                )}
-                <div className="flex min-w-0 flex-1 items-center justify-between gap-2">
-                  <span className="truncate text-sm text-warm-white">{r.author}</span>
-                  <span className="shrink-0 text-[11px] uppercase tracking-wide2 text-silver/60">
-                    {r.relativeTime}
-                  </span>
-                </div>
-                <GoogleG className="h-4 w-4 shrink-0 opacity-70" />
-              </figcaption>
-            </Reveal>
-          ))}
-        </div>
+        {/* Review cards — carousel (swipe on mobile, arrows + drag on desktop) */}
+        <ReviewsCarousel reviews={cards} />
 
         {data.showBranding && (
-          <p className="mt-10 text-center text-[10px] uppercase tracking-wide2 text-silver/40">
+          <p className="mt-10 text-center text-[11px] uppercase tracking-wide2 text-neutral-400">
             Reviews synced from Google by{" "}
             <a
               href="https://featurable.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-champagne"
+              className="underline-offset-2 hover:underline"
+              style={{ color: GOLD }}
             >
               Featurable
             </a>

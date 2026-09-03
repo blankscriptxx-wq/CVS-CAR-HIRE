@@ -80,6 +80,8 @@ export const services: ServiceContent[] = [
       { question: "How much does it cost to hire a supercar for a weekend?", answer: "Weekend hire uses our published weekend (3-day) rate, which varies by vehicle. Use our instant quote tool or contact us with your dates and we'll confirm the price for your chosen car." },
       { question: "What do I need to hire a supercar short-term?", answer: "Requirements such as minimum age, driving licence and deposit vary by vehicle. Start a conversation with our team and we'll talk you through exactly what's needed for the car you'd like." },
       { question: "Can I have a supercar delivered for the weekend?", answer: "Yes — nationwide UK delivery is available on many vehicles, subject to the car and the location. Contact us with your address and dates and we'll confirm." },
+      { question: "Can I hire a supercar for a week?", answer: "Yes — as well as daily and weekend hire, we offer weekly rates that work out better value for a longer stay. Tell us the car and your dates and we'll confirm the weekly price." },
+      { question: "Is weekend supercar hire available near me?", answer: "We're based in Birmingham and cover the West Midlands directly, with nationwide UK delivery for weekend hire. Tell us where you are and we'll confirm we can reach you." },
     ],
     metaTitle: "Short-Term Supercar Hire | Daily & Weekend Ferrari & Lamborghini Hire | CVS Car Hire",
     metaDescription:
@@ -97,9 +99,10 @@ export const services: ServiceContent[] = [
         "A Ferrari, Lamborghini or Audi R8 for weeks or months at a time — the experience of ownership, without the deposit, the depreciation or a long finance commitment.",
     },
     overview:
-      "Long-term supercar hire gives you a genuine supercar for an extended period — a month, a season, or longer — on a single, straightforward rate. It suits anyone who wants the car without the ownership: a relocation or extended stay, a film or content project, a run of business travel, or simply the chance to live with a supercar before deciding whether to buy. There is no deposit against a purchase, no depreciation to absorb and no resale to worry about — you drive, and we take care of the rest. We tailor every extended hire around you: the right car (or a rotation of cars), the duration and the mileage that fits your plans, with delivery across Birmingham and the UK. Weekly and monthly rates apply, and our team is your single point of contact throughout.",
+      "Long-term supercar hire gives you a genuine supercar for an extended period — a month, a season, or longer — on a single, straightforward rate. Think of it as a flexible alternative to a lease or contract hire, or a supercar subscription: monthly luxury car rental without the deposit against a purchase, the depreciation to absorb or the resale to worry about. It suits anyone who wants the car without the ownership: a relocation or extended stay in Birmingham or beyond, a film or content project, a run of business travel, or simply the chance to live with a supercar before deciding whether to buy. We tailor every extended hire around you: the right car (or a rotation of cars), the duration and the mileage that fits your plans, with delivery across Birmingham and the UK. Weekly and monthly rates apply, and our team is your single point of contact throughout.",
     benefits: [
       "Weekly and monthly rates for genuine supercars",
+      "A flexible alternative to leasing or contract hire — no long finance agreement",
       "The supercar experience without ownership, depreciation or resale",
       "One car for a season or a project — or rotate between models",
       "Flexible durations and mileage, arranged around your plans",
@@ -123,6 +126,8 @@ export const services: ServiceContent[] = [
       { question: "Can I hire a supercar long-term in the UK?", answer: "Yes — we offer extended, long-term supercar hire by the week or month, tailored around your duration and mileage. Tell us your plans and we'll put together the right arrangement." },
       { question: "How much does long-term supercar hire cost?", answer: "Long-term hire uses our weekly and monthly rates, which vary by vehicle. Some models have published monthly rates; others are quoted on enquiry. Contact us with the car and duration and we'll confirm the price." },
       { question: "Is long-term supercar hire an alternative to leasing or buying?", answer: "For many people, yes. You get the car without a deposit against a purchase, without depreciation and without a long finance contract — you pay one rate for the period you need. Talk to us about what suits your situation." },
+      { question: "Do you offer a supercar subscription or monthly rental?", answer: "Yes — our monthly rate works like a supercar subscription: one all-in price for the month, with the flexibility to extend or switch cars. It's ideal if you want a supercar for a season without a lease or contract hire commitment." },
+      { question: "Can I arrange long-term car hire in Birmingham?", answer: "Yes — we're based in Birmingham and arrange long-term and monthly supercar hire locally and across the UK, with delivery available. Tell us your dates and mileage and we'll tailor the arrangement." },
       { question: "What is the longest I can hire a supercar for?", answer: "Extended hires of several weeks or months are arranged individually. Share your intended dates and we'll confirm availability for that period." },
       { question: "Do you deliver long-term hire cars?", answer: "Yes — nationwide UK delivery and collection are available on many vehicles, subject to the car and location. We'll confirm for your area when you enquire." },
     ],
@@ -141,7 +146,7 @@ export const services: ServiceContent[] = [
         "Birmingham's leading collection of luxury, prestige and performance vehicles — for the occasions that deserve them.",
     },
     overview:
-      "Luxury is in the detail: the way a car looks as it pulls up, the hush of the cabin, the sense of occasion it creates. Our luxury collection spans the finest names in motoring, chosen for their presence and refinement. Whatever the occasion, we help you find the car that fits it perfectly — and take care of everything around the hire so you can simply enjoy it.",
+      "Luxury is in the detail: the way a car looks as it pulls up, the hush of the cabin, the sense of occasion it creates. Our luxury car hire spans the finest names in motoring — Rolls-Royce, Lamborghini, Ferrari, Mercedes-AMG, Range Rover, Audi and BMW — chosen for their presence and refinement. Whether you want luxury car rental for a day, a weekend or longer, self-drive or chauffeur-driven, we help you find the car that fits the occasion perfectly and take care of everything around the hire so you can simply enjoy it.",
     benefits: [
       "A fleet of over 50 luxury, prestige and performance vehicles",
       "Self-drive and chauffeur-driven options",
@@ -153,10 +158,12 @@ export const services: ServiceContent[] = [
     faqs: [
       { question: "What counts as a luxury car?", answer: "Our luxury collection ranges from prestige saloons and SUVs to supercars — Rolls-Royce, Lamborghini, Mercedes-AMG, Range Rover and more. Tell us the occasion and we'll suggest the right fit." },
       { question: "Do you offer both self-drive and chauffeur?", answer: "Yes. Many vehicles are available either way. We'll confirm which option suits your plans." },
+      { question: "Is there luxury car hire near me?", answer: "We're based in Birmingham and cover the West Midlands directly, with nationwide UK delivery from London and Manchester to Leeds, Bristol and beyond. Tell us where you are and we'll confirm we can reach you." },
+      { question: "How much is luxury car hire?", answer: "It depends on the car — from performance models and prestige SUVs to supercars — with clear daily, weekend, weekly and monthly rates. Message us your dates and chosen vehicle and we'll confirm the exact price." },
     ],
-    metaTitle: "Luxury Car Hire Birmingham | Prestige & Performance | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Birmingham | Prestige & Supercar Rental | CVS Car Hire",
     metaDescription:
-      "Luxury car hire in Birmingham and across the UK. Self-drive and chauffeur options from a fleet of 50+ prestige and performance vehicles. Check availability.",
+      "Luxury car hire in Birmingham and across the UK. Self-drive and chauffeur luxury car rental from a fleet of 50+ prestige, supercar and performance vehicles. Check availability.",
   },
   {
     slug: "prestige-car-hire",
@@ -216,31 +223,34 @@ export const services: ServiceContent[] = [
   },
   {
     slug: "luxury-4x4-hire",
-    name: "Luxury 4x4 Hire",
+    name: "Luxury SUV & 4x4 Hire",
     navLabel: "Luxury 4x4 Hire",
     category: "luxury-4x4",
     hero: {
       eyebrow: "Self-Drive & Chauffeur",
-      heading: "Luxury 4x4 Hire",
+      heading: "Luxury SUV & 4x4 Hire",
       intro:
-        "Commanding presence and effortless comfort — from Rolls-Royce Cullinan to Mercedes-AMG G 63.",
+        "Commanding presence and effortless comfort — from the Rolls-Royce Cullinan and Mercedes-AMG G 63 to the Range Rover and Lamborghini Urus.",
     },
     overview:
-      "The luxury 4x4 has become the vehicle of choice for those who want presence, space and refinement in one. Our collection spans the very best — imposing, beautifully finished and equally suited to a wedding, a business trip or a weekend away. Whatever the plan, a luxury 4x4 makes the arrival unforgettable.",
+      "SUV hire has become the first choice for anyone who wants presence, space and refinement in one car. Our luxury SUV and 4x4 collection spans the very best — the Rolls-Royce Cullinan, Mercedes-AMG G63 (G-Wagon), the full Range Rover line-up, the Lamborghini Urus Performante and the BMW X5 — imposing, beautifully finished and equally suited to a wedding, a business trip, a family occasion or a weekend away. Whether you want to hire an SUV for the day, the weekend or longer, self-drive or chauffeur-driven, a luxury 4x4 makes the arrival unforgettable.",
     benefits: [
-      "Icons including the Cullinan, G 63 and Range Rover",
+      "Icons including the Cullinan, G63 G-Wagon, Range Rover and Urus",
       "Space and comfort for the whole party",
       "Self-drive or chauffeur-driven",
+      "Hire by the day, weekend, week or month",
       "A firm favourite for weddings and productions",
       "Nationwide delivery, subject to availability",
     ],
-    occasions: ["Weddings", "Productions & music videos", "Family occasions", "Corporate"],
+    occasions: ["Weddings", "Productions & music videos", "Family occasions", "Corporate", "Weekend escapes"],
     faqs: [
-      { question: "Which luxury 4x4 has the most presence?", answer: "The Rolls-Royce Cullinan and Mercedes-AMG G 63 are both showstoppers. We'll help you choose based on your occasion and style." },
+      { question: "Which luxury SUV has the most presence?", answer: "The Rolls-Royce Cullinan and Mercedes-AMG G63 (G-Wagon) are both showstoppers, while the Lamborghini Urus adds supercar pace. We'll help you choose the right 4x4 for your occasion and style." },
+      { question: "Can I hire an SUV or 4x4 near me?", answer: "We're based in Birmingham and cover the West Midlands directly, with nationwide UK delivery on many vehicles. Tell us your location and dates and we'll confirm we can reach you." },
+      { question: "How much does luxury SUV hire cost?", answer: "It depends on the vehicle — the G63 (G-Wagon) starts from £700 per day, with Range Rover, Urus and Cullinan quoted on enquiry, and weekend, weekly and monthly rates available. Message us your dates for an exact price." },
     ],
-    metaTitle: "Luxury 4x4 Hire Birmingham | Cullinan, G-Wagon & More | CVS Car Hire",
+    metaTitle: "Luxury SUV & 4x4 Hire Birmingham | Cullinan, G-Wagon, Range Rover | CVS",
     metaDescription:
-      "Luxury 4x4 hire in Birmingham. Rolls-Royce Cullinan, Mercedes G63, Range Rover and more. Self-drive and chauffeur options. Check availability.",
+      "Luxury SUV and 4x4 hire in Birmingham and nationwide. Rolls-Royce Cullinan, Mercedes G63 G-Wagon, Range Rover, Lamborghini Urus and more, self-drive or chauffeur. Check availability.",
   },
   {
     slug: "chauffeur-hire",
@@ -328,30 +338,31 @@ export const services: ServiceContent[] = [
   },
   {
     slug: "corporate-car-hire",
-    name: "Corporate Car Hire",
+    name: "Executive & Corporate Car Hire",
     navLabel: "Corporate Hire",
     hero: {
       eyebrow: "Self-Drive & Chauffeur",
-      heading: "Corporate & Business Hire",
+      heading: "Executive & Corporate Car Hire",
       intro:
         "Composed, professional travel that reflects your business — self-drive or chauffeur-driven.",
     },
     overview:
-      "The right vehicle says something before the meeting begins. Our corporate service provides refined, dependable travel for executives, clients and teams — whether that's a prestige saloon for a day of meetings, an SUV for a site visit, or a chauffeur-driven arrival for an important guest. Reliable, discreet and always appropriate.",
+      "The right vehicle says something before the meeting begins. Our executive car hire provides refined, dependable travel for executives, clients and teams across Birmingham and the UK — whether that's a prestige saloon for a day of meetings, an SUV for a site visit, or a chauffeur-driven arrival for an important guest. Reliable, discreet and always appropriate, with self-drive and chauffeur options and flexible terms from a single day to long-term corporate accounts.",
     benefits: [
-      "Prestige saloons, SUVs and group vehicles",
+      "Executive saloons, prestige SUVs and group vehicles",
       "Self-drive or professional chauffeur",
       "Ideal for client travel and executive use",
       "Punctual and discreet",
-      "Long-term and repeat arrangements available",
+      "Long-term, monthly and repeat business arrangements available",
     ],
     occasions: ["Client meetings", "Executive travel", "Corporate events", "Site visits"],
     faqs: [
-      { question: "Do you offer accounts for regular business hire?", answer: "We support long-term and repeat business arrangements. Speak to our team about setting up regular hire for your company." },
+      { question: "Do you offer accounts for regular business hire?", answer: "We support long-term, monthly and repeat business arrangements. Speak to our team about setting up regular executive hire for your company." },
+      { question: "Is there executive car hire near me?", answer: "We're based in Birmingham and serve the West Midlands directly, with nationwide UK delivery available for corporate clients. Tell us your location and requirements and we'll confirm." },
     ],
-    metaTitle: "Corporate Car Hire Birmingham | Executive & Business Travel | CVS Car Hire",
+    metaTitle: "Executive Car Hire Birmingham | Corporate & Business Travel | CVS Car Hire",
     metaDescription:
-      "Corporate and business car hire in Birmingham. Prestige vehicles for executive travel, self-drive or chauffeur. Long-term options. Check availability.",
+      "Executive and corporate car hire in Birmingham and nationwide. Prestige vehicles for executive travel, self-drive or chauffeur, with long-term and monthly business options. Check availability.",
   },
   {
     slug: "airport-transfer",
@@ -419,21 +430,24 @@ export const services: ServiceContent[] = [
         "The right car for weeks or months — flexible, premium and hassle-free.",
     },
     overview:
-      "Sometimes you need a premium vehicle for longer than a weekend. Our long-term hire offers a flexible alternative for extended trips, business needs or while you decide on a purchase — a quality car, on your terms, without the commitment of ownership. Tell us your timescale and requirements and we'll tailor an arrangement.",
+      "Sometimes you need a premium vehicle for longer than a weekend. Our long-term car hire in Birmingham offers a flexible alternative for extended trips, business needs or while you decide on a purchase — a quality car on your terms, without the commitment of ownership, leasing or contract hire. Whether you want monthly car rental for a few weeks, a longer arrangement, or a rolling monthly subscription, tell us your timescale and requirements and we'll tailor it around you, with delivery across Birmingham and the UK.",
     benefits: [
-      "Flexible terms for weeks or months",
-      "Premium and prestige vehicles",
-      "Ideal for business and extended needs",
-      "A quality alternative to ownership",
-      "Tailored to your timescale",
+      "Flexible terms for weeks or months — no long finance agreement",
+      "Monthly car rental and rolling subscription options",
+      "Premium, prestige and performance vehicles",
+      "Ideal for business, relocations and extended needs",
+      "A quality alternative to leasing or ownership",
+      "Tailored to your timescale, with UK delivery available",
     ],
     occasions: ["Extended business use", "Relocations", "Interim vehicles"],
     faqs: [
       { question: "How long can I hire a vehicle for?", answer: "We offer flexible long-term arrangements spanning weeks or months. Speak to our team about your requirements and we'll tailor the terms." },
+      { question: "Do you offer monthly car rental or a subscription?", answer: "Yes — our monthly rate works as a rolling car subscription, one price per month with the flexibility to extend, ideal as an alternative to leasing or contract hire. Tell us the vehicle and duration and we'll confirm the rate." },
+      { question: "Is long-term car hire available near me in Birmingham?", answer: "Yes — we're based in Birmingham and arrange long-term and monthly hire locally and nationwide, with delivery available. Tell us your location and dates and we'll confirm." },
     ],
-    metaTitle: "Long-Term Car Hire Birmingham | Flexible Premium Vehicle Hire | CVS",
+    metaTitle: "Long-Term Car Hire Birmingham | Monthly Rental & Subscription | CVS",
     metaDescription:
-      "Long-term and business vehicle hire in Birmingham. Flexible premium car hire for weeks or months. Tailored terms. Check availability with CVS Car Hire.",
+      "Long-term car hire in Birmingham — flexible monthly car rental and subscription for premium vehicles, a simple alternative to leasing or contract hire. UK delivery. Check availability.",
   },
   {
     slug: "nationwide-delivery",

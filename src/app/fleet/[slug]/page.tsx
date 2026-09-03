@@ -30,6 +30,18 @@ import { ButtonLink } from "@/components/ui/Button";
 import { PhoneIcon, WhatsAppIcon, ArrowRight } from "@/components/ui/Icons";
 import { vehicleWhatsAppMessage } from "@/lib/whatsapp";
 import { buildMetadata, vehicleSchema, faqSchema } from "@/lib/seo";
+import { getCollectionForVehicle } from "@/lib/data/collections";
+
+/** Map a vehicle category to its primary service landing page. */
+const CATEGORY_SERVICE: Record<string, { slug: string; label: string }> = {
+  supercar: { slug: "supercar-hire", label: "Supercar hire" },
+  "luxury-4x4": { slug: "luxury-4x4-hire", label: "Luxury SUV & 4x4 hire" },
+  performance: { slug: "performance-car-hire", label: "Performance car hire" },
+  prestige: { slug: "prestige-car-hire", label: "Prestige car hire" },
+  convertible: { slug: "luxury-car-hire", label: "Luxury car hire" },
+  "group-travel": { slug: "corporate-car-hire", label: "Executive & corporate hire" },
+  chauffeur: { slug: "chauffeur-hire", label: "Chauffeur hire" },
+};
 
 export function generateStaticParams() {
   return allVehicleSlugs.map((slug) => ({ slug }));
@@ -63,6 +75,21 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
   const specs = specPairs(vehicle);
   const commercials = commercialPairs(vehicle);
   const gallery = vehicle.gallery ?? [];
+
+  // Contextual internal links: marque hub, category service, long-term hire.
+  const marqueHub = getCollectionForVehicle(vehicle.slug);
+  const categoryService = CATEGORY_SERVICE[vehicle.category];
+  const longTerm =
+    vehicle.category === "supercar"
+      ? { slug: "long-term-supercar-hire", label: "Long-term supercar hire" }
+      : { slug: "long-term-hire", label: "Long-term & monthly hire" };
+  const exploreLinks: { href: string; label: string }[] = [
+    ...(marqueHub ? [{ href: `/hire/${marqueHub.slug}`, label: marqueHub.heading }] : []),
+    ...(categoryService
+      ? [{ href: `/services/${categoryService.slug}`, label: categoryService.label }]
+      : []),
+    { href: `/services/${longTerm.slug}`, label: longTerm.label },
+  ];
 
   return (
     <>
@@ -234,6 +261,26 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
       </section>
+
+      {/* Explore more — contextual internal links to hubs & services */}
+      {exploreLinks.length > 0 && (
+        <section className="border-t border-line py-12">
+          <div className="shell">
+            <span className="eyebrow">Explore more</span>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {exploreLinks.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="border border-line px-4 py-2 text-xs uppercase tracking-wide2 text-silver hover:border-champagne hover:text-warm-white"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Similar vehicles */}
       {related.length > 0 && (

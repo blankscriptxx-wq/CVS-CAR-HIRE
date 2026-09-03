@@ -14,6 +14,7 @@ export function buildMetadata(opts: {
   description: string;
   path: string;
   images?: string[];
+  keywords?: string[];
 }): Metadata {
   const url = absoluteUrl(opts.path);
   const provided = opts.images?.map((i) => (i.startsWith("http") ? i : absoluteUrl(i)));
@@ -24,6 +25,7 @@ export function buildMetadata(opts: {
     // doubling the brand — our metaTitle strings already include it.
     title: { absolute: opts.title },
     description: opts.description,
+    ...(opts.keywords && opts.keywords.length ? { keywords: opts.keywords } : {}),
     alternates: { canonical: url },
     openGraph: {
       title: opts.title,
@@ -175,6 +177,30 @@ export function faqSchema(faqs: FAQ[]) {
       "@type": "Question",
       name: f.question,
       acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+}
+
+/**
+ * ItemList of vehicles for a marque / collection hub page, so search engines
+ * understand the page as a curated list pointing at the individual Car pages.
+ */
+export function itemListSchema(opts: {
+  name: string;
+  path: string;
+  items: { name: string; path: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: opts.name,
+    url: absoluteUrl(opts.path),
+    numberOfItems: opts.items.length,
+    itemListElement: opts.items.map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: it.name,
+      url: absoluteUrl(it.path),
     })),
   };
 }

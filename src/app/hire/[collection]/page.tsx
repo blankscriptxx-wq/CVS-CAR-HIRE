@@ -13,7 +13,8 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { StickyActionBar } from "@/components/StickyActionBar";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { ArrowRight } from "@/components/ui/Icons";
-import { buildMetadata, breadcrumbSchema, faqSchema } from "@/lib/seo";
+import { buildMetadata, breadcrumbSchema, faqSchema, itemListSchema } from "@/lib/seo";
+import { vehicleName } from "@/lib/vehicleDisplay";
 
 export const dynamicParams = false;
 
@@ -33,6 +34,7 @@ export async function generateMetadata({
     title: c.metaTitle,
     description: c.metaDescription,
     path: `/hire/${c.slug}`,
+    keywords: c.keywords,
   });
 }
 
@@ -60,6 +62,14 @@ export default async function CollectionPage({
             { name: "Fleet", path: "/fleet" },
             { name: c.heading, path: `/hire/${c.slug}` },
           ]),
+          itemListSchema({
+            name: c.heading,
+            path: `/hire/${c.slug}`,
+            items: cars.map((v) => ({
+              name: vehicleName(v),
+              path: `/fleet/${v.slug}`,
+            })),
+          }),
           faqSchema(c.faqs),
         ]}
       />
@@ -82,6 +92,22 @@ export default async function CollectionPage({
           ))}
         </div>
       </section>
+
+      {/* Long-form content — the crawlable hub copy */}
+      {c.body.length > 0 && (
+        <section className="border-t border-line py-14 md:py-20">
+          <div className="shell max-w-3xl">
+            <span className="eyebrow">About {c.heading.toLowerCase()}</span>
+            <div className="mt-6 space-y-5">
+              {c.body.map((p, i) => (
+                <p key={i} className="text-base leading-relaxed text-silver">
+                  {p}
+                </p>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FAQs */}
       {c.faqs.length > 0 && (

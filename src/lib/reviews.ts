@@ -130,6 +130,7 @@ async function fetchLegacy(key: string, placeId: string): Promise<GoogleReviewsD
  */
 export interface FeaturableData extends GoogleReviewsData {
   showBranding: boolean;
+  writeUri?: string;
 }
 
 interface FeaturableReview {
@@ -184,9 +185,11 @@ export async function getFeaturableReviews(widgetId?: string): Promise<Featurabl
 
     const s = w.gbpLocationSummary ?? {};
     const rating: number | undefined = s.averageRating ?? s.rating ?? undefined;
-    const total: number | undefined = s.totalReviewCount ?? s.reviewCount ?? s.total ?? undefined;
+    const total: number | undefined =
+      s.reviewsCount ?? s.totalReviewCount ?? s.reviewCount ?? s.total ?? undefined;
+    const writeUri: string | undefined = s.writeAReviewUri ?? undefined;
 
-    return { rating, total, reviews, showBranding: w.showBranding !== false };
+    return { rating, total, reviews, writeUri, showBranding: w.showBranding !== false };
   } catch {
     return null;
   }

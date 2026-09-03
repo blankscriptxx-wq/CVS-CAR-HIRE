@@ -71,7 +71,7 @@ export async function FeaturableReviews() {
             )}
             <div className="flex flex-wrap gap-3">
               <a
-                href={googleReviewLinks.write}
+                href={data.writeUri || googleReviewLinks.write}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[44px] items-center gap-2 border border-champagne px-5 text-xs uppercase tracking-wide2 text-champagne hover:bg-champagne hover:text-black"

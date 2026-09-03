@@ -24,6 +24,11 @@ export interface Collection {
   intro: string;
   /** Long-form paragraphs rendered as the on-page content block. */
   body: string[];
+  /**
+   * Optional deeper, H2-headed content sections rendered below the body.
+   * Used for the highest-priority hubs that warrant a fuller guide.
+   */
+  sections?: { heading: string; body: string[] }[];
   /** SEO keyword hints for metadata. */
   keywords: string[];
   vehicleSlugs: string[];
@@ -262,22 +267,77 @@ export const collections: Collection[] = [
       "Both are offered self-drive for a day, a weekend or a week, so you can pick the level of drama to suit the occasion — the R8 for a landmark celebration or photoshoot, the RS3 for a spirited weekend or a first taste of real performance. Deposit, mileage and minimum age are confirmed on enquiry.",
       areasServed("Audi"),
     ],
+    sections: [
+      {
+        heading: "RS3 or R8 Spyder — which Audi should you hire?",
+        body: [
+          "The two Audis we offer are very different cars for very different days. The Audi RS3 is the everyday hero: a compact five-door Sportback with the legendary turbocharged five-cylinder engine, quattro grip and a warble unlike anything else on the road. It seats five, swallows a weekend's luggage and is devastatingly quick — the ideal choice for a spirited weekend, a birthday treat or a first taste of serious performance without the theatre.",
+          "The Audi R8 Spyder is the step up to a true supercar. Its naturally aspirated 5.2-litre V10 sits behind the seats, the roof drops for open-top drama, and quattro all-wheel drive keeps all that performance approachable. With two seats and genuine presence, it is the car for a landmark celebration, a proposal, a photoshoot or a music video — from £700 per day, minimum age 25.",
+          "In short: choose the RS3 for usable, everyday thrills and space for the group; choose the R8 Spyder when the occasion calls for a headline supercar. Not sure? Tell us the occasion and we'll recommend the right one.",
+        ],
+      },
+      {
+        heading: "Audi hire in Birmingham and near you",
+        body: [
+          "We're a Birmingham-based hire company, so if you're searching for Audi hire near you in the city or across the West Midlands — Solihull, Sutton Coldfield, Wolverhampton, Coventry or Walsall — you can collect directly from us. For everyone else, we deliver nationwide, from London and Manchester to Leeds, Bristol and beyond, subject to vehicle and location.",
+          "Both the RS3 and R8 Spyder are self-drive, so the day is entirely yours. We'll confirm the driving-licence requirements, deposit and minimum age for your chosen car when you enquire, and can deliver to your home, hotel or venue so the experience begins the moment the car arrives.",
+        ],
+      },
+      {
+        heading: "How much does Audi hire cost?",
+        body: [
+          "Audi R8 Spyder hire starts from £700 per day, with a weekend (3-day) rate from £1,800, a weekly rate from £3,000 and monthly rates for longer stays. The RS3 is priced on enquiry with the same clear daily, weekend and weekly structure. Rates depend on the dates, the duration and the mileage you need — the longer the hire, the better the effective daily rate.",
+          "For an exact quote, message us on WhatsApp or use the instant quote tool with your chosen Audi and dates, and we'll confirm the price and availability.",
+        ],
+      },
+      {
+        heading: "Weekend, weekly and long-term Audi hire",
+        body: [
+          "Weekend Audi hire is one of our most popular options — pick the car up on Friday and drop it back Monday on our weekend rate. Weekly hire works out better value again for a longer stay or a road trip, and for extended needs we offer monthly rates and long-term arrangements, a flexible alternative to leasing or buying. Whatever the duration, tell us your dates and we'll tailor it around you.",
+        ],
+      },
+    ],
     vehicleSlugs: ["audi-r8-spyder-hire", "audi-rs3-hire"],
     faqs: [
       {
         question: "Which Audis can I hire?",
         answer:
-          "We offer the Audi R8 Spyder and the Audi RS3 for self-drive hire. Tell us your dates and we'll confirm availability and pricing.",
+          "We offer the Audi R8 Spyder — a naturally aspirated V10 supercar — and the Audi RS3, the cult five-cylinder super-hatch, both for self-drive hire. Tell us your dates and we'll confirm availability and pricing.",
       },
       {
         question: "Is there Audi hire near me?",
         answer:
-          "We're based in Birmingham and cover the West Midlands directly, with nationwide UK delivery available. Tell us where you are and we'll confirm we can reach you.",
+          "We're based in Birmingham and cover the West Midlands directly — Solihull, Sutton Coldfield, Wolverhampton, Coventry and Walsall — with nationwide UK delivery available. Tell us where you are and we'll confirm we can reach you.",
+      },
+      {
+        question: "How much does it cost to hire an Audi?",
+        answer:
+          "Audi R8 Spyder hire starts from £700 per day, with a weekend rate from £1,800 and a weekly rate from £3,000. The RS3 is quoted on enquiry with the same daily, weekend and weekly structure. Message us your dates for an exact price.",
       },
       {
         question: "Can I hire an Audi RS3 or R8 for the weekend?",
         answer:
-          "Yes — both are popular weekend hires, available by the day, weekend or week. Message us your dates and we'll confirm the rate and availability.",
+          "Yes — both are popular weekend hires, available by the day, weekend or week. The R8 Spyder weekend rate starts from £1,800. Message us your dates and we'll confirm the rate and availability.",
+      },
+      {
+        question: "How old do I need to be to hire an Audi?",
+        answer:
+          "The Audi R8 Spyder has a minimum age of 25. Age, licence and deposit requirements for the RS3 are confirmed on enquiry, as they vary by vehicle. Get in touch and we'll talk you through exactly what's needed.",
+      },
+      {
+        question: "What's the difference between the RS3 and the R8 Spyder?",
+        answer:
+          "The RS3 is a five-seat, five-door super-hatch — usable, quick and great value for an everyday thrill. The R8 Spyder is a two-seat, open-top V10 supercar for a genuine headline occasion. Choose the RS3 for a spirited weekend with space, the R8 for maximum drama.",
+      },
+      {
+        question: "Is Audi hire self-drive or chauffeur?",
+        answer:
+          "Both the Audi R8 Spyder and RS3 are offered self-drive, so you're behind the wheel for the whole hire, with delivery available across Birmingham and the UK.",
+      },
+      {
+        question: "Can I hire an Audi long-term or monthly?",
+        answer:
+          "Yes — as well as daily and weekend hire, we offer weekly and monthly Audi rates for extended stays, a flexible alternative to leasing. Tell us your dates and mileage and we'll tailor the arrangement.",
       },
     ],
   },

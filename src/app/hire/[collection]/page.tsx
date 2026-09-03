@@ -109,6 +109,26 @@ export default async function CollectionPage({
         </section>
       )}
 
+      {/* Deeper H2-headed content sections (priority hubs) */}
+      {c.sections && c.sections.length > 0 && (
+        <section className="border-t border-line py-14 md:py-20">
+          <div className="shell max-w-3xl space-y-12">
+            {c.sections.map((s) => (
+              <div key={s.heading}>
+                <h2 className="text-display-sm font-display text-warm-white">{s.heading}</h2>
+                <div className="mt-5 space-y-5">
+                  {s.body.map((p, i) => (
+                    <p key={i} className="text-base leading-relaxed text-silver">
+                      {p}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* FAQs */}
       {c.faqs.length > 0 && (
         <section className="border-t border-line py-14 md:py-20">

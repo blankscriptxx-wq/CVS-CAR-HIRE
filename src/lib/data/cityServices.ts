@@ -148,6 +148,14 @@ export const CITY_SERVICES: CityServiceDef[] = [
         question: `Which cars are best for a wedding?`,
         answer: `The Rolls-Royce Ghost and Cullinan are perennial favourites, with the Mercedes V-Class for the wedding party and convertibles for summer ceremonies. We'll help you choose for your ${loc.city} venue and style.`,
       },
+      {
+        question: `How much is wedding car hire in ${loc.city}?`,
+        answer: `Wedding car hire in ${loc.city} depends on the car, whether it's chauffeur-driven and how long you need it. Share your date, venue and the car you have in mind and we'll put together a tailored quote.`,
+      },
+      {
+        question: `How far ahead should I book a wedding car in ${loc.city}?`,
+        answer: `As early as possible — popular cars and summer Saturdays in ${loc.city} book up months ahead. Get in touch as soon as you have your date to secure your first choice.`,
+      },
     ],
     metaTitle: (loc) => `Wedding Car Hire ${loc.city} | Rolls-Royce Wedding Cars | CVS Car Hire`,
     metaDescription: (loc) =>
@@ -177,6 +185,14 @@ export const CITY_SERVICES: CityServiceDef[] = [
       {
         question: `Do you deliver prom cars to home or school?`,
         answer: `Yes — we deliver to your chosen ${loc.city} address for photos and take you to the venue in style, subject to vehicle and location.`,
+      },
+      {
+        question: `How much is prom car hire in ${loc.city}?`,
+        answer: `Prom car hire in ${loc.city} depends on the car and whether it's chauffeur-driven — from statement supercars to luxury 4x4s. Message us with the car and date and we'll confirm the price. Book early, as prom-season dates go quickly.`,
+      },
+      {
+        question: `Which cars are most popular for proms in ${loc.city}?`,
+        answer: `The Lamborghini Urus and Huracán, the Ferrari Roma and the Mercedes-AMG G63 (G-Wagon) are the most-requested prom cars in ${loc.city} — delivered for the photos and the big entrance.`,
       },
     ],
     metaTitle: (loc) => `Prom Car Hire ${loc.city} | Supercar Prom Arrivals | CVS Car Hire`,

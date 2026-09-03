@@ -13,7 +13,7 @@ export const locations: LocationContent[] = [
     region: "West Midlands",
     nation: "England",
     intro:
-      "Birmingham is home. As a Birmingham-based hire company established in 2014, CVS Car Hire knows the city intimately — from the Jewellery Quarter to Edgbaston, Solihull to the city centre. Our fleet of over 50 luxury, prestige and performance vehicles is ready for collection locally, with delivery across the West Midlands.",
+      "Birmingham is home. For luxury car hire in Birmingham, CVS Car Hire is the city's specialist — a Birmingham-based car hire company established in 2014 that knows the city intimately, from the Jewellery Quarter to Edgbaston, Solihull to the city centre. Our fleet of over 50 luxury, prestige and performance vehicles is ready for collection locally, with delivery across the West Midlands.",
     serving:
       "Whether you need a supercar for a landmark celebration, a Rolls-Royce for a wedding at a Warwickshire venue, or a chauffeur-driven arrival for a business event at the ICC, we're on your doorstep. Local collection is straightforward, and delivery across Birmingham and the wider West Midlands is quick and simple.",
     delivery:
@@ -27,12 +27,15 @@ export const locations: LocationContent[] = [
     recommendedVehicles: ["lamborghini-urus-performante-hire", "rolls-royce-cullinan-hire", "mercedes-amg-g63-hire", "ferrari-roma-hire"],
     nearbyLocations: ["coventry", "wolverhampton", "leicester"],
     faqs: [
-      { question: "Do you deliver luxury cars across Birmingham?", answer: "Yes — as a Birmingham-based company we offer local collection and delivery across the city and West Midlands, with nationwide delivery available subject to vehicle and location." },
+      { question: "Where can I find car hire in Birmingham?", answer: "CVS Car Hire is a Birmingham-based car hire company established in 2014, with local collection from our Birmingham base and delivery across the city and the West Midlands. We specialise in luxury, supercar, prestige and performance car hire, self-drive or chauffeur-driven." },
+      { question: "Do you deliver cars across Birmingham?", answer: "Yes — as a Birmingham-based company we offer local collection and delivery across the city and West Midlands, with nationwide delivery available subject to vehicle and location." },
+      { question: "Do you offer car hire near Birmingham Airport?", answer: "Yes — we can deliver to addresses near Birmingham Airport (BHX) and across the city, subject to vehicle and location. Tell us your pick-up point and dates and we'll confirm." },
+      { question: "Are you a luxury or standard car hire company in Birmingham?", answer: "We're a luxury and prestige car hire specialist — supercars, luxury 4x4s, prestige saloons and performance cars — rather than standard economy rental. If you want a car with genuine presence for an occasion, a weekend or longer, we're the Birmingham team to call." },
       { question: "Can I hire a car for a wedding in Birmingham?", answer: "Absolutely. We regularly supply wedding cars for Birmingham and Warwickshire venues, self-drive or chauffeur-driven. Get in touch with your date and venue to check availability." },
     ],
-    metaTitle: "Luxury Car Hire Birmingham | Supercar & Prestige Hire | CVS Car Hire",
+    metaTitle: "Car Hire Birmingham | Luxury, Supercar & Prestige Hire | CVS Car Hire",
     metaDescription:
-      "Luxury, supercar and prestige car hire in Birmingham. Established 2014, 50+ vehicles, self-drive and chauffeur. Local delivery across the West Midlands. Check availability.",
+      "Car hire in Birmingham — luxury, supercar, prestige and performance car hire from CVS Car Hire. Established 2014, 50+ vehicles, self-drive or chauffeur, with local delivery across the West Midlands. Check availability.",
     geo: { lat: 52.4862, lng: -1.8904 },
   },
   {

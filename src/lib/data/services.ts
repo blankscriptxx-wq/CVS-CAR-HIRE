@@ -304,6 +304,8 @@ export const services: ServiceContent[] = [
     faqs: [
       { question: "How far in advance should we book a wedding car?", answer: "As early as possible — popular vehicles and summer dates book up quickly. Get in touch to check availability for your date." },
       { question: "Can you provide cars for the whole wedding party?", answer: "Yes. Alongside the main wedding car, options such as the Mercedes V-Class carry the party in comfort. Tell us your numbers and we'll advise." },
+      { question: "Can I hire a Rolls-Royce for my wedding in Birmingham?", answer: "Yes — the Rolls-Royce Ghost and Cullinan are our most popular wedding cars, supplied chauffeur-driven with ribbons and presentation taken care of. We serve Birmingham and Warwickshire venues, with nationwide delivery available. Share your date and venue and we'll confirm." },
+      { question: "How much does wedding car hire cost?", answer: "It depends on the car, whether it's chauffeur-driven and the hours you need it for. Tell us your date, venue and the car you have in mind and we'll put together a tailored wedding quote." },
     ],
     metaTitle: "Wedding Car Hire Birmingham | Rolls-Royce & Luxury Wedding Cars | CVS",
     metaDescription:
@@ -331,10 +333,13 @@ export const services: ServiceContent[] = [
     occasions: ["School proms", "Leavers' events", "Celebrations"],
     faqs: [
       { question: "Is a chauffeur included for prom hire?", answer: "Prom hire is typically chauffeur-driven for safety and simplicity. We'll confirm the arrangements when you enquire." },
+      { question: "How much is prom car hire in Birmingham?", answer: "Prom car hire depends on the car and whether it's chauffeur-driven — from statement supercars to luxury 4x4s. Message us with the car you have in mind and the date and we'll confirm the price. Book early, as prom-season dates go quickly." },
+      { question: "Which cars are most popular for proms?", answer: "The head-turners: the Lamborghini Urus and Huracán, the Ferrari Roma and the Mercedes-AMG G63 (G-Wagon) are the most requested prom cars, delivered to home or school for the photos and the big entrance." },
+      { question: "How early should I book a prom car?", answer: "As early as you can — prom season is our busiest period and the best cars and dates book up fast. Get in touch as soon as you have your date to secure the car you want." },
     ],
     metaTitle: "Prom Car Hire Birmingham | Supercars & Luxury Prom Cars | CVS Car Hire",
     metaDescription:
-      "Prom car hire in Birmingham. Head-turning supercars and luxury 4x4s, chauffeur-driven for a safe, unforgettable night. Check availability with CVS Car Hire.",
+      "Prom car hire in Birmingham. Head-turning supercars and luxury 4x4s — Lamborghini, Ferrari, G-Wagon — chauffeur-driven for a safe, unforgettable night. Book early. Check availability.",
   },
   {
     slug: "corporate-car-hire",

@@ -4,13 +4,14 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import type { GoogleReview } from "@/lib/reviews";
 import { StarIcon } from "@/components/ui/Icons";
 
-const GOLD = "#B8894B";
-
 function Stars({ rating }: { rating: number }) {
   return (
-    <span className="inline-flex gap-0.5" aria-label={`${rating} out of 5`} style={{ color: GOLD }}>
+    <span className="inline-flex gap-0.5" aria-label={`${rating} out of 5`}>
       {[1, 2, 3, 4, 5].map((i) => (
-        <StarIcon key={i} className="h-4 w-4" style={{ opacity: i <= Math.round(rating) ? 1 : 0.2 }} />
+        <StarIcon
+          key={i}
+          className={`h-4 w-4 ${i <= Math.round(rating) ? "text-champagne" : "text-line"}`}
+        />
       ))}
     </span>
   );
@@ -30,19 +31,15 @@ function GoogleG({ className = "h-4 w-4" }: { className?: string }) {
 function Chevron({ dir }: { dir: "left" | "right" }) {
   return (
     <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden>
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d={dir === "left" ? "M15 6l-6 6 6 6" : "M9 6l6 6-6 6"}
-      />
+      <path strokeLinecap="round" strokeLinejoin="round" d={dir === "left" ? "M15 6l-6 6 6 6" : "M9 6l6 6-6 6"} />
     </svg>
   );
 }
 
 /**
- * Native reviews carousel — scroll-snap track that works on both desktop
- * (arrow buttons + drag) and mobile (swipe). Gentle autoplay that pauses on
- * hover, focus or touch. Light cards to contrast the dark site.
+ * Native reviews carousel — dark, matching the site. Scroll-snap track that
+ * works on desktop (arrow buttons + drag) and mobile (swipe). Gentle autoplay
+ * that pauses on hover, focus or touch.
  */
 export function ReviewsCarousel({ reviews }: { reviews: GoogleReview[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -52,7 +49,7 @@ export function ReviewsCarousel({ reviews }: { reviews: GoogleReview[] }) {
 
   const stepSize = useCallback((track: HTMLDivElement) => {
     const first = track.firstElementChild as HTMLElement | null;
-    const gap = 24; // matches gap-6
+    const gap = 24; // gap-6
     return first ? first.offsetWidth + gap : track.clientWidth;
   }, []);
 
@@ -68,16 +65,12 @@ export function ReviewsCarousel({ reviews }: { reviews: GoogleReview[] }) {
       const t = trackRef.current;
       if (!t) return;
       const atEnd = t.scrollLeft + t.clientWidth >= t.scrollWidth - 8;
-      if (dir === 1 && atEnd) {
-        t.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        t.scrollBy({ left: dir * stepSize(t), behavior: "smooth" });
-      }
+      if (dir === 1 && atEnd) t.scrollTo({ left: 0, behavior: "smooth" });
+      else t.scrollBy({ left: dir * stepSize(t), behavior: "smooth" });
     },
     [stepSize],
   );
 
-  // Gentle autoplay, paused on interaction.
   useEffect(() => {
     if (reviews.length <= 1) return;
     const id = window.setInterval(() => {
@@ -118,22 +111,21 @@ export function ReviewsCarousel({ reviews }: { reviews: GoogleReview[] }) {
         {reviews.map((r) => (
           <figure
             key={`${r.author}-${r.time}`}
-            className="relative flex w-[85%] shrink-0 snap-start flex-col border border-black/10 bg-white p-7 shadow-sm sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
+            className="relative flex w-[85%] shrink-0 snap-start flex-col border border-line bg-charcoal/40 p-7 transition-colors duration-300 hover:border-champagne/60 sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
           >
             <span
               aria-hidden
-              className="pointer-events-none absolute right-5 top-2 select-none font-display text-7xl leading-none"
-              style={{ color: GOLD, opacity: 0.12 }}
+              className="pointer-events-none absolute right-5 top-2 select-none font-display text-7xl leading-none text-champagne/10"
             >
               &rdquo;
             </span>
 
             <Stars rating={r.rating} />
-            <blockquote className="mt-5 flex-1 text-sm leading-relaxed text-neutral-700">
+            <blockquote className="mt-5 flex-1 text-sm leading-relaxed text-silver">
               {r.text.length > 300 ? `${r.text.slice(0, 297)}…` : r.text}
             </blockquote>
 
-            <figcaption className="mt-6 flex items-center gap-3 border-t border-black/10 pt-5">
+            <figcaption className="mt-6 flex items-center gap-3 border-t border-line pt-5">
               {r.photo ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
@@ -142,20 +134,16 @@ export function ReviewsCarousel({ reviews }: { reviews: GoogleReview[] }) {
                   width={36}
                   height={36}
                   loading="lazy"
-                  className="h-9 w-9 shrink-0 rounded-full object-cover"
-                  style={{ border: `1px solid ${GOLD}66` }}
+                  className="h-9 w-9 shrink-0 rounded-full border border-champagne/30 object-cover"
                 />
               ) : (
-                <span
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full font-display text-sm"
-                  style={{ border: `1px solid ${GOLD}66`, color: GOLD }}
-                >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-champagne/30 font-display text-sm text-champagne">
                   {r.author.charAt(0)}
                 </span>
               )}
               <div className="flex min-w-0 flex-1 items-center justify-between gap-2">
-                <span className="truncate text-sm font-medium text-black">{r.author}</span>
-                <span className="shrink-0 text-[11px] uppercase tracking-wide2 text-neutral-500">
+                <span className="truncate text-sm text-warm-white">{r.author}</span>
+                <span className="shrink-0 text-[11px] uppercase tracking-wide2 text-silver/60">
                   {r.relativeTime}
                 </span>
               </div>
@@ -172,7 +160,7 @@ export function ReviewsCarousel({ reviews }: { reviews: GoogleReview[] }) {
           aria-label="Previous reviews"
           onClick={() => scrollByDir(-1)}
           disabled={!canPrev}
-          className="flex h-11 w-11 items-center justify-center border border-black/15 text-black transition-colors hover:border-black/50 disabled:opacity-30"
+          className="flex h-11 w-11 items-center justify-center border border-line text-warm-white transition-colors hover:border-champagne disabled:opacity-30"
         >
           <Chevron dir="left" />
         </button>
@@ -181,7 +169,7 @@ export function ReviewsCarousel({ reviews }: { reviews: GoogleReview[] }) {
           aria-label="Next reviews"
           onClick={() => scrollByDir(1)}
           disabled={!canNext}
-          className="flex h-11 w-11 items-center justify-center border border-black/15 text-black transition-colors hover:border-black/50 disabled:opacity-30"
+          className="flex h-11 w-11 items-center justify-center border border-line text-warm-white transition-colors hover:border-champagne disabled:opacity-30"
         >
           <Chevron dir="right" />
         </button>

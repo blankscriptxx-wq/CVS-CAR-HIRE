@@ -131,9 +131,91 @@ export const services: ServiceContent[] = [
       { question: "What is the longest I can hire a supercar for?", answer: "Extended hires of several weeks or months are arranged individually. Share your intended dates and we'll confirm availability for that period." },
       { question: "Do you deliver long-term hire cars?", answer: "Yes — nationwide UK delivery and collection are available on many vehicles, subject to the car and location. We'll confirm for your area when you enquire." },
     ],
+    sections: [
+      {
+        heading: "Long-term supercar hire vs leasing vs buying",
+        body: [
+          "Traditional supercar ownership means a large deposit, steep depreciation the moment you drive away, servicing and insurance to arrange, and the hassle of selling when you're done. A finance lease or PCP ties you into a multi-year contract with mileage penalties and a car you don't actually own at the end. Long-term supercar hire sidesteps all of it: one straightforward monthly rate, for exactly as long as you want, with no depreciation to absorb and nothing to resell.",
+          "It's the difference between committing to a single car for years and simply enjoying the supercar you want, now, for a month or a season — and swapping to something else when the mood takes you. For many of our clients that flexibility is worth far more than the paperwork of ownership.",
+        ],
+      },
+      {
+        heading: "What long-term supercar hire costs",
+        body: [
+          "Long-term hire uses our weekly and monthly rates, which come down considerably against the daily rate the longer you take the car. Some models have published monthly rates; others are quoted on enquiry. The final figure depends on the car, the duration and the mileage you need — tell us all three and we'll confirm an exact, all-in monthly price with no hidden extras.",
+        ],
+      },
+      {
+        heading: "Which supercars are available long-term?",
+        body: [
+          "Much of our fleet is available for extended hire, including the Lamborghini Urus Performante and Huracán, the Ferrari Roma and the Audi R8 Spyder, alongside luxury SUVs like the Mercedes-AMG G63 and Range Rover for those who want presence and everyday usability over a longer term. If you'd like to rotate between models across your hire, we can arrange that too.",
+        ],
+      },
+    ],
+    related: ["supercar-subscription", "long-term-hire", "short-term-supercar-hire", "nationwide-delivery"],
     metaTitle: "Long-Term Supercar Hire | Monthly Ferrari & Lamborghini Hire UK | CVS Car Hire",
     metaDescription:
       "Long-term supercar hire in Birmingham and across the UK — Ferrari, Lamborghini and more by the week or month. The supercar experience without ownership or depreciation. Check availability.",
+  },
+  {
+    slug: "supercar-subscription",
+    name: "Supercar Subscription",
+    navLabel: "Supercar Subscription",
+    hero: {
+      eyebrow: "Rolling Monthly Access",
+      heading: "Supercar Subscription",
+      intro:
+        "One monthly price, the supercar you want — with the freedom to extend or switch. Ownership's thrill, without its commitment.",
+    },
+    overview:
+      "A supercar subscription is the modern alternative to buying or leasing: a single, all-in monthly rate that gives you a genuine supercar for as long as you want it, with the flexibility to extend month to month or switch to a different model. There's no deposit against a purchase, no depreciation, no long finance agreement and nothing to resell — you simply drive, and we take care of the rest. It suits anyone who loves variety, is between cars, or wants the supercar experience without tying up capital or signing a multi-year contract.",
+    sections: [
+      {
+        heading: "How a supercar subscription works",
+        body: [
+          "Choose your supercar and your start date, and we confirm one all-in monthly rate covering the car and an agreed mileage allowance. Take it for a month, roll it over month to month, or switch to a different model when you fancy a change — the arrangement flexes around you rather than locking you in.",
+          "It's delivered to you across Birmingham and the UK, with a single point of contact throughout and a simple handover at the end of each term. Think of it as membership to a supercar, not a purchase.",
+        ],
+      },
+      {
+        heading: "Subscription vs leasing vs ownership",
+        body: [
+          "A lease or PCP commits you to one car for years, with mileage limits, early-termination penalties and a balloon payment if you want to keep it. Buying means depreciation and the effort of reselling. A subscription is deliberately different: short, rolling commitments, the freedom to change cars, and one predictable monthly cost — ideal in a world where flexibility matters more than a logbook.",
+        ],
+      },
+      {
+        heading: "Who supercar subscription suits",
+        body: [
+          "It's popular with entrepreneurs and professionals who want a supercar on the driveway without capital tied up, people relocating or between cars, content creators who value variety, and anyone who'd rather enjoy several supercars over a year than commit to one. Tell us how you'd like to use it and we'll tailor the terms.",
+        ],
+      },
+    ],
+    benefits: [
+      "One all-in monthly rate — no deposit, depreciation or resale",
+      "Roll month to month or switch between supercars",
+      "A flexible alternative to leasing, PCP or buying",
+      "Agreed mileage, tailored to how you drive",
+      "Delivery across Birmingham and the UK",
+      "A single, dedicated point of contact throughout",
+    ],
+    occasions: ["Between cars", "Business & entrepreneurs", "Content creators", "Trying before buying", "Seasonal driving"],
+    recommendedVehicles: [
+      "lamborghini-urus-performante-hire",
+      "ferrari-roma-hire",
+      "audi-r8-spyder-hire",
+      "lamborghini-huracan-performante-spyder-hire",
+    ],
+    faqs: [
+      { question: "What is a supercar subscription?", answer: "It's a rolling monthly arrangement that gives you a genuine supercar for one all-in price, with the flexibility to extend or switch cars — a modern alternative to leasing or buying, without the deposit, depreciation or long contract." },
+      { question: "How is a subscription different from leasing?", answer: "A lease ties you to one car for years with mileage penalties and a finance agreement. A subscription is short and rolling — you can change cars, extend month to month, and there's nothing to resell. One predictable monthly cost, maximum flexibility." },
+      { question: "Can I switch supercars during my subscription?", answer: "Yes — the ability to rotate between models is one of the main reasons people choose a subscription over ownership. Talk to us about which cars you'd like to enjoy across your term." },
+      { question: "How much is a supercar subscription?", answer: "It depends on the car and your mileage, quoted as a single all-in monthly rate. Tell us the supercar you have in mind and roughly how many miles you'll cover and we'll confirm the price." },
+      { question: "Is there a minimum term?", answer: "Subscriptions are arranged monthly, so commitments are short and flexible. Share your plans and we'll tailor the terms around you." },
+    ],
+    related: ["long-term-supercar-hire", "long-term-hire", "short-term-supercar-hire"],
+    metaTitle: "Supercar Subscription | Monthly Supercar Hire & Leasing Alternative | CVS",
+    metaDescription:
+      "Supercar subscription in the UK — one all-in monthly rate for a genuine supercar, with the freedom to extend or switch. The flexible alternative to leasing or buying. Check availability.",
   },
   {
     slug: "luxury-car-hire",
@@ -450,6 +532,22 @@ export const services: ServiceContent[] = [
       { question: "Do you offer monthly car rental or a subscription?", answer: "Yes — our monthly rate works as a rolling car subscription, one price per month with the flexibility to extend, ideal as an alternative to leasing or contract hire. Tell us the vehicle and duration and we'll confirm the rate." },
       { question: "Is long-term car hire available near me in Birmingham?", answer: "Yes — we're based in Birmingham and arrange long-term and monthly hire locally and nationwide, with delivery available. Tell us your location and dates and we'll confirm." },
     ],
+    sections: [
+      {
+        heading: "A flexible alternative to leasing or contract hire",
+        body: [
+          "Personal or business leasing and contract hire lock you into a fixed multi-year agreement, with mileage limits, early-exit penalties and a credit check — and at the end you hand the car back with nothing to show for it. Long-term car hire works differently: a rolling weekly or monthly rate, for as long as you actually need the vehicle, with no long contract to sign and the freedom to change or return the car when your plans change.",
+          "It's ideal when your needs are uncertain or temporary — a relocation, a project, a gap between cars, or a business that would rather not tie up capital in a fleet. You get a premium vehicle on flexible terms, without the commitment leasing demands.",
+        ],
+      },
+      {
+        heading: "Monthly car rental and subscription",
+        body: [
+          "Our monthly rate effectively works as a rolling car subscription: one predictable all-in price per month, with the flexibility to extend month to month. It's popular with business users, people relocating to the Birmingham area, and anyone who wants a quality car for a season without buying or leasing. Mileage is agreed up front and tailored to how you drive.",
+        ],
+      },
+    ],
+    related: ["long-term-supercar-hire", "supercar-subscription", "corporate-car-hire", "nationwide-delivery"],
     metaTitle: "Long-Term Car Hire Birmingham | Monthly Rental & Subscription | CVS",
     metaDescription:
       "Long-term car hire in Birmingham — flexible monthly car rental and subscription for premium vehicles, a simple alternative to leasing or contract hire. UK delivery. Check availability.",

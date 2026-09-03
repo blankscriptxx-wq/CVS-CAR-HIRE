@@ -118,12 +118,16 @@ export interface ServiceContent {
     intro: string;
   };
   overview: string;
+  /** Optional deeper, H2-headed content sections rendered below the overview. */
+  sections?: { heading: string; body: string[] }[];
   benefits: string[];
   occasions: string[];
   /** Slugs of vehicles to feature. If empty, resolved by category. */
   recommendedVehicles?: string[];
   process?: { title: string; body: string }[];
   faqs: FAQ[];
+  /** Slugs of related services to cross-link (topic clustering). */
+  related?: string[];
   metaTitle: string;
   metaDescription: string;
 }

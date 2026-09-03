@@ -121,6 +121,26 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </Reveal>
       </section>
 
+      {/* Deeper H2-headed content sections */}
+      {service.sections && service.sections.length > 0 && (
+        <section className="border-t border-line py-14 md:py-20">
+          <div className="shell max-w-3xl space-y-12">
+            {service.sections.map((s) => (
+              <div key={s.heading}>
+                <h2 className="text-display-sm font-display text-warm-white">{s.heading}</h2>
+                <div className="mt-5 space-y-5">
+                  {s.body.map((p, i) => (
+                    <p key={i} className="text-base leading-relaxed text-silver">
+                      {p}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Process */}
       {service.process && service.process.length > 0 && (
         <section className="border-t border-line bg-charcoal/30 py-16 md:py-20">
@@ -209,6 +229,29 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </h2>
             <div className="mt-8">
               <FaqAccordion faqs={service.faqs} />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Related services — topic-cluster internal linking */}
+      {service.related && service.related.length > 0 && (
+        <section className="border-t border-line py-12">
+          <div className="shell">
+            <span className="eyebrow">Related services</span>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {service.related
+                .map(getServiceBySlug)
+                .filter((s): s is NonNullable<typeof s> => Boolean(s))
+                .map((s) => (
+                  <Link
+                    key={s.slug}
+                    href={`/services/${s.slug}`}
+                    className="border border-line px-4 py-2 text-xs uppercase tracking-wide2 text-silver hover:border-champagne hover:text-warm-white"
+                  >
+                    {s.name}
+                  </Link>
+                ))}
             </div>
           </div>
         </section>

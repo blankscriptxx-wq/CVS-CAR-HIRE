@@ -5,6 +5,8 @@ import { FeaturedFleet } from "@/components/sections/FeaturedFleet";
 import { BrowseByExperience } from "@/components/sections/BrowseByExperience";
 import { WhyCVS } from "@/components/sections/WhyCVS";
 import { SignatureService } from "@/components/sections/SignatureService";
+import { FeaturableReviews } from "@/components/sections/FeaturableReviews";
+import { GoogleReviews } from "@/components/sections/GoogleReviews";
 import { SocialProof } from "@/components/sections/SocialProof";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { StickyActionBar } from "@/components/StickyActionBar";
@@ -19,6 +21,9 @@ export default function HomePage() {
       <BrowseByExperience />
       <WhyCVS />
       <SignatureService />
+      {/* Live Google reviews — render only once configured (widget id / API key). */}
+      <FeaturableReviews />
+      <GoogleReviews />
       <SocialProof />
       <FinalCTA />
       <StickyActionBar context={{ page: "home" }} />

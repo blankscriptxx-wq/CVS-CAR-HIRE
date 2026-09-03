@@ -417,6 +417,90 @@ export const locations: LocationContent[] = [
       "Luxury, supercar, wedding and prom car hire in Stoke-on-Trent & Staffordshire. Delivery from our Birmingham base. Check availability.",
     geo: { lat: 53.0027, lng: -2.1794 },
   },
+  {
+    slug: "solihull",
+    city: "Solihull",
+    region: "West Midlands",
+    nation: "England",
+    intro:
+      "Solihull is right on our doorstep. As a Birmingham-based hire company established in 2014, CVS Car Hire serves Solihull, Shirley, Dorridge and Knowle with local collection and quick delivery — luxury, supercar and prestige vehicles ready for the occasions this affluent corner of the West Midlands is known for.",
+    serving:
+      "Whether it's a supercar for a landmark birthday in Solihull, a Rolls-Royce for a wedding at a nearby venue, or a chauffeur-driven arrival for business at Blythe Valley Park, we're minutes away. With Birmingham Airport and the NEC on Solihull's edge, we're perfectly placed for events, arrivals and celebrations.",
+    delivery:
+      "Fast local delivery and collection across Solihull, Shirley, Dorridge and Knowle from our nearby Birmingham base. Nationwide UK delivery is also available, subject to vehicle and location.",
+    motorways: ["M42", "M40", "M6", "A34"],
+    airports: ["Birmingham Airport (BHX)"],
+    weddingVenues: ["Nailcote Hall", "Hogarths Hotel & Spa", "The St. Johns Hotel", "Ardencote"],
+    businessDistricts: ["Blythe Valley Park", "Solihull town centre", "Birmingham Business Park"],
+    landmarks: ["Touchwood", "Tudor Grange Park", "The NEC", "Knowle & Dorridge"],
+    occasions: ["Weddings", "Proms", "Corporate events", "Airport arrivals", "Celebrations"],
+    recommendedVehicles: ["lamborghini-urus-performante-hire", "mercedes-amg-g63-hire", "rolls-royce-cullinan-hire", "audi-r8-spyder-hire"],
+    nearbyLocations: ["birmingham", "coventry"],
+    faqs: [
+      { question: "Do you deliver luxury cars to Solihull?", answer: "Yes — Solihull is right beside our Birmingham base, so local collection and delivery to Solihull, Shirley, Dorridge and Knowle are quick and easy. Nationwide delivery is also available, subject to vehicle and location." },
+      { question: "Can I hire a car near Birmingham Airport or the NEC?", answer: "Absolutely — both sit on Solihull's edge and we regularly deliver for arrivals and events there. Tell us your pick-up point and dates and we'll confirm." },
+    ],
+    metaTitle: "Luxury Car Hire Solihull | Supercar, Wedding & Prom Hire | CVS Car Hire",
+    metaDescription:
+      "Luxury, supercar, wedding and prom car hire in Solihull — self-drive or chauffeur, with fast local delivery from our nearby Birmingham base. Check availability.",
+    geo: { lat: 52.4118, lng: -1.7776 },
+  },
+  {
+    slug: "milton-keynes",
+    city: "Milton Keynes",
+    region: "Buckinghamshire",
+    nation: "England",
+    intro:
+      "CVS Car Hire brings its collection of supercars, luxury 4x4s and prestige vehicles to Milton Keynes through our nationwide delivery service — your chosen car delivered to your home, hotel or venue, subject to availability. Straight down the M1 from our Birmingham base, MK is well within easy reach.",
+    serving:
+      "From a Lamborghini for a weekend in Milton Keynes to a Rolls-Royce for a wedding, or a chauffeur-driven arrival for a corporate event in Central Milton Keynes, we make luxury hire effortless. Tell us the occasion and the location and we'll confirm delivery.",
+    delivery:
+      "Milton Keynes is served through our nationwide delivery service, with quick access via the M1 — your vehicle delivered to your chosen MK address, subject to vehicle and location. Collection is arranged to suit you.",
+    motorways: ["M1", "A5", "A421"],
+    airports: ["Luton (LTN)", "Birmingham (BHX)"],
+    weddingVenues: ["Horwood House", "Woughton House", "The Old Rectory"],
+    businessDistricts: ["Central Milton Keynes (CMK)", "Kents Hill Business Park"],
+    landmarks: ["thecentre:mk", "Stadium MK", "Xscape", "Bletchley Park"],
+    occasions: ["Weddings", "Proms", "Corporate events", "Celebrations", "Weekend hire"],
+    recommendedVehicles: ["lamborghini-urus-performante-hire", "ferrari-roma-hire", "mercedes-amg-g63-hire", "rolls-royce-cullinan-hire"],
+    nearbyLocations: ["birmingham"],
+    faqs: [
+      { question: "Do you deliver luxury cars to Milton Keynes?", answer: "Yes — MK is a straight run down the M1 from our Birmingham base, so delivery and collection are simple. We deliver to your home, hotel or venue, subject to vehicle and location." },
+      { question: "Can I hire a supercar in Milton Keynes for the weekend?", answer: "Yes — many of our supercars are available for weekend hire in Milton Keynes via delivery. Get in touch to confirm the car and dates." },
+    ],
+    metaTitle: "Luxury Car Hire Milton Keynes | Supercar & Prestige Hire | CVS Car Hire",
+    metaDescription:
+      "Luxury and supercar hire delivered across Milton Keynes — Lamborghini, Ferrari, Rolls-Royce and more, self-drive or chauffeur, subject to availability. Check availability.",
+    geo: { lat: 52.0406, lng: -0.7594 },
+  },
+  {
+    slug: "oxford",
+    city: "Oxford",
+    region: "Oxfordshire",
+    nation: "England",
+    intro:
+      "CVS Car Hire delivers its collection of supercars, luxury 4x4s and prestige vehicles to Oxford and across Oxfordshire through our nationwide service — the perfect match for the county's beautiful venues, country weddings and dreaming-spires backdrops. Your chosen car brought to your door, subject to availability.",
+    serving:
+      "From a supercar for a celebration among the Cotswolds to a Rolls-Royce for a wedding at an Oxfordshire manor, or a chauffeur-driven arrival for a college or business event, we make luxury hire in Oxford seamless. Tell us the occasion and location and we'll confirm delivery.",
+    delivery:
+      "Oxford and Oxfordshire are served through our nationwide delivery service, with access via the M40 — your vehicle delivered to your chosen address, subject to vehicle and location. Collection is arranged to suit you.",
+    motorways: ["M40", "A34", "A40"],
+    airports: ["London Oxford Airport", "Heathrow (LHR)", "Birmingham (BHX)"],
+    weddingVenues: ["Heythrop Park", "Weston Manor", "The Bay Tree", "Caswell House"],
+    businessDistricts: ["Oxford city centre", "Oxford Science Park", "Botley Road"],
+    landmarks: ["The dreaming spires", "Blenheim Palace", "Ashmolean Museum", "Radcliffe Camera"],
+    occasions: ["Weddings", "Celebrations", "Corporate & college events", "Weekend hire"],
+    recommendedVehicles: ["rolls-royce-cullinan-hire", "ferrari-roma-hire", "lamborghini-urus-performante-hire", "mercedes-amg-g63-hire"],
+    nearbyLocations: ["birmingham"],
+    faqs: [
+      { question: "Do you deliver luxury cars to Oxford?", answer: "Yes — we deliver to Oxford and across Oxfordshire through our nationwide service via the M40, bringing your chosen vehicle to your home, hotel or venue, subject to availability." },
+      { question: "Can I hire a wedding car for an Oxfordshire venue?", answer: "Absolutely — the Cotswolds and Oxfordshire have some of the country's finest wedding venues, and we regularly deliver wedding cars there. Share your date and venue and we'll confirm." },
+    ],
+    metaTitle: "Luxury Car Hire Oxford | Supercar, Wedding & Prestige Hire | CVS Car Hire",
+    metaDescription:
+      "Luxury and supercar hire delivered across Oxford & Oxfordshire — Rolls-Royce, Ferrari, Lamborghini and more, self-drive or chauffeur. Check availability.",
+    geo: { lat: 51.7520, lng: -1.2577 },
+  },
 ];
 
 export function getLocationBySlug(slug: string): LocationContent | undefined {

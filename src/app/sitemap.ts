@@ -2,10 +2,13 @@ import type { MetadataRoute } from "next";
 import { vehicles } from "@/lib/data/vehicles";
 import { services } from "@/lib/data/services";
 import { locations } from "@/lib/data/locations";
-import { journalPosts } from "@/lib/data/journal";
+import { getPublishedPosts } from "@/lib/data/journal";
 import { CITY_SERVICES } from "@/lib/data/cityServices";
 import { collections } from "@/lib/data/collections";
 import { absoluteUrl } from "@/lib/seo";
+
+// Revalidate twice a day so newly-published journal posts enter the sitemap.
+export const revalidate = 43200;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -54,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const journalRoutes = journalPosts.map((p) => ({
+  const journalRoutes = getPublishedPosts().map((p) => ({
     url: absoluteUrl(`/journal/${p.slug}`),
     lastModified: new Date(p.publishedAt),
     changeFrequency: "yearly" as const,

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { journalPosts, getJournalPost } from "@/lib/data/journal";
+import { journalPosts, getJournalPost, isPublished } from "@/lib/data/journal";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Media } from "@/components/ui/Media";
@@ -11,8 +11,13 @@ import { StickyActionBar } from "@/components/StickyActionBar";
 import { ArrowRight } from "@/components/ui/Icons";
 import { buildMetadata } from "@/lib/seo";
 
+// Revalidate twice a day so a future-dated post goes live on its publish date.
+export const revalidate = 43200;
+
 export function generateStaticParams() {
-  return journalPosts.map((p) => ({ slug: p.slug }));
+  // Pre-render only already-published posts; future-dated ones render on demand
+  // (and are gated below) once their date arrives.
+  return journalPosts.filter((p) => isPublished(p)).map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
@@ -34,6 +39,8 @@ export default async function JournalPostPage({ params }: { params: Promise<{ sl
   const { slug } = await params;
   const post = getJournalPost(slug);
   if (!post) notFound();
+  // Not yet its publish date — keep it hidden until then.
+  if (!isPublished(post)) notFound();
 
   const date = new Date(post.publishedAt).toLocaleDateString("en-GB", {
     day: "numeric",

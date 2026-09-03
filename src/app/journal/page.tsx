@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { journalPosts } from "@/lib/data/journal";
+import { getPublishedPosts } from "@/lib/data/journal";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Media } from "@/components/ui/Media";
@@ -17,11 +17,15 @@ export const metadata: Metadata = buildMetadata({
   path: "/journal",
 });
 
+// Revalidate twice a day so future-dated posts reveal themselves on schedule.
+export const revalidate = 43200;
+
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 }
 
 export default function JournalPage() {
+  const posts = getPublishedPosts();
   return (
     <>
       <PageHero
@@ -33,7 +37,7 @@ export default function JournalPage() {
 
       <section className="shell py-14 md:py-20">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {journalPosts.map((post, i) => (
+          {posts.map((post, i) => (
             <Reveal key={post.slug} delay={(i % 3) * 0.05}>
               <Link
                 href={`/journal/${post.slug}`}

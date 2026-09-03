@@ -73,7 +73,10 @@ export const siteConfig = {
   reviews: {
     googlePlaceId:
       process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "ChIJTz31FLu7cEgRv2o0D6e5URQ",
-    featurableWidgetId: process.env.NEXT_PUBLIC_FEATURABLE_WIDGET_ID || "",
+    // CVS Hire Featurable widget (public id). Reviews render natively via the
+    // widget API once the Google Business Profile is connected on featurable.com.
+    featurableWidgetId:
+      process.env.NEXT_PUBLIC_FEATURABLE_WIDGET_ID || "4bcb74b4-086a-4410-bd46-4de5058ceea9",
   },
 
   // ── Aniro.ai chat widget ───────────────────────────────────

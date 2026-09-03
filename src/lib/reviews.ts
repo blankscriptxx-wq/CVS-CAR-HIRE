@@ -120,6 +120,78 @@ async function fetchLegacy(key: string, placeId: string): Promise<GoogleReviewsD
   };
 }
 
+/**
+ * Featurable reviews — genuine Google reviews synced by Featurable, fetched
+ * from its public widget API and rendered NATIVELY in our own design (no embed
+ * script, no iframe). Returns null (safe "read on Google" fallback) when the
+ * widget is unset, unreachable, or still showing Featurable's example reviews —
+ * so we never display placeholder or fabricated reviews. `showBranding` mirrors
+ * Featurable's flag so we honour their free-plan attribution.
+ */
+export interface FeaturableData extends GoogleReviewsData {
+  showBranding: boolean;
+}
+
+interface FeaturableReview {
+  text?: string;
+  originalText?: string;
+  rating?: { value?: number; max?: number };
+  publishedAt?: string;
+  url?: string;
+  author?: { name?: string; avatarUrl?: string | null; profileUrl?: string | null };
+}
+
+/** Turn an ISO date into a compact "x months ago" string. */
+function relativeFromIso(iso?: string): string {
+  if (!iso) return "";
+  const then = Date.parse(iso);
+  if (!then) return "";
+  const days = Math.max(0, Math.floor((Date.now() - then) / 86400000));
+  if (days < 1) return "today";
+  if (days < 7) return `${days} day${days > 1 ? "s" : ""} ago`;
+  if (days < 30) { const w = Math.floor(days / 7); return `${w} week${w > 1 ? "s" : ""} ago`; }
+  if (days < 365) { const m = Math.floor(days / 30); return `${m} month${m > 1 ? "s" : ""} ago`; }
+  const y = Math.floor(days / 365);
+  return `${y} year${y > 1 ? "s" : ""} ago`;
+}
+
+export async function getFeaturableReviews(widgetId?: string): Promise<FeaturableData | null> {
+  const id = widgetId || process.env.NEXT_PUBLIC_FEATURABLE_WIDGET_ID;
+  if (!id) return null;
+
+  try {
+    const res = await fetch(`https://featurable.com/api/v2/widgets/${encodeURIComponent(id)}`, {
+      next: { revalidate: DAY },
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const w = data?.widget;
+    // Never render Featurable's placeholder "example" reviews.
+    if (!data?.success || !w || w.isExampleReviews) return null;
+
+    const reviews: GoogleReview[] = (w.reviews ?? [])
+      .map((r: FeaturableReview) => ({
+        author: r.author?.name ?? "Google user",
+        rating: r.rating?.value ?? 0,
+        text: (r.text ?? r.originalText ?? "").trim(),
+        relativeTime: relativeFromIso(r.publishedAt),
+        photo: r.author?.avatarUrl ?? undefined,
+        url: r.author?.profileUrl ?? r.url ?? undefined,
+        time: r.publishedAt ? Date.parse(r.publishedAt) || 0 : 0,
+      }))
+      .filter((r: GoogleReview) => r.text.length > 0 && !r.text.includes("[EXAMPLE"));
+    if (reviews.length === 0) return null;
+
+    const s = w.gbpLocationSummary ?? {};
+    const rating: number | undefined = s.averageRating ?? s.rating ?? undefined;
+    const total: number | undefined = s.totalReviewCount ?? s.reviewCount ?? s.total ?? undefined;
+
+    return { rating, total, reviews, showBranding: w.showBranding !== false };
+  } catch {
+    return null;
+  }
+}
+
 export async function getGoogleReviews(): Promise<GoogleReviewsData | null> {
   const key = process.env.GOOGLE_PLACES_API_KEY;
   const placeId = process.env.GOOGLE_PLACE_ID;

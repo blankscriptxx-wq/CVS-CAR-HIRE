@@ -19,6 +19,35 @@ const hireTypes = [
   { key: "chauffeur", label: "Chauffeur" },
 ] as const;
 
+// Curated running order for the whole fleet, applied to the default "Featured"
+// sort (and within each category). Leads with the halo cars and cascades down
+// by desirability so the showroom always reads as a deliberate line-up rather
+// than raw file order. Any vehicle not listed falls to the end.
+const FLEET_ORDER = [
+  "rolls-royce-cullinan-hire",
+  "lamborghini-huracan-performante-spyder-hire",
+  "ferrari-roma-hire",
+  "lamborghini-urus-performante-hire",
+  "mercedes-amg-g63-hire",
+  "mercedes-amg-g63-red-hire",
+  "rolls-royce-ghost-hire",
+  "audi-r8-spyder-hire",
+  "lamborghini-huracan-evo-hire",
+  "range-rover-svr-hire",
+  "range-rover-vogue-hire",
+  "range-rover-sport-hire",
+  "bmw-x5-hire",
+  "bmw-m3-hire",
+  "audi-rs3-hire",
+  "mercedes-glc-43-amg-hire",
+  "vw-golf-r-lapiz-blue-hire",
+  "vw-golf-r-hire",
+  "mercedes-amg-a35-hire",
+  "bmw-4-series-convertible-hire",
+  "bmw-3-series-hire",
+  "mercedes-v-class-hire",
+];
+
 // Curated running order for the chauffeur line-up (applied to the default
 // "Featured" sort so the chauffeur fleet always reads in this exact sequence).
 const CHAUFFEUR_ORDER = [
@@ -82,15 +111,12 @@ export function FleetShowroom({ vehicles }: { vehicles: Vehicle[] }) {
         // In the chauffeur view, honour the curated running order; otherwise
         // fall back to featured-first.
         const chauffeurView = category === "chauffeur" || hire === "chauffeur";
-        if (chauffeurView) {
-          const rank = (v: Vehicle) => {
-            const i = CHAUFFEUR_ORDER.indexOf(v.slug);
-            return i === -1 ? CHAUFFEUR_ORDER.length : i;
-          };
-          list.sort((a, b) => rank(a) - rank(b));
-        } else {
-          list.sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)));
-        }
+        const order = chauffeurView ? CHAUFFEUR_ORDER : FLEET_ORDER;
+        const rank = (v: Vehicle) => {
+          const i = order.indexOf(v.slug);
+          return i === -1 ? order.length : i;
+        };
+        list.sort((a, b) => rank(a) - rank(b));
       }
     }
     return list;

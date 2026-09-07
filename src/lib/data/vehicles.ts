@@ -17,38 +17,6 @@ function img(slug: string, name: string, alt: string, caption?: string): ImageAs
 export const vehicles: Vehicle[] = [
   // ── Supercars ──────────────────────────────────────────────
   {
-    id: "ferrari-roma",
-    slug: "ferrari-roma-hire",
-    manufacturer: "Ferrari",
-    model: "Roma",
-    category: "supercar",
-    bodyType: "coupe",
-    heroImage: img("ferrari-roma-hire", "hero.jpg", "Ferrari Roma available for luxury self-drive hire from CVS Car Hire Birmingham"),
-    gallery: [
-      img("ferrari-roma-hire", "front.jpg", "Front three-quarter view of the Ferrari Roma"),
-      img("ferrari-roma-hire", "interior.jpg", "Ferrari Roma driver-focused interior"),
-      img("ferrari-roma-hire", "rear.jpg", "Rear of the Ferrari Roma"),
-    ],
-    shortDescription:
-      "La Nuova Dolce Vita — Ferrari's front-engined grand tourer, effortless and utterly magnetic.",
-    fullDescription:
-      "The Ferrari Roma is restraint and drama in perfect measure. Where other supercars shout, the Roma persuades — a clean, sculpted grand tourer that carries the weight of Ferrari's heritage with modern calm. Slip inside and the cabin wraps around you, every surface considered. On the open road it delivers the sensation only a front-engined Ferrari can, yet it remains composed enough for an evening in the city. It is the car for the arrival that lingers in memory.",
-    seats: 4,
-    doors: 2,
-    transmission: "automatic",
-    fuelType: "petrol",
-    drivetrain: "rwd",
-    selfDriveAvailable: true,
-    chauffeurAvailable: false,
-    availabilityStatus: "available",
-    featured: true,
-    recommendedOccasions: ["self-drive", "weekend", "production", "birthday"],
-    relatedVehicles: ["lamborghini-huracan-performante-spyder-hire", "audi-r8-spyder-hire", "lamborghini-urus-performante-hire"],
-    metaTitle: "Ferrari Roma Hire Birmingham | Self-Drive Supercar Hire | CVS Car Hire",
-    metaDescription:
-      "Hire the Ferrari Roma in Birmingham with CVS Car Hire. Self-drive supercar hire with nationwide UK delivery available. Check availability today.",
-  },
-  {
     id: "lamborghini-huracan-performante-spyder",
     slug: "lamborghini-huracan-performante-spyder-hire",
     manufacturer: "Lamborghini",
@@ -880,6 +848,38 @@ export const vehicles: Vehicle[] = [
     metaTitle: "BMW 3 Series M Sport Hire Birmingham | Prestige Car Hire | CVS Car Hire",
     metaDescription:
       "Hire the BMW 3 Series M Sport in Birmingham with CVS Car Hire. Self-drive prestige saloon, nationwide UK delivery available. Check availability today.",
+  },
+  {
+    id: "ferrari-roma",
+    slug: "ferrari-roma-hire",
+    manufacturer: "Ferrari",
+    model: "Roma",
+    category: "supercar",
+    bodyType: "coupe",
+    heroImage: img("ferrari-roma-hire", "hero.jpg", "Ferrari Roma available for luxury self-drive hire from CVS Car Hire Birmingham"),
+    gallery: [
+      img("ferrari-roma-hire", "front.jpg", "Front three-quarter view of the Ferrari Roma"),
+      img("ferrari-roma-hire", "interior.jpg", "Ferrari Roma driver-focused interior"),
+      img("ferrari-roma-hire", "rear.jpg", "Rear of the Ferrari Roma"),
+    ],
+    shortDescription:
+      "La Nuova Dolce Vita — Ferrari's front-engined grand tourer, effortless and utterly magnetic.",
+    fullDescription:
+      "The Ferrari Roma is restraint and drama in perfect measure. Where other supercars shout, the Roma persuades — a clean, sculpted grand tourer that carries the weight of Ferrari's heritage with modern calm. Slip inside and the cabin wraps around you, every surface considered. On the open road it delivers the sensation only a front-engined Ferrari can, yet it remains composed enough for an evening in the city. It is the car for the arrival that lingers in memory.",
+    seats: 4,
+    doors: 2,
+    transmission: "automatic",
+    fuelType: "petrol",
+    drivetrain: "rwd",
+    selfDriveAvailable: true,
+    chauffeurAvailable: false,
+    availabilityStatus: "available",
+    featured: true,
+    recommendedOccasions: ["self-drive", "weekend", "production", "birthday"],
+    relatedVehicles: ["lamborghini-huracan-performante-spyder-hire", "audi-r8-spyder-hire", "lamborghini-urus-performante-hire"],
+    metaTitle: "Ferrari Roma Hire Birmingham | Self-Drive Supercar Hire | CVS Car Hire",
+    metaDescription:
+      "Hire the Ferrari Roma in Birmingham with CVS Car Hire. Self-drive supercar hire with nationwide UK delivery available. Check availability today.",
   },
 ];
 

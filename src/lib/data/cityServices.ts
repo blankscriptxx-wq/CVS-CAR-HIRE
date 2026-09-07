@@ -39,10 +39,10 @@ export const CITY_SERVICES: CityServiceDef[] = [
     short: "supercar hire",
     eyebrow: "Self-Drive",
     fleet: [
-      "ferrari-roma-hire",
       "lamborghini-huracan-performante-spyder-hire",
-      "audi-r8-spyder-hire",
       "lamborghini-urus-performante-hire",
+      "audi-r8-spyder-hire",
+      "ferrari-roma-hire",
     ],
     intro: (loc) =>
       `There is nowhere quite like the right road in a supercar, and ${loc.city} puts some of the best of them within reach. CVS Car Hire brings genuine icons — Ferrari, Lamborghini and the Audi R8 — to ${loc.city}, prepared to the highest standard and ready for a day, a weekend or longer. Whether it is a landmark birthday near ${at(loc.landmarks, 0, "the city")}, a photoshoot or a driving escape beyond ${loc.city}, we help you choose the car and take care of every detail around it.`,

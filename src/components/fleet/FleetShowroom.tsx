@@ -26,7 +26,6 @@ const hireTypes = [
 const FLEET_ORDER = [
   "rolls-royce-cullinan-hire",
   "lamborghini-huracan-performante-spyder-hire",
-  "ferrari-roma-hire",
   "lamborghini-urus-performante-hire",
   "mercedes-amg-g63-hire",
   "mercedes-amg-g63-red-hire",
@@ -46,6 +45,7 @@ const FLEET_ORDER = [
   "bmw-4-series-convertible-hire",
   "bmw-3-series-hire",
   "mercedes-v-class-hire",
+  "ferrari-roma-hire",
 ];
 
 // Curated running order for the chauffeur line-up (applied to the default

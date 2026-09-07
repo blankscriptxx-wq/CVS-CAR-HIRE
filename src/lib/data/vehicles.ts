@@ -874,7 +874,7 @@ export const vehicles: Vehicle[] = [
     selfDriveAvailable: true,
     chauffeurAvailable: false,
     availabilityStatus: "available",
-    featured: true,
+    // Intentionally not featured — kept off the homepage featured strip.
     recommendedOccasions: ["self-drive", "weekend", "production", "birthday"],
     relatedVehicles: ["lamborghini-huracan-performante-spyder-hire", "audi-r8-spyder-hire", "lamborghini-urus-performante-hire"],
     metaTitle: "Ferrari Roma Hire Birmingham | Self-Drive Supercar Hire | CVS Car Hire",

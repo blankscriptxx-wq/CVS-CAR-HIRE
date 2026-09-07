@@ -533,6 +533,45 @@ export const vehicles: Vehicle[] = [
     metaDescription:
       "Hire the Volkswagen Golf R in Birmingham with CVS Car Hire. Self-drive performance hire, nationwide UK delivery available. Check availability today.",
   },
+  {
+    id: "vw-golf-r-lapiz-blue",
+    slug: "vw-golf-r-lapiz-blue-hire",
+    manufacturer: "Volkswagen",
+    model: "Golf R",
+    edition: "Lapiz Blue",
+    category: "performance",
+    bodyType: "hatchback",
+    newArrival: true,
+    heroImage: img("vw-golf-r-lapiz-blue-hire", "hero.jpg", "Lapiz Blue Volkswagen Golf R for performance car hire at CVS Car Hire Birmingham"),
+    gallery: [
+      img("vw-golf-r-lapiz-blue-hire", "front.jpg", "Front of the Lapiz Blue Volkswagen Golf R"),
+      img("vw-golf-r-lapiz-blue-hire", "side.jpg", "Side profile of the Lapiz Blue Volkswagen Golf R on black alloys"),
+      img("vw-golf-r-lapiz-blue-hire", "rear.jpg", "Rear of the Lapiz Blue Volkswagen Golf R with its quad exhaust"),
+    ],
+    shortDescription:
+      "The hot hatch benchmark in signature Lapiz Blue — fast, four-wheel-drive and unmistakable.",
+    fullDescription:
+      "This Volkswagen Golf R wears the model's signature Lapiz Blue metallic — the colour that has defined the R badge for a generation — over gloss-black alloys. Beneath the discreet looks it's the same thinking driver's performance car: rapid, all-weather capable and entirely unassuming, with serious pace and four-wheel-drive traction in a practical, comfortable package. For a spirited weekend, a first taste of a performance car, or simply a quality drive with real presence, the Golf R in Lapiz Blue is hard to beat.",
+    seats: 5,
+    doors: 5,
+    transmission: "automatic",
+    fuelType: "petrol",
+    drivetrain: "awd",
+    selfDriveAvailable: true,
+    chauffeurAvailable: false,
+    availabilityStatus: "available",
+    minimumAge: 23,
+    dailyPriceFrom: 250,
+    weekendPriceFrom: 700,
+    weeklyPriceFrom: 1000,
+    monthlyPriceFrom: 3000,
+    excessMileageCharge: 0.9,
+    recommendedOccasions: ["self-drive", "weekend"],
+    relatedVehicles: ["vw-golf-r-hire", "audi-rs3-hire", "mercedes-glc-43-amg-hire"],
+    metaTitle: "Lapiz Blue Golf R Hire Birmingham | VW Golf R Self-Drive | CVS Car Hire",
+    metaDescription:
+      "Hire the Volkswagen Golf R in signature Lapiz Blue with CVS Car Hire, Birmingham. Self-drive performance hire, nationwide UK delivery. Check availability today.",
+  },
 
   // ── Prestige ───────────────────────────────────────────────
   {

@@ -43,7 +43,7 @@ export default function JournalPage() {
                 href={`/journal/${post.slug}`}
                 className="group flex h-full flex-col border border-line bg-charcoal/40"
               >
-                <div className="relative aspect-[16/10] overflow-hidden">
+                <div className="relative aspect-video overflow-hidden">
                   <div className="absolute inset-0 transition-transform duration-800 ease-luxe group-hover:scale-105">
                     <Media asset={post.heroImage} label={post.category} sizes="(max-width: 640px) 100vw, 33vw" />
                   </div>

@@ -29,7 +29,7 @@ export function BrowseByExperience() {
             <Reveal key={exp.href} delay={(i % 3) * 0.06}>
               <Link
                 href={exp.href}
-                className="group relative flex aspect-[16/10] flex-col justify-end overflow-hidden border border-line p-6"
+                className="group relative flex aspect-video flex-col justify-end overflow-hidden border border-line p-6"
               >
                 <div className="absolute inset-0 transition-transform duration-800 ease-luxe group-hover:scale-105">
                   <Media

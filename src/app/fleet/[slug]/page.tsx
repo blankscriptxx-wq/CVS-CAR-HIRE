@@ -206,7 +206,7 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
             <span className="eyebrow">Gallery</span>
             <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {gallery.map((img, i) => (
-                <Reveal key={i} delay={(i % 3) * 0.06} className="relative aspect-[4/3] overflow-hidden border border-line">
+                <Reveal key={i} delay={(i % 3) * 0.06} className="relative aspect-video overflow-hidden border border-line">
                   <Media asset={img} label={name} sizes="(max-width: 640px) 100vw, 33vw" />
                 </Reveal>
               ))}

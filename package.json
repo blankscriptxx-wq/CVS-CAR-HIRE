@@ -2,13 +2,14 @@
   "name": "cvs-car-hire",
   "version": "1.0.0",
   "private": true,
-  "description": "CVS Car Hire — luxury, prestige & performance vehicle hire. Birmingham & nationwide UK.",
+  "description": "CVS Car Hire \u2014 luxury, prestige & performance vehicle hire. Birmingham & nationwide UK.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

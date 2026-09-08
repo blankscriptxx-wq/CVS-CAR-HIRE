@@ -1,12 +1,24 @@
 import Link from "next/link";
-import { getFeaturedVehicles } from "@/lib/data/vehicles";
+import { getVehicleBySlug } from "@/lib/data/vehicles";
+import type { Vehicle } from "@/lib/types";
 import { VehicleCard } from "@/components/VehicleCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowRight } from "@/components/ui/Icons";
 
+// Curated homepage featured line-up, in this exact order.
+const FEATURED_SLUGS = [
+  "lamborghini-huracan-performante-spyder-hire",
+  "rolls-royce-cullinan-hire",
+  "lamborghini-urus-performante-hire",
+  "mercedes-amg-g63-hire",
+  "audi-r8-spyder-hire",
+];
+
 export function FeaturedFleet() {
-  const featured = getFeaturedVehicles().slice(0, 8);
+  const featured = FEATURED_SLUGS.map(getVehicleBySlug).filter(
+    (v): v is Vehicle => Boolean(v),
+  );
   return (
     <section id="featured" className="scroll-mt-24 border-t border-line py-20 md:py-28">
       <div className="shell">

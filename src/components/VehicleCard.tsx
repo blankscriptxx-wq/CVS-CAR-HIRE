@@ -27,7 +27,7 @@ export function VehicleCard({
   return (
     <article className="group relative flex flex-col border border-line bg-charcoal/40">
       {/* Media */}
-      <Link href={href} className="relative block aspect-[4/3] overflow-hidden" aria-label={`View ${name}`}>
+      <Link href={href} className="relative block aspect-[16/10] overflow-hidden" aria-label={`View ${name}`}>
         <div className="absolute inset-0 transition-transform duration-800 ease-luxe group-hover:scale-[1.04]">
           <Media asset={vehicle.thumbnail ?? vehicle.heroImage} label={name} sizes={sizes} priority={priority} />
         </div>

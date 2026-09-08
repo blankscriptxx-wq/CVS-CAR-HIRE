@@ -136,6 +136,13 @@ export const vehicles: Vehicle[] = [
     excessMileageCharge: 1.85,
     recommendedOccasions: ["self-drive", "weekend", "birthday", "production"],
     relatedVehicles: ["lamborghini-huracan-performante-spyder-hire", "ferrari-roma-hire", "bmw-4-series-convertible-hire"],
+    knowledgeFaqs: [
+      { question: "What engine does the Audi R8 Spyder have?", answer: "The R8 Spyder is powered by a naturally aspirated 5.2-litre V10 — closely related to the Lamborghini Huracán's engine — producing around 570–620 PS depending on version, driving all four wheels through quattro all-wheel drive." },
+      { question: "How fast is the Audi R8 Spyder?", answer: "Audi quotes 0–100 km/h (0–62 mph) in around 3.4–3.5 seconds and a top speed above 320 km/h (roughly 200 mph), with the roof down for open-top drama." },
+      { question: "Does the R8 share its engine with a Lamborghini?", answer: "Yes. The R8's naturally aspirated V10 is closely related to the engine in the Lamborghini Huracán, as both are built within the Volkswagen Group — the R8 is often called the most usable way into a V10 supercar." },
+      { question: "How many seats does the Audi R8 Spyder have?", answer: "The R8 Spyder is a two-seat, open-top supercar with a folding fabric roof and mid-mounted V10, offering genuine supercar theatre with Audi's everyday usability." },
+      { question: "Is the Audi R8 a good supercar for beginners?", answer: "It is one of the most approachable V10 supercars: quattro all-wheel drive, predictable handling and a comfortable cabin make the R8 Spyder confidence-inspiring for a first supercar experience." },
+    ],
     metaTitle: "Audi R8 Spyder Hire Birmingham | Self-Drive Supercar Hire | CVS Car Hire",
     metaDescription:
       "Hire the Audi R8 Spyder in Birmingham with CVS Car Hire. Self-drive supercar hire, nationwide UK delivery available. Check availability today.",
@@ -188,6 +195,13 @@ export const vehicles: Vehicle[] = [
     excessMileageCharge: 2.0,
     recommendedOccasions: ["self-drive", "wedding", "production", "corporate", "weekend"],
     relatedVehicles: ["mercedes-amg-g63-hire", "rolls-royce-cullinan-hire", "ferrari-roma-hire"],
+    knowledgeFaqs: [
+      { question: "What is the difference between the Urus Performante and the standard Urus?", answer: "The Urus Performante is the more focused, driver-oriented version: it is lighter, lower and stiffer than the standard Urus, with more power (around 666 PS), revised styling and a sharper chassis aimed at on-road performance." },
+      { question: "What engine does the Lamborghini Urus Performante have?", answer: "The Urus Performante uses a 4.0-litre twin-turbo V8 producing around 666 PS (about 657 bhp), driving all four wheels through an eight-speed automatic gearbox." },
+      { question: "How fast is the Lamborghini Urus Performante?", answer: "Lamborghini claims 0–100 km/h (0–62 mph) in around 3.3 seconds and a top speed of about 306 km/h (roughly 190 mph) — supercar performance in an SUV body." },
+      { question: "How many seats does the Lamborghini Urus have?", answer: "The Urus is a five-seat, five-door SUV with all-wheel drive, combining genuine everyday practicality and space with supercar pace." },
+      { question: "Is the Lamborghini Urus practical?", answer: "Yes — that is its appeal. The Urus offers five seats, a usable boot and comfortable long-distance manners, making it a rare supercar-performance vehicle you can genuinely use every day or for a family weekend." },
+    ],
     metaTitle: "Lamborghini Urus Performante Hire Birmingham | Luxury SUV Hire | CVS Car Hire",
     metaDescription:
       "Hire the Lamborghini Urus Performante in Birmingham with CVS Car Hire. Self-drive and chauffeur options, nationwide UK delivery. Check availability today.",
@@ -245,6 +259,13 @@ export const vehicles: Vehicle[] = [
     excessMileageCharge: 1.8,
     recommendedOccasions: ["self-drive", "wedding", "production", "corporate"],
     relatedVehicles: ["lamborghini-urus-performante-hire", "rolls-royce-cullinan-hire", "range-rover-sport-hire"],
+    knowledgeFaqs: [
+      { question: "What is the difference between a G63 and a G-Wagon?", answer: "'G-Wagon' is the popular nickname for the Mercedes G-Class. The G63 is the top Mercedes-AMG performance version of that G-Class — so every G63 is a G-Wagon, but not every G-Wagon is a G63." },
+      { question: "What engine does the Mercedes-AMG G63 have?", answer: "The G63 uses AMG's hand-built 4.0-litre twin-turbo V8, producing around 585 PS (about 577 bhp). Each engine is assembled by a single technician under AMG's 'one man, one engine' principle." },
+      { question: "How fast is the Mercedes-AMG G63?", answer: "Mercedes-AMG claims 0–100 km/h (0–62 mph) in around 4.5 seconds — remarkable for a car shaped like a box — with the top speed limited to 220 km/h (137 mph), or 240 km/h with the AMG Driver's Package." },
+      { question: "How many seats does a G63 have?", answer: "The G63 is a five-seat, five-door SUV with permanent all-wheel drive and three locking differentials, so it retains genuine off-road ability beneath the luxury and performance." },
+      { question: "Is the G63 good for a wedding or event?", answer: "Yes — its upright, unmistakable shape and commanding presence make the G63 a favourite for weddings, music videos and high-profile arrivals, available in black or red from our fleet." },
+    ],
     metaTitle: "Mercedes G63 Hire Birmingham | G-Wagon Luxury 4x4 Hire | CVS Car Hire",
     metaDescription:
       "Hire the Mercedes-AMG G63 (G-Wagon) in Birmingham with CVS Car Hire. Self-drive and chauffeur options, nationwide UK delivery. Check availability today.",
@@ -298,6 +319,13 @@ export const vehicles: Vehicle[] = [
     featured: true,
     recommendedOccasions: ["wedding", "chauffeur", "corporate"],
     relatedVehicles: ["rolls-royce-ghost-hire", "mercedes-amg-g63-hire", "lamborghini-urus-performante-hire"],
+    knowledgeFaqs: [
+      { question: "What engine does the Rolls-Royce Cullinan have?", answer: "The Cullinan uses a 6.75-litre twin-turbocharged V12 producing around 571 PS (about 563 bhp), delivering effortless, near-silent performance suited to its 'magic carpet ride'." },
+      { question: "How many seats does the Rolls-Royce Cullinan have?", answer: "The Cullinan is a five-seat luxury SUV (a four-seat configuration with a rear lounge is also offered) with all-wheel drive and rear coach doors." },
+      { question: "What is the difference between the Cullinan and Cullinan Series II?", answer: "The Cullinan Series II is the 2024 update of the original Cullinan: it keeps the same 6.75-litre V12 but adds redesigned front styling, new lighting and an updated, more contemporary interior. It is a facelift rather than an all-new car." },
+      { question: "How fast is the Rolls-Royce Cullinan?", answer: "Rolls-Royce quotes 0–100 km/h (0–62 mph) in around 5.2 seconds, with the top speed limited to 250 km/h (155 mph) — though the Cullinan is built for serene comfort rather than speed." },
+      { question: "Is the Rolls-Royce Cullinan good for weddings?", answer: "Yes — the Cullinan's commanding presence and limousine-quality rear cabin make it one of the most requested luxury SUVs for weddings and VIP arrivals, offered chauffeur-driven." },
+    ],
     metaTitle: "Rolls-Royce Cullinan Chauffeur Hire Birmingham | Luxury SUV | CVS Car Hire",
     metaDescription:
       "Chauffeur-driven Rolls-Royce Cullinan hire in Birmingham with CVS Car Hire — weddings, corporate and occasions. Nationwide UK delivery. Check availability today.",
@@ -517,6 +545,13 @@ export const vehicles: Vehicle[] = [
     featured: true,
     recommendedOccasions: ["self-drive", "weekend", "birthday"],
     relatedVehicles: ["mercedes-glc-43-amg-hire", "audi-r8-spyder-hire", "vw-golf-r-hire"],
+    knowledgeFaqs: [
+      { question: "What engine does the Audi RS3 have?", answer: "The RS3 is powered by Audi's distinctive 2.5-litre turbocharged five-cylinder engine producing 400 PS (about 394 bhp) — an award-winning unit known for its unusual 1-2-4-5-3 firing order and warbling soundtrack." },
+      { question: "How fast is the Audi RS3?", answer: "Audi claims 0–100 km/h (0–62 mph) in around 3.8 seconds. Top speed is limited to 250 km/h (155 mph) as standard, or up to 290 km/h (180 mph) with the optional RS Dynamic package." },
+      { question: "Is the Audi RS3 all-wheel drive?", answer: "Yes. The RS3 uses Audi's quattro all-wheel drive with an RS Torque Splitter that can send power to the outer rear wheel for sharper, more playful cornering." },
+      { question: "How many seats does the Audi RS3 have?", answer: "The RS3 is a practical five-seat, five-door car (offered as a Sportback hatch or saloon), which is a big part of its appeal — supercar-baiting pace with everyday usability." },
+      { question: "Is the Audi RS3 a good first performance car to hire?", answer: "Yes — its combination of quattro grip, genuine pace and five-seat practicality makes the RS3 one of the most accessible and usable performance cars we offer, ideal for a spirited weekend." },
+    ],
     metaTitle: "Audi RS3 Hire Birmingham | Performance Car Hire | CVS Car Hire",
     metaDescription:
       "Hire the Audi RS3 in Birmingham with CVS Car Hire. Self-drive performance car hire, nationwide UK delivery available. Check availability today.",
@@ -1023,6 +1058,13 @@ export const vehicles: Vehicle[] = [
     newArrival: true,
     recommendedOccasions: ["self-drive", "birthday", "production", "weekend"],
     relatedVehicles: ["ferrari-sf90-hire", "lamborghini-aventador-svj-hire", "lamborghini-temerario-hire"],
+    knowledgeFaqs: [
+      { question: "Is the Lamborghini Revuelto a hybrid?", answer: "Yes. The Revuelto is a plug-in hybrid (HPEV), pairing a naturally aspirated 6.5-litre V12 with three electric motors and a small battery, so it can also run short distances on electric power alone." },
+      { question: "How much power does the Lamborghini Revuelto have?", answer: "The Revuelto produces around 1,015 PS (about 1,001 bhp) combined from its V12 and three electric motors — making it the most powerful series-production Lamborghini road car to date." },
+      { question: "How fast is the Lamborghini Revuelto?", answer: "Lamborghini claims 0–100 km/h (0–62 mph) in around 2.5 seconds and a top speed above 350 km/h (over 217 mph)." },
+      { question: "What did the Revuelto replace?", answer: "The Revuelto replaced the Aventador as Lamborghini's V12 flagship, carrying the twelve-cylinder engine into the hybrid era on an all-new carbon-fibre 'monofuselage' chassis." },
+      { question: "How many seats does the Lamborghini Revuelto have?", answer: "The Revuelto is a two-seat, two-door coupé with Lamborghini's signature scissor doors, and it is all-wheel drive." },
+    ],
     metaTitle: "Lamborghini Revuelto Hire | V12 Hybrid Supercar Hire UK | CVS Hire",
     metaDescription:
       "Hire the Lamborghini Revuelto — the 1,000bhp V12 hybrid flagship — self-drive from Birmingham with nationwide UK delivery. Check availability with CVS Hire.",
@@ -1052,6 +1094,13 @@ export const vehicles: Vehicle[] = [
     newArrival: true,
     recommendedOccasions: ["self-drive", "birthday", "production", "weekend"],
     relatedVehicles: ["lamborghini-revuelto-hire", "ferrari-12cilindri-hire", "ferrari-488-hire"],
+    knowledgeFaqs: [
+      { question: "Is the Ferrari SF90 a hybrid?", answer: "Yes. The SF90 Stradale is a plug-in hybrid — Ferrari's first series-production PHEV — combining a 4.0-litre twin-turbo V8 with three electric motors, and it can drive a short distance on electric power alone." },
+      { question: "How much power does the Ferrari SF90 have?", answer: "The SF90 produces around 1,000 CV (about 986 bhp) combined — for years the most powerful road-going Ferrari, and the reason it wears the SF90 name after Ferrari's Formula 1 team." },
+      { question: "How fast is the Ferrari SF90?", answer: "Ferrari claims 0–100 km/h (0–62 mph) in around 2.5 seconds and a top speed of approximately 340 km/h (about 211 mph)." },
+      { question: "Is the Ferrari SF90 all-wheel drive?", answer: "Yes. The two front electric motors give the SF90 electric all-wheel drive, which helps put its huge power down; the V8 drives the rear wheels through an eight-speed dual-clutch gearbox." },
+      { question: "How many seats does the Ferrari SF90 have?", answer: "The SF90 is a two-seat mid-engined supercar, offered in Stradale (coupé) and Spider (retractable hard-top) forms." },
+    ],
     metaTitle: "Ferrari SF90 Hire | Hybrid Supercar Self-Drive Hire UK | CVS Hire",
     metaDescription:
       "Hire the Ferrari SF90 — the near-1,000bhp plug-in hybrid flagship — self-drive from Birmingham with nationwide UK delivery. Check availability with CVS Hire.",
@@ -1082,6 +1131,13 @@ export const vehicles: Vehicle[] = [
     newArrival: true,
     recommendedOccasions: ["self-drive", "weekend", "corporate", "production"],
     relatedVehicles: ["rolls-royce-cullinan-series-2-hire", "land-rover-defender-hire", "lamborghini-urus-performante-hire"],
+    knowledgeFaqs: [
+      { question: "Is the Ferrari Purosangue an SUV?", answer: "Not in the conventional sense. Ferrari describes the Purosangue as a four-door, four-seat 'FUV' rather than an SUV — it rides higher than a sports car for usability but is engineered to drive like a Ferrari, with a front-mid-mounted V12." },
+      { question: "What engine does the Ferrari Purosangue have?", answer: "The Purosangue uses a naturally aspirated 6.5-litre V12 producing around 725 PS (about 715 bhp) — a rarity in a four-seat car, most of which use turbocharged or hybrid power." },
+      { question: "How fast is the Ferrari Purosangue?", answer: "Ferrari claims 0–100 km/h (0–62 mph) in around 3.3 seconds and a top speed of about 310 km/h (roughly 193 mph)." },
+      { question: "How many seats does the Ferrari Purosangue have?", answer: "Four. It has four individual seats and four doors, with the rear pair rear-hinged ('welcome doors'), and it is all-wheel drive." },
+      { question: "How practical is the Ferrari Purosangue?", answer: "It is the most practical Ferrari — four full seats, four doors and a usable boot make it genuinely usable day to day and for events, while still delivering V12 performance." },
+    ],
     metaTitle: "Ferrari Purosangue Hire | V12 Four-Seat Ferrari Hire UK | CVS Hire",
     metaDescription:
       "Hire the Ferrari Purosangue — the first four-door, four-seat V12 Ferrari — self-drive or chauffeur-driven from Birmingham, UK delivery. Check availability with CVS Hire.",
@@ -1112,6 +1168,13 @@ export const vehicles: Vehicle[] = [
     newArrival: true,
     recommendedOccasions: ["wedding", "chauffeur", "corporate", "production"],
     relatedVehicles: ["rolls-royce-cullinan-series-2-hire", "rolls-royce-spectre-hire", "rolls-royce-dawn-hire"],
+    knowledgeFaqs: [
+      { question: "What engine does the Rolls-Royce Phantom have?", answer: "The Phantom is powered by a 6.75-litre twin-turbocharged V12 producing around 571 PS (about 563 bhp), tuned for effortless, near-silent torque rather than outright speed." },
+      { question: "How many seats does the Rolls-Royce Phantom have?", answer: "The Phantom seats five (four in the extended-wheelbase version's lounge configuration), across a four-door body, and is rear-wheel drive." },
+      { question: "Which generation is the current Phantom?", answer: "The current car is the eighth-generation Phantom (Phantom VIII), launched in 2017 on Rolls-Royce's aluminium 'Architecture of Luxury' platform." },
+      { question: "How fast is the Rolls-Royce Phantom?", answer: "Rolls-Royce quotes 0–100 km/h (0–62 mph) in around 5.3 seconds, with the top speed electronically limited to 250 km/h (155 mph) — though the Phantom is designed for serenity rather than speed." },
+      { question: "What is the Phantom's ride like?", answer: "The Phantom is known for its 'magic carpet ride', using a camera-assisted air suspension that reads the road ahead to deliver an exceptionally smooth, isolated ride from the rear seat." },
+    ],
     metaTitle: "Rolls-Royce Phantom Hire | Chauffeur Wedding Car Hire UK | CVS Hire",
     metaDescription:
       "Hire the Rolls-Royce Phantom — the flagship of luxury motoring — chauffeur-driven for weddings and occasions from Birmingham, nationwide UK. Check availability with CVS Hire.",
@@ -1142,6 +1205,13 @@ export const vehicles: Vehicle[] = [
     newArrival: true,
     recommendedOccasions: ["self-drive", "track", "birthday", "production"],
     relatedVehicles: ["lamborghini-huracan-sto-hire", "ferrari-488-hire", "lamborghini-revuelto-hire"],
+    knowledgeFaqs: [
+      { question: "How much power does the Porsche 911 GT3 RS have?", answer: "The current (992) 911 GT3 RS produces around 525 PS (about 518 bhp) from a naturally aspirated 4.0-litre flat-six that revs to 9,000 rpm — power comes from revs and response rather than turbocharging." },
+      { question: "How fast is the Porsche 911 GT3 RS?", answer: "Porsche claims 0–100 km/h (0–62 mph) in around 3.2 seconds and a top speed of about 296 km/h (roughly 184 mph) — lower than some rivals because the huge rear wing prioritises downforce over top speed." },
+      { question: "Is the 911 GT3 RS manual or automatic?", answer: "The GT3 RS is fitted with Porsche's seven-speed PDK dual-clutch automatic only; the standard GT3 offers a manual, but the RS is PDK to maximise track performance." },
+      { question: "Why does the GT3 RS have such a big rear wing?", answer: "The GT3 RS uses active, race-derived aerodynamics — including a large swan-neck rear wing with a DRS-style flap — to generate significant downforce for high-speed cornering and track stability." },
+      { question: "Is the Porsche 911 GT3 RS road legal?", answer: "Yes. Despite being a motorsport-focused, track-honed car, the 911 GT3 RS is fully road legal — it's rear-wheel drive with two seats and a 9,000 rpm redline." },
+    ],
     metaTitle: "Porsche 911 GT3 RS Hire | Self-Drive Supercar Hire UK | CVS Hire",
     metaDescription:
       "Hire the Porsche 911 GT3 RS — the road-legal, naturally aspirated track weapon — self-drive from Birmingham with nationwide UK delivery. Check availability with CVS Hire.",
@@ -1172,6 +1242,12 @@ export const vehicles: Vehicle[] = [
     showInFleet: false,
     recommendedOccasions: ["self-drive", "birthday", "production", "weekend"],
     relatedVehicles: ["ferrari-sf90-hire", "lamborghini-huracan-sto-hire", "ferrari-roma-hire"],
+    knowledgeFaqs: [
+      { question: "What engine does the Ferrari 488 have?", answer: "The 488 uses a 3.9-litre twin-turbo V8 producing around 670 PS (about 661 bhp). It marked Ferrari's return to turbocharging for its core mid-engined supercar and won multiple International Engine of the Year awards." },
+      { question: "How fast is the Ferrari 488?", answer: "Ferrari quotes 0–100 km/h (0–62 mph) in around 3.0 seconds and a top speed of about 330 km/h (roughly 205 mph)." },
+      { question: "What is the difference between the 488 GTB and 488 Spider?", answer: "The 488 GTB is the fixed-roof coupé; the 488 Spider is the open-top version with a retractable hard-top. Both share the same twin-turbo V8 and rear-wheel-drive layout." },
+      { question: "How many seats does the Ferrari 488 have?", answer: "The 488 is a two-seat, mid-engined, rear-wheel-drive supercar." },
+    ],
     metaTitle: "Ferrari 488 Hire UK | Register Interest | CVS Hire",
     metaDescription:
       "Ferrari 488 hire is coming soon to CVS Hire — the twin-turbo V8 supercar. Register your interest now and we'll confirm availability as soon as it arrives.",
@@ -1199,6 +1275,12 @@ export const vehicles: Vehicle[] = [
     showInFleet: false,
     recommendedOccasions: ["self-drive", "weekend", "production", "corporate"],
     relatedVehicles: ["ferrari-purosangue-hire", "range-rover-vogue-hire", "mercedes-amg-g63-hire"],
+    knowledgeFaqs: [
+      { question: "Is the new Land Rover Defender body-on-frame like the old one?", answer: "No. The reinvented Defender (launched 2020) uses Land Rover's stiff D7x monocoque (unibody) platform rather than the original's separate ladder chassis, which improves on-road refinement while retaining serious off-road ability." },
+      { question: "How many seats does the Land Rover Defender have?", answer: "It depends on the body. The Defender 90 is the shorter three-door; the 110 seats five (with an optional third row) and the longer 130 seats up to eight. All are all-wheel drive." },
+      { question: "What body styles does the Defender come in?", answer: "The Defender is offered as the short-wheelbase 90, the mid 110 and the long-wheelbase 130, so buyers can choose between compact agility and maximum interior space." },
+      { question: "Is the Land Rover Defender good off-road?", answer: "Yes — despite its luxury cabin, the Defender retains genuine capability with air suspension, wading depth around 900mm and Land Rover's Terrain Response system." },
+    ],
     metaTitle: "Land Rover Defender Hire UK | Register Interest | CVS Hire",
     metaDescription:
       "Land Rover Defender hire is coming soon to CVS Hire — the reinvented luxury 4x4 icon. Register your interest and we'll confirm availability as soon as it arrives.",
@@ -1227,6 +1309,12 @@ export const vehicles: Vehicle[] = [
     showInFleet: false,
     recommendedOccasions: ["self-drive", "track", "birthday", "production"],
     relatedVehicles: ["porsche-911-gt3-rs-hire", "lamborghini-aventador-svj-hire", "lamborghini-revuelto-hire"],
+    knowledgeFaqs: [
+      { question: "What does STO stand for on the Huracán STO?", answer: "STO stands for Super Trofeo Omologata — a road-legal homologation of Lamborghini's Huracán Super Trofeo and GT3 racing cars, making it the most track-focused Huracán." },
+      { question: "Is the Huracán STO rear-wheel drive?", answer: "Yes. Unusually for a Huracán, the STO is rear-wheel drive only (most Huracáns are all-wheel drive), which sharpens its handling and cuts weight for a purer, more race-like feel." },
+      { question: "What engine does the Huracán STO have?", answer: "The STO uses a naturally aspirated 5.2-litre V10 producing around 640 PS (about 631 bhp), revving to over 8,000 rpm with a soundtrack unique to the naturally aspirated Lamborghini V10." },
+      { question: "How fast is the Lamborghini Huracán STO?", answer: "Lamborghini claims 0–100 km/h (0–62 mph) in around 3.0 seconds and a top speed of about 310 km/h (roughly 193 mph)." },
+    ],
     metaTitle: "Lamborghini Huracán STO Hire UK | Register Interest | CVS Hire",
     metaDescription:
       "Lamborghini Huracán STO hire is coming soon to CVS Hire — the road-legal, rear-drive racing V10. Register your interest and we'll confirm availability on arrival.",
@@ -1255,6 +1343,12 @@ export const vehicles: Vehicle[] = [
     showInFleet: false,
     recommendedOccasions: ["self-drive", "birthday", "production", "weekend"],
     relatedVehicles: ["lamborghini-revuelto-hire", "lamborghini-huracan-sto-hire", "ferrari-sf90-hire"],
+    knowledgeFaqs: [
+      { question: "What replaced the Lamborghini Huracán?", answer: "The Temerario replaced the Huracán as Lamborghini's mid-engined 'entry' supercar, moving from the Huracán's naturally aspirated V10 to an all-new twin-turbo V8 hybrid powertrain." },
+      { question: "Is the Lamborghini Temerario a hybrid?", answer: "Yes. The Temerario uses a plug-in hybrid system built around a flat-plane-crank twin-turbo V8 assisted by electric motors, for a combined output of around 920 CV (manufacturer-claimed)." },
+      { question: "How high does the Temerario's engine rev?", answer: "The Temerario's twin-turbo V8 revs to a remarkable 10,000 rpm — exceptionally high for a turbocharged engine — to preserve the high-revving character Lamborghini is known for." },
+      { question: "How many seats does the Lamborghini Temerario have?", answer: "The Temerario is a two-seat, mid-engined supercar with all-wheel drive, and it introduces Lamborghini's newer design language." },
+    ],
     metaTitle: "Lamborghini Temerario Hire UK | Register Interest | CVS Hire",
     metaDescription:
       "Lamborghini Temerario hire is coming soon to CVS Hire — the all-new V8 hybrid successor to the Huracán. Register your interest and we'll confirm availability on arrival.",
@@ -1284,6 +1378,12 @@ export const vehicles: Vehicle[] = [
     showInFleet: false,
     recommendedOccasions: ["self-drive", "weekend", "production", "birthday"],
     relatedVehicles: ["ferrari-sf90-hire", "ferrari-purosangue-hire", "ferrari-roma-hire"],
+    knowledgeFaqs: [
+      { question: "What engine does the Ferrari 12Cilindri have?", answer: "As the name suggests, the 12Cilindri uses a naturally aspirated 6.5-litre V12 producing around 830 PS (about 819 bhp), revving to 9,500 rpm — with no turbocharging or hybrid assistance." },
+      { question: "How fast is the Ferrari 12Cilindri?", answer: "Ferrari claims 0–100 km/h (0–62 mph) in around 2.9 seconds and a top speed above 340 km/h (roughly 211 mph)." },
+      { question: "What did the Ferrari 12Cilindri replace?", answer: "The 12Cilindri is the successor to the 812 Superfast/GTS as Ferrari's front-engined V12 grand tourer, with a clean, futurist design that nods to the classic 1960s Daytona." },
+      { question: "Is the Ferrari 12Cilindri front or mid-engined?", answer: "The 12Cilindri is front-mid-engined and rear-wheel drive — the classic grand-touring layout — with two seats and a choice of coupé or retractable-hard-top Spider body." },
+    ],
     metaTitle: "Ferrari 12Cilindri Hire UK | Register Interest | CVS Hire",
     metaDescription:
       "Ferrari 12Cilindri hire is coming soon to CVS Hire — the naturally aspirated front-engined V12 grand tourer. Register your interest and we'll confirm availability on arrival.",
@@ -1314,6 +1414,12 @@ export const vehicles: Vehicle[] = [
     showInFleet: false,
     recommendedOccasions: ["wedding", "chauffeur", "corporate", "production"],
     relatedVehicles: ["ferrari-purosangue-hire", "rolls-royce-phantom-hire", "rolls-royce-cullinan-hire"],
+    knowledgeFaqs: [
+      { question: "What is the difference between the Cullinan and Cullinan Series II?", answer: "The Cullinan Series II is the 2024 update of the original Cullinan. It keeps the same 6.75-litre twin-turbo V12 but adds a redesigned front end, new lighting signatures and an updated, more contemporary interior. It is a facelift, not an all-new model." },
+      { question: "What engine does the Cullinan Series II have?", answer: "Like the original Cullinan, the Series II uses a 6.75-litre twin-turbo V12 of around 571 PS (about 563 bhp), tuned for effortless, near-silent torque and the marque's 'magic carpet ride'." },
+      { question: "How many seats does the Cullinan Series II have?", answer: "The Cullinan Series II is a five-seat luxury SUV (a four-seat rear-lounge configuration is also offered), with all-wheel drive and rear coach doors." },
+      { question: "Is the Cullinan Series II electric?", answer: "No. The Cullinan Series II retains the V12 petrol engine. Rolls-Royce's fully electric model is the Spectre coupé." },
+    ],
     metaTitle: "Rolls-Royce Cullinan Series II Hire UK | Register Interest | CVS Hire",
     metaDescription:
       "Rolls-Royce Cullinan Series II hire is coming soon to CVS Hire — the updated luxury SUV flagship. Register your interest and we'll confirm availability on arrival.",
@@ -1343,6 +1449,12 @@ export const vehicles: Vehicle[] = [
     showInFleet: false,
     recommendedOccasions: ["wedding", "chauffeur", "production", "corporate"],
     relatedVehicles: ["rolls-royce-phantom-hire", "rolls-royce-dawn-hire", "rolls-royce-ghost-hire"],
+    knowledgeFaqs: [
+      { question: "Is the Rolls-Royce Spectre fully electric?", answer: "Yes. The Spectre is Rolls-Royce's first series-production all-electric car — a battery-electric ultra-luxury coupé with no petrol engine." },
+      { question: "What is the range of the Rolls-Royce Spectre?", answer: "Rolls-Royce quotes an official WLTP range of around 530 km (about 329 miles) on a full charge, delivered with the silent, effortless waftability that suits the marque perfectly." },
+      { question: "How much power does the Rolls-Royce Spectre have?", answer: "The Spectre uses a dual-motor all-electric powertrain producing around 585 PS (about 577 bhp), with 0–100 km/h (0–62 mph) in approximately 4.5 seconds." },
+      { question: "How many seats does the Rolls-Royce Spectre have?", answer: "The Spectre is a four-seat, two-door coupé with Rolls-Royce's signature rear-hinged coach doors and Starlight interior." },
+    ],
     metaTitle: "Rolls-Royce Spectre Hire UK | Register Interest | CVS Hire",
     metaDescription:
       "Rolls-Royce Spectre hire is coming soon to CVS Hire — the marque's first all-electric luxury coupé. Register your interest and we'll confirm availability on arrival.",
@@ -1372,6 +1484,12 @@ export const vehicles: Vehicle[] = [
     showInFleet: false,
     recommendedOccasions: ["wedding", "self-drive", "production", "weekend"],
     relatedVehicles: ["rolls-royce-spectre-hire", "rolls-royce-phantom-hire", "rolls-royce-ghost-hire"],
+    knowledgeFaqs: [
+      { question: "Is the Rolls-Royce Dawn a convertible?", answer: "Yes. The Dawn is a four-seat luxury convertible (a 'drophead') with a fabric roof that folds away in near silence, turning the cabin into an open-air sanctuary." },
+      { question: "What engine does the Rolls-Royce Dawn have?", answer: "The Dawn is powered by a 6.6-litre twin-turbo V12 of around 571 PS (about 563 bhp), delivering the effortless, waftable performance the marque is known for." },
+      { question: "How many seats does the Rolls-Royce Dawn have?", answer: "The Dawn seats four across a two-door convertible body, and is rear-wheel drive — designed as a genuine four-seat open-top tourer rather than a two-seat roadster." },
+      { question: "Is the Rolls-Royce Dawn good for a summer wedding?", answer: "Yes — as an elegant open-top four-seater, the Dawn is a striking choice for summer weddings and golden-hour drives, offered self-drive or chauffeur-driven." },
+    ],
     metaTitle: "Rolls-Royce Dawn Hire UK | Register Interest | CVS Hire",
     metaDescription:
       "Rolls-Royce Dawn hire is coming soon to CVS Hire — the open-top four-seat luxury drophead. Register your interest and we'll confirm availability on arrival.",
@@ -1400,6 +1518,12 @@ export const vehicles: Vehicle[] = [
     showInFleet: false,
     recommendedOccasions: ["self-drive", "birthday", "production", "track"],
     relatedVehicles: ["lamborghini-revuelto-hire", "lamborghini-huracan-sto-hire", "ferrari-sf90-hire"],
+    knowledgeFaqs: [
+      { question: "What does SVJ stand for on the Aventador SVJ?", answer: "SVJ stands for Superveloce Jota — Lamborghini's most extreme designation, reserved for the most track-focused, highest-performance version of the Aventador." },
+      { question: "What engine does the Aventador SVJ have?", answer: "The SVJ uses a naturally aspirated 6.5-litre V12 producing around 770 PS (about 759 bhp) — one of the last and most powerful non-hybrid V12s Lamborghini built, famed for its spine-tingling top-end sound." },
+      { question: "How fast is the Lamborghini Aventador SVJ?", answer: "Lamborghini claims 0–100 km/h (0–62 mph) in around 2.8 seconds and a top speed above 350 km/h (over 217 mph). In 2018 the SVJ set a production-car lap record at the Nürburgring." },
+      { question: "What is ALA on the Aventador SVJ?", answer: "ALA (Aerodinamica Lamborghini Attiva) is the SVJ's active aerodynamics system, which changes downforce and can vector it side to side for sharper cornering — a key part of its record-setting performance." },
+    ],
     metaTitle: "Lamborghini Aventador SVJ Hire UK | Register Interest | CVS Hire",
     metaDescription:
       "Lamborghini Aventador SVJ hire is coming soon to CVS Hire — the extreme naturally aspirated V12 flagship. Register your interest and we'll confirm availability on arrival.",

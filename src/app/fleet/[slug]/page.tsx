@@ -72,6 +72,7 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
   const name = vehicleName(vehicle);
   const related = getRelatedVehicles(vehicle);
   const faqs = vehicleFaqs(vehicle);
+  const knowledgeFaqs = vehicle.knowledgeFaqs ?? [];
   const specs = specPairs(vehicle);
   const commercials = commercialPairs(vehicle);
   const gallery = vehicle.gallery ?? [];
@@ -95,7 +96,7 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
   return (
     <>
       <VehicleTracker slug={vehicle.slug} name={name} />
-      <JsonLd data={[vehicleSchema(vehicle), faqSchema(faqs)]} />
+      <JsonLd data={[vehicleSchema(vehicle), faqSchema([...knowledgeFaqs, ...faqs])]} />
 
       {/* Full-screen hero */}
       <section className="relative min-h-[86svh] overflow-hidden border-b border-line">
@@ -274,12 +275,23 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      {/* FAQs */}
+      {/* FAQs — two groups: model knowledge, then hiring */}
       <section className="border-t border-line py-16 md:py-20">
         <div className="shell max-w-3xl">
+          {knowledgeFaqs.length > 0 && (
+            <div className="mb-14">
+              <span className="eyebrow">About the {vehicle.model}</span>
+              <h2 className="mt-4 text-display-sm font-display text-warm-white">
+                {vehicle.model} — specifications &amp; facts
+              </h2>
+              <div className="mt-8">
+                <FaqAccordion faqs={knowledgeFaqs} />
+              </div>
+            </div>
+          )}
           <span className="eyebrow">Frequently Asked</span>
           <h2 className="mt-4 text-display-sm font-display text-warm-white">
-            {vehicle.model} hire — your questions
+            Hiring the {vehicle.model} — your questions
           </h2>
           <div className="mt-8">
             <FaqAccordion faqs={faqs} />

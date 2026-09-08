@@ -116,6 +116,14 @@ export interface Vehicle {
   recommendedOccasions?: Occasion[];
   relatedVehicles?: string[]; // slugs
 
+  /**
+   * Model-knowledge FAQs (engine, power, performance, seats, generation, etc.).
+   * Rendered as a second "About the vehicle" group alongside the auto-generated
+   * hire FAQs, and included in the page's FAQPage schema. Facts only — verified
+   * manufacturer figures, phrased as approximate/claimed where appropriate.
+   */
+  knowledgeFaqs?: FAQ[];
+
   metaTitle?: string;
   metaDescription?: string;
 }

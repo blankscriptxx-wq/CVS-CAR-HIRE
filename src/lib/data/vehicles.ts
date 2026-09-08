@@ -728,7 +728,7 @@ export const vehicles: Vehicle[] = [
     monthlyPriceFrom: 2500,
     excessMileageCharge: 0.8,
     recommendedOccasions: ["airport", "wedding", "corporate", "chauffeur"],
-    relatedVehicles: ["mercedes-v-class-hire", "range-rover-sport-hire", "bmw-x5-hire"],
+    relatedVehicles: ["range-rover-sport-hire", "bmw-x5-hire", "range-rover-vogue-hire"],
     metaTitle: "Mercedes V-Class Hire Birmingham | Group Travel & Chauffeur | CVS Car Hire",
     metaDescription:
       "Hire the Mercedes-Benz V-Class in Birmingham with CVS Car Hire. Group travel, airport transfers and chauffeur options. Check availability today.",

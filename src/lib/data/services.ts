@@ -447,9 +447,166 @@ export const services: ServiceContent[] = [
       { question: "Do you offer accounts for regular business hire?", answer: "We support long-term, monthly and repeat business arrangements. Speak to our team about setting up regular executive hire for your company." },
       { question: "Is there executive car hire near me?", answer: "We're based in Birmingham and serve the West Midlands directly, with nationwide UK delivery available for corporate clients. Tell us your location and requirements and we'll confirm." },
     ],
+    related: ["v-class-hire", "long-term-v-class-hire", "chauffeur-hire", "airport-transfer"],
     metaTitle: "Executive Car Hire Birmingham | Corporate & Business Travel | CVS Car Hire",
     metaDescription:
       "Executive and corporate car hire in Birmingham and nationwide. Prestige vehicles for executive travel, self-drive or chauffeur, with long-term and monthly business options. Check availability.",
+  },
+  {
+    slug: "v-class-hire",
+    name: "Mercedes V-Class Hire",
+    navLabel: "V-Class Hire",
+    category: "group-travel",
+    hero: {
+      eyebrow: "Group Travel & Chauffeur",
+      heading: "Mercedes V-Class Hire",
+      intro:
+        "Eight seats of quiet, first-class comfort — for the airport, the wedding party or the team on the move.",
+    },
+    overview:
+      "When the whole party needs to arrive together, the Mercedes-Benz V-Class is the definitive choice. Our V-Class hire in Birmingham pairs seating for up to eight with a hushed, executive cabin, generous luggage space and the reassurance of the three-pointed star — a genuine luxury people carrier, not a converted van. Hire it self-drive or with a professional chauffeur, for a single day, a weekend, or on a rolling monthly basis, with delivery across Birmingham and the UK. It's the natural answer for airport transfers, wedding parties, corporate groups, golf trips and event travel — everyone relaxed, together and on time.",
+    sections: [
+      {
+        heading: "A luxury 8-seater, not a minibus",
+        body: [
+          "The V-Class is built around comfort. Individual leather seats, climate control throughout, deep glass and a low, quiet ride make it feel far closer to an executive saloon than a shuttle — the difference your guests notice the moment they step in. Configurable seating carries up to eight passengers, or folds and slides away for luggage-heavy airport runs and golf bags.",
+          "Because it's a full Mercedes-Benz, the details are right: powered doors, ambient lighting, USB charging and room to genuinely stretch out on a longer journey. It's the vehicle that keeps a group together without asking anyone to compromise on comfort.",
+        ],
+      },
+      {
+        heading: "Self-drive or chauffeur-driven",
+        body: [
+          "Drive it yourself on a standard UK licence, or let one of our professional chauffeurs take the wheel while your group relaxes — ideal for weddings, corporate days and airport transfers where nobody wants to navigate or park. Either way the V-Class arrives immaculately prepared, fully insured and ready for the occasion.",
+        ],
+      },
+      {
+        heading: "V-Class hire across Birmingham and the UK",
+        body: [
+          "We're based in Birmingham and serve the West Midlands directly, with nationwide delivery available to homes, hotels, venues and airports. Tell us your dates, passenger numbers and pick-up point and we'll confirm availability and tailor the arrangement — a day, a weekend, or a longer term.",
+        ],
+      },
+    ],
+    benefits: [
+      "Seating for up to eight in individual comfort",
+      "Quiet, executive Mercedes-Benz cabin",
+      "Self-drive or professional chauffeur",
+      "Generous luggage space for airport and event travel",
+      "Short-term and long-term arrangements available",
+      "Birmingham-based, with nationwide UK delivery",
+    ],
+    occasions: ["Airport transfers", "Wedding parties", "Corporate groups", "Event & golf travel"],
+    recommendedVehicles: ["mercedes-v-class-hire", "range-rover-sport-hire", "bmw-x5-hire"],
+    faqs: [
+      { question: "How many passengers can the V-Class carry?", answer: "The Mercedes V-Class seats up to eight passengers plus the driver, with configurable seating so you can prioritise people or luggage." },
+      { question: "Can I hire the V-Class self-drive, or is it chauffeur only?", answer: "Both. You can drive the V-Class yourself on a standard UK licence, or add a professional chauffeur — popular for weddings, corporate travel and airport transfers." },
+      { question: "Is V-Class hire available near me in Birmingham?", answer: "Yes — we're based in Birmingham and cover the West Midlands directly, with nationwide delivery available. Tell us your location, dates and passenger numbers and we'll confirm." },
+      { question: "Can I hire a V-Class for a wedding?", answer: "Absolutely — the V-Class is a favourite for keeping the wedding party together, self-drive or chauffeur-driven. Ask about pairing it with one of our luxury cars for the couple." },
+    ],
+    related: ["short-term-v-class-hire", "long-term-v-class-hire", "chauffeur-hire", "airport-transfer", "corporate-car-hire"],
+    metaTitle: "Mercedes V-Class Hire Birmingham | 8 Seater Luxury Hire | CVS Car Hire",
+    metaDescription:
+      "Mercedes V-Class hire in Birmingham — luxury 8-seater people carrier, self-drive or chauffeur, for airport transfers, weddings and corporate groups. Nationwide UK delivery. Check availability.",
+  },
+  {
+    slug: "short-term-v-class-hire",
+    name: "Short-Term V-Class Hire",
+    navLabel: "Short-Term V-Class Hire",
+    category: "group-travel",
+    hero: {
+      eyebrow: "By the Day or Weekend",
+      heading: "Short-Term V-Class Hire",
+      intro:
+        "The luxury 8-seater for a single day, a weekend or an event — self-drive or chauffeur-driven.",
+    },
+    overview:
+      "Sometimes you just need the space and comfort of a Mercedes V-Class for a day or two. Our short-term V-Class hire in Birmingham covers exactly that — daily and weekend rates on a luxury eight-seater, ideal for airport runs, wedding parties, a stag or hen weekend, a golf trip or a corporate day out. Hire it self-drive on a standard licence or with a professional chauffeur, delivered immaculately prepared and ready to go, with flexible pick-up and drop-off across Birmingham and the UK.",
+    sections: [
+      {
+        heading: "Daily and weekend V-Class rates",
+        body: [
+          "Short-term hire is built for occasions rather than commitments: pick your dates, tell us the passenger count, and we'll confirm a day rate or a weekend rate on the V-Class. It's the easiest way to move a group in comfort for a specific event without arranging a minibus or splitting across several cars.",
+          "Mileage is generous and agreed up front, and the vehicle arrives valeted, fuelled and fully insured. Extend day-to-day if your plans grow.",
+        ],
+      },
+      {
+        heading: "Made for events and airport runs",
+        body: [
+          "The V-Class is the group-travel workhorse of any big day — wedding parties between venues, guests to and from the airport, a corporate team to an event, or the group away for a golf weekend. Up to eight seats plus luggage space mean everyone travels together, relaxed, in a quiet executive cabin rather than a cramped shuttle.",
+        ],
+      },
+    ],
+    benefits: [
+      "Flexible daily and weekend rates",
+      "Luxury 8-seater for one-off occasions",
+      "Self-drive or professional chauffeur",
+      "Perfect for weddings, airports and group days out",
+      "Immaculately prepared and fully insured",
+      "Birmingham-based, nationwide delivery available",
+    ],
+    occasions: ["Weekend group trips", "Airport runs", "Wedding party transport", "Stag, hen & golf"],
+    recommendedVehicles: ["mercedes-v-class-hire", "range-rover-sport-hire", "bmw-x5-hire"],
+    faqs: [
+      { question: "What's the minimum hire period for the V-Class?", answer: "We offer short-term V-Class hire from a single day, with weekend rates available. Tell us your dates and we'll confirm the rate." },
+      { question: "Can I get the V-Class just for a wedding day?", answer: "Yes — a single-day hire is ideal for keeping the wedding party together, self-drive or chauffeur-driven. Let us know your timings and venues." },
+      { question: "Do you deliver the V-Class for short hires?", answer: "Yes — we deliver across Birmingham and nationwide, to homes, hotels, venues or the airport. Tell us your pick-up point and we'll confirm." },
+    ],
+    related: ["v-class-hire", "long-term-v-class-hire", "airport-transfer", "wedding-car-hire", "chauffeur-hire"],
+    metaTitle: "Short-Term V-Class Hire Birmingham | Daily & Weekend 8 Seater | CVS Car Hire",
+    metaDescription:
+      "Short-term Mercedes V-Class hire in Birmingham — daily and weekend rates on a luxury 8-seater, self-drive or chauffeur, for weddings, airports and group trips. Nationwide delivery. Check availability.",
+  },
+  {
+    slug: "long-term-v-class-hire",
+    name: "Long-Term V-Class Hire",
+    navLabel: "Long-Term V-Class Hire",
+    category: "group-travel",
+    hero: {
+      eyebrow: "Monthly & Flexible Terms",
+      heading: "Long-Term V-Class Hire",
+      intro:
+        "A luxury 8-seater on flexible monthly terms — for business, big families and extended needs.",
+    },
+    overview:
+      "When you need a Mercedes V-Class for longer than a weekend, our long-term V-Class hire in Birmingham gives you one on flexible weekly or monthly terms — a genuine alternative to leasing or contract hire, with no multi-year commitment. It suits growing families, businesses running group or client travel, production and events work, and anyone who needs an eight-seater for a season rather than for good. One predictable monthly rate, premium condition throughout, and the freedom to extend or hand it back when plans change. Delivered across Birmingham and the UK.",
+    sections: [
+      {
+        heading: "Monthly V-Class rental and subscription",
+        body: [
+          "Our monthly rate works as a rolling subscription: one all-in price per month for the V-Class, with the flexibility to extend month to month. It's popular with businesses that need dependable group transport, families who want the space of an eight-seater without buying one, and anyone bridging a gap between vehicles. Mileage is agreed up front and tailored to how you'll use it.",
+        ],
+      },
+      {
+        heading: "A flexible alternative to leasing",
+        body: [
+          "Leasing or contract hire locks you into a fixed multi-year agreement with mileage caps, early-exit penalties and a credit check. Long-term V-Class hire works the other way round — a rolling weekly or monthly arrangement, for as long as you actually need the vehicle, with the freedom to change or return it when circumstances shift. Ideal when your requirement is real but not permanent.",
+        ],
+      },
+      {
+        heading: "For business, family and events",
+        body: [
+          "A long-term V-Class earns its keep as a shuttle for a hotel or venue, a client-and-team vehicle for a business, dependable transport for a large family, or a recurring unit for production and event schedules. Add a chauffeur arrangement where you need one. Whatever the use, you get a premium eight-seater on terms that flex with you.",
+        ],
+      },
+    ],
+    benefits: [
+      "Flexible weekly and monthly terms — no long contract",
+      "Rolling monthly subscription option",
+      "Luxury 8-seater for business and family use",
+      "A quality alternative to leasing or contract hire",
+      "Tailored mileage, agreed up front",
+      "Birmingham-based, nationwide delivery available",
+    ],
+    occasions: ["Extended business use", "Large family transport", "Production & events", "Interim group vehicle"],
+    recommendedVehicles: ["mercedes-v-class-hire", "range-rover-sport-hire", "bmw-x5-hire"],
+    faqs: [
+      { question: "How long can I hire a V-Class for?", answer: "We offer flexible long-term V-Class hire spanning weeks or months, on a rolling basis. Tell us your timescale and we'll tailor the terms." },
+      { question: "Is it cheaper than leasing a V-Class?", answer: "It's structured differently — a rolling monthly rate with no multi-year contract, mileage-cap penalties or credit tie-in. For flexible or temporary needs it's often the better fit; tell us your duration and we'll confirm a rate." },
+      { question: "Can I add a chauffeur to a long-term V-Class arrangement?", answer: "Yes — we can pair a long-term V-Class with chauffeur services for regular business or event travel. Speak to our team about a tailored arrangement." },
+    ],
+    related: ["v-class-hire", "short-term-v-class-hire", "long-term-hire", "corporate-car-hire", "nationwide-delivery"],
+    metaTitle: "Long-Term V-Class Hire Birmingham | Monthly 8 Seater Rental | CVS Car Hire",
+    metaDescription:
+      "Long-term Mercedes V-Class hire in Birmingham — flexible weekly and monthly rental on a luxury 8-seater, a simple alternative to leasing. For business, family and events. UK delivery. Check availability.",
   },
   {
     slug: "airport-transfer",
@@ -471,10 +628,11 @@ export const services: ServiceContent[] = [
       "Serving Birmingham Airport and beyond",
     ],
     occasions: ["Business travel", "Family holidays", "Group airport travel"],
-    recommendedVehicles: ["mercedes-e-class-hire", "mercedes-v-class-hire", "range-rover-sport-hire", "bmw-x5-hire"],
+    recommendedVehicles: ["mercedes-v-class-hire", "range-rover-sport-hire", "bmw-x5-hire"],
     faqs: [
       { question: "Which airports do you cover?", answer: "We regularly serve Birmingham Airport and can arrange transfers to other UK airports on request. Tell us your route and we'll confirm." },
     ],
+    related: ["v-class-hire", "short-term-v-class-hire", "chauffeur-hire", "corporate-car-hire"],
     metaTitle: "Airport Transfer Birmingham | Chauffeur Airport Transfers | CVS Car Hire",
     metaDescription:
       "Chauffeur-driven airport transfers in Birmingham. Executive and group vehicles, punctual and private. Serving Birmingham Airport and beyond. Check availability.",
@@ -547,7 +705,7 @@ export const services: ServiceContent[] = [
         ],
       },
     ],
-    related: ["long-term-supercar-hire", "supercar-subscription", "corporate-car-hire", "nationwide-delivery"],
+    related: ["long-term-supercar-hire", "long-term-v-class-hire", "supercar-subscription", "corporate-car-hire", "nationwide-delivery"],
     metaTitle: "Long-Term Car Hire Birmingham | Monthly Rental & Subscription | CVS",
     metaDescription:
       "Long-term car hire in Birmingham — flexible monthly car rental and subscription for premium vehicles, a simple alternative to leasing or contract hire. UK delivery. Check availability.",

@@ -270,6 +270,12 @@ export function vehicleSchema(vehicle: Vehicle) {
     description: vehicle.shortDescription,
     url: absoluteUrl(`/fleet/${vehicle.slug}`),
   };
+  // Real photography for image rich results / Google Images (hero first, then
+  // gallery). Placeholders are never emitted as real images.
+  const images = [vehicle.heroImage, ...(vehicle.gallery ?? [])]
+    .filter((i) => i && !i.placeholder)
+    .map((i) => absoluteUrl(i.src));
+  if (images.length) schema.image = images;
   if (vehicle.year) schema.vehicleModelDate = String(vehicle.year);
   if (vehicle.seats) schema.seatingCapacity = vehicle.seats;
   if (vehicle.doors) schema.numberOfDoors = vehicle.doors;

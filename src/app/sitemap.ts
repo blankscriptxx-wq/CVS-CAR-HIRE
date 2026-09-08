@@ -36,12 +36,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: r.priority,
   }));
 
-  const vehicleRoutes = vehicles.map((v) => ({
-    url: absoluteUrl(`/fleet/${v.slug}`),
-    lastModified: now,
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
+  const vehicleRoutes = vehicles.map((v) => {
+    // Surface real photography to Google Images via the sitemap.
+    const images = [v.heroImage, ...(v.gallery ?? [])]
+      .filter((i) => i && !i.placeholder)
+      .map((i) => absoluteUrl(i.src));
+    return {
+      url: absoluteUrl(`/fleet/${v.slug}`),
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+      ...(images.length ? { images } : {}),
+    };
+  });
 
   const serviceRoutes = services.map((s) => ({
     url: absoluteUrl(`/services/${s.slug}`),

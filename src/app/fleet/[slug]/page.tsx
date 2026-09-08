@@ -78,14 +78,22 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
   const gallery = vehicle.gallery ?? [];
   const incoming = vehicle.status === "incoming";
 
-  // Contextual internal links: marque hub, category service, long-term hire.
+  // Contextual internal links: brand service, marque hub, category service, long-term.
   const marqueHub = getCollectionForVehicle(vehicle.slug);
   const categoryService = CATEGORY_SERVICE[vehicle.category];
+  // Brand hire service pages (commercial intent) for marques that have one.
+  const BRAND_SERVICE: Record<string, { slug: string; label: string }> = {
+    Ferrari: { slug: "ferrari-hire", label: "Ferrari hire" },
+    Lamborghini: { slug: "lamborghini-hire", label: "Lamborghini hire" },
+    "Rolls-Royce": { slug: "rolls-royce-hire", label: "Rolls-Royce hire" },
+  };
+  const brandService = BRAND_SERVICE[vehicle.manufacturer];
   const longTerm =
     vehicle.category === "supercar"
       ? { slug: "long-term-supercar-hire", label: "Long-term supercar hire" }
       : { slug: "long-term-hire", label: "Long-term & monthly hire" };
   const exploreLinks: { href: string; label: string }[] = [
+    ...(brandService ? [{ href: `/services/${brandService.slug}`, label: brandService.label }] : []),
     ...(marqueHub ? [{ href: `/hire/${marqueHub.slug}`, label: marqueHub.heading }] : []),
     ...(categoryService
       ? [{ href: `/services/${categoryService.slug}`, label: categoryService.label }]

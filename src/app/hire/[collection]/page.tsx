@@ -53,6 +53,16 @@ export default async function CollectionPage({
 
   const others = collections.filter((x) => x.slug !== c.slug);
 
+  // Brand hubs (model discovery) pair with a brand hire service page (commercial
+  // hire intent) so each owns a distinct search intent and they reinforce rather
+  // than cannibalise each other.
+  const BRAND_SERVICE: Record<string, { slug: string; label: string }> = {
+    ferrari: { slug: "ferrari-hire", label: "Ferrari hire service" },
+    lamborghini: { slug: "lamborghini-hire", label: "Lamborghini hire service" },
+    "rolls-royce": { slug: "rolls-royce-hire", label: "Rolls-Royce hire service" },
+  };
+  const brandService = BRAND_SERVICE[c.slug];
+
   return (
     <>
       <JsonLd
@@ -91,6 +101,16 @@ export default async function CollectionPage({
             <VehicleCard key={v.slug} vehicle={v} priority={i < 3} />
           ))}
         </div>
+        {brandService && (
+          <div className="mt-8">
+            <Link
+              href={`/services/${brandService.slug}`}
+              className="link-underline text-xs uppercase tracking-wide2"
+            >
+              How {c.name} hire works — our {brandService.label} <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        )}
       </section>
 
       {/* Long-form content — the crawlable hub copy */}

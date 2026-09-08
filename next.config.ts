@@ -61,9 +61,12 @@ const legacyRedirects = [
   { source: "/rolls-royce-cullinan-hire", destination: "/fleet/rolls-royce-cullinan-hire", permanent: true },
   { source: "/rollsroyceghosthire", destination: "/fleet/rolls-royce-ghost-hire", permanent: true },
   { source: "/rollsroyceghosthire-1", destination: "/fleet/rolls-royce-ghost-hire", permanent: true },
-  { source: "/rollsroycephantomhire", destination: "/fleet/rolls-royce-ghost-hire", permanent: true },
-  { source: "/rollsroycewraithhire", destination: "/fleet/rolls-royce-ghost-hire", permanent: true },
-  { source: "/rollsroycedawnhire", destination: "/fleet/rolls-royce-ghost-hire", permanent: true },
+  // Now that the Phantom and Dawn have their own pages, point these at the
+  // correct model (previously fell back to the Ghost). Wraith has no CVS
+  // equivalent, so it goes to the Rolls-Royce hub.
+  { source: "/rollsroycephantomhire", destination: "/fleet/rolls-royce-phantom-hire", permanent: true },
+  { source: "/rollsroycewraithhire", destination: "/hire/rolls-royce", permanent: true },
+  { source: "/rollsroycedawnhire", destination: "/fleet/rolls-royce-dawn-hire", permanent: true },
   { source: "/lamborghini-urus-hire", destination: "/fleet/lamborghini-urus-performante-hire", permanent: true },
   { source: "/lamborghini-huracan-hire", destination: "/fleet/lamborghini-huracan-performante-spyder-hire", permanent: true },
   { source: "/lamborghini-huracan-performante-hire", destination: "/fleet/lamborghini-huracan-performante-spyder-hire", permanent: true },

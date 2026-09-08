@@ -268,6 +268,168 @@ export const services: ServiceContent[] = [
       "Luxury car hire in Birmingham and across the UK. Self-drive and chauffeur luxury car rental from a fleet of 50+ prestige, supercar and performance vehicles. Check availability.",
   },
   {
+    slug: "ferrari-hire",
+    name: "Ferrari Hire",
+    navLabel: "Ferrari Hire",
+    hero: {
+      eyebrow: "Self-Drive & Chauffeur",
+      heading: "Ferrari Hire",
+      intro:
+        "Hire a Ferrari in Birmingham and across the UK — the SF90, Roma and Purosangue, prepared to the highest standard and delivered to your door.",
+    },
+    overview:
+      "Ferrari hire with CVS puts one of motoring's most emotive badges within reach for a day, a weekend or longer. This is the hire service that surrounds the cars: honest advice on the right Ferrari for your occasion, immaculate preparation, and self-drive or chauffeur-driven options with delivery across Birmingham and the UK. Browse the individual models on our Ferrari collection, then talk to us and we'll handle everything from availability to hand-over.",
+    sections: [
+      {
+        heading: "How Ferrari hire works",
+        body: [
+          "Tell us the dates, the occasion and the Ferrari you have in mind — or let us recommend one — and we'll confirm availability, requirements and the rate before you commit. The SF90 and Roma are offered self-drive so the day is entirely yours; the four-seat Purosangue can be hired self-drive or chauffeur-driven. Driving-licence requirements, minimum age and deposit are confirmed on enquiry, as they vary by model.",
+          "We prepare every Ferrari to concours standard and can deliver it to your home, hotel or venue so the experience begins the moment it arrives, subject to vehicle and location.",
+        ],
+      },
+      {
+        heading: "Occasions we're asked for most",
+        body: [
+          "Ferraris are our most-requested cars for landmark birthdays, anniversaries, proposals and photoshoots, and the Purosangue has quickly become a favourite for weddings and events where four seats and genuine presence matter. Whatever the moment, we'll match the car to it and take care of the detail around the hire.",
+        ],
+      },
+      {
+        heading: "Ferrari hire in Birmingham and nationwide",
+        body: [
+          "We're based in Birmingham and serve the West Midlands directly — Solihull, Sutton Coldfield, Wolverhampton and Coventry — with nationwide UK delivery available on request. Tell us where you are and we'll confirm we can reach you.",
+        ],
+      },
+    ],
+    benefits: [
+      "The SF90, Roma and Purosangue — with the 488 and 12Cilindri joining soon",
+      "Self-drive, or chauffeur-driven on the Purosangue",
+      "Immaculate, concours-standard preparation",
+      "Delivery across Birmingham and the UK",
+      "Honest advice on the right Ferrari for your occasion",
+    ],
+    occasions: ["Landmark birthdays", "Weddings (Purosangue)", "Photoshoots & content", "Weekend drives"],
+    recommendedVehicles: ["ferrari-sf90-hire", "ferrari-roma-hire", "ferrari-purosangue-hire", "ferrari-488-hire", "ferrari-12cilindri-hire"],
+    faqs: [
+      { question: "Can I hire a Ferrari in Birmingham?", answer: "Yes. CVS Hire is Birmingham-based and offers Ferrari hire across the city and the West Midlands, with nationwide UK delivery available. The SF90, Roma and Purosangue are available now; tell us your dates and we'll confirm availability." },
+      { question: "Is Ferrari hire self-drive or chauffeur-driven?", answer: "The SF90 and Roma are offered self-drive. The four-seat Purosangue can be hired self-drive or with a professional chauffeur, which makes it popular for weddings and events." },
+      { question: "How much does it cost to hire a Ferrari?", answer: "It depends on the model, the duration and the mileage you need, with daily and weekend rates available. Tell us the Ferrari and your dates and we'll confirm the exact price on enquiry." },
+      { question: "What do I need to hire a Ferrari?", answer: "Requirements such as minimum age, driving licence and deposit vary by model and are confirmed on enquiry. Start a conversation with our team and we'll talk you through exactly what's needed for your chosen car." },
+      { question: "Can a Ferrari be delivered to me?", answer: "Yes — nationwide UK delivery is available, subject to vehicle and location. We'll deliver to your home, hotel or venue and confirm the delivery charge with your quote." },
+    ],
+    related: ["lamborghini-hire", "supercar-hire", "luxury-car-hire", "wedding-car-hire"],
+    metaTitle: "Ferrari Hire Birmingham | Self-Drive & Chauffeur Ferrari Hire | CVS Hire",
+    metaDescription:
+      "Ferrari hire in Birmingham and nationwide — self-drive the SF90 and Roma, self-drive or chauffeur the Purosangue. Concours preparation, UK delivery. Check availability with CVS Hire.",
+  },
+  {
+    slug: "lamborghini-hire",
+    name: "Lamborghini Hire",
+    navLabel: "Lamborghini Hire",
+    hero: {
+      eyebrow: "Self-Drive & Chauffeur",
+      heading: "Lamborghini Hire",
+      intro:
+        "Hire a Lamborghini in Birmingham and across the UK — from the V12 Revuelto flagship to the Urus Performante and the V10 Huracán.",
+    },
+    overview:
+      "Lamborghini hire with CVS is the fastest way to put a genuine icon on your driveway for a day, a weekend or longer. This is the service around the cars: matching the right Lamborghini to your occasion, immaculate preparation, and self-drive or chauffeur-driven options with delivery across Birmingham and the UK. Explore the models on our Lamborghini collection, then talk to us to check dates and confirm everything you need.",
+    sections: [
+      {
+        heading: "How Lamborghini hire works",
+        body: [
+          "Choose your model — or let us recommend one for the occasion — and we'll confirm availability, requirements and the rate. The range runs from the 1,000bhp V12 hybrid Revuelto flagship to the Urus Performante super-SUV and the naturally aspirated V10 Huracán in Performante Spyder and Evo forms. Cars are offered self-drive (minimum age and deposit confirmed on enquiry) or chauffeur-driven for weddings, videos and events.",
+          "Every Lamborghini is prepared to the highest standard and can be delivered to your home, hotel or venue, subject to vehicle and location, so the drama begins the moment it arrives.",
+        ],
+      },
+      {
+        heading: "Occasions we're asked for most",
+        body: [
+          "Lamborghinis are our go-to for landmark birthdays, milestone celebrations, music videos and content shoots, and the Urus adds day-to-day usability for a weekend away with the family. Tell us the moment and we'll match the car and handle the rest.",
+        ],
+      },
+      {
+        heading: "Lamborghini hire in Birmingham and nationwide",
+        body: [
+          "We're a Birmingham-based hire company serving the West Midlands directly — Solihull, Sutton Coldfield, Wolverhampton and Coventry — with nationwide UK delivery available. Tell us your location and dates and we'll confirm we can cover it.",
+        ],
+      },
+    ],
+    benefits: [
+      "The Revuelto, Urus Performante and Huracán — with the STO, Temerario and Aventador SVJ joining soon",
+      "Self-drive or chauffeur-driven for weddings and events",
+      "Immaculate preparation, carefully maintained cars",
+      "Delivery across Birmingham and the UK",
+      "Advice on the right Lamborghini for your occasion",
+    ],
+    occasions: ["Landmark birthdays", "Music videos & content", "Weddings & events", "Weekend escapes"],
+    recommendedVehicles: ["lamborghini-revuelto-hire", "lamborghini-urus-performante-hire", "lamborghini-huracan-performante-spyder-hire", "lamborghini-huracan-evo-hire", "lamborghini-huracan-sto-hire", "lamborghini-temerario-hire", "lamborghini-aventador-svj-hire"],
+    faqs: [
+      { question: "Can I hire a Lamborghini in Birmingham?", answer: "Yes. CVS Hire is Birmingham-based and offers Lamborghini hire across the city, the West Midlands and nationwide by delivery. The Revuelto, Urus Performante and Huracán are available now; tell us your dates and we'll confirm availability." },
+      { question: "How much does it cost to hire a Lamborghini?", answer: "Lamborghini hire is priced by the model, the duration and the mileage you need, with daily, weekend and longer rates available. Message us with the car and your dates and we'll confirm the exact price." },
+      { question: "Is Lamborghini hire self-drive or chauffeur-driven?", answer: "Our Lamborghinis are available self-drive, and the Urus and Huracán can also be arranged chauffeur-driven for weddings, videos and events. Tell us which suits your occasion." },
+      { question: "How old do I need to be to hire a Lamborghini?", answer: "Minimum age, licence and deposit requirements vary by model and are confirmed on enquiry. Get in touch and we'll talk you through exactly what's needed for your chosen car." },
+      { question: "Can a Lamborghini be delivered to me?", answer: "Yes — nationwide UK delivery is available, subject to vehicle and location, to your home, hotel or venue. We'll confirm the delivery charge with your quote." },
+    ],
+    related: ["ferrari-hire", "supercar-hire", "luxury-car-hire", "production-car-hire"],
+    metaTitle: "Lamborghini Hire Birmingham | Self-Drive & Chauffeur Lamborghini Hire | CVS Hire",
+    metaDescription:
+      "Lamborghini hire in Birmingham and nationwide — the Revuelto, Urus Performante and Huracán, self-drive or chauffeur-driven, with UK delivery. Check availability with CVS Hire.",
+  },
+  {
+    slug: "rolls-royce-hire",
+    name: "Rolls-Royce Hire",
+    navLabel: "Rolls-Royce Hire",
+    hero: {
+      eyebrow: "Chauffeur-Driven & Self-Drive",
+      heading: "Rolls-Royce Hire",
+      intro:
+        "Hire a Rolls-Royce in Birmingham and across the UK — the Phantom, Cullinan and Ghost, chauffeur-driven for the occasions that deserve them.",
+    },
+    overview:
+      "Rolls-Royce hire with CVS is the definition of arriving well. This is the service around the marque: coordinating the car, the chauffeur, the timings and the finishing touches so your day runs perfectly. The Phantom, Cullinan and Ghost are offered chauffeur-driven for weddings, milestone occasions and executive travel across Birmingham and the UK. See the full collection on our Rolls-Royce models page, then talk to us to check your date.",
+    sections: [
+      {
+        heading: "How Rolls-Royce hire works",
+        body: [
+          "Tell us the date, the venue and the occasion and we'll confirm availability and build the arrangement around you — including a professional chauffeur, ribbons and finishing touches for weddings, and route and timing planning so everything is seamless. The Phantom is the flagship for the ultimate arrival; the Cullinan brings commanding SUV presence; the Ghost is the classic wedding saloon.",
+          "We coordinate around your schedule and can position the car for photographs and the entrance, so the moment itself is exactly as you pictured it.",
+        ],
+      },
+      {
+        heading: "Weddings, milestones and executive travel",
+        body: [
+          "Rolls-Royce is our most-requested marque for weddings, and also suits milestone anniversaries, proms, and executive or VIP travel. For weddings we can pair the Rolls-Royce with a second car for the wedding party, such as our Mercedes V-Class.",
+        ],
+      },
+      {
+        heading: "Rolls-Royce hire in Birmingham and nationwide",
+        body: [
+          "We're based in Birmingham and serve the whole of the West Midlands directly, with nationwide UK delivery for weddings and events. Tell us your venue and date and we'll confirm we can cover it.",
+        ],
+      },
+    ],
+    benefits: [
+      "The Phantom, Cullinan and Ghost — with the Cullinan Series II, Spectre and Dawn joining soon",
+      "Chauffeur-driven for a composed, effortless arrival",
+      "Ribbons and finishing touches for weddings",
+      "Route and timing planning included",
+      "Delivery across Birmingham and the UK",
+    ],
+    occasions: ["Weddings", "Milestone anniversaries", "Executive & VIP travel", "Proms"],
+    recommendedVehicles: ["rolls-royce-phantom-hire", "rolls-royce-cullinan-hire", "rolls-royce-ghost-hire", "rolls-royce-cullinan-series-2-hire", "rolls-royce-spectre-hire", "rolls-royce-dawn-hire"],
+    faqs: [
+      { question: "Can I hire a Rolls-Royce in Birmingham for a wedding?", answer: "Yes. CVS Hire is Birmingham-based and Rolls-Royce is our most-requested wedding marque. The Phantom, Cullinan and Ghost are available chauffeur-driven across the West Midlands and nationwide by arrangement. Tell us your date and venue and we'll confirm availability." },
+      { question: "Is Rolls-Royce hire chauffeur-driven or self-drive?", answer: "Our Rolls-Royce models are offered chauffeur-driven so you can relax and enjoy the occasion while our chauffeur takes care of the route, timing and every detail." },
+      { question: "How much does Rolls-Royce hire cost?", answer: "It depends on the model, whether it's for a full day or a wedding package, and the location. Share your date, venue and the car you have in mind and we'll put together a tailored quote." },
+      { question: "Do you provide ribbons and wedding finishing touches?", answer: "Yes — ribbons and presentation are taken care of for weddings, and we plan timings around your day. Let us know your schedule and venues and we'll coordinate it." },
+      { question: "Which Rolls-Royce is best for a wedding?", answer: "The Phantom is the ultimate flagship arrival, the Ghost is the timeless wedding saloon, and the Cullinan brings commanding SUV presence. We'll help you choose for your venue and style." },
+    ],
+    related: ["wedding-car-hire", "chauffeur-hire", "luxury-car-hire", "corporate-car-hire"],
+    metaTitle: "Rolls-Royce Hire Birmingham | Chauffeur Wedding Car Hire | CVS Hire",
+    metaDescription:
+      "Rolls-Royce hire in Birmingham and nationwide — chauffeur-driven Phantom, Cullinan and Ghost for weddings, milestones and executive travel. Check availability with CVS Hire.",
+  },
+  {
     slug: "prestige-car-hire",
     name: "Prestige Car Hire",
     navLabel: "Prestige Car Hire",

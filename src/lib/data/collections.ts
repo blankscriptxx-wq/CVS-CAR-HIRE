@@ -46,7 +46,7 @@ export const collections: Collection[] = [
     name: "Lamborghini",
     heading: "Lamborghini Hire",
     eyebrow: "Lamborghini Hire",
-    metaTitle: "Lamborghini Hire Birmingham | Urus & Huracán Hire | CVS Car Hire",
+    metaTitle: "Lamborghini Models to Hire | Revuelto, Urus & Huracán Fleet | CVS Hire",
     metaDescription:
       "Lamborghini hire in Birmingham and nationwide — hire the Urus Performante and Huracán self-drive or chauffeur-driven, by the day, weekend, week or month. Check availability today.",
     keywords: [
@@ -97,7 +97,7 @@ export const collections: Collection[] = [
     name: "Ferrari",
     heading: "Ferrari Hire",
     eyebrow: "Ferrari Hire",
-    metaTitle: "Ferrari Hire Birmingham | SF90, Roma & Purosangue Hire | CVS Car Hire",
+    metaTitle: "Ferrari Models to Hire | SF90, Roma & Purosangue Fleet | CVS Hire",
     metaDescription:
       "Ferrari hire in Birmingham and nationwide — the SF90 hybrid flagship, the Roma grand tourer and the four-seat Purosangue, self-drive or chauffeur, with UK delivery. Check availability.",
     keywords: [
@@ -148,7 +148,7 @@ export const collections: Collection[] = [
     name: "Rolls-Royce",
     heading: "Rolls-Royce Hire",
     eyebrow: "Rolls-Royce Hire",
-    metaTitle: "Rolls-Royce Hire Birmingham | Phantom, Cullinan & Ghost Hire | CVS Car Hire",
+    metaTitle: "Rolls-Royce Models to Hire | Phantom, Cullinan & Ghost Fleet | CVS Hire",
     metaDescription:
       "Rolls-Royce hire in Birmingham and nationwide — chauffeur-driven Phantom, Cullinan and Ghost for weddings, corporate and occasions. UK delivery. Check availability.",
     keywords: [

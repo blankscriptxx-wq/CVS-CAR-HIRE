@@ -11,7 +11,7 @@ const FEATURED_SLUGS = [
   "lamborghini-huracan-performante-spyder-hire",
   "rolls-royce-cullinan-hire",
   "lamborghini-urus-performante-hire",
-  "mercedes-amg-g63-hire",
+  "mercedes-amg-g63-red-hire",
   "audi-r8-spyder-hire",
 ];
 

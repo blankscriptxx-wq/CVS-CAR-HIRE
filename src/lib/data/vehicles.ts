@@ -217,8 +217,9 @@ export const vehicles: Vehicle[] = [
     thumbnail: img("rolls-royce-cullinan-hire", "thumb.jpg", "Black Rolls-Royce Cullinan Black Badge available to hire from CVS Car Hire"),
     gallery: [
       // Studio shots first
-      img("rolls-royce-cullinan-hire", "g-front.jpg", "Front of the Rolls-Royce Cullinan Black Badge with its illuminated grille"),
+      img("rolls-royce-cullinan-hire", "g-studio-front3q.jpg", "Black Rolls-Royce Cullinan Black Badge, front three-quarter studio"),
       img("rolls-royce-cullinan-hire", "g-side.jpg", "Side profile of the black Rolls-Royce Cullinan Black Badge"),
+      img("rolls-royce-cullinan-hire", "g-front.jpg", "Front of the Rolls-Royce Cullinan Black Badge with its illuminated grille"),
       img("rolls-royce-cullinan-hire", "g-rear.jpg", "Rear three-quarter of the Rolls-Royce Cullinan Black Badge"),
       // Then a varied mix of location, interior and previous shots
       img("rolls-royce-cullinan-hire", "g-highlands.jpg", "Rolls-Royce Cullinan Black Badge in the Scottish Highlands"),

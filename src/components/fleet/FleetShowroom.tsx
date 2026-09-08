@@ -23,12 +23,11 @@ const hireTypes = [
 // sort (and within each category). Leads with the halo cars and cascades down
 // by desirability so the showroom always reads as a deliberate line-up rather
 // than raw file order. Any vehicle not listed falls to the end.
+// Cars with full professional photography lead the showroom. The five newly
+// added cars are still awaiting their CVS shoot, so they sit deliberately
+// mid-and-lower (Purosangue/Phantom in the middle; Revuelto/SF90/GT3 RS toward
+// the end) until their photos land — at which point they can be promoted here.
 const FLEET_ORDER = [
-  "lamborghini-revuelto-hire",
-  "ferrari-sf90-hire",
-  "rolls-royce-phantom-hire",
-  "ferrari-purosangue-hire",
-  "porsche-911-gt3-rs-hire",
   "rolls-royce-cullinan-hire",
   "lamborghini-huracan-performante-spyder-hire",
   "lamborghini-urus-performante-hire",
@@ -44,12 +43,19 @@ const FLEET_ORDER = [
   "bmw-m3-hire",
   "audi-rs3-hire",
   "mercedes-glc-43-amg-hire",
+  // — middle: new cars (photography to follow) —
+  "ferrari-purosangue-hire",
+  "rolls-royce-phantom-hire",
   "vw-golf-r-lapiz-blue-hire",
   "vw-golf-r-hire",
   "mercedes-amg-a35-hire",
   "bmw-4-series-convertible-hire",
   "bmw-3-series-hire",
   "mercedes-v-class-hire",
+  // — end: new supercars (photography to follow) —
+  "lamborghini-revuelto-hire",
+  "ferrari-sf90-hire",
+  "porsche-911-gt3-rs-hire",
   "ferrari-roma-hire",
 ];
 

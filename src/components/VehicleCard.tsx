@@ -29,7 +29,7 @@ export function VehicleCard({
       {/* Media */}
       <Link href={href} className="relative block aspect-[4/3] overflow-hidden" aria-label={`View ${name}`}>
         <div className="absolute inset-0 transition-transform duration-800 ease-luxe group-hover:scale-[1.04]">
-          <Media asset={vehicle.heroImage} label={name} sizes={sizes} priority={priority} />
+          <Media asset={vehicle.thumbnail ?? vehicle.heroImage} label={name} sizes={sizes} priority={priority} />
         </div>
         {vehicle.newArrival && (
           <span className="absolute left-4 top-4 z-10 bg-champagne px-3 py-1 text-[10px] font-medium uppercase tracking-wide2 text-black">

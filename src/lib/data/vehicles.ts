@@ -25,6 +25,7 @@ export const vehicles: Vehicle[] = [
     category: "supercar",
     bodyType: "convertible",
     heroImage: img("lamborghini-huracan-performante-spyder-hire", "hero.jpg", "Matte black Lamborghini Huracán Performante Spyder for supercar hire at CVS Car Hire"),
+    thumbnail: img("lamborghini-huracan-performante-spyder-hire", "thumb.jpg", "Matte black Lamborghini Huracán Performante Spyder available to hire from CVS Car Hire"),
     gallery: [
       img("lamborghini-huracan-performante-spyder-hire", "front.jpg", "Front three-quarter of the Lamborghini Huracán Performante Spyder with the roof down"),
       img("lamborghini-huracan-performante-spyder-hire", "front-angle.jpg", "Front of the matte black Lamborghini Huracán Performante Spyder"),
@@ -72,6 +73,7 @@ export const vehicles: Vehicle[] = [
     category: "supercar",
     bodyType: "convertible",
     heroImage: img("audi-r8-spyder-hire", "hero.jpg", "Blue Audi R8 Spyder with the roof down, available for self-drive supercar hire at CVS Car Hire Birmingham"),
+    thumbnail: img("audi-r8-spyder-hire", "thumb.jpg", "Blue Audi R8 Spyder V10 available to hire from CVS Car Hire Birmingham"),
     gallery: [
       img("audi-r8-spyder-hire", "front.jpg", "Front of the blue Audi R8 Spyder with the roof down"),
       img("audi-r8-spyder-hire", "front-city.jpg", "Audi R8 Spyder in the city with the roof down"),
@@ -118,6 +120,7 @@ export const vehicles: Vehicle[] = [
     category: "luxury-4x4",
     bodyType: "suv",
     heroImage: img("lamborghini-urus-performante-hire", "hero.jpg", "Giallo Inti yellow Lamborghini Urus Performante for luxury SUV hire at CVS Car Hire Birmingham"),
+    thumbnail: img("lamborghini-urus-performante-hire", "thumb.jpg", "Yellow Lamborghini Urus Performante super-SUV available to hire from CVS Car Hire"),
     gallery: [
       img("lamborghini-urus-performante-hire", "rear.jpg", "Rear of the yellow Lamborghini Urus Performante"),
       img("lamborghini-urus-performante-hire", "interior.jpg", "Lamborghini Urus Performante sports seats with yellow stitching"),
@@ -200,6 +203,7 @@ export const vehicles: Vehicle[] = [
     category: "luxury-4x4",
     bodyType: "suv",
     heroImage: img("rolls-royce-cullinan-hire", "hero.jpg", "Rolls-Royce Cullinan with its rear coach door open, for luxury SUV and chauffeur hire at CVS Car Hire"),
+    thumbnail: img("rolls-royce-cullinan-hire", "thumb.jpg", "Black Rolls-Royce Cullinan Black Badge available to hire from CVS Car Hire"),
     gallery: [
       img("rolls-royce-cullinan-hire", "front-3q.jpg", "Front three-quarter view of the Rolls-Royce Cullinan"),
       img("rolls-royce-cullinan-hire", "front.jpg", "Front of the Rolls-Royce Cullinan"),
@@ -773,6 +777,7 @@ export const vehicles: Vehicle[] = [
     category: "luxury-4x4",
     bodyType: "suv",
     heroImage: img("mercedes-amg-g63-red-hire", "hero.jpg", "Red Mercedes-AMG G 63 for luxury 4x4 hire at CVS Car Hire Birmingham"),
+    thumbnail: img("mercedes-amg-g63-red-hire", "thumb.jpg", "Red Mercedes-AMG G63 available to hire from CVS Car Hire Birmingham"),
     gallery: [
       img("mercedes-amg-g63-red-hire", "front.jpg", "Front three-quarter view of the red Mercedes-AMG G 63"),
       img("mercedes-amg-g63-red-hire", "rear.jpg", "Rear of the red Mercedes-AMG G 63 with its side-hinged spare wheel"),

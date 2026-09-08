@@ -61,6 +61,8 @@ export interface Vehicle {
   bodyType?: BodyType;
 
   heroImage: ImageAsset;
+  /** Optional card/listing thumbnail. Falls back to heroImage when unset. */
+  thumbnail?: ImageAsset;
   gallery?: ImageAsset[];
   video?: { src: string; poster?: string };
 

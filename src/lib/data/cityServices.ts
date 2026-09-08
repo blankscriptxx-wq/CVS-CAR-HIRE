@@ -3,7 +3,7 @@ import type { LocationContent, FAQ } from "@/lib/types";
 /**
  * City × service landing pages (/[city]/[service]).
  *
- * Each of the five services below is composed with a city's LocationContent to
+ * Each of the services below is composed with a city's LocationContent to
  * produce a genuinely differentiated page — the copy, featured fleet, local
  * context (venues, airports, business districts, landmarks) and FAQs all draw
  * on real per-city data, so these are NOT thin doorway pages. Delivery language
@@ -198,6 +198,40 @@ export const CITY_SERVICES: CityServiceDef[] = [
     metaTitle: (loc) => `Prom Car Hire ${loc.city} | Supercar Prom Arrivals | CVS Car Hire`,
     metaDescription: (loc) =>
       `Prom car hire in ${loc.city} — Lamborghini, Ferrari and the Mercedes-AMG G 63 delivered for the big arrival. CVS Car Hire, subject to availability. Check availability.`,
+  },
+  {
+    slug: "v-class-hire",
+    name: "V-Class Hire",
+    short: "V-Class hire",
+    eyebrow: "Group Travel & Chauffeur",
+    fleet: [
+      "mercedes-v-class-hire",
+      "range-rover-vogue-hire",
+      "range-rover-sport-hire",
+      "bmw-x5-hire",
+    ],
+    intro: (loc) =>
+      `When the whole party needs to travel together in ${loc.city}, the Mercedes-Benz V-Class is the answer. CVS Car Hire offers luxury 8-seater V-Class hire across ${loc.city} — self-drive or chauffeur-driven — for airport transfers, wedding parties, corporate groups and event travel. A quiet, executive cabin, seating for up to eight and generous luggage space mean everyone arrives together, relaxed and on time, whether you're heading to ${at(loc.airports, 0, "the airport")} or a venue near ${at(loc.landmarks, 0, "the city centre")}.`,
+    angleTitle: "Airports, business & venues",
+    angle: (loc) =>
+      `The V-Class is ideal for airport runs to ${list(loc.airports, "your nearest airport")}, corporate group travel around ${list(loc.businessDistricts, "the city's business districts")}, and keeping wedding parties together${loc.weddingVenues && loc.weddingVenues.length ? ` between venues such as ${list(loc.weddingVenues, "")}` : ""}. We deliver across ${loc.city}, subject to vehicle and location.`,
+    faqs: (loc) => [
+      {
+        question: `Can I hire a Mercedes V-Class in ${loc.city}?`,
+        answer: `Yes — luxury 8-seater V-Class hire is available across ${loc.city}, self-drive or chauffeur-driven, for a day, a weekend or longer, subject to availability. Tell us your dates and passenger numbers and we'll confirm.`,
+      },
+      {
+        question: `Is the V-Class good for airport transfers in ${loc.city}?`,
+        answer: `It's one of the best — up to eight seats plus luggage space make it ideal for group airport transfers to ${list(loc.airports, "your nearest airport")}. Chauffeur-driven options mean you can relax door to door.`,
+      },
+      {
+        question: `Do you offer 8-seater group hire in ${loc.city}?`,
+        answer: `Yes — the V-Class seats up to eight in comfort, ideal for wedding parties, corporate groups and events across ${loc.city}. Self-drive on a standard licence or add a professional chauffeur.`,
+      },
+    ],
+    metaTitle: (loc) => `Mercedes V-Class Hire ${loc.city} | 8 Seater Group Hire | CVS Car Hire`,
+    metaDescription: (loc) =>
+      `Mercedes V-Class hire in ${loc.city} — luxury 8-seater, self-drive or chauffeur, for airport transfers, weddings and corporate groups. CVS Car Hire, subject to availability. Check availability.`,
   },
 ];
 

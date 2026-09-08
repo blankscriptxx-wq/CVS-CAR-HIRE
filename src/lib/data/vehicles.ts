@@ -25,7 +25,7 @@ export const vehicles: Vehicle[] = [
     category: "supercar",
     bodyType: "convertible",
     heroImage: img("lamborghini-huracan-performante-spyder-hire", "hero.jpg", "Matte black Lamborghini Huracán Performante Spyder by Tower Bridge, London — supercar hire from CVS Car Hire"),
-    thumbnail: img("lamborghini-huracan-performante-spyder-hire", "thumb.jpg", "Matte black Lamborghini Huracán Performante Spyder available to hire from CVS Car Hire"),
+    thumbnail: img("lamborghini-huracan-performante-spyder-hire", "g-city-night.jpg", "Matte black Lamborghini Huracán Performante Spyder in the City of London at night, available to hire from CVS Car Hire"),
     gallery: [
       // Studio shots first
       img("lamborghini-huracan-performante-spyder-hire", "g-studio-front3q.jpg", "Matte black Lamborghini Huracán Performante Spyder, front three-quarter studio"),
@@ -43,7 +43,7 @@ export const vehicles: Vehicle[] = [
       img("lamborghini-huracan-performante-spyder-hire", "seat-detail.jpg", "Alcantara seat detail in the Lamborghini Huracán Performante Spyder"),
       img("lamborghini-huracan-performante-spyder-hire", "g-concrete.jpg", "Lamborghini Huracán Performante Spyder against modern architecture in golden light"),
       img("lamborghini-huracan-performante-spyder-hire", "wheel.jpg", "Lamborghini Huracán Performante Spyder wheel and blue brake caliper"),
-      img("lamborghini-huracan-performante-spyder-hire", "g-city-night.jpg", "Lamborghini Huracán Performante Spyder in the City of London at night"),
+      img("lamborghini-huracan-performante-spyder-hire", "thumb.jpg", "Lamborghini Huracán Performante Spyder at the Royal Exchange, London, in golden-hour light"),
       img("lamborghini-huracan-performante-spyder-hire", "door.jpg", "Performante detailing on the Lamborghini Huracán Spyder door"),
       img("lamborghini-huracan-performante-spyder-hire", "g-manor.jpg", "Lamborghini Huracán Performante Spyder outside a country manor"),
       img("lamborghini-huracan-performante-spyder-hire", "sill.jpg", "Performante side sill detail on the Lamborghini Huracán Spyder"),
@@ -85,7 +85,7 @@ export const vehicles: Vehicle[] = [
     category: "supercar",
     bodyType: "convertible",
     heroImage: img("audi-r8-spyder-hire", "hero.jpg", "Blue Audi R8 Spyder V10 by Tower Bridge, London — self-drive supercar hire from CVS Car Hire"),
-    thumbnail: img("audi-r8-spyder-hire", "thumb.jpg", "Blue Audi R8 Spyder V10 available to hire from CVS Car Hire Birmingham"),
+    thumbnail: img("audi-r8-spyder-hire", "r-belgravia.jpg", "Blue Audi R8 Spyder V10 outside a Belgravia townhouse, available to hire from CVS Car Hire"),
     gallery: [
       // Studio shots first
       img("audi-r8-spyder-hire", "r-studio-front3q.jpg", "Blue Audi R8 Spyder V10, front three-quarter studio"),
@@ -95,7 +95,7 @@ export const vehicles: Vehicle[] = [
       // Then a varied mix of location, interior and previous shots
       img("audi-r8-spyder-hire", "r-alps.jpg", "Audi R8 Spyder in the mountains with the roof down"),
       img("audi-r8-spyder-hire", "interior.jpg", "Audi R8 Spyder virtual cockpit and red leather interior"),
-      img("audi-r8-spyder-hire", "r-belgravia.jpg", "Audi R8 Spyder outside a Belgravia townhouse at dusk"),
+      img("audi-r8-spyder-hire", "thumb.jpg", "Audi R8 Spyder at the Royal Exchange, London, in golden-hour light"),
       img("audi-r8-spyder-hire", "r-coast.jpg", "Rear three-quarter of the Audi R8 Spyder on the coast at sunset"),
       img("audi-r8-spyder-hire", "r-concrete.jpg", "Audi R8 Spyder against modern architecture in golden light"),
       img("audi-r8-spyder-hire", "cockpit.jpg", "Audi R8 Spyder steering wheel and red quilted seats"),
@@ -143,7 +143,7 @@ export const vehicles: Vehicle[] = [
     category: "luxury-4x4",
     bodyType: "suv",
     heroImage: img("lamborghini-urus-performante-hire", "hero.jpg", "Yellow Lamborghini Urus Performante by Tower Bridge, London — luxury super-SUV hire from CVS Car Hire"),
-    thumbnail: img("lamborghini-urus-performante-hire", "thumb.jpg", "Yellow Lamborghini Urus Performante super-SUV available to hire from CVS Car Hire"),
+    thumbnail: img("lamborghini-urus-performante-hire", "g-concrete.jpg", "Yellow Lamborghini Urus Performante against modern architecture, available to hire from CVS Car Hire"),
     gallery: [
       // Studio shots first
       img("lamborghini-urus-performante-hire", "g-studio-front3q.jpg", "Yellow Lamborghini Urus Performante, front three-quarter studio"),
@@ -155,7 +155,7 @@ export const vehicles: Vehicle[] = [
       img("lamborghini-urus-performante-hire", "interior.jpg", "Lamborghini Urus Performante sports seats with yellow stitching"),
       img("lamborghini-urus-performante-hire", "g-mayfair.jpg", "Lamborghini Urus Performante outside a Mayfair townhouse at dusk"),
       img("lamborghini-urus-performante-hire", "g-coast.jpg", "Rear three-quarter of the Lamborghini Urus Performante on the coast"),
-      img("lamborghini-urus-performante-hire", "g-concrete.jpg", "Lamborghini Urus Performante against modern architecture"),
+      img("lamborghini-urus-performante-hire", "thumb.jpg", "Lamborghini Urus Performante at the Royal Exchange, London, in golden-hour light"),
       img("lamborghini-urus-performante-hire", "rear.jpg", "Rear of the yellow Lamborghini Urus Performante"),
       img("lamborghini-urus-performante-hire", "g-canary.jpg", "Lamborghini Urus Performante in Canary Wharf at night"),
       img("lamborghini-urus-performante-hire", "g-manor.jpg", "Lamborghini Urus Performante outside a country manor"),
@@ -239,7 +239,7 @@ export const vehicles: Vehicle[] = [
     category: "luxury-4x4",
     bodyType: "suv",
     heroImage: img("rolls-royce-cullinan-hire", "hero.jpg", "Black Rolls-Royce Cullinan Black Badge by Tower Bridge, London — luxury SUV and chauffeur hire from CVS Car Hire"),
-    thumbnail: img("rolls-royce-cullinan-hire", "thumb.jpg", "Black Rolls-Royce Cullinan Black Badge available to hire from CVS Car Hire"),
+    thumbnail: img("rolls-royce-cullinan-hire", "g-highlands.jpg", "Black Rolls-Royce Cullinan Black Badge in the Scottish Highlands, available to hire from CVS Car Hire"),
     gallery: [
       // Studio shots first
       img("rolls-royce-cullinan-hire", "g-studio-front3q.jpg", "Black Rolls-Royce Cullinan Black Badge, front three-quarter studio"),
@@ -247,7 +247,7 @@ export const vehicles: Vehicle[] = [
       img("rolls-royce-cullinan-hire", "g-front.jpg", "Front of the Rolls-Royce Cullinan Black Badge with its illuminated grille"),
       img("rolls-royce-cullinan-hire", "g-rear.jpg", "Rear three-quarter of the Rolls-Royce Cullinan Black Badge"),
       // Then a varied mix of location, interior and previous shots
-      img("rolls-royce-cullinan-hire", "g-highlands.jpg", "Rolls-Royce Cullinan Black Badge in the Scottish Highlands"),
+      img("rolls-royce-cullinan-hire", "thumb.jpg", "Rolls-Royce Cullinan Black Badge at the Royal Exchange, London, in golden-hour light"),
       img("rolls-royce-cullinan-hire", "dashboard.jpg", "Rolls-Royce Cullinan dashboard and cockpit"),
       img("rolls-royce-cullinan-hire", "g-coast.jpg", "Rear three-quarter of the Rolls-Royce Cullinan on the coast"),
       img("rolls-royce-cullinan-hire", "rear-seats.jpg", "Rolls-Royce Cullinan rear seats in black and white leather"),
@@ -825,7 +825,7 @@ export const vehicles: Vehicle[] = [
     category: "luxury-4x4",
     bodyType: "suv",
     heroImage: img("mercedes-amg-g63-red-hire", "hero.jpg", "Red Mercedes-AMG G63 by Tower Bridge, London — luxury 4x4 hire from CVS Car Hire"),
-    thumbnail: img("mercedes-amg-g63-red-hire", "thumb.jpg", "Red Mercedes-AMG G63 available to hire from CVS Car Hire Birmingham"),
+    thumbnail: img("mercedes-amg-g63-red-hire", "g-mayfair.jpg", "Red Mercedes-AMG G63 outside a Mayfair townhouse, available to hire from CVS Car Hire"),
     gallery: [
       // Studio shots first
       img("mercedes-amg-g63-red-hire", "g-studio-front3q.jpg", "Red Mercedes-AMG G63, front three-quarter studio"),
@@ -835,7 +835,7 @@ export const vehicles: Vehicle[] = [
       // Then a varied mix of location and previous shots
       img("mercedes-amg-g63-red-hire", "g-alps.jpg", "Red Mercedes-AMG G63 in the mountains"),
       img("mercedes-amg-g63-red-hire", "g-coast.jpg", "Rear three-quarter of the red Mercedes-AMG G63 on the coast"),
-      img("mercedes-amg-g63-red-hire", "g-mayfair.jpg", "Red Mercedes-AMG G63 outside a Mayfair townhouse at dusk"),
+      img("mercedes-amg-g63-red-hire", "thumb.jpg", "Red Mercedes-AMG G63 at the Royal Exchange, London, in golden-hour light"),
       img("mercedes-amg-g63-red-hire", "side.jpg", "Side profile of the red Mercedes-AMG G 63"),
       img("mercedes-amg-g63-red-hire", "g-city-night.jpg", "Red Mercedes-AMG G63 in the City of London at night"),
       img("mercedes-amg-g63-red-hire", "g-manor.jpg", "Red Mercedes-AMG G63 outside a country manor"),

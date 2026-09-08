@@ -130,11 +130,24 @@ export const vehicles: Vehicle[] = [
     model: "Urus Performante",
     category: "luxury-4x4",
     bodyType: "suv",
-    heroImage: img("lamborghini-urus-performante-hire", "hero.jpg", "Giallo Inti yellow Lamborghini Urus Performante for luxury SUV hire at CVS Car Hire Birmingham"),
+    heroImage: img("lamborghini-urus-performante-hire", "hero.jpg", "Yellow Lamborghini Urus Performante by Tower Bridge, London — luxury super-SUV hire from CVS Car Hire"),
     thumbnail: img("lamborghini-urus-performante-hire", "thumb.jpg", "Yellow Lamborghini Urus Performante super-SUV available to hire from CVS Car Hire"),
     gallery: [
-      img("lamborghini-urus-performante-hire", "rear.jpg", "Rear of the yellow Lamborghini Urus Performante"),
+      // Studio shots first
+      img("lamborghini-urus-performante-hire", "g-studio-front3q.jpg", "Yellow Lamborghini Urus Performante, front three-quarter studio"),
+      img("lamborghini-urus-performante-hire", "g-studio-side.jpg", "Yellow Lamborghini Urus Performante, side profile studio"),
+      img("lamborghini-urus-performante-hire", "g-studio-front.jpg", "Yellow Lamborghini Urus Performante, front studio"),
+      img("lamborghini-urus-performante-hire", "g-studio-rear.jpg", "Yellow Lamborghini Urus Performante, rear three-quarter studio"),
+      // Then a varied mix of location, interior and previous shots
+      img("lamborghini-urus-performante-hire", "g-alps.jpg", "Lamborghini Urus Performante in the mountains"),
       img("lamborghini-urus-performante-hire", "interior.jpg", "Lamborghini Urus Performante sports seats with yellow stitching"),
+      img("lamborghini-urus-performante-hire", "g-mayfair.jpg", "Lamborghini Urus Performante outside a Mayfair townhouse at dusk"),
+      img("lamborghini-urus-performante-hire", "g-coast.jpg", "Rear three-quarter of the Lamborghini Urus Performante on the coast"),
+      img("lamborghini-urus-performante-hire", "g-concrete.jpg", "Lamborghini Urus Performante against modern architecture"),
+      img("lamborghini-urus-performante-hire", "rear.jpg", "Rear of the yellow Lamborghini Urus Performante"),
+      img("lamborghini-urus-performante-hire", "g-canary.jpg", "Lamborghini Urus Performante in Canary Wharf at night"),
+      img("lamborghini-urus-performante-hire", "g-manor.jpg", "Lamborghini Urus Performante outside a country manor"),
+      img("lamborghini-urus-performante-hire", "g-city-night.jpg", "Lamborghini Urus Performante in the City of London at night"),
     ],
     shortDescription:
       "Supercar presence with everyday practicality — designed to dominate every arrival.",

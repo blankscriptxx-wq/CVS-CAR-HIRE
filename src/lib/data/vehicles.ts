@@ -290,10 +290,22 @@ export const vehicles: Vehicle[] = [
     year: 2024,
     category: "luxury-4x4",
     bodyType: "suv",
-    heroImage: img("range-rover-vogue-hire", "hero.jpg", "Black 2024 Range Rover Vogue for luxury 4x4 and chauffeur hire at CVS Car Hire Birmingham"),
+    heroImage: img("range-rover-vogue-hire", "hero.jpg", "Matte black Range Rover Vogue by Tower Bridge, London — luxury 4x4 and chauffeur hire from CVS Car Hire"),
+    thumbnail: img("range-rover-vogue-hire", "g-manor.jpg", "Matte black Range Rover Vogue outside a country manor, available to hire from CVS Car Hire"),
     gallery: [
-      img("range-rover-vogue-hire", "front.jpg", "Front of the black 2024 Range Rover Vogue"),
+      // Studio shots first
+      img("range-rover-vogue-hire", "g-studio-front3q.jpg", "Matte black Range Rover Vogue, front three-quarter studio"),
+      img("range-rover-vogue-hire", "g-studio-side.jpg", "Matte black Range Rover Vogue, side profile studio"),
+      img("range-rover-vogue-hire", "g-studio-front.jpg", "Matte black Range Rover Vogue, front studio"),
+      img("range-rover-vogue-hire", "g-studio-rear.jpg", "Matte black Range Rover Vogue, rear three-quarter studio"),
+      // Then a varied mix of location and previous shots
+      img("range-rover-vogue-hire", "g-alps.jpg", "Matte black Range Rover Vogue in the mountains"),
+      img("range-rover-vogue-hire", "g-coast.jpg", "Rear three-quarter of the matte black Range Rover Vogue on the coast at sunset"),
+      img("range-rover-vogue-hire", "g-royal-exchange.jpg", "Matte black Range Rover Vogue at the Royal Exchange, London, in golden-hour light"),
       img("range-rover-vogue-hire", "rear.jpg", "Rear three-quarter view of the black Range Rover Vogue"),
+      img("range-rover-vogue-hire", "g-concrete.jpg", "Matte black Range Rover Vogue against modern architecture"),
+      img("range-rover-vogue-hire", "g-city-night.jpg", "Matte black Range Rover Vogue in the City of London at night"),
+      img("range-rover-vogue-hire", "front.jpg", "Front of the black 2024 Range Rover Vogue"),
     ],
     shortDescription:
       "The flagship Range Rover — serene, imposing and quietly unmistakable.",

@@ -436,13 +436,14 @@ export const services: ServiceContent[] = [
     overview:
       "The right vehicle says something before the meeting begins. Our executive car hire provides refined, dependable travel for executives, clients and teams across Birmingham and the UK — whether that's a prestige saloon for a day of meetings, an SUV for a site visit, or a chauffeur-driven arrival for an important guest. Reliable, discreet and always appropriate, with self-drive and chauffeur options and flexible terms from a single day to long-term corporate accounts.",
     benefits: [
-      "Executive saloons, prestige SUVs and group vehicles",
+      "Executive saloons, prestige SUVs and the 8-seat Mercedes V-Class for teams",
       "Self-drive or professional chauffeur",
       "Ideal for client travel and executive use",
       "Punctual and discreet",
       "Long-term, monthly and repeat business arrangements available",
     ],
-    occasions: ["Client meetings", "Executive travel", "Corporate events", "Site visits"],
+    occasions: ["Client meetings", "Executive travel", "Corporate events", "Group & team travel"],
+    recommendedVehicles: ["range-rover-sport-hire", "mercedes-v-class-hire", "bmw-x5-hire", "mercedes-glc-43-amg-hire", "range-rover-vogue-hire", "bmw-3-series-hire"],
     faqs: [
       { question: "Do you offer accounts for regular business hire?", answer: "We support long-term, monthly and repeat business arrangements. Speak to our team about setting up regular executive hire for your company." },
       { question: "Is there executive car hire near me?", answer: "We're based in Birmingham and serve the West Midlands directly, with nationwide UK delivery available for corporate clients. Tell us your location and requirements and we'll confirm." },

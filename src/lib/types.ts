@@ -200,6 +200,8 @@ export interface JournalPost {
   heroImage: ImageAsset;
   /** Body as an array of simple blocks to keep the scaffold dependency-free. */
   body: { type: "p" | "h2" | "h3"; text: string }[];
+  /** Contextual internal links to commercial pages (vehicles, hubs, services). */
+  related?: { href: string; label: string }[];
   metaTitle: string;
   metaDescription: string;
 }

@@ -9,7 +9,8 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { StickyActionBar } from "@/components/StickyActionBar";
 import { ArrowRight } from "@/components/ui/Icons";
-import { buildMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { buildMetadata, absoluteUrl, ORG_ID } from "@/lib/seo";
 
 // Revalidate twice a day so a future-dated post goes live on its publish date.
 export const revalidate = 43200;
@@ -51,6 +52,22 @@ export default async function JournalPostPage({ params }: { params: Promise<{ sl
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: post.title,
+          description: post.metaDescription,
+          datePublished: post.publishedAt,
+          dateModified: post.publishedAt,
+          author: { "@id": ORG_ID },
+          publisher: { "@id": ORG_ID },
+          mainEntityOfPage: absoluteUrl(`/journal/${post.slug}`),
+          ...(post.heroImage && !post.heroImage.placeholder
+            ? { image: absoluteUrl(post.heroImage.src) }
+            : {}),
+        }}
+      />
       <PageHero
         eyebrow={`${post.category} • ${post.readingMinutes} min read`}
         title={post.title}
@@ -89,6 +106,26 @@ export default async function JournalPostPage({ params }: { params: Promise<{ sl
           })}
         </div>
       </article>
+
+      {/* Contextual links into commercial pages */}
+      {post.related && post.related.length > 0 && (
+        <section className="border-t border-line py-12">
+          <div className="shell">
+            <span className="eyebrow">Explore &amp; hire</span>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {post.related.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="border border-line px-4 py-2 text-xs uppercase tracking-wide2 text-silver hover:border-champagne hover:text-warm-white"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* More reading */}
       {more.length > 0 && (

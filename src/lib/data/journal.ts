@@ -347,6 +347,138 @@ export const journalPosts: JournalPost[] = [
       "Long-term supercar hire explained — the flexible, monthly alternative to leasing or buying, with no deposit, depreciation or resale. From CVS Car Hire, Birmingham.",
   },
   {
+    slug: "lamborghini-revuelto-vs-ferrari-sf90",
+    title: "Lamborghini Revuelto vs Ferrari SF90: Which Hybrid Hypercar to Hire",
+    excerpt:
+      "Two four-figure-horsepower plug-in hybrids, two very different philosophies. Here's how the V12 Revuelto and V8 SF90 compare for a hire.",
+    category: "Comparisons",
+    readingMinutes: 7,
+    publishedAt: "2026-08-20",
+    heroImage: {
+      src: "/images/journal/lamborghini-revuelto-vs-ferrari-sf90/hero.jpg",
+      alt: "Lamborghini Revuelto and Ferrari SF90 side by side",
+      placeholder: true,
+    },
+    body: [
+      { type: "p", text: "The Lamborghini Revuelto and Ferrari SF90 are the flagships of a new era: both are plug-in hybrids producing around a thousand horsepower, both can whisper through town on electric power, and both rewrite what their makers thought a road car could do. But they get there in completely different ways, and that shapes which one you should hire." },
+      { type: "h2", text: "Engine and power" },
+      { type: "p", text: "The Revuelto keeps Lamborghini's naturally aspirated 6.5-litre V12 and adds three electric motors for around 1,015 PS (about 1,001 bhp) — the drama of a screaming twelve-cylinder, electrified. The SF90 takes the opposite route: a 4.0-litre twin-turbo V8 plus three electric motors for around 1,000 CV (about 986 bhp), all-wheel drive and Ferrari's Formula 1-derived thinking. Both send 0–100 km/h in roughly 2.5 seconds." },
+      { type: "h2", text: "Character" },
+      { type: "p", text: "This is the real difference. The Revuelto is theatre — the V12's sound, the scissor doors, the sheer visual event of it. The SF90 is scalpel-sharp and technical, with a wraparound digital cockpit that feels a decade ahead and performance that arrives with clinical precision. One is a spectacle; the other is a statement of engineering." },
+      { type: "h2", text: "Which should you hire?" },
+      { type: "p", text: "Choose the Revuelto if you want maximum occasion — the noise, the presence and the last great Lamborghini V12 for a landmark celebration or a shoot. Choose the SF90 if you want the most technically astonishing way to cover ground, and a car that flatters your driving. Either way you're hiring one of the definitive cars of the decade." },
+      { type: "h3", text: "Hire either with CVS" },
+      { type: "p", text: "Both are part of our supercar collection, offered self-drive from Birmingham with nationwide UK delivery. Tell us the occasion and we'll help you choose and confirm availability." },
+    ],
+    related: [
+      { href: "/fleet/lamborghini-revuelto-hire", label: "Lamborghini Revuelto" },
+      { href: "/fleet/ferrari-sf90-hire", label: "Ferrari SF90" },
+      { href: "/services/supercar-hire", label: "Supercar hire" },
+    ],
+    metaTitle: "Lamborghini Revuelto vs Ferrari SF90 | Which to Hire | CVS Hire",
+    metaDescription:
+      "Lamborghini Revuelto vs Ferrari SF90 compared — engine, power, performance and character — to help you choose which hybrid flagship to hire. CVS Hire, Birmingham & UK.",
+  },
+  {
+    slug: "lamborghini-urus-vs-mercedes-g63",
+    title: "Lamborghini Urus vs Mercedes-AMG G63: Which Super-SUV to Hire",
+    excerpt:
+      "Two of the most-requested super-SUVs, poles apart in character. Here's how the Urus Performante and G63 compare for a hire.",
+    category: "Comparisons",
+    readingMinutes: 6,
+    publishedAt: "2026-08-13",
+    heroImage: {
+      src: "/images/journal/lamborghini-urus-vs-mercedes-g63/hero.jpg",
+      alt: "Lamborghini Urus and Mercedes-AMG G63",
+      placeholder: true,
+    },
+    body: [
+      { type: "p", text: "The Lamborghini Urus Performante and Mercedes-AMG G63 are the two super-SUVs we're asked for most — but they could hardly be more different. One is a low, sharp performance machine; the other is an upright icon. Both use a twin-turbo V8; the similarity mostly ends there." },
+      { type: "h2", text: "Performance" },
+      { type: "p", text: "The Urus Performante is the driver's choice: around 666 PS, 0–100 km/h in roughly 3.3 seconds and genuinely sports-car-like handling for something so practical. The G63 makes around 585 PS and covers 0–100 km/h in about 4.5 seconds — hugely quick for a car shaped like a box, but built for presence rather than lap times." },
+      { type: "h2", text: "Character and presence" },
+      { type: "p", text: "The Urus looks and drives like a Lamborghini that happens to have five seats — fast, aggressive and low. The G63 is all attitude and heritage: upright, unmistakable and endlessly cool, which is why it dominates music videos and high-profile arrivals. Both seat five; both photograph superbly." },
+      { type: "h2", text: "Which should you hire?" },
+      { type: "p", text: "Hire the Urus Performante if you want supercar pace and handling with SUV space — ideal for a spirited weekend or a driver who wants to enjoy the road. Hire the G63 (we have it in black and red) if presence is the point: weddings, videos, birthdays and standout arrivals. Many clients hire both across a weekend." },
+      { type: "h3", text: "Hire either with CVS" },
+      { type: "p", text: "Both are available self-drive or chauffeur-driven from Birmingham, with nationwide delivery. Tell us the occasion and we'll recommend the right one." },
+    ],
+    related: [
+      { href: "/fleet/lamborghini-urus-performante-hire", label: "Lamborghini Urus Performante" },
+      { href: "/fleet/mercedes-amg-g63-hire", label: "Mercedes-AMG G63" },
+      { href: "/services/luxury-4x4-hire", label: "Luxury 4x4 hire" },
+    ],
+    metaTitle: "Lamborghini Urus vs Mercedes G63 | Which Super-SUV to Hire | CVS Hire",
+    metaDescription:
+      "Lamborghini Urus Performante vs Mercedes-AMG G63 compared — performance, character and presence — to help you choose which super-SUV to hire. CVS Hire, Birmingham & UK.",
+  },
+  {
+    slug: "ferrari-purosangue-vs-rolls-royce-cullinan",
+    title: "Ferrari Purosangue vs Rolls-Royce Cullinan: Which Luxury SUV to Hire",
+    excerpt:
+      "A V12 four-seat Ferrari against the definitive luxury SUV. Here's how the Purosangue and Cullinan compare for a hire.",
+    category: "Comparisons",
+    readingMinutes: 6,
+    publishedAt: "2026-08-06",
+    heroImage: {
+      src: "/images/journal/ferrari-purosangue-vs-rolls-royce-cullinan/hero.jpg",
+      alt: "Ferrari Purosangue and Rolls-Royce Cullinan",
+      placeholder: true,
+    },
+    body: [
+      { type: "p", text: "The Ferrari Purosangue and Rolls-Royce Cullinan both answer the question 'what if a supercar or a limousine had four doors?' — but from opposite directions. One is a Ferrari that happens to seat four; the other is the definitive statement of luxury with a boot." },
+      { type: "h2", text: "The Ferrari way" },
+      { type: "p", text: "The Purosangue is a genuine Ferrari first: a naturally aspirated 6.5-litre V12 of around 725 PS, 0–100 km/h in roughly 3.3 seconds and a chassis engineered to drive like a sports car. It has four seats and four doors (the rear pair rear-hinged), but it is emphatically not a soft SUV — Ferrari won't even call it one." },
+      { type: "h2", text: "The Rolls-Royce way" },
+      { type: "p", text: "The Cullinan is about serenity and presence. Its 6.75-litre twin-turbo V12 (around 571 PS) is tuned for effortless, near-silent torque and the famous 'magic carpet ride', with a rear cabin finished to a standard nothing else matches. It is the car you're driven in as much as the car you drive." },
+      { type: "h2", text: "Which should you hire?" },
+      { type: "p", text: "Hire the Purosangue if you want Ferrari drama and V12 sound with room for four — a car that turns a weekend or a shoot into an event. Hire the Cullinan if you want commanding luxury and comfort for a wedding, VIP arrival or occasion, especially chauffeur-driven." },
+      { type: "h3", text: "Hire either with CVS" },
+      { type: "p", text: "Both are part of our luxury collection, from Birmingham with nationwide delivery. Tell us the occasion and we'll confirm availability." },
+    ],
+    related: [
+      { href: "/fleet/ferrari-purosangue-hire", label: "Ferrari Purosangue" },
+      { href: "/fleet/rolls-royce-cullinan-hire", label: "Rolls-Royce Cullinan" },
+      { href: "/services/luxury-car-hire", label: "Luxury car hire" },
+    ],
+    metaTitle: "Ferrari Purosangue vs Rolls-Royce Cullinan | Which to Hire | CVS Hire",
+    metaDescription:
+      "Ferrari Purosangue vs Rolls-Royce Cullinan compared — V12 power, driving character and luxury — to help you choose which to hire. CVS Hire, Birmingham & UK.",
+  },
+  {
+    slug: "porsche-gt3-rs-vs-lamborghini-huracan-sto",
+    title: "Porsche 911 GT3 RS vs Lamborghini Huracán STO: Track Weapons to Hire",
+    excerpt:
+      "Two road-legal racing cars — a naturally aspirated flat-six against a V10. Here's how the GT3 RS and Huracán STO compare.",
+    category: "Comparisons",
+    readingMinutes: 6,
+    publishedAt: "2026-07-30",
+    heroImage: {
+      src: "/images/journal/porsche-gt3-rs-vs-lamborghini-huracan-sto/hero.jpg",
+      alt: "Porsche 911 GT3 RS and Lamborghini Huracán STO",
+      placeholder: true,
+    },
+    body: [
+      { type: "p", text: "The Porsche 911 GT3 RS and Lamborghini Huracán STO are as close as a road car gets to a racing car. Both are rear-wheel drive, naturally aspirated and built around aerodynamics — the purest, most focused way to experience each brand." },
+      { type: "h2", text: "Engine and sound" },
+      { type: "p", text: "The GT3 RS uses a 4.0-litre flat-six that revs to 9,000 rpm for around 525 PS — power from revs and response, not turbos. The STO's naturally aspirated 5.2-litre V10 makes around 640 PS with a higher, more operatic voice. Two of the last great naturally aspirated engines, each unmistakable." },
+      { type: "h2", text: "Aero and focus" },
+      { type: "p", text: "Both wear huge fixed rear wings and generate real downforce. The GT3 RS goes furthest on active aerodynamics, with a DRS-style flap and endless adjustability; the STO channels Lamborghini's one-make racing cars with its 'Cofango' clamshell and shark fin. Neither prioritises top speed — both are about cornering and connection." },
+      { type: "h2", text: "Which should you hire?" },
+      { type: "p", text: "Hire the GT3 RS if you value precision, adjustability and the last word in naturally aspirated Porsche engineering. Hire the Huracán STO if you want the drama and voice of a road-legal Lamborghini race car. Both reward a driver who wants to feel every input." },
+      { type: "h3", text: "Hire with CVS" },
+      { type: "p", text: "The GT3 RS is available now for self-drive; the Huracán STO is joining our fleet soon — register your interest and we'll be in touch. Both from Birmingham with nationwide delivery." },
+    ],
+    related: [
+      { href: "/fleet/porsche-911-gt3-rs-hire", label: "Porsche 911 GT3 RS" },
+      { href: "/fleet/lamborghini-huracan-sto-hire", label: "Lamborghini Huracán STO" },
+      { href: "/services/supercar-hire", label: "Supercar hire" },
+    ],
+    metaTitle: "Porsche 911 GT3 RS vs Lamborghini Huracán STO | Which to Hire | CVS Hire",
+    metaDescription:
+      "Porsche 911 GT3 RS vs Lamborghini Huracán STO compared — naturally aspirated engines, aero and focus — to help you choose. CVS Hire, Birmingham & UK.",
+  },
+  {
     slug: "range-rover-hire-vogue-sport-or-svr",
     title: "Range Rover Hire: Vogue, Sport or SVR?",
     excerpt:

@@ -430,6 +430,144 @@ export const services: ServiceContent[] = [
       "Rolls-Royce hire in Birmingham and nationwide — chauffeur-driven Phantom, Cullinan and Ghost for weddings, milestones and executive travel. Check availability with CVS Hire.",
   },
   {
+    slug: "audi-hire",
+    name: "Audi Hire",
+    navLabel: "Audi Hire",
+    hero: {
+      eyebrow: "Self-Drive",
+      heading: "Audi Hire",
+      intro:
+        "Hire an Audi in Birmingham and across the UK — the naturally aspirated V10 R8 Spyder and the cult five-cylinder RS3, self-drive with delivery to your door.",
+    },
+    overview:
+      "Audi hire with CVS covers both ends of the performance spectrum — the genuine V10 supercar drama of the R8 Spyder and the everyday-usable, seriously quick RS3. This is the service around the cars: matching the right Audi to your occasion, immaculate preparation, and self-drive hire with delivery across Birmingham and the UK. See both models on our Audi collection, then talk to us to check dates.",
+    sections: [
+      {
+        heading: "How Audi hire works",
+        body: [
+          "Pick your Audi — the R8 Spyder for a headline supercar occasion, or the RS3 for usable, everyday thrills — and we'll confirm availability, requirements and the rate. Both are offered self-drive, delivered valeted, fuelled and fully insured. Minimum age, licence and deposit vary by car and are confirmed on enquiry.",
+        ],
+      },
+      {
+        heading: "R8 Spyder or RS3 — which to hire?",
+        body: [
+          "The R8 Spyder is a two-seat, open-top V10 supercar for a landmark celebration, a proposal or a shoot. The RS3 is a five-seat super-hatch with quattro grip and its famous warbling five-cylinder — the ideal choice for a spirited weekend or a first taste of real performance with space for the group.",
+        ],
+      },
+    ],
+    benefits: [
+      "The R8 Spyder V10 supercar and the RS3 super-hatch",
+      "Self-drive so the day is entirely yours",
+      "Immaculate, carefully maintained cars",
+      "Delivery across Birmingham and the UK",
+      "Advice on the right Audi for your occasion",
+    ],
+    occasions: ["Landmark birthdays", "Spirited weekends", "Photoshoots & content", "First supercar experiences"],
+    recommendedVehicles: ["audi-r8-spyder-hire", "audi-rs3-hire"],
+    faqs: [
+      { question: "Can I hire an Audi R8 or RS3 in Birmingham?", answer: "Yes. CVS Hire is Birmingham-based and offers the Audi R8 Spyder and RS3 for self-drive hire across the city, the West Midlands and nationwide by delivery. Tell us your dates and we'll confirm availability." },
+      { question: "What's the difference between hiring the RS3 and the R8?", answer: "The RS3 is a five-seat, five-door super-hatch — usable, quick and great value for an everyday thrill. The R8 Spyder is a two-seat, open-top V10 supercar for a headline occasion. Choose the RS3 for a weekend with space, the R8 for maximum drama." },
+      { question: "How much does Audi hire cost?", answer: "It depends on the model, duration and mileage, with daily, weekend and weekly rates available. Message us with the car and your dates and we'll confirm the exact price." },
+      { question: "How old do I need to be to hire an Audi?", answer: "The R8 Spyder has a minimum age of 25. Requirements for the RS3 are confirmed on enquiry, as they vary by vehicle. Get in touch and we'll talk you through exactly what's needed." },
+    ],
+    related: ["performance-car-hire", "supercar-hire", "luxury-car-hire"],
+    metaTitle: "Audi Hire Birmingham | R8 Spyder & RS3 Self-Drive Hire | CVS Hire",
+    metaDescription:
+      "Audi hire in Birmingham and nationwide — self-drive the R8 Spyder V10 supercar and the RS3 super-hatch, with UK delivery. Check availability with CVS Hire.",
+  },
+  {
+    slug: "mercedes-hire",
+    name: "Mercedes Hire",
+    navLabel: "Mercedes Hire",
+    hero: {
+      eyebrow: "Self-Drive & Chauffeur",
+      heading: "Mercedes Hire",
+      intro:
+        "Hire a Mercedes in Birmingham and across the UK — the icon G63, the AMG GLC 43 and A35, and the executive V-Class, self-drive or chauffeur-driven.",
+    },
+    overview:
+      "Mercedes hire with CVS spans the marque's most-wanted models — the definitive G63 (G-Wagon), the AMG GLC 43, the hot A35 hatch and the eight-seat V-Class for group travel. This is the service around the cars: choosing the right Mercedes for your occasion, immaculate preparation, and self-drive or chauffeur options with delivery across Birmingham and the UK. Browse the range on our Mercedes collection, then talk to us to check dates.",
+    sections: [
+      {
+        heading: "How Mercedes hire works",
+        body: [
+          "Tell us the occasion and we'll match the right Mercedes and confirm availability. The G63 is our signature icon for weddings, videos and standout arrivals (available in black or red); the GLC 43 blends usability with AMG pace; the A35 is the affordable entry to performance hire; and the V-Class carries the whole party in comfort. Most are available self-drive, with chauffeur-driven options on the G63 and V-Class.",
+        ],
+      },
+      {
+        heading: "For the G-Wagon specifically",
+        body: [
+          "The Mercedes-AMG G63 is our most-requested Mercedes and one of our signature cars. See our dedicated G-Wagon page for the full detail on hiring it in black or red, self-drive or chauffeur-driven.",
+        ],
+      },
+    ],
+    benefits: [
+      "The G63 (in black and red), GLC 43, A35 and V-Class",
+      "Self-drive, with chauffeur options on the G63 and V-Class",
+      "The 8-seat V-Class for group travel and airport transfers",
+      "Delivery across Birmingham and the UK",
+      "Advice on the right Mercedes for your occasion",
+    ],
+    occasions: ["Weddings & events", "Music videos", "Group & airport travel", "Spirited weekends"],
+    recommendedVehicles: ["mercedes-amg-g63-hire", "mercedes-amg-g63-red-hire", "mercedes-glc-43-amg-hire", "mercedes-amg-a35-hire", "mercedes-v-class-hire"],
+    faqs: [
+      { question: "Which Mercedes models can I hire in Birmingham?", answer: "CVS Hire offers the Mercedes-AMG G63 (in black and red), the GLC 43, the A35 and the V-Class, from our Birmingham base with nationwide delivery. Self-drive and chauffeur options are available depending on the model." },
+      { question: "Can I hire a G-Wagon self-drive or chauffeur-driven?", answer: "Both. The G63 (G-Wagon) is available self-drive (minimum age 25) and chauffeur-driven for weddings, videos and events. See our G-Wagon page for full detail." },
+      { question: "Can I hire a Mercedes V-Class for group travel?", answer: "Yes — the eight-seat V-Class is our go-to for group travel, airport transfers and productions, self-drive or chauffeur-driven. Tell us your dates and party size and we'll confirm." },
+      { question: "How much does Mercedes hire cost?", answer: "It depends on the model and duration, from the A35 up to the G63, with clear daily, weekend and longer rates. Message us your dates and chosen car for an exact price." },
+    ],
+    related: ["luxury-4x4-hire", "v-class-hire", "wedding-car-hire", "corporate-car-hire"],
+    metaTitle: "Mercedes Hire Birmingham | G63, GLC, A35 & V-Class Hire | CVS Hire",
+    metaDescription:
+      "Mercedes hire in Birmingham and nationwide — the AMG G63, GLC 43, A35 and V-Class, self-drive or chauffeur-driven, with UK delivery. Check availability with CVS Hire.",
+  },
+  {
+    slug: "range-rover-hire",
+    name: "Range Rover Hire",
+    navLabel: "Range Rover Hire",
+    hero: {
+      eyebrow: "Self-Drive & Chauffeur",
+      heading: "Range Rover Hire",
+      intro:
+        "Hire a Range Rover in Birmingham and across the UK — the flagship Vogue, the athletic Sport and the supercharged Sport SVR, self-drive or chauffeur-driven.",
+    },
+    overview:
+      "Range Rover hire with CVS is British luxury at its most versatile — equally at home outside a Mayfair hotel, at a wedding, or on a road trip. This is the service around the cars: matching the right Range Rover to your occasion, immaculate preparation, and self-drive or chauffeur options with delivery across Birmingham and the UK. See the fleet on our Range Rover collection, then talk to us to check dates.",
+    sections: [
+      {
+        heading: "How Range Rover hire works",
+        body: [
+          "Choose your Range Rover — the serene, commanding Vogue, the sharper Sport, or the supercharged Sport SVR for a performance edge — and we'll confirm availability and the rate. All are offered self-drive or chauffeur-driven, by the day, weekend, or the week and month for longer and business needs.",
+        ],
+      },
+      {
+        heading: "For families, business and weekends",
+        body: [
+          "Spacious, refined and endlessly capable, the Range Rover is one of our most requested SUVs for family occasions, corporate travel, weddings and weekends away — genuine presence with everyday usability.",
+        ],
+      },
+    ],
+    benefits: [
+      "The Vogue, Sport and supercharged Sport SVR",
+      "Self-drive or chauffeur-driven",
+      "Comfort and presence for families, business and weddings",
+      "Delivery across Birmingham and the UK",
+      "Day, weekend, weekly and monthly hire",
+    ],
+    occasions: ["Weddings", "Corporate & business travel", "Family occasions", "Weekend escapes"],
+    recommendedVehicles: ["range-rover-vogue-hire", "range-rover-sport-hire", "range-rover-svr-hire"],
+    faqs: [
+      { question: "Which Range Rovers can I hire in Birmingham?", answer: "CVS Hire offers the Range Rover Vogue, Sport and the supercharged Sport SVR, from our Birmingham base with nationwide delivery, self-drive or chauffeur-driven. Tell us your dates and we'll confirm availability." },
+      { question: "Can I hire a Range Rover for a wedding or corporate travel?", answer: "Yes — the Range Rover's presence and refinement make it popular for weddings, corporate travel and VIP arrivals, self-drive or chauffeur-driven. Tell us the occasion and we'll recommend the right model." },
+      { question: "Can I hire a Range Rover long-term or monthly?", answer: "Yes — as well as daily and weekend hire, we offer weekly and monthly Range Rover rates for longer stays and business use. Tell us your dates and mileage and we'll tailor it." },
+      { question: "What's the difference between the Sport and the Sport SVR?", answer: "The Range Rover Sport is the athletic all-rounder; the Sport SVR adds a supercharged V8 and a harder, more thrilling performance edge. Both are available to hire — tell us which suits your plans." },
+    ],
+    related: ["luxury-4x4-hire", "luxury-car-hire", "corporate-car-hire", "long-term-hire"],
+    metaTitle: "Range Rover Hire Birmingham | Vogue, Sport & SVR Hire | CVS Hire",
+    metaDescription:
+      "Range Rover hire in Birmingham and nationwide — the Vogue, Sport and supercharged Sport SVR, self-drive or chauffeur-driven, with UK delivery. Check availability with CVS Hire.",
+  },
+  {
     slug: "prestige-car-hire",
     name: "Prestige Car Hire",
     navLabel: "Prestige Car Hire",

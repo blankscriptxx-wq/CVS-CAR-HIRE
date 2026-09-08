@@ -241,7 +241,7 @@ export const collections: Collection[] = [
     name: "Range Rover",
     heading: "Range Rover Hire",
     eyebrow: "Range Rover Hire",
-    metaTitle: "Range Rover Hire Birmingham | Vogue, Sport & SVR Hire | CVS Car Hire",
+    metaTitle: "Range Rover Models to Hire | Vogue, Sport & SVR Fleet | CVS Hire",
     metaDescription:
       "Range Rover hire in Birmingham and nationwide — the Vogue, Sport and SVR, self-drive or chauffeur, by day, weekend, week or month. Check availability today.",
     keywords: [
@@ -278,7 +278,7 @@ export const collections: Collection[] = [
     name: "Audi",
     heading: "Audi Hire",
     eyebrow: "Audi Hire",
-    metaTitle: "Audi Hire Birmingham | R8 Spyder & RS3 Hire | CVS Car Hire",
+    metaTitle: "Audi Models to Hire | R8 Spyder & RS3 Fleet | CVS Hire",
     metaDescription:
       "Audi hire in Birmingham and nationwide — the R8 Spyder supercar and the RS3, self-drive by day, weekend or week, with UK delivery. Check availability today.",
     keywords: [
@@ -412,7 +412,7 @@ export const collections: Collection[] = [
     name: "Mercedes-Benz",
     heading: "Mercedes Hire",
     eyebrow: "Mercedes Hire",
-    metaTitle: "Mercedes Hire Birmingham | G63, GLC, A35 & V-Class Hire | CVS Car Hire",
+    metaTitle: "Mercedes Models to Hire | G63, GLC, A35 & V-Class Fleet | CVS Hire",
     metaDescription:
       "Mercedes hire in Birmingham and nationwide — the AMG G63, GLC 43, A35 and V-Class, self-drive or chauffeur, by day, weekend or longer. Check availability today.",
     keywords: [

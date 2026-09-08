@@ -86,6 +86,10 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
     Ferrari: { slug: "ferrari-hire", label: "Ferrari hire" },
     Lamborghini: { slug: "lamborghini-hire", label: "Lamborghini hire" },
     "Rolls-Royce": { slug: "rolls-royce-hire", label: "Rolls-Royce hire" },
+    Audi: { slug: "audi-hire", label: "Audi hire" },
+    "Mercedes-AMG": { slug: "mercedes-hire", label: "Mercedes hire" },
+    "Mercedes-Benz": { slug: "mercedes-hire", label: "Mercedes hire" },
+    "Land Rover": { slug: "range-rover-hire", label: "Range Rover hire" },
   };
   const brandService = BRAND_SERVICE[vehicle.manufacturer];
   const longTerm =

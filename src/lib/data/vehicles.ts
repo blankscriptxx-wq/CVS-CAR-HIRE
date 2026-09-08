@@ -799,13 +799,25 @@ export const vehicles: Vehicle[] = [
     model: "G 63",
     category: "luxury-4x4",
     bodyType: "suv",
-    heroImage: img("mercedes-amg-g63-red-hire", "hero.jpg", "Red Mercedes-AMG G 63 for luxury 4x4 hire at CVS Car Hire Birmingham"),
+    heroImage: img("mercedes-amg-g63-red-hire", "hero.jpg", "Red Mercedes-AMG G63 by Tower Bridge, London — luxury 4x4 hire from CVS Car Hire"),
     thumbnail: img("mercedes-amg-g63-red-hire", "thumb.jpg", "Red Mercedes-AMG G63 available to hire from CVS Car Hire Birmingham"),
     gallery: [
-      img("mercedes-amg-g63-red-hire", "front.jpg", "Front three-quarter view of the red Mercedes-AMG G 63"),
-      img("mercedes-amg-g63-red-hire", "rear.jpg", "Rear of the red Mercedes-AMG G 63 with its side-hinged spare wheel"),
+      // Studio shots first
+      img("mercedes-amg-g63-red-hire", "g-studio-front3q.jpg", "Red Mercedes-AMG G63, front three-quarter studio"),
+      img("mercedes-amg-g63-red-hire", "g-studio-side.jpg", "Red Mercedes-AMG G63, side profile studio"),
+      img("mercedes-amg-g63-red-hire", "g-studio-front.jpg", "Red Mercedes-AMG G63, front studio"),
+      img("mercedes-amg-g63-red-hire", "g-studio-rear.jpg", "Red Mercedes-AMG G63, rear three-quarter studio"),
+      // Then a varied mix of location and previous shots
+      img("mercedes-amg-g63-red-hire", "g-alps.jpg", "Red Mercedes-AMG G63 in the mountains"),
+      img("mercedes-amg-g63-red-hire", "g-coast.jpg", "Rear three-quarter of the red Mercedes-AMG G63 on the coast"),
+      img("mercedes-amg-g63-red-hire", "g-mayfair.jpg", "Red Mercedes-AMG G63 outside a Mayfair townhouse at dusk"),
       img("mercedes-amg-g63-red-hire", "side.jpg", "Side profile of the red Mercedes-AMG G 63"),
+      img("mercedes-amg-g63-red-hire", "g-city-night.jpg", "Red Mercedes-AMG G63 in the City of London at night"),
+      img("mercedes-amg-g63-red-hire", "g-manor.jpg", "Red Mercedes-AMG G63 outside a country manor"),
+      img("mercedes-amg-g63-red-hire", "rear.jpg", "Rear of the red Mercedes-AMG G 63 with its side-hinged spare wheel"),
+      img("mercedes-amg-g63-red-hire", "g-concrete.jpg", "Red Mercedes-AMG G63 against modern architecture in golden light"),
       img("mercedes-amg-g63-red-hire", "city.jpg", "Red Mercedes-AMG G 63 in the city"),
+      img("mercedes-amg-g63-red-hire", "front.jpg", "Front three-quarter view of the red Mercedes-AMG G 63"),
       img("mercedes-amg-g63-red-hire", "front-head-on.jpg", "Front of the red Mercedes-AMG G 63"),
     ],
     shortDescription:

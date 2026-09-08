@@ -21,7 +21,8 @@ export function VehicleCard({
 }) {
   const name = vehicleName(vehicle);
   const href = `/fleet/${vehicle.slug}`;
-  const price = priceLabel(vehicle);
+  const incoming = vehicle.status === "incoming";
+  const price = incoming ? null : priceLabel(vehicle);
   const chips = specChips(vehicle);
 
   return (
@@ -31,11 +32,15 @@ export function VehicleCard({
         <div className="absolute inset-0 transition-transform duration-800 ease-luxe group-hover:scale-[1.04]">
           <Media asset={vehicle.thumbnail ?? vehicle.heroImage} label={name} sizes={sizes} priority={priority} />
         </div>
-        {vehicle.newArrival && (
+        {incoming ? (
+          <span className="absolute left-4 top-4 z-10 border border-champagne bg-black/70 px-3 py-1 text-[10px] font-medium uppercase tracking-wide2 text-champagne backdrop-blur">
+            Incoming
+          </span>
+        ) : vehicle.newArrival ? (
           <span className="absolute left-4 top-4 z-10 bg-champagne px-3 py-1 text-[10px] font-medium uppercase tracking-wide2 text-black">
             New Arrival
           </span>
-        )}
+        ) : null}
         <span className="absolute right-4 top-4 z-10">
           <ShortlistButton slug={vehicle.slug} name={name} />
         </span>
@@ -70,7 +75,11 @@ export function VehicleCard({
         )}
 
         <div className="mt-auto pt-5">
-          {price && <p className="text-sm text-champagne">{price}</p>}
+          {incoming ? (
+            <p className="text-sm text-champagne">Awaiting delivery</p>
+          ) : (
+            price && <p className="text-sm text-champagne">{price}</p>
+          )}
           <div className="mt-3 flex items-center gap-3">
             <Link
               href={href}
@@ -82,7 +91,7 @@ export function VehicleCard({
               href={`${href}#enquire`}
               className="inline-flex min-h-[44px] flex-1 items-center justify-center gap-2 bg-champagne text-xs font-medium uppercase tracking-wide2 text-black transition-colors hover:bg-champagne-soft"
             >
-              Check <ArrowRight className="h-3.5 w-3.5" />
+              {incoming ? "Register" : "Check"} <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
         </div>

@@ -14,6 +14,13 @@ function img(slug: string, name: string, alt: string, caption?: string): ImageAs
   return { src: `/images/fleet/${slug}/${name}`, alt, caption, placeholder: false };
 }
 
+/** Image slot awaiting real CVS photography: renders the branded placeholder
+ *  now, and when a real file is dropped in at the SAME path you only flip
+ *  `placeholder` to false — the URL, page and SEO never change. */
+function imgTBD(slug: string, name: string, alt: string): ImageAsset {
+  return { src: `/images/fleet/${slug}/${name}`, alt, placeholder: true };
+}
+
 export const vehicles: Vehicle[] = [
   // ── Supercars ──────────────────────────────────────────────
   {
@@ -982,6 +989,421 @@ export const vehicles: Vehicle[] = [
     metaDescription:
       "Hire the Ferrari Roma in Birmingham with CVS Car Hire. Self-drive supercar hire with nationwide UK delivery available. Check availability today.",
   },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // FLEET EXPANSION — five live-fleet halo cars + nine incoming SEO landings.
+  // Incoming cars carry status:"incoming" + showInFleet:false: their landing
+  // page is live and indexable, but they are hidden from the Fleet listing and
+  // never assert availability, pricing or spec until they arrive.
+  // ─────────────────────────────────────────────────────────────────────────
+
+  // ===== LIVE FLEET (available now) =====
+  {
+    id: "lamborghini-revuelto",
+    slug: "lamborghini-revuelto-hire",
+    manufacturer: "Lamborghini",
+    model: "Revuelto",
+    category: "supercar",
+    bodyType: "coupe",
+    heroImage: imgTBD("lamborghini-revuelto-hire", "hero.jpg", "Lamborghini Revuelto for supercar hire at CVS Hire"),
+    shortDescription:
+      "Sant'Agata's V12 reborn — a 1,000bhp hybrid flagship and the new benchmark for Lamborghini theatre.",
+    fullDescription:
+      "The Revuelto is the car that carries Lamborghini's V12 into the electric age without losing an ounce of drama. A new naturally aspirated 6.5-litre twelve-cylinder is joined by three electric motors and a carbon 'monofuselage' chassis, and the result is a four-figure horsepower flagship that still sounds and feels unmistakably like a Lamborghini — only sharper, faster and more usable than any before it. Scissor doors, a fighter-jet cockpit and a silhouette that stops traffic make it the ultimate statement car.\n\nAs the halo of our supercar fleet, the Revuelto is built for the days that deserve something extraordinary — a landmark birthday, a headline photoshoot, a music video, or simply the drive of a lifetime. Offered self-drive so the occasion is entirely yours, from our Birmingham base with delivery available across the UK.",
+    seats: 2,
+    doors: 2,
+    transmission: "automatic",
+    fuelType: "hybrid",
+    drivetrain: "awd",
+    selfDriveAvailable: true,
+    chauffeurAvailable: false,
+    availabilityStatus: "available",
+    status: "available",
+    showInFleet: true,
+    newArrival: true,
+    recommendedOccasions: ["self-drive", "birthday", "production", "weekend"],
+    relatedVehicles: ["ferrari-sf90-hire", "lamborghini-aventador-svj-hire", "lamborghini-temerario-hire"],
+    metaTitle: "Lamborghini Revuelto Hire | V12 Hybrid Supercar Hire UK | CVS Hire",
+    metaDescription:
+      "Hire the Lamborghini Revuelto — the 1,000bhp V12 hybrid flagship — self-drive from Birmingham with nationwide UK delivery. Check availability with CVS Hire.",
+  },
+  {
+    id: "ferrari-sf90",
+    slug: "ferrari-sf90-hire",
+    manufacturer: "Ferrari",
+    model: "SF90",
+    category: "supercar",
+    bodyType: "coupe",
+    heroImage: imgTBD("ferrari-sf90-hire", "hero.jpg", "Ferrari SF90 for supercar hire at CVS Hire"),
+    shortDescription:
+      "Ferrari's plug-in hybrid flagship — a 986bhp V8 that rewrote what a road-going Ferrari can do.",
+    fullDescription:
+      "The SF90 was Ferrari's first series-production plug-in hybrid and, for years, its most powerful road car — a twin-turbo V8 paired with three electric motors for close to a thousand horsepower and all-wheel-drive traction that makes the performance genuinely deployable. It can slip through town in near silence on electric power, then detonate down a slip road with a ferocity that recalibrates your sense of fast. Named for Ferrari's Formula 1 team, it wears its motorsport intent openly.\n\nInside, the wraparound digital cockpit and head-up controls feel a decade ahead, yet the SF90 remains a car you could genuinely use. It is one of the most sought-after supercars we offer for a milestone occasion, a shoot or a spectacular self-drive weekend, available from Birmingham with UK-wide delivery.",
+    seats: 2,
+    doors: 2,
+    transmission: "automatic",
+    fuelType: "hybrid",
+    drivetrain: "awd",
+    selfDriveAvailable: true,
+    chauffeurAvailable: false,
+    availabilityStatus: "available",
+    status: "available",
+    showInFleet: true,
+    newArrival: true,
+    recommendedOccasions: ["self-drive", "birthday", "production", "weekend"],
+    relatedVehicles: ["lamborghini-revuelto-hire", "ferrari-12cilindri-hire", "ferrari-488-hire"],
+    metaTitle: "Ferrari SF90 Hire | Hybrid Supercar Self-Drive Hire UK | CVS Hire",
+    metaDescription:
+      "Hire the Ferrari SF90 — the near-1,000bhp plug-in hybrid flagship — self-drive from Birmingham with nationwide UK delivery. Check availability with CVS Hire.",
+  },
+  {
+    id: "ferrari-purosangue",
+    slug: "ferrari-purosangue-hire",
+    manufacturer: "Ferrari",
+    model: "Purosangue",
+    category: "luxury-4x4",
+    categories: ["prestige"],
+    bodyType: "suv",
+    heroImage: imgTBD("ferrari-purosangue-hire", "hero.jpg", "Ferrari Purosangue for luxury hire at CVS Hire"),
+    shortDescription:
+      "The first four-door, four-seat Ferrari — a naturally aspirated V12 that refuses to be called an SUV.",
+    fullDescription:
+      "Purosangue means 'thoroughbred', and Ferrari chose the name deliberately: this is not a badge-engineered SUV but a genuine four-seat Ferrari with a naturally aspirated V12 mounted up front and four rear-hinged doors that open to a cabin of extraordinary craft. It rides tall enough for real-world usability yet drives with the poise of a sports car, thanks to a sophisticated active suspension that keeps it flat and composed. It is, quite simply, unlike anything else on the road.\n\nFor those who want Ferrari drama with room for four and the practicality of everyday luxury, the Purosangue is the answer — a car that turns heads at a wedding, a corporate event or a weekend away in equal measure. Available self-drive or chauffeur-driven from Birmingham, with delivery across the UK.",
+    seats: 4,
+    doors: 4,
+    transmission: "automatic",
+    fuelType: "petrol",
+    drivetrain: "awd",
+    selfDriveAvailable: true,
+    chauffeurAvailable: true,
+    availabilityStatus: "available",
+    status: "available",
+    showInFleet: true,
+    newArrival: true,
+    recommendedOccasions: ["self-drive", "weekend", "corporate", "production"],
+    relatedVehicles: ["rolls-royce-cullinan-series-2-hire", "land-rover-defender-hire", "lamborghini-urus-performante-hire"],
+    metaTitle: "Ferrari Purosangue Hire | V12 Four-Seat Ferrari Hire UK | CVS Hire",
+    metaDescription:
+      "Hire the Ferrari Purosangue — the first four-door, four-seat V12 Ferrari — self-drive or chauffeur-driven from Birmingham, UK delivery. Check availability with CVS Hire.",
+  },
+  {
+    id: "rolls-royce-phantom",
+    slug: "rolls-royce-phantom-hire",
+    manufacturer: "Rolls-Royce",
+    model: "Phantom",
+    category: "prestige",
+    categories: ["chauffeur"],
+    bodyType: "saloon",
+    heroImage: imgTBD("rolls-royce-phantom-hire", "hero.jpg", "Rolls-Royce Phantom for luxury chauffeur hire at CVS Hire"),
+    shortDescription:
+      "The pinnacle of Rolls-Royce — the eighth-generation Phantom, the most serene way to arrive anywhere.",
+    fullDescription:
+      "The Phantom is the car every other luxury car is measured against. The eighth-generation model rides on Rolls-Royce's 'Architecture of Luxury', and the effect from the rear seat is otherworldly — a hushed, wafty calm that the marque calls 'magic carpet ride', beneath a hand-finished cabin where the famous Gallery dashboard can be commissioned as a piece of art. Coach doors close at the touch of a button, the Spirit of Ecstasy leads the way, and the twin-turbo V12 is felt more than heard.\n\nThis is the ultimate wedding and occasion car — the arrival that needs no explanation. We offer the Phantom chauffeur-driven so you step out composed while our driver takes care of every detail, for weddings, milestone celebrations and executive occasions across Birmingham and the UK.",
+    seats: 5,
+    doors: 4,
+    transmission: "automatic",
+    fuelType: "petrol",
+    drivetrain: "rwd",
+    selfDriveAvailable: false,
+    chauffeurAvailable: true,
+    availabilityStatus: "available",
+    status: "available",
+    showInFleet: true,
+    newArrival: true,
+    recommendedOccasions: ["wedding", "chauffeur", "corporate", "production"],
+    relatedVehicles: ["rolls-royce-cullinan-series-2-hire", "rolls-royce-spectre-hire", "rolls-royce-dawn-hire"],
+    metaTitle: "Rolls-Royce Phantom Hire | Chauffeur Wedding Car Hire UK | CVS Hire",
+    metaDescription:
+      "Hire the Rolls-Royce Phantom — the flagship of luxury motoring — chauffeur-driven for weddings and occasions from Birmingham, nationwide UK. Check availability with CVS Hire.",
+  },
+  {
+    id: "porsche-911-gt3-rs",
+    slug: "porsche-911-gt3-rs-hire",
+    manufacturer: "Porsche",
+    model: "911 GT3 RS",
+    category: "supercar",
+    categories: ["performance"],
+    bodyType: "coupe",
+    heroImage: imgTBD("porsche-911-gt3-rs-hire", "hero.jpg", "Porsche 911 GT3 RS for supercar hire at CVS Hire"),
+    shortDescription:
+      "A road-legal racing car — naturally aspirated, wing-topped and honed on the Nürburgring.",
+    fullDescription:
+      "The 911 GT3 RS is the most extreme naturally aspirated 911 Porsche will sell you — a motorsport homologation special with a screaming flat-six that revs to 9,000rpm, active aerodynamics borrowed from GT racing and a giant swan-neck rear wing that generates genuine downforce. Every element, from the DRS-style adjustable aero to the lightweight construction, exists to make it faster against the clock. It is raw, precise and utterly intoxicating in a way turbocharged rivals can't match.\n\nFor a driving enthusiast, few cars deliver more, which makes the GT3 RS one of the most requested self-drive experiences we offer — for a landmark occasion, a track-focused weekend or a photoshoot. Available from Birmingham with delivery across the UK.",
+    seats: 2,
+    doors: 2,
+    transmission: "automatic",
+    fuelType: "petrol",
+    drivetrain: "rwd",
+    selfDriveAvailable: true,
+    chauffeurAvailable: false,
+    availabilityStatus: "available",
+    status: "available",
+    showInFleet: true,
+    newArrival: true,
+    recommendedOccasions: ["self-drive", "track", "birthday", "production"],
+    relatedVehicles: ["lamborghini-huracan-sto-hire", "ferrari-488-hire", "lamborghini-revuelto-hire"],
+    metaTitle: "Porsche 911 GT3 RS Hire | Self-Drive Supercar Hire UK | CVS Hire",
+    metaDescription:
+      "Hire the Porsche 911 GT3 RS — the road-legal, naturally aspirated track weapon — self-drive from Birmingham with nationwide UK delivery. Check availability with CVS Hire.",
+  },
+
+  // ===== INCOMING (awaiting delivery — landing pages live & indexable, hidden from Fleet) =====
+  {
+    id: "ferrari-488",
+    slug: "ferrari-488-hire",
+    manufacturer: "Ferrari",
+    model: "488",
+    category: "supercar",
+    bodyType: "coupe",
+    heroImage: imgTBD("ferrari-488-hire", "hero.jpg", "Ferrari 488 supercar — joining CVS Hire soon"),
+    shortDescription:
+      "The turbocharged V8 that redefined the mid-engined Ferrari — ferociously fast, beautifully balanced.",
+    fullDescription:
+      "The 488 marked Ferrari's return to turbocharging for its core mid-engined supercar, and it did so emphatically: a 3.9-litre twin-turbo V8, twice named International Engine of the Year, delivering near-instant response and a savage mid-range with none of the lag that word once implied. Blistering pace, telepathic steering and aerodynamics honed in Maranello's wind tunnel make it one of the most complete and exploitable supercars of its generation, in coupé and open-top Spider form alike.\n\nThe 488 is joining the CVS Hire fleet soon. If a modern V8 Ferrari is on your list for a celebration, a shoot or a self-drive weekend, register your interest now and we'll be in touch the moment it's available to hire.",
+    seats: 2,
+    doors: 2,
+    transmission: "automatic",
+    fuelType: "petrol",
+    drivetrain: "rwd",
+    selfDriveAvailable: true,
+    chauffeurAvailable: false,
+    availabilityStatus: "coming-soon",
+    status: "incoming",
+    showInFleet: false,
+    recommendedOccasions: ["self-drive", "birthday", "production", "weekend"],
+    relatedVehicles: ["ferrari-sf90-hire", "lamborghini-huracan-sto-hire", "ferrari-roma-hire"],
+    metaTitle: "Ferrari 488 Hire UK | Register Interest | CVS Hire",
+    metaDescription:
+      "Ferrari 488 hire is coming soon to CVS Hire — the twin-turbo V8 supercar. Register your interest now and we'll confirm availability as soon as it arrives.",
+  },
+  {
+    id: "land-rover-defender",
+    slug: "land-rover-defender-hire",
+    manufacturer: "Land Rover",
+    model: "Defender",
+    category: "luxury-4x4",
+    bodyType: "suv",
+    heroImage: imgTBD("land-rover-defender-hire", "hero.jpg", "Land Rover Defender — joining CVS Hire soon"),
+    shortDescription:
+      "The reinvented icon — rugged character and genuine capability wrapped in modern luxury.",
+    fullDescription:
+      "The reborn Defender took one of the most recognisable shapes in motoring and reimagined it for the modern age, without losing the go-anywhere spirit that made the original a legend. It pairs serious off-road hardware with a beautifully finished, tech-rich cabin, distinctive upright styling and a road manner far more refined than its adventurous looks suggest. Equally at home outside a members' club, on the school run or halfway up a mountain, it is the luxury 4x4 with genuine character.\n\nThe Defender is joining the CVS Hire fleet soon. For a versatile, characterful SUV — for a weekend away, a country escape or a production — register your interest now and we'll let you know as soon as it's available.",
+    seats: 5,
+    doors: 5,
+    transmission: "automatic",
+    drivetrain: "awd",
+    selfDriveAvailable: true,
+    chauffeurAvailable: false,
+    availabilityStatus: "coming-soon",
+    status: "incoming",
+    showInFleet: false,
+    recommendedOccasions: ["self-drive", "weekend", "production", "corporate"],
+    relatedVehicles: ["ferrari-purosangue-hire", "range-rover-vogue-hire", "mercedes-amg-g63-hire"],
+    metaTitle: "Land Rover Defender Hire UK | Register Interest | CVS Hire",
+    metaDescription:
+      "Land Rover Defender hire is coming soon to CVS Hire — the reinvented luxury 4x4 icon. Register your interest and we'll confirm availability as soon as it arrives.",
+  },
+  {
+    id: "lamborghini-huracan-sto",
+    slug: "lamborghini-huracan-sto-hire",
+    manufacturer: "Lamborghini",
+    model: "Huracán STO",
+    category: "supercar",
+    bodyType: "coupe",
+    heroImage: imgTBD("lamborghini-huracan-sto-hire", "hero.jpg", "Lamborghini Huracán STO — joining CVS Hire soon"),
+    shortDescription:
+      "Super Trofeo Omologata — the racing Huracán made road-legal, with a naturally aspirated V10 and race-bred aero.",
+    fullDescription:
+      "The Huracán STO — Super Trofeo Omologata — is Lamborghini's road-legal tribute to its one-make racing cars. Rear-wheel drive only, stripped of weight, crowned with a huge fixed wing and a shark-fin engine cover, it channels the naturally aspirated 5.2-litre V10 with a purity the all-wheel-drive Huracáns can't match. The 'Cofango' one-piece front clamshell, magnesium wheels and carbon everywhere leave you in no doubt: this is the closest thing to a race car you can drive on the road.\n\nThe Huracán STO is joining the CVS Hire fleet soon. For the driver who wants the most focused V10 Lamborghini of them all, register your interest now and we'll be in touch as soon as it's available to hire.",
+    seats: 2,
+    doors: 2,
+    transmission: "automatic",
+    fuelType: "petrol",
+    drivetrain: "rwd",
+    selfDriveAvailable: true,
+    chauffeurAvailable: false,
+    availabilityStatus: "coming-soon",
+    status: "incoming",
+    showInFleet: false,
+    recommendedOccasions: ["self-drive", "track", "birthday", "production"],
+    relatedVehicles: ["porsche-911-gt3-rs-hire", "lamborghini-aventador-svj-hire", "lamborghini-revuelto-hire"],
+    metaTitle: "Lamborghini Huracán STO Hire UK | Register Interest | CVS Hire",
+    metaDescription:
+      "Lamborghini Huracán STO hire is coming soon to CVS Hire — the road-legal, rear-drive racing V10. Register your interest and we'll confirm availability on arrival.",
+  },
+  {
+    id: "lamborghini-temerario",
+    slug: "lamborghini-temerario-hire",
+    manufacturer: "Lamborghini",
+    model: "Temerario",
+    category: "supercar",
+    bodyType: "coupe",
+    heroImage: imgTBD("lamborghini-temerario-hire", "hero.jpg", "Lamborghini Temerario — joining CVS Hire soon"),
+    shortDescription:
+      "The Huracán's successor — a flat-plane twin-turbo V8 hybrid that revs to 10,000rpm.",
+    fullDescription:
+      "The Temerario is Lamborghini's next chapter, replacing the much-loved Huracán with an all-new hybrid heart: a flat-plane-crank twin-turbo V8 spinning to a remarkable 10,000rpm, augmented by electric motors for a combined output well beyond anything the outgoing car offered. It keeps the compact, exploitable feel that made the Huracán a favourite while adding electrified response and a redrawn, sharper design language for the marque's new era.\n\nThe Temerario is joining the CVS Hire fleet soon. To be among the first to experience Lamborghini's newest V8 hybrid supercar, register your interest now and we'll let you know the moment it's available to hire.",
+    seats: 2,
+    doors: 2,
+    transmission: "automatic",
+    fuelType: "hybrid",
+    drivetrain: "awd",
+    selfDriveAvailable: true,
+    chauffeurAvailable: false,
+    availabilityStatus: "coming-soon",
+    status: "incoming",
+    showInFleet: false,
+    recommendedOccasions: ["self-drive", "birthday", "production", "weekend"],
+    relatedVehicles: ["lamborghini-revuelto-hire", "lamborghini-huracan-sto-hire", "ferrari-sf90-hire"],
+    metaTitle: "Lamborghini Temerario Hire UK | Register Interest | CVS Hire",
+    metaDescription:
+      "Lamborghini Temerario hire is coming soon to CVS Hire — the all-new V8 hybrid successor to the Huracán. Register your interest and we'll confirm availability on arrival.",
+  },
+  {
+    id: "ferrari-12cilindri",
+    slug: "ferrari-12cilindri-hire",
+    manufacturer: "Ferrari",
+    model: "12Cilindri",
+    category: "supercar",
+    categories: ["prestige"],
+    bodyType: "coupe",
+    heroImage: imgTBD("ferrari-12cilindri-hire", "hero.jpg", "Ferrari 12Cilindri — joining CVS Hire soon"),
+    shortDescription:
+      "A modern front-engined V12 grand tourer — naturally aspirated, 9,500rpm, unapologetically Ferrari.",
+    fullDescription:
+      "The 12Cilindri is Ferrari's love letter to the front-mounted V12 — a naturally aspirated 6.5-litre twelve-cylinder that revs to 9,500rpm, wrapped in a clean, futurist design that nods to the great Daytona of the 1960s. In an age of downsizing and hybridisation, it is a defiant celebration of the layout and engine that built Ferrari's legend, matching immense, operatic performance with the long-legged manners of a genuine grand tourer.\n\nThe 12Cilindri is joining the CVS Hire fleet soon. For the purest expression of a modern Ferrari V12, register your interest now and we'll be in touch as soon as it's available to hire.",
+    seats: 2,
+    doors: 2,
+    transmission: "automatic",
+    fuelType: "petrol",
+    drivetrain: "rwd",
+    selfDriveAvailable: true,
+    chauffeurAvailable: false,
+    availabilityStatus: "coming-soon",
+    status: "incoming",
+    showInFleet: false,
+    recommendedOccasions: ["self-drive", "weekend", "production", "birthday"],
+    relatedVehicles: ["ferrari-sf90-hire", "ferrari-purosangue-hire", "ferrari-roma-hire"],
+    metaTitle: "Ferrari 12Cilindri Hire UK | Register Interest | CVS Hire",
+    metaDescription:
+      "Ferrari 12Cilindri hire is coming soon to CVS Hire — the naturally aspirated front-engined V12 grand tourer. Register your interest and we'll confirm availability on arrival.",
+  },
+  {
+    id: "rolls-royce-cullinan-series-2",
+    slug: "rolls-royce-cullinan-series-2-hire",
+    manufacturer: "Rolls-Royce",
+    model: "Cullinan",
+    edition: "Series II",
+    category: "luxury-4x4",
+    categories: ["prestige", "chauffeur"],
+    bodyType: "suv",
+    heroImage: imgTBD("rolls-royce-cullinan-series-2-hire", "hero.jpg", "Rolls-Royce Cullinan Series II — joining CVS Hire soon"),
+    shortDescription:
+      "The updated Cullinan — Rolls-Royce's commanding SUV, now with a sharper face and a more contemporary cabin.",
+    fullDescription:
+      "The Cullinan Series II refines the car that brought Rolls-Royce to the world of luxury SUVs. A redesigned front end with a more assertive stance, new lighting and a beautifully reworked cabin bring the Cullinan up to date while preserving everything that made it special: the effortless twin-turbo V12, the serene 'magic carpet' ride, and a rear cabin finished to a standard nothing else in its class approaches. It is presence and comfort in equal, generous measure.\n\nThe Cullinan Series II is joining the CVS Hire fleet soon. For weddings, milestone occasions and executive travel that call for the ultimate luxury SUV, register your interest now and we'll let you know as soon as it's available, self-drive or chauffeur-driven.",
+    seats: 5,
+    doors: 5,
+    transmission: "automatic",
+    fuelType: "petrol",
+    drivetrain: "awd",
+    selfDriveAvailable: true,
+    chauffeurAvailable: true,
+    availabilityStatus: "coming-soon",
+    status: "incoming",
+    showInFleet: false,
+    recommendedOccasions: ["wedding", "chauffeur", "corporate", "production"],
+    relatedVehicles: ["ferrari-purosangue-hire", "rolls-royce-phantom-hire", "rolls-royce-cullinan-hire"],
+    metaTitle: "Rolls-Royce Cullinan Series II Hire UK | Register Interest | CVS Hire",
+    metaDescription:
+      "Rolls-Royce Cullinan Series II hire is coming soon to CVS Hire — the updated luxury SUV flagship. Register your interest and we'll confirm availability on arrival.",
+  },
+  {
+    id: "rolls-royce-spectre",
+    slug: "rolls-royce-spectre-hire",
+    manufacturer: "Rolls-Royce",
+    model: "Spectre",
+    category: "prestige",
+    categories: ["chauffeur"],
+    bodyType: "coupe",
+    heroImage: imgTBD("rolls-royce-spectre-hire", "hero.jpg", "Rolls-Royce Spectre — joining CVS Hire soon"),
+    shortDescription:
+      "Rolls-Royce's first electric car — a silent, super-luxury coupé that feels made for the marque.",
+    fullDescription:
+      "The Spectre is the most natural electric car imaginable, because near-silent, effortless propulsion is exactly what Rolls-Royce has always chased. This grand ultra-luxury coupé pairs coach doors and a Starlight cabin with instant, waftless electric torque and the brand's signature 'magic carpet' ride, delivering serenity no combustion car can match. It is a glimpse of the marque's future that already feels utterly resolved — imposing, beautiful and profoundly calm.\n\nThe Spectre is joining the CVS Hire fleet soon. For a wedding, a landmark celebration or an arrival like no other, register your interest now and we'll be in touch as soon as it's available, self-drive or chauffeur-driven.",
+    seats: 4,
+    doors: 2,
+    transmission: "automatic",
+    fuelType: "electric",
+    drivetrain: "rwd",
+    selfDriveAvailable: true,
+    chauffeurAvailable: true,
+    availabilityStatus: "coming-soon",
+    status: "incoming",
+    showInFleet: false,
+    recommendedOccasions: ["wedding", "chauffeur", "production", "corporate"],
+    relatedVehicles: ["rolls-royce-phantom-hire", "rolls-royce-dawn-hire", "rolls-royce-ghost-hire"],
+    metaTitle: "Rolls-Royce Spectre Hire UK | Register Interest | CVS Hire",
+    metaDescription:
+      "Rolls-Royce Spectre hire is coming soon to CVS Hire — the marque's first all-electric luxury coupé. Register your interest and we'll confirm availability on arrival.",
+  },
+  {
+    id: "rolls-royce-dawn",
+    slug: "rolls-royce-dawn-hire",
+    manufacturer: "Rolls-Royce",
+    model: "Dawn",
+    category: "convertible",
+    categories: ["prestige"],
+    bodyType: "convertible",
+    heroImage: imgTBD("rolls-royce-dawn-hire", "hero.jpg", "Rolls-Royce Dawn — joining CVS Hire soon"),
+    shortDescription:
+      "The open-top Rolls-Royce — a four-seat drophead of extraordinary elegance and calm.",
+    fullDescription:
+      "The Dawn is Rolls-Royce at its most glamorous: a four-seat convertible whose fabric roof folds in near silence to turn the most serene cabin in motoring into an open-air sanctuary. Rolls-Royce called it 'the sexiest Rolls-Royce ever built', and from the flowing waistline to the wood-lined tonneau it is hard to disagree. Beneath the beauty sits the familiar twin-turbo V12 and 'magic carpet' ride, so progress is as effortless with the roof down as it is up.\n\nThe Dawn is joining the CVS Hire fleet soon. For a summer wedding, an anniversary or a golden-hour drive along the coast, register your interest now and we'll let you know as soon as it's available, self-drive or chauffeur-driven.",
+    seats: 4,
+    doors: 2,
+    transmission: "automatic",
+    fuelType: "petrol",
+    drivetrain: "rwd",
+    selfDriveAvailable: true,
+    chauffeurAvailable: true,
+    availabilityStatus: "coming-soon",
+    status: "incoming",
+    showInFleet: false,
+    recommendedOccasions: ["wedding", "self-drive", "production", "weekend"],
+    relatedVehicles: ["rolls-royce-spectre-hire", "rolls-royce-phantom-hire", "rolls-royce-ghost-hire"],
+    metaTitle: "Rolls-Royce Dawn Hire UK | Register Interest | CVS Hire",
+    metaDescription:
+      "Rolls-Royce Dawn hire is coming soon to CVS Hire — the open-top four-seat luxury drophead. Register your interest and we'll confirm availability on arrival.",
+  },
+  {
+    id: "lamborghini-aventador-svj",
+    slug: "lamborghini-aventador-svj-hire",
+    manufacturer: "Lamborghini",
+    model: "Aventador SVJ",
+    category: "supercar",
+    bodyType: "coupe",
+    heroImage: imgTBD("lamborghini-aventador-svj-hire", "hero.jpg", "Lamborghini Aventador SVJ — joining CVS Hire soon"),
+    shortDescription:
+      "The most extreme Aventador — a screaming naturally aspirated V12 and a former Nürburgring record-holder.",
+    fullDescription:
+      "The Aventador SVJ — Superveloce Jota — is the wildest send-off the Aventador ever received, and one of the last great naturally aspirated V12 Lamborghinis. Its 6.5-litre twelve-cylinder is one of the most spine-tingling engines ever fitted to a road car, and its active 'ALA' aerodynamics helped it set a production-car lap record at the Nürburgring. Scissor doors, a wailing top end and a presence that borders on theatrical make it a genuine collector's icon.\n\nThe Aventador SVJ is joining the CVS Hire fleet soon. For those who want one of the definitive naturally aspirated V12 supercars for a landmark occasion or a shoot, register your interest now and we'll be in touch the moment it's available to hire.",
+    seats: 2,
+    doors: 2,
+    transmission: "automatic",
+    fuelType: "petrol",
+    drivetrain: "awd",
+    selfDriveAvailable: true,
+    chauffeurAvailable: false,
+    availabilityStatus: "coming-soon",
+    status: "incoming",
+    showInFleet: false,
+    recommendedOccasions: ["self-drive", "birthday", "production", "track"],
+    relatedVehicles: ["lamborghini-revuelto-hire", "lamborghini-huracan-sto-hire", "ferrari-sf90-hire"],
+    metaTitle: "Lamborghini Aventador SVJ Hire UK | Register Interest | CVS Hire",
+    metaDescription:
+      "Lamborghini Aventador SVJ hire is coming soon to CVS Hire — the extreme naturally aspirated V12 flagship. Register your interest and we'll confirm availability on arrival.",
+  },
 ];
 
 // ── Derived helpers ──────────────────────────────────────────
@@ -990,8 +1412,20 @@ export function getVehicleBySlug(slug: string): Vehicle | undefined {
   return vehicles.find((v) => v.slug === slug);
 }
 
+/** True when a vehicle should appear in the live Fleet listing / category
+ * auto-listings. Incoming cars set showInFleet:false to stay out of Fleet while
+ * their landing page remains live and indexable. */
+export function isInFleet(v: Vehicle): boolean {
+  return v.showInFleet !== false;
+}
+
+/** Vehicles shown in the main Fleet listing (hides "incoming" / hidden cars). */
+export function getFleetVehicles(): Vehicle[] {
+  return vehicles.filter(isInFleet);
+}
+
 export function getFeaturedVehicles(): Vehicle[] {
-  return vehicles.filter((v) => v.featured);
+  return vehicles.filter((v) => v.featured && isInFleet(v));
 }
 
 /**
@@ -1027,7 +1461,11 @@ export function vehicleInCategory(v: Vehicle, category: string): boolean {
 }
 
 export function getVehiclesByCategory(category: string): Vehicle[] {
-  return vehicles.filter((v) => vehicleInCategory(v, category));
+  // Category auto-listings only surface live-fleet vehicles, so an "incoming"
+  // car is never shown as bookable through a category. Incoming cars are
+  // discovered instead via manufacturer hubs and explicit "related" links,
+  // which render an enquiry-led card.
+  return vehicles.filter((v) => isInFleet(v) && vehicleInCategory(v, category));
 }
 
 export function getRelatedVehicles(vehicle: Vehicle, limit = 3): Vehicle[] {
@@ -1035,9 +1473,15 @@ export function getRelatedVehicles(vehicle: Vehicle, limit = 3): Vehicle[] {
     .map(getVehicleBySlug)
     .filter((v): v is Vehicle => Boolean(v));
   if (bySlug.length >= limit) return bySlug.slice(0, limit);
-  // Fill from same category.
+  // Fill from same category — live-fleet cars only, so the fill never implies
+  // availability for an incoming vehicle (those appear only via explicit
+  // relatedVehicles slugs above, which render an enquiry-led card).
   const fill = vehicles.filter(
-    (v) => v.category === vehicle.category && v.slug !== vehicle.slug && !bySlug.includes(v)
+    (v) =>
+      v.category === vehicle.category &&
+      v.slug !== vehicle.slug &&
+      isInFleet(v) &&
+      !bySlug.includes(v),
   );
   return [...bySlug, ...fill].slice(0, limit);
 }

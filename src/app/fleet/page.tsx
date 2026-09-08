@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { vehicles } from "@/lib/data/vehicles";
+import { getFleetVehicles } from "@/lib/data/vehicles";
 import { collections } from "@/lib/data/collections";
 import { FleetShowroom } from "@/components/fleet/FleetShowroom";
 import { PageHero } from "@/components/ui/PageHero";
@@ -25,7 +25,7 @@ export default function FleetPage() {
         intro="Over 50 luxury, prestige and performance vehicles. Filter, shortlist and find the car for your occasion — then check availability in a couple of taps."
       />
       <Suspense fallback={<div className="shell py-20 text-silver">Loading the fleet…</div>}>
-        <FleetShowroom vehicles={vehicles} />
+        <FleetShowroom vehicles={getFleetVehicles()} />
       </Suspense>
 
       {/* Hire by marque — links to the collection landing pages */}

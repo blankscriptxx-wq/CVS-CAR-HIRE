@@ -75,6 +75,7 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
   const specs = specPairs(vehicle);
   const commercials = commercialPairs(vehicle);
   const gallery = vehicle.gallery ?? [];
+  const incoming = vehicle.status === "incoming";
 
   // Contextual internal links: marque hub, category service, long-term hire.
   const marqueHub = getCollectionForVehicle(vehicle.slug);
@@ -106,11 +107,15 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
           <Reveal className="max-w-3xl">
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
               <span className="eyebrow">{categoryLabel(vehicle.category)}</span>
-              {vehicle.newArrival && (
+              {incoming ? (
+                <span className="border border-champagne bg-black/50 px-3 py-1 text-[10px] font-medium uppercase tracking-wide2 text-champagne">
+                  Incoming — awaiting delivery
+                </span>
+              ) : vehicle.newArrival ? (
                 <span className="bg-champagne px-3 py-1 text-[10px] font-medium uppercase tracking-wide2 text-black">
                   New Arrival
                 </span>
-              )}
+              ) : null}
             </div>
             <h1 className="mt-4 text-display font-display text-warm-white">{name}</h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-silver sm:text-lg">
@@ -118,7 +123,8 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <ButtonLink href="#enquire" variant="primary" size="lg">
-                Check Availability <ArrowRight className="h-4 w-4" />
+                {incoming ? "Register Your Interest" : "Check Availability"}{" "}
+                <ArrowRight className="h-4 w-4" />
               </ButtonLink>
               <CallLink
                 context={{ page: "vehicle", slug: vehicle.slug }}
@@ -182,19 +188,35 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
               ))}
             </dl>
 
-            <h3 className="mt-8 font-display text-2xl text-warm-white">Hire details</h3>
-            <dl className="mt-5 divide-y divide-line">
-              {commercials.map((s) => (
-                <div key={s.label} className="flex items-center justify-between py-3">
-                  <dt className="text-xs uppercase tracking-wide2 text-silver">{s.label}</dt>
-                  <dd className="text-sm text-warm-white">{s.value}</dd>
-                </div>
-              ))}
-            </dl>
-            <p className="mt-4 text-[11px] leading-relaxed text-silver/70">
-              Deposit and included mileage confirmed on enquiry. Prices are a guide and subject to
-              availability.
-            </p>
+            {incoming ? (
+              <>
+                <h3 className="mt-8 font-display text-2xl text-warm-white">Availability</h3>
+                <p className="mt-4 text-sm leading-relaxed text-silver">
+                  The {vehicle.model} is joining the CVS Hire fleet soon. Pricing, specification
+                  and hire terms will be confirmed on arrival — register your interest now and
+                  we&rsquo;ll be in touch the moment it&rsquo;s available to book.
+                </p>
+                <ButtonLink href="#enquire" variant="primary" size="md" className="mt-5 w-full">
+                  Register Your Interest <ArrowRight className="h-4 w-4" />
+                </ButtonLink>
+              </>
+            ) : (
+              <>
+                <h3 className="mt-8 font-display text-2xl text-warm-white">Hire details</h3>
+                <dl className="mt-5 divide-y divide-line">
+                  {commercials.map((s) => (
+                    <div key={s.label} className="flex items-center justify-between py-3">
+                      <dt className="text-xs uppercase tracking-wide2 text-silver">{s.label}</dt>
+                      <dd className="text-sm text-warm-white">{s.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <p className="mt-4 text-[11px] leading-relaxed text-silver/70">
+                  Deposit and included mileage confirmed on enquiry. Prices are a guide and subject to
+                  availability.
+                </p>
+              </>
+            )}
           </div>
         </Reveal>
       </section>
@@ -219,13 +241,16 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
       <section id="enquire" className="scroll-mt-24 border-t border-line bg-charcoal/30 py-16 md:py-24">
         <div className="shell grid gap-12 lg:grid-cols-2 lg:items-center">
           <Reveal>
-            <span className="eyebrow">Check Availability</span>
+            <span className="eyebrow">{incoming ? "Register Interest" : "Check Availability"}</span>
             <h2 className="mt-4 text-display-sm font-display text-warm-white">
-              Enquire about the {vehicle.model}.
+              {incoming
+                ? `Register interest in the ${vehicle.model}.`
+                : `Enquire about the ${vehicle.model}.`}
             </h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-silver">
-              Tell us your dates and we&rsquo;ll confirm availability, or reach us instantly by
-              live chat or phone.
+              {incoming
+                ? "This car is arriving soon. Leave your details and we’ll contact you as soon as it’s available to hire — or reach us now on live chat or phone."
+                : "Tell us your dates and we’ll confirm availability, or reach us instantly by live chat or phone."}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <LiveChatButton
@@ -244,7 +269,7 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <EnquiryPanel presetVehicle={name} />
+            <EnquiryPanel presetVehicle={name} registerInterest={incoming} />
           </Reveal>
         </div>
       </section>

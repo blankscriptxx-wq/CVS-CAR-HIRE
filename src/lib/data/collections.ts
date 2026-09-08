@@ -58,16 +58,21 @@ export const collections: Collection[] = [
       "lamborghini rental uk",
     ],
     intro:
-      "Hire a Lamborghini with CVS Car Hire. From the Urus Performante super-SUV to the V10 drama of the Huracán, our Lamborghini fleet is available self-drive or chauffeur-driven, in Birmingham and delivered nationwide. Choose your model below and we'll confirm availability.",
+      "Hire a Lamborghini with CVS Car Hire. From the new V12 hybrid Revuelto flagship and the Urus Performante super-SUV to the naturally aspirated drama of the Huracán, our Lamborghini fleet is available self-drive or chauffeur-driven, in Birmingham and delivered nationwide. Choose your model below and we'll confirm availability.",
     body: [
-      "Lamborghini hire is the fastest way to put a genuine icon on your driveway for a day, a weekend or longer. Our Birmingham-based Lamborghini fleet spans the Urus Performante — the super-SUV that turned Sant'Agata into a household name — and the naturally aspirated V10 Huracán in Performante Spyder and Evo forms, so whether you want everyday drama or open-top theatre, there is a car for the occasion.",
-      "Every Lamborghini is offered self-drive (minimum age and deposit confirmed on enquiry) or chauffeur-driven for weddings, milestone birthdays, music videos and content shoots. Hire by the day, take it for the weekend, or arrange a weekly or monthly rate for an extended stay — Lamborghini hire from £1,200 per day, with clear weekend and long-term rates on request.",
+      "Lamborghini hire is the fastest way to put a genuine icon on your driveway for a day, a weekend or longer. Our Birmingham-based Lamborghini fleet is led by the Revuelto — the 1,000bhp V12 hybrid flagship — and spans the Urus Performante super-SUV and the naturally aspirated V10 Huracán in Performante Spyder and Evo forms, so whether you want the ultimate halo car, everyday drama or open-top theatre, there is a Lamborghini for the occasion.",
+      "Every available Lamborghini is offered self-drive (minimum age and deposit confirmed on enquiry) or chauffeur-driven for weddings, milestone birthdays, music videos and content shoots. Hire by the day, take it for the weekend, or arrange a weekly or monthly rate for an extended stay — with clear weekend and long-term rates on request.",
+      "We're also expanding the Lamborghini line-up: the track-bred Huracán STO, the all-new V8 hybrid Temerario and the extreme Aventador SVJ are joining the fleet soon. Each has its own page where you can register your interest and we'll be in touch the moment it's available to hire.",
       areasServed("Lamborghini"),
     ],
     vehicleSlugs: [
+      "lamborghini-revuelto-hire",
       "lamborghini-urus-performante-hire",
       "lamborghini-huracan-performante-spyder-hire",
       "lamborghini-huracan-evo-hire",
+      "lamborghini-huracan-sto-hire",
+      "lamborghini-temerario-hire",
+      "lamborghini-aventador-svj-hire",
     ],
     faqs: [
       {
@@ -92,34 +97,49 @@ export const collections: Collection[] = [
     name: "Ferrari",
     heading: "Ferrari Hire",
     eyebrow: "Ferrari Hire",
-    metaTitle: "Ferrari Hire Birmingham | Ferrari Roma Self-Drive Hire | CVS Car Hire",
+    metaTitle: "Ferrari Hire Birmingham | SF90, Roma & Purosangue Hire | CVS Car Hire",
     metaDescription:
-      "Ferrari hire in Birmingham and nationwide. Self-drive the Ferrari Roma grand tourer by the day, weekend, week or month, with UK delivery. Check availability today.",
+      "Ferrari hire in Birmingham and nationwide — the SF90 hybrid flagship, the Roma grand tourer and the four-seat Purosangue, self-drive or chauffeur, with UK delivery. Check availability.",
     keywords: [
       "ferrari hire",
       "ferrari hire birmingham",
+      "ferrari hire uk",
+      "ferrari sf90 hire",
       "ferrari roma hire",
+      "ferrari purosangue hire",
       "hire a ferrari",
       "ferrari rental uk",
     ],
     intro:
-      "Hire a Ferrari with CVS Car Hire. Our Ferrari Roma pairs front-engined grand-touring elegance with unmistakable Prancing Horse presence — available for self-drive hire from Birmingham with nationwide delivery. Enquire below to check dates.",
+      "Hire a Ferrari with CVS Car Hire. From the near-1,000bhp SF90 hybrid flagship and the elegant Roma grand tourer to the extraordinary four-seat Purosangue, our Ferrari fleet brings one of motoring's most emotive badges within reach — self-drive or chauffeur-driven, from Birmingham with nationwide delivery.",
     body: [
-      "Ferrari hire brings one of the most emotive badges in motoring within reach for a day, a weekend or a longer escape. The Ferrari Roma is a modern V8 grand tourer — La Nuova Dolce Vita made metal — with the pace of a supercar and the manners of a car you could drive to the coast and back. It is the perfect choice for a landmark birthday, an anniversary drive, a proposal or a photoshoot.",
-      "The Roma is offered self-drive so the day is entirely yours, hired by the day, over the weekend, or by the week and month for an extended stay. Deposit, mileage and minimum age are confirmed on enquiry.",
+      "Ferrari hire puts one of the most desirable badges in the world on your driveway for a day, a weekend or a longer escape. Our fleet is led by the SF90 Stradale — Ferrari's plug-in hybrid flagship, with close to a thousand horsepower — alongside the Roma, a modern front-engined V8 grand tourer that is La Nuova Dolce Vita made metal, and the Purosangue, the first four-door, four-seat Ferrari and a genuine V12 thoroughbred.",
+      "Whether it is a landmark birthday, an anniversary drive, a proposal, a wedding or a photoshoot, there is a Ferrari for the moment — the SF90 and Roma self-drive so the day is entirely yours, and the four-seat Purosangue self-drive or chauffeur-driven. Deposit, mileage and minimum age are confirmed on enquiry.",
+      "The Ferrari story continues with more models joining our fleet soon — the twin-turbo V8 488 and the naturally aspirated V12 12Cilindri grand tourer. Each already has its own page where you can register your interest and we'll confirm availability the moment it arrives.",
       areasServed("Ferrari"),
     ],
-    vehicleSlugs: ["ferrari-roma-hire"],
+    vehicleSlugs: [
+      "ferrari-sf90-hire",
+      "ferrari-roma-hire",
+      "ferrari-purosangue-hire",
+      "ferrari-488-hire",
+      "ferrari-12cilindri-hire",
+    ],
     faqs: [
       {
-        question: "Which Ferrari can I hire?",
+        question: "Which Ferraris can I hire?",
         answer:
-          "We offer the Ferrari Roma for self-drive hire — a modern V8 grand tourer. Contact us for current availability and pricing.",
+          "Our available Ferrari fleet includes the SF90 hybrid supercar, the Roma grand tourer and the four-seat Purosangue. The 488 and 12Cilindri are joining soon — register your interest on their pages. Contact us for current availability and pricing.",
       },
       {
         question: "Can I hire a Ferrari in Birmingham for the weekend?",
         answer:
-          "Yes — the Ferrari Roma is available for weekend self-drive hire from our Birmingham base, with nationwide UK delivery on request. Message us with your dates and we'll confirm availability and the rate.",
+          "Yes — our Ferraris are available for weekend self-drive hire from our Birmingham base, with nationwide UK delivery on request. Message us with your dates and the model and we'll confirm availability and the rate.",
+      },
+      {
+        question: "Can I hire a Ferrari for a wedding?",
+        answer:
+          "The four-seat Ferrari Purosangue can be hired self-drive or chauffeur-driven, making it a striking wedding or occasion car. Tell us your date and we'll confirm availability.",
       },
     ],
   },
@@ -128,25 +148,34 @@ export const collections: Collection[] = [
     name: "Rolls-Royce",
     heading: "Rolls-Royce Hire",
     eyebrow: "Rolls-Royce Hire",
-    metaTitle: "Rolls-Royce Hire Birmingham | Cullinan & Ghost Chauffeur Hire | CVS Car Hire",
+    metaTitle: "Rolls-Royce Hire Birmingham | Phantom, Cullinan & Ghost Hire | CVS Car Hire",
     metaDescription:
-      "Rolls-Royce hire in Birmingham and nationwide — chauffeur-driven Cullinan and Ghost for weddings, corporate and occasions. UK delivery. Check availability.",
+      "Rolls-Royce hire in Birmingham and nationwide — chauffeur-driven Phantom, Cullinan and Ghost for weddings, corporate and occasions. UK delivery. Check availability.",
     keywords: [
       "rolls royce hire",
       "rolls royce hire birmingham",
+      "rolls royce phantom hire",
       "rolls royce cullinan hire",
       "rolls royce ghost hire",
       "rolls royce wedding car hire",
       "hire a rolls royce",
     ],
     intro:
-      "Hire a Rolls-Royce with CVS Car Hire. The Cullinan and Ghost are the ultimate expression of luxury motoring — offered chauffeur-driven for weddings, milestone occasions and executive travel, from Birmingham and across the UK.",
+      "Hire a Rolls-Royce with CVS Car Hire. From the flagship Phantom to the commanding Cullinan and the Ghost, our Rolls-Royce fleet is the ultimate expression of luxury motoring — offered chauffeur-driven for weddings, milestone occasions and executive travel, from Birmingham and across the UK.",
     body: [
-      "Rolls-Royce hire is the definition of arriving well. The Cullinan — the marque's commanding SUV — and the Ghost saloon are the two most requested Rolls-Royce models for weddings, and both are offered chauffeur-driven so you can step out composed while our driver takes care of every detail. For the photographs, the entrance and the moment itself, nothing else comes close.",
+      "Rolls-Royce hire is the definition of arriving well. Our fleet is crowned by the Phantom — the eighth-generation flagship and the pinnacle of the marque — alongside the commanding Cullinan SUV and the Ghost saloon, the most requested Rolls-Royce models for weddings. Each is offered chauffeur-driven so you can step out composed while our driver takes care of every detail. For the photographs, the entrance and the moment itself, nothing else comes close.",
       "Beyond weddings, Rolls-Royce hire suits milestone anniversaries, proms, executive travel and any occasion that deserves genuine occasion. We coordinate around your venue, timings and route, and can supply ribbons and finishing touches for the day.",
+      "The collection is growing, too: the updated Cullinan Series II, the all-electric Spectre and the open-top Dawn are joining our fleet soon. Each has its own page where you can register your interest and we'll confirm availability the moment it arrives.",
       areasServed("Rolls-Royce"),
     ],
-    vehicleSlugs: ["rolls-royce-cullinan-hire", "rolls-royce-ghost-hire"],
+    vehicleSlugs: [
+      "rolls-royce-phantom-hire",
+      "rolls-royce-cullinan-hire",
+      "rolls-royce-ghost-hire",
+      "rolls-royce-cullinan-series-2-hire",
+      "rolls-royce-spectre-hire",
+      "rolls-royce-dawn-hire",
+    ],
     faqs: [
       {
         question: "Can I hire a Rolls-Royce for a wedding?",
@@ -422,6 +451,101 @@ export const collections: Collection[] = [
         question: "Can I hire a Mercedes V-Class for group travel or an airport transfer?",
         answer:
           "Yes — the V-Class is our go-to for group travel, airport transfers and productions, available self-drive or chauffeur-driven. Message us with your dates and party size and we'll confirm.",
+      },
+    ],
+  },
+  {
+    slug: "porsche",
+    name: "Porsche",
+    heading: "Porsche Hire",
+    eyebrow: "Porsche Hire",
+    metaTitle: "Porsche Hire UK | Porsche 911 GT3 RS Hire | CVS Hire",
+    metaDescription:
+      "Porsche hire in Birmingham and nationwide — self-drive the 911 GT3 RS, the road-legal, naturally aspirated track weapon. UK delivery. Check availability with CVS Hire.",
+    keywords: [
+      "porsche hire",
+      "porsche hire uk",
+      "porsche hire birmingham",
+      "porsche 911 hire",
+      "porsche gt3 rs hire",
+      "hire a porsche",
+      "porsche rental uk",
+    ],
+    intro:
+      "Hire a Porsche with CVS Car Hire. Our fleet is headlined by the 911 GT3 RS — the most focused, track-honed naturally aspirated 911 Porsche builds — available self-drive from Birmingham with nationwide delivery. Enquire below to check dates.",
+    body: [
+      "Porsche hire is about precision as much as pace. The 911 GT3 RS is a road-legal racing car in all but name: a 9,000rpm naturally aspirated flat-six, active motorsport aerodynamics and a giant swan-neck rear wing that generates real downforce. For a driving enthusiast, few experiences come close — which is exactly why it is one of the most requested self-drive cars we offer for a landmark occasion, a track-focused weekend or a photoshoot.",
+      "The GT3 RS is offered self-drive so the day is entirely yours, by the day, the weekend or longer. Deposit, mileage and minimum age are confirmed on enquiry. Whether you are marking a milestone, treating a fellow enthusiast or capturing content, we'll have the car immaculately prepared and delivered to your chosen address.",
+      areasServed("Porsche"),
+    ],
+    sections: [
+      {
+        heading: "Why hire the 911 GT3 RS?",
+        body: [
+          "The GT3 RS sits at the sharp end of the 911 range, developed hand-in-hand with Porsche Motorsport. Everything about it — the ultra-high-revving flat-six, the DRS-style adjustable rear wing, the lightweight construction and the track-tuned chassis — exists to make it faster and more engaging against the clock. Unlike turbocharged rivals it builds its drama towards a spine-tingling top end, rewarding commitment with a purity of response that has made it a modern icon.",
+          "It is the ideal car for someone who values driving above all: a once-in-a-while experience for a special birthday, a gift for an enthusiast, or a headline vehicle for a shoot. It also pairs beautifully with our supercars — many clients combine the GT3 RS with a Lamborghini or Ferrari across a weekend.",
+        ],
+      },
+      {
+        heading: "Porsche hire in Birmingham and near you",
+        body: [
+          "We're a Birmingham-based hire company, so if you're searching for Porsche hire near you in the city or across the West Midlands — Solihull, Sutton Coldfield, Wolverhampton and Coventry — you can collect directly from us. For everyone else, we deliver nationwide, from London and Manchester to Leeds, Bristol and beyond, subject to vehicle and location.",
+        ],
+      },
+    ],
+    vehicleSlugs: ["porsche-911-gt3-rs-hire"],
+    faqs: [
+      {
+        question: "Which Porsche can I hire?",
+        answer:
+          "We offer the Porsche 911 GT3 RS for self-drive hire — the road-legal, naturally aspirated track weapon. Contact us for current availability and pricing, and ask about pairing it with our supercars.",
+      },
+      {
+        question: "Is there Porsche hire near me?",
+        answer:
+          "We're based in Birmingham and cover the West Midlands directly, with nationwide UK delivery available. Tell us where you are and we'll confirm we can reach you.",
+      },
+      {
+        question: "Can I hire the 911 GT3 RS for the weekend?",
+        answer:
+          "Yes — the GT3 RS is available by the day, the weekend or longer, self-drive. Message us your dates and we'll confirm availability and the rate.",
+      },
+    ],
+  },
+  {
+    slug: "land-rover",
+    name: "Land Rover",
+    heading: "Land Rover Defender Hire",
+    eyebrow: "Land Rover Hire",
+    metaTitle: "Land Rover Defender Hire UK | Register Interest | CVS Hire",
+    metaDescription:
+      "Land Rover Defender hire is joining CVS Hire soon — the reinvented luxury 4x4 icon. Register your interest for upcoming availability, or hire a Range Rover today.",
+    keywords: [
+      "land rover hire",
+      "land rover defender hire",
+      "defender hire",
+      "defender hire uk",
+      "land rover defender hire birmingham",
+      "hire a defender",
+    ],
+    intro:
+      "Land Rover hire with CVS Car Hire. The reinvented Land Rover Defender — rugged character wrapped in modern luxury — is joining our fleet soon. Register your interest for upcoming availability below, or explore our Range Rover fleet, available now.",
+    body: [
+      "The Land Rover Defender is one of the most characterful luxury 4x4s on the road — go-anywhere capability and unmistakable upright styling paired with a beautifully finished, technology-rich cabin. Equally suited to a country escape, a weekend away, the school run or a production, it brings genuine presence without the formality of a full luxury saloon.",
+      "The Defender is joining the CVS Hire fleet soon. Register your interest on its page and we'll be in touch the moment it's available to hire, with pricing and availability confirmed on arrival. In the meantime, our Range Rover fleet — the Vogue, Sport and supercharged Sport SVR — is available now for those who want British luxury SUV motoring today.",
+      areasServed("Land Rover"),
+    ],
+    vehicleSlugs: ["land-rover-defender-hire"],
+    faqs: [
+      {
+        question: "Can I hire a Land Rover Defender?",
+        answer:
+          "The Land Rover Defender is joining our fleet soon. You can register your interest on its page now and we'll confirm availability and pricing the moment it arrives.",
+      },
+      {
+        question: "Can I hire a Range Rover in the meantime?",
+        answer:
+          "Yes — our Range Rover fleet is available now, including the Vogue, Sport and Sport SVR, self-drive or chauffeur-driven. See our Range Rover hire page for the full line-up.",
       },
     ],
   },

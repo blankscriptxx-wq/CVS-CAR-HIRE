@@ -26,6 +26,17 @@ export const services: ServiceContent[] = [
       "Direct, human support from enquiry to return",
     ],
     occasions: ["Landmark birthdays", "Driving experiences", "Photoshoots & content", "Weekend escapes"],
+    recommendedVehicles: [
+      "lamborghini-revuelto-hire",
+      "ferrari-sf90-hire",
+      "porsche-911-gt3-rs-hire",
+      "lamborghini-huracan-performante-spyder-hire",
+      "lamborghini-urus-performante-hire",
+      "audi-r8-spyder-hire",
+      "lamborghini-huracan-sto-hire",
+      "ferrari-488-hire",
+      "lamborghini-aventador-svj-hire",
+    ],
     process: [
       { title: "Tell us your plans", body: "Share the dates, the occasion and the car you have in mind — or let us recommend one." },
       { title: "We confirm availability", body: "We check the fleet and confirm everything you need to know before you commit." },
@@ -237,6 +248,15 @@ export const services: ServiceContent[] = [
       "Nationwide delivery available, subject to vehicle and location",
     ],
     occasions: ["Weddings", "Corporate & business", "Celebrations", "Weekend escapes"],
+    recommendedVehicles: [
+      "rolls-royce-phantom-hire",
+      "ferrari-purosangue-hire",
+      "rolls-royce-cullinan-hire",
+      "rolls-royce-cullinan-series-2-hire",
+      "rolls-royce-spectre-hire",
+      "rolls-royce-dawn-hire",
+      "land-rover-defender-hire",
+    ],
     faqs: [
       { question: "What counts as a luxury car?", answer: "Our luxury collection ranges from prestige saloons and SUVs to supercars — Rolls-Royce, Lamborghini, Mercedes-AMG, Range Rover and more. Tell us the occasion and we'll suggest the right fit." },
       { question: "Do you offer both self-drive and chauffeur?", answer: "Yes. Many vehicles are available either way. We'll confirm which option suits your plans." },
@@ -382,7 +402,7 @@ export const services: ServiceContent[] = [
       "Available across Birmingham and nationwide",
     ],
     occasions: ["Ceremonies", "Receptions", "Wedding photography", "Bridal party travel"],
-    recommendedVehicles: ["rolls-royce-ghost-hire", "rolls-royce-cullinan-hire", "mercedes-amg-g63-hire", "mercedes-v-class-hire"],
+    recommendedVehicles: ["rolls-royce-phantom-hire", "rolls-royce-ghost-hire", "rolls-royce-cullinan-hire", "rolls-royce-dawn-hire", "rolls-royce-spectre-hire", "mercedes-v-class-hire"],
     faqs: [
       { question: "How far in advance should we book a wedding car?", answer: "As early as possible — popular vehicles and summer dates book up quickly. Get in touch to check availability for your date." },
       { question: "Can you provide cars for the whole wedding party?", answer: "Yes. Alongside the main wedding car, options such as the Mercedes V-Class carry the party in comfort. Tell us your numbers and we'll advise." },

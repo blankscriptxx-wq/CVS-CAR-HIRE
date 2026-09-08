@@ -45,9 +45,14 @@ const labelClass = "block text-[11px] uppercase tracking-wide2 text-silver mb-2"
 export function EnquiryPanel({
   presetVehicle,
   compact = false,
+  registerInterest = false,
 }: {
   presetVehicle?: string;
   compact?: boolean;
+  /** Enquiry-led mode for an incoming vehicle awaiting delivery. Re-labels the
+   * panel and tags the lead so it is identifiable as a register-interest lead
+   * rather than a live-availability booking. */
+  registerInterest?: boolean;
 }) {
   const [step, setStep] = useState(0);
   const [fields, setFields] = useState<Fields>({ ...EMPTY, vehicle: presetVehicle ?? "" });
@@ -57,7 +62,9 @@ export function EnquiryPanel({
 
   /** Full lead + vehicle details, pre-filled for the WhatsApp hand-off. */
   const leadMessage = [
-    "New website availability enquiry.",
+    registerInterest
+      ? "New register-interest enquiry (upcoming vehicle — awaiting delivery)."
+      : "New website availability enquiry.",
     fields.name ? `Name: ${fields.name}` : "",
     fields.mobile ? `Mobile: ${fields.mobile}` : "",
     fields.vehicle ? `Interested in: ${fields.vehicle}` : "Interested in: not sure yet",
@@ -69,14 +76,21 @@ export function EnquiryPanel({
     .filter(Boolean)
     .join("\n");
 
+  const intent = registerInterest ? "register-interest" : "hire";
+
   const next = () => {
-    if (step === 0) track("begin_enquiry", { vehicle: fields.vehicle || "unspecified" });
+    if (step === 0)
+      track("begin_enquiry", { vehicle: fields.vehicle || "unspecified", intent });
     setStep((s) => Math.min(s + 1, 2));
   };
   const back = () => setStep((s) => Math.max(s - 1, 0));
 
   function submit() {
-    track("submit_enquiry", { vehicle: fields.vehicle || "unspecified", occasion: fields.occasion });
+    track("submit_enquiry", {
+      vehicle: fields.vehicle || "unspecified",
+      occasion: fields.occasion,
+      intent,
+    });
     // Open WhatsApp with the enquiry pre-filled — inside the click gesture so it
     // isn't blocked. WhatsApp is the primary communication channel.
     if (typeof window !== "undefined") {
@@ -86,7 +100,12 @@ export function EnquiryPanel({
     fetch("/api/enquiry", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...fields, ...captureUtm(), source: "quick-enquiry" }),
+      body: JSON.stringify({
+        ...fields,
+        ...captureUtm(),
+        source: "quick-enquiry",
+        intent,
+      }),
     }).catch(() => {});
     setDone(true);
   }
@@ -126,9 +145,9 @@ export function EnquiryPanel({
     <div className="border border-line bg-charcoal/70 p-6 backdrop-blur sm:p-8">
       <div className="flex items-center justify-between">
         <div>
-          <span className="eyebrow">Check Availability</span>
+          <span className="eyebrow">{registerInterest ? "Register Interest" : "Check Availability"}</span>
           <h3 className={`mt-2 font-display ${compact ? "text-2xl" : "text-3xl"} text-warm-white`}>
-            Find your car
+            {registerInterest ? "Register your interest" : "Find your car"}
           </h3>
         </div>
         <span className="text-xs text-silver">Step {step + 1} of 3</span>
@@ -324,7 +343,7 @@ export function EnquiryPanel({
             onClick={submit}
             className="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 bg-champagne px-6 text-xs font-medium uppercase tracking-wide2 text-black hover:bg-champagne-soft disabled:opacity-60"
           >
-            Submit Enquiry <ArrowRight className="h-4 w-4" />
+            {registerInterest ? "Register Interest" : "Submit Enquiry"} <ArrowRight className="h-4 w-4" />
           </button>
         )}
       </div>

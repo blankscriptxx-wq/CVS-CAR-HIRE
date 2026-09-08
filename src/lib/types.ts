@@ -94,6 +94,22 @@ export interface Vehicle {
   excessMileageCharge?: number; // GBP/mile
 
   availabilityStatus: AvailabilityStatus;
+  /**
+   * Lifecycle status, independent of fleet visibility and indexability:
+   *  - "available": in the live fleet, hireable now.
+   *  - "incoming": awaiting delivery. Page is live and indexable, but CTAs are
+   *    enquiry/register-interest led and no availability/pricing is asserted.
+   * Defaults to "available" when unset.
+   */
+  status?: "available" | "incoming";
+  /**
+   * Controls whether the vehicle appears in the main Fleet listing and
+   * category auto-listings. Defaults to true. IMPORTANT: this is purely a
+   * merchandising control — it does NOT affect indexability, the sitemap or the
+   * permanent URL, so an "incoming" car can be hidden from Fleet while its SEO
+   * landing page is fully live and crawlable.
+   */
+  showInFleet?: boolean;
   featured?: boolean;
   newArrival?: boolean;
 

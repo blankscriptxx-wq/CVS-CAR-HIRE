@@ -24,6 +24,11 @@ const hireTypes = [
 // by desirability so the showroom always reads as a deliberate line-up rather
 // than raw file order. Any vehicle not listed falls to the end.
 const FLEET_ORDER = [
+  "lamborghini-revuelto-hire",
+  "ferrari-sf90-hire",
+  "rolls-royce-phantom-hire",
+  "ferrari-purosangue-hire",
+  "porsche-911-gt3-rs-hire",
   "rolls-royce-cullinan-hire",
   "lamborghini-huracan-performante-spyder-hire",
   "lamborghini-urus-performante-hire",

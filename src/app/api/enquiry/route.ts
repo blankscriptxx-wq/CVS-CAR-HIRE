@@ -23,6 +23,8 @@ type EnquiryPayload = {
   occasion?: string;
   message?: string;
   source?: string;
+  /** "register-interest" marks a lead for an incoming vehicle awaiting delivery. */
+  intent?: string;
   utm_source?: string;
   utm_medium?: string;
   utm_campaign?: string;
@@ -85,6 +87,7 @@ export async function POST(request: Request) {
     name: body.name,
     vehicle: body.vehicle,
     source: body.source,
+    intent: body.intent,
   });
   return NextResponse.json({ ok: true, forwarded: false });
 }

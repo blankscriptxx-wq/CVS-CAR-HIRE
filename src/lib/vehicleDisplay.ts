@@ -74,6 +74,28 @@ export function vehicleFaqs(v: Vehicle): FAQ[] {
   const name = vehicleName(v);
   const faqs: FAQ[] = [];
 
+  // Incoming vehicles: enquiry-led FAQs that never assert current availability,
+  // pricing or specification.
+  if (v.status === "incoming") {
+    faqs.push({
+      question: `Can I hire the ${name} now?`,
+      answer: `The ${name} is joining the CVS Hire fleet soon and is not yet available to book. You can register your interest now and we'll contact you as soon as it's available to hire.`,
+    });
+    faqs.push({
+      question: `How do I register interest in the ${name}?`,
+      answer: `Use the register-interest form on this page, or message us on WhatsApp or by phone. Tell us roughly when and where you'd like the ${name} and we'll be in touch the moment it arrives, with pricing and availability.`,
+    });
+    faqs.push({
+      question: `How much will it cost to hire the ${name}?`,
+      answer: `Pricing for the ${name} will be confirmed when the car arrives and joins the fleet. Register your interest and we'll share rates and availability as soon as they're set.`,
+    });
+    faqs.push({
+      question: `Will the ${name} be available self-drive or chauffeur-driven?`,
+      answer: `Hire options for the ${name} will be confirmed on arrival. Let us know how you'd like to use it when you register your interest and we'll advise as soon as the car is available.`,
+    });
+    return faqs;
+  }
+
   faqs.push({
     question: `How do I hire the ${name}?`,
     answer: `Start a conversation with our team via live chat, a quick enquiry or a phone call. Tell us your dates and location and we'll confirm availability for the ${name} and everything you need to know.`,

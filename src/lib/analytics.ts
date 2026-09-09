@@ -53,15 +53,23 @@ export function openCookiePreferences(): void {
 declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
-/** Fire a tracked event. No-ops safely without consent. */
+/**
+ * Fire a tracked event. No-ops safely without consent. Sends to both the
+ * dataLayer (for GTM, if used) and directly to GA4 via gtag, so events like
+ * click_whatsapp and submit_enquiry reach GA4 with or without a GTM container.
+ */
 export function track(event: AnalyticsEvent, params: Params = {}): void {
   if (typeof window === "undefined") return;
   if (!hasConsent()) return;
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event, ...params });
+  if (typeof window.gtag === "function") {
+    window.gtag("event", event, params);
+  }
 }
 
 /** Capture UTM parameters from the URL for attribution / chat context. */

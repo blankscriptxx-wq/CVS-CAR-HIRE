@@ -87,7 +87,7 @@ export const siteConfig = {
 
   // ── Analytics ids (consent-gated, optional) ────────────────
   analytics: {
-    ga4: process.env.NEXT_PUBLIC_GA4_ID || "",
+    ga4: process.env.NEXT_PUBLIC_GA4_ID || "G-EMEB9B0CSB",
     gtm: process.env.NEXT_PUBLIC_GTM_ID || "",
     metaPixel: process.env.NEXT_PUBLIC_META_PIXEL_ID || "",
     tiktokPixel: process.env.NEXT_PUBLIC_TIKTOK_PIXEL_ID || "",

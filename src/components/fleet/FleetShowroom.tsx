@@ -28,39 +28,38 @@ const hireTypes = [
 // mid-and-lower (Purosangue/Phantom in the middle; Revuelto/SF90/GT3 RS toward
 // the end) until their photos land — at which point they can be promoted here.
 const FLEET_ORDER = [
-  // Curated showroom order. Interleaved so no two adjacent cars share a body
-  // type (SUV / supercar / saloon / hatch / MPV rotate) and no two neighbours
-  // share a colour. A set of cars is deliberately held toward the bottom
-  // (Purosangue, SF90, Defender, Revuelto, Huracán Evo, Phantom) so they also
-  // fall to the end of every category view, which ranks by this same order.
+  // Curated showroom order. The top of the grid keeps its prior sequence; six
+  // cars (Phantom, Purosangue, Revuelto, SF90, Huracán Evo, Defender) are woven
+  // into the lower third — spaced between other cars rather than clustered at
+  // the very end — so they sit low here and low in every category view (which
+  // ranks by this same order) without stacking.
   "rolls-royce-cullinan-hire",
-  "rolls-royce-ghost-white-hire",
-  "range-rover-vogue-hire",
-  "vw-golf-r-lapiz-blue-hire",
-  "porsche-911-gt3-rs-hire",
-  "bmw-m3-hire",
   "mercedes-amg-g63-hire",
-  "bmw-3-series-hire",
-  "bmw-x5-hire",
-  "lamborghini-huracan-performante-spyder-hire",
-  "mercedes-amg-g63-red-hire",
-  "mercedes-v-class-hire",
-  "lamborghini-urus-performante-hire",
-  "mercedes-amg-a35-hire",
-  "mercedes-glc-43-amg-hire",
-  "audi-rs3-hire",
-  "range-rover-sport-hire",
-  "audi-r8-spyder-hire",
-  "range-rover-svr-hire",
-  "vw-golf-r-hire",
+  "porsche-911-gt3-rs-hire",
+  "range-rover-vogue-hire",
   "rolls-royce-ghost-hire",
-  // — held toward the bottom (also last in every category) —
-  "ferrari-sf90-hire",
-  "land-rover-defender-hire",
-  "lamborghini-huracan-evo-hire",
+  "lamborghini-urus-performante-hire",
+  "audi-r8-spyder-hire",
+  "range-rover-sport-hire",
+  "bmw-m3-hire",
+  "mercedes-amg-g63-red-hire",
+  "lamborghini-huracan-performante-spyder-hire",
+  "range-rover-svr-hire",
+  "rolls-royce-ghost-white-hire",
+  "audi-rs3-hire",
+  "bmw-x5-hire",
+  "vw-golf-r-lapiz-blue-hire",
   "rolls-royce-phantom-hire",
-  "lamborghini-revuelto-hire",
+  "mercedes-amg-a35-hire",
   "ferrari-purosangue-hire",
+  "vw-golf-r-hire",
+  "lamborghini-revuelto-hire",
+  "mercedes-glc-43-amg-hire",
+  "ferrari-sf90-hire",
+  "bmw-3-series-hire",
+  "lamborghini-huracan-evo-hire",
+  "mercedes-v-class-hire",
+  "land-rover-defender-hire",
 ];
 
 // Curated running order for the chauffeur line-up (applied to the default

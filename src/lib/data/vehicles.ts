@@ -1050,7 +1050,13 @@ export const vehicles: Vehicle[] = [
     model: "Revuelto",
     category: "supercar",
     bodyType: "coupe",
-    heroImage: imgTBD("lamborghini-revuelto-hire", "hero.jpg", "Lamborghini Revuelto for supercar hire at CVS Hire"),
+    heroImage: img("lamborghini-revuelto-hire", "hero.jpg", "Blue Lamborghini Revuelto V12 hybrid, front three-quarter — supercar hire from CVS Car Hire"),
+    thumbnail: img("lamborghini-revuelto-hire", "rear-3q.jpg", "Blue Lamborghini Revuelto V12 hybrid, rear three-quarter, available to hire from CVS Car Hire"),
+    gallery: [
+      img("lamborghini-revuelto-hire", "front-3q.jpg", "Blue Lamborghini Revuelto, front three-quarter"),
+      img("lamborghini-revuelto-hire", "rear-3q.jpg", "Blue Lamborghini Revuelto, rear three-quarter"),
+      img("lamborghini-revuelto-hire", "rear.jpg", "Blue Lamborghini Revuelto, rear with quad exhausts and active wing"),
+    ],
     shortDescription:
       "Sant'Agata's V12 reborn — a 1,000bhp hybrid flagship and the new benchmark for Lamborghini theatre.",
     fullDescription:

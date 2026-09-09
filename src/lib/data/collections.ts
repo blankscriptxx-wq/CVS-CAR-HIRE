@@ -515,11 +515,11 @@ export const collections: Collection[] = [
   {
     slug: "land-rover",
     name: "Land Rover",
-    heading: "Land Rover Defender Hire",
+    heading: "Land Rover Hire",
     eyebrow: "Land Rover Hire",
-    metaTitle: "Land Rover Defender Hire UK | Register Interest | CVS Hire",
+    metaTitle: "Land Rover Models to Hire | Defender & Range Rover | CVS Hire",
     metaDescription:
-      "Land Rover Defender hire is joining CVS Hire soon — the reinvented luxury 4x4 icon. Register your interest for upcoming availability, or hire a Range Rover today.",
+      "Explore the Land Rover models to hire with CVS Hire — the reinvented Defender joining soon, plus the Range Rover Vogue, Sport and SVR available now, in Birmingham and nationwide.",
     keywords: [
       "land rover hire",
       "land rover defender hire",

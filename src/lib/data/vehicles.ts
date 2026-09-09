@@ -32,7 +32,7 @@ export const vehicles: Vehicle[] = [
     category: "supercar",
     bodyType: "convertible",
     heroImage: img("lamborghini-huracan-performante-spyder-hire", "pro-royal-exchange.jpg", "Matte black Lamborghini Huracán Performante Spyder at the Royal Exchange, London — supercar hire from CVS Car Hire"),
-    thumbnail: img("lamborghini-huracan-performante-spyder-hire", "pro-mayfair.jpg", "Matte black Lamborghini Huracán Performante Spyder on a Mayfair street at night, available to hire from CVS Car Hire"),
+    thumbnail: img("lamborghini-huracan-performante-spyder-hire", "g-studio-front3q.jpg", "Matte black Lamborghini Huracán Performante Spyder, front three-quarter studio, available to hire from CVS Car Hire"),
     gallery: [
       // Studio shots first
       img("lamborghini-huracan-performante-spyder-hire", "g-studio-front3q.jpg", "Matte black Lamborghini Huracán Performante Spyder, front three-quarter studio"),
@@ -94,7 +94,7 @@ export const vehicles: Vehicle[] = [
     category: "supercar",
     bodyType: "convertible",
     heroImage: img("audi-r8-spyder-hire", "pro-courtyard.jpg", "Blue Audi R8 Spyder V10 in a contemporary courtyard at dusk — self-drive supercar hire from CVS Car Hire"),
-    thumbnail: img("audi-r8-spyder-hire", "pro-tower-bridge.jpg", "Blue Audi R8 Spyder V10 by Tower Bridge, London, available to hire from CVS Car Hire"),
+    thumbnail: img("audi-r8-spyder-hire", "r-belgravia.jpg", "Blue Audi R8 Spyder V10 outside a Belgravia townhouse, available to hire from CVS Car Hire"),
     gallery: [
       // Studio shots first
       img("audi-r8-spyder-hire", "r-studio-front3q.jpg", "Blue Audi R8 Spyder V10, front three-quarter studio"),
@@ -162,7 +162,7 @@ export const vehicles: Vehicle[] = [
     category: "luxury-4x4",
     bodyType: "suv",
     heroImage: img("lamborghini-urus-performante-hire", "pro-tower-bridge.jpg", "Yellow Lamborghini Urus Performante by Tower Bridge, London — luxury super-SUV hire from CVS Car Hire"),
-    thumbnail: img("lamborghini-urus-performante-hire", "pro-royal-exchange.jpg", "Yellow Lamborghini Urus Performante at the Royal Exchange, London, available to hire from CVS Car Hire"),
+    thumbnail: img("lamborghini-urus-performante-hire", "g-canary.jpg", "Yellow Lamborghini Urus Performante at Canary Wharf, available to hire from CVS Car Hire"),
     gallery: [
       // Studio shots first
       img("lamborghini-urus-performante-hire", "g-studio-front3q.jpg", "Yellow Lamborghini Urus Performante, front three-quarter studio"),
@@ -220,10 +220,11 @@ export const vehicles: Vehicle[] = [
     model: "G 63",
     category: "luxury-4x4",
     bodyType: "suv",
-    heroImage: img("mercedes-amg-g63-hire", "pro-royal-exchange.jpg", "Black Mercedes-AMG G 63 at the Royal Exchange, London — luxury 4x4 hire from CVS Car Hire Birmingham"),
-    thumbnail: img("mercedes-amg-g63-hire", "pro-tower-bridge.jpg", "Black Mercedes-AMG G 63 by Tower Bridge, London, available to hire from CVS Car Hire"),
+    heroImage: img("mercedes-amg-g63-hire", "g-tower-bridge.jpg", "Black Mercedes-AMG G 63 by Tower Bridge, London at dusk — luxury 4x4 hire from CVS Car Hire Birmingham"),
+    thumbnail: img("mercedes-amg-g63-hire", "pro-royal-exchange.jpg", "Black Mercedes-AMG G 63 at the Royal Exchange, London, available to hire from CVS Car Hire"),
     gallery: [
       img("mercedes-amg-g63-hire", "g-studio-front3q.jpg", "Mercedes-AMG G 63 front three-quarter studio shot"),
+      img("mercedes-amg-g63-hire", "pro-royal-exchange.jpg", "Black Mercedes-AMG G 63 at the Royal Exchange, London"),
       img("mercedes-amg-g63-hire", "g-studio-side.jpg", "Mercedes-AMG G 63 side profile studio shot"),
       img("mercedes-amg-g63-hire", "g-studio-front.jpg", "Mercedes-AMG G 63 head-on front studio shot"),
       img("mercedes-amg-g63-hire", "g-studio-rear3q.jpg", "Mercedes-AMG G 63 rear three-quarter studio shot with side-hinged spare wheel"),
@@ -279,7 +280,7 @@ export const vehicles: Vehicle[] = [
     category: "luxury-4x4",
     bodyType: "suv",
     heroImage: img("rolls-royce-cullinan-hire", "pro-estate-3q.jpg", "Black Rolls-Royce Cullinan Black Badge at a country estate, front three-quarter — luxury SUV and chauffeur hire from CVS Car Hire"),
-    thumbnail: img("rolls-royce-cullinan-hire", "pro-tower-bridge.jpg", "Black Rolls-Royce Cullinan Black Badge by Tower Bridge, London, available to hire from CVS Car Hire"),
+    thumbnail: img("rolls-royce-cullinan-hire", "g-highlands.jpg", "Black Rolls-Royce Cullinan Black Badge in the Scottish Highlands, available to hire from CVS Car Hire"),
     gallery: [
       // Studio shots first
       img("rolls-royce-cullinan-hire", "g-studio-front3q.jpg", "Black Rolls-Royce Cullinan Black Badge, front three-quarter studio"),
@@ -340,11 +341,12 @@ export const vehicles: Vehicle[] = [
     year: 2024,
     category: "luxury-4x4",
     bodyType: "suv",
-    heroImage: img("range-rover-vogue-hire", "pro-tower-bridge.jpg", "Matte black Range Rover Vogue by Tower Bridge, London — luxury 4x4 and chauffeur hire from CVS Car Hire"),
+    heroImage: img("range-rover-vogue-hire", "g-manor.jpg", "Matte black Range Rover Vogue outside a country manor — luxury 4x4 and chauffeur hire from CVS Car Hire"),
     thumbnail: img("range-rover-vogue-hire", "pro-royal-exchange.jpg", "Matte black Range Rover Vogue at the Royal Exchange, London, available to hire from CVS Car Hire"),
     gallery: [
       // Studio shots first
       img("range-rover-vogue-hire", "g-studio-front3q.jpg", "Matte black Range Rover Vogue, front three-quarter studio"),
+      img("range-rover-vogue-hire", "pro-tower-bridge.jpg", "Matte black Range Rover Vogue by Tower Bridge, London"),
       img("range-rover-vogue-hire", "g-studio-side.jpg", "Matte black Range Rover Vogue, side profile studio"),
       img("range-rover-vogue-hire", "g-studio-front.jpg", "Matte black Range Rover Vogue, front studio"),
       img("range-rover-vogue-hire", "g-studio-rear.jpg", "Matte black Range Rover Vogue, rear three-quarter studio"),
@@ -392,7 +394,7 @@ export const vehicles: Vehicle[] = [
     category: "luxury-4x4",
     bodyType: "suv",
     heroImage: img("range-rover-sport-hire", "pro-royal-exchange.jpg", "Range Rover Sport at the Royal Exchange, London — luxury 4x4 hire from CVS Car Hire Birmingham"),
-    thumbnail: img("range-rover-sport-hire", "pro-tower-bridge.jpg", "Range Rover Sport by Tower Bridge, London, available to hire from CVS Car Hire"),
+    thumbnail: img("range-rover-sport-hire", "g-belgravia.jpg", "Range Rover Sport outside a Belgravia townhouse, available to hire from CVS Car Hire"),
     gallery: [
       img("range-rover-sport-hire", "g-studio-front3q.jpg", "Range Rover Sport front three-quarter studio shot"),
       img("range-rover-sport-hire", "g-studio-side.jpg", "Range Rover Sport side profile studio shot"),
@@ -441,10 +443,11 @@ export const vehicles: Vehicle[] = [
     model: "Range Rover Sport SVR",
     category: "luxury-4x4",
     bodyType: "suv",
-    heroImage: img("range-rover-svr-hire", "pro-courtyard.jpg", "Matte black Range Rover Sport SVR in a contemporary courtyard — performance 4x4 hire from CVS Car Hire"),
+    heroImage: img("range-rover-svr-hire", "hero.jpg", "Matte black Range Rover Sport SVR at a country manor — performance 4x4 hire from CVS Car Hire"),
     thumbnail: img("range-rover-svr-hire", "pro-mayfair.jpg", "Matte black Range Rover Sport SVR on a Mayfair street at night, available to hire from CVS Car Hire"),
     gallery: [
       img("range-rover-svr-hire", "g-studio-front3q.jpg", "Range Rover Sport SVR front three-quarter studio shot"),
+      img("range-rover-svr-hire", "pro-courtyard.jpg", "Matte black Range Rover Sport SVR in a contemporary courtyard"),
       img("range-rover-svr-hire", "g-studio-side.jpg", "Range Rover Sport SVR side profile studio shot"),
       img("range-rover-svr-hire", "g-studio-front.jpg", "Range Rover Sport SVR head-on front studio shot"),
       img("range-rover-svr-hire", "g-studio-rear3q.jpg", "Range Rover Sport SVR rear three-quarter studio shot"),

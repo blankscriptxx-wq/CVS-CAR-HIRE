@@ -100,7 +100,7 @@ export const vehicles: Vehicle[] = [
     category: "supercar",
     bodyType: "convertible",
     heroImage: img("audi-r8-spyder-hire", "pro-courtyard.jpg", "Blue Audi R8 Spyder V10 in a contemporary courtyard at dusk — self-drive supercar hire from CVS Car Hire"),
-    thumbnail: img("audi-r8-spyder-hire", "front-3q.jpg", "Blue Audi R8 Spyder V10, front three-quarter, available to hire from CVS Car Hire"),
+    thumbnail: img("audi-r8-spyder-hire", "r-belgravia.jpg", "Blue Audi R8 Spyder V10 in Belgravia, front three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("audi-r8-spyder-hire", "studio-wide-front.jpg", "Audi R8 Spyder — front three-quarter, studio"),
       img("audi-r8-spyder-hire", "studio-front.jpg", "Audi R8 Spyder — head-on, studio"),
@@ -433,7 +433,7 @@ export const vehicles: Vehicle[] = [
     category: "luxury-4x4",
     bodyType: "suv",
     heroImage: img("range-rover-sport-hire", "pro-royal-exchange.jpg", "Range Rover Sport at the Royal Exchange, London — luxury 4x4 hire from CVS Car Hire Birmingham"),
-    thumbnail: img("range-rover-sport-hire", "front-brick.jpg", "Range Rover Sport, front three-quarter, available to hire from CVS Car Hire"),
+    thumbnail: img("range-rover-sport-hire", "g-manor.jpg", "White Range Rover Sport at a country manor, front three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("range-rover-sport-hire", "studio-wide-front.jpg", "Land Rover Range Rover Sport — front three-quarter, studio"),
       img("range-rover-sport-hire", "studio-front.jpg", "Land Rover Range Rover Sport — head-on, studio"),
@@ -488,8 +488,8 @@ export const vehicles: Vehicle[] = [
     model: "Range Rover Sport SVR",
     category: "luxury-4x4",
     bodyType: "suv",
-    heroImage: img("range-rover-svr-hire", "hero.jpg", "Matte black Range Rover Sport SVR at a country manor — performance 4x4 hire from CVS Car Hire"),
-    thumbnail: img("range-rover-svr-hire", "front.jpg", "Matte black Range Rover Sport SVR, front three-quarter, available to hire from CVS Car Hire"),
+    heroImage: img("range-rover-svr-hire", "g-belgravia.jpg", "Matte black Range Rover Sport SVR in Belgravia — performance 4x4 hire from CVS Car Hire"),
+    thumbnail: img("range-rover-svr-hire", "pro-courtyard.jpg", "Matte black Range Rover Sport SVR, front three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("range-rover-svr-hire", "studio-wide-front.jpg", "Land Rover Range Rover Sport SVR — front three-quarter, studio"),
       img("range-rover-svr-hire", "studio-front.jpg", "Land Rover Range Rover Sport SVR — head-on, studio"),

@@ -29,37 +29,36 @@ const hireTypes = [
 // the end) until their photos land — at which point they can be promoted here.
 const FLEET_ORDER = [
   // Curated showroom order. Interleaved so no two adjacent cars share a body
-  // type or camera angle (SUV / supercar / saloon / hatch rotate), and colours
-  // are spread (reds, whites and the two Ghosts / Golf Rs / G-Wagens never sit
-  // side by side). Leads with the fully-photographed halo cars; the three cars
-  // still awaiting their CVS studio shoot sit at the end until their photos land.
+  // type (SUV / supercar / saloon / hatch / MPV rotate) and colours are spread
+  // (reds, whites, greys and the paired Ghosts / Golf Rs / G-Wagens never sit
+  // side by side). Leads with the halo cars; every car is now photographed.
   "rolls-royce-cullinan-hire",
   "lamborghini-revuelto-hire",
-  "mercedes-amg-g63-hire",
+  "rolls-royce-phantom-hire",
+  "ferrari-purosangue-hire",
   "ferrari-sf90-hire",
+  "mercedes-amg-g63-hire",
+  "porsche-911-gt3-rs-hire",
   "range-rover-vogue-hire",
   "lamborghini-huracan-evo-hire",
   "rolls-royce-ghost-hire",
   "lamborghini-urus-performante-hire",
   "audi-r8-spyder-hire",
-  "range-rover-svr-hire",
+  "range-rover-sport-hire",
   "bmw-m3-hire",
   "mercedes-amg-g63-red-hire",
   "lamborghini-huracan-performante-spyder-hire",
-  "range-rover-sport-hire",
+  "range-rover-svr-hire",
   "rolls-royce-ghost-white-hire",
   "audi-rs3-hire",
   "bmw-x5-hire",
   "vw-golf-r-lapiz-blue-hire",
+  "land-rover-defender-hire",
+  "mercedes-amg-a35-hire",
   "mercedes-glc-43-amg-hire",
   "vw-golf-r-hire",
   "bmw-3-series-hire",
-  "mercedes-amg-a35-hire",
   "mercedes-v-class-hire",
-  // — end: awaiting CVS studio photography —
-  "ferrari-purosangue-hire",
-  "porsche-911-gt3-rs-hire",
-  "rolls-royce-phantom-hire",
 ];
 
 // Curated running order for the chauffeur line-up (applied to the default

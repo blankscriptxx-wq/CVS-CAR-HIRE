@@ -624,7 +624,8 @@ export const vehicles: Vehicle[] = [
     model: "GLC 43",
     category: "performance",
     bodyType: "suv",
-    heroImage: img("mercedes-glc-43-amg-hire", "hero.jpg", "Grey Mercedes-AMG GLC 43 Coupé for performance SUV hire at CVS Car Hire"),
+    heroImage: img("mercedes-glc-43-amg-hire", "studio-wide-front.jpg", "Mercedes-AMG GLC 43, front three-quarter — performance SUV hire from CVS Car Hire"),
+    thumbnail: img("mercedes-glc-43-amg-hire", "studio-rear-3q.jpg", "Mercedes-AMG GLC 43, rear three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("mercedes-glc-43-amg-hire", "studio-wide-front.jpg", "Mercedes-AMG GLC 43 — front three-quarter, studio"),
       img("mercedes-glc-43-amg-hire", "studio-front.jpg", "Mercedes-AMG GLC 43 — head-on, studio"),
@@ -753,7 +754,8 @@ export const vehicles: Vehicle[] = [
     model: "Ghost",
     category: "prestige",
     bodyType: "saloon",
-    heroImage: img("rolls-royce-ghost-hire", "hero.jpg", "Black and champagne Rolls-Royce Ghosts from the CVS Car Hire fleet"),
+    heroImage: img("rolls-royce-ghost-hire", "studio-wide-front.jpg", "Rolls-Royce Ghost, front three-quarter — luxury saloon hire from CVS Car Hire"),
+    thumbnail: img("rolls-royce-ghost-hire", "studio-side.jpg", "Rolls-Royce Ghost, side profile, available to hire from CVS Car Hire"),
     gallery: [
       img("rolls-royce-ghost-hire", "studio-wide-front.jpg", "Rolls-Royce Ghost — front three-quarter, studio"),
       img("rolls-royce-ghost-hire", "studio-front.jpg", "Rolls-Royce Ghost — head-on, studio"),
@@ -861,7 +863,8 @@ export const vehicles: Vehicle[] = [
     edition: "Spyder",
     category: "supercar",
     bodyType: "convertible",
-    heroImage: img("lamborghini-huracan-evo-hire", "hero.jpg", "Red Lamborghini Huracán Evo Spyder for supercar hire at CVS Car Hire Birmingham"),
+    heroImage: img("lamborghini-huracan-evo-hire", "studio-wide-front.jpg", "Lamborghini Huracán Evo Spyder, front three-quarter — supercar hire from CVS Car Hire"),
+    thumbnail: img("lamborghini-huracan-evo-hire", "studio-rear-3q.jpg", "Lamborghini Huracán Evo Spyder, rear three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("lamborghini-huracan-evo-hire", "studio-wide-front.jpg", "Lamborghini Huracán Evo Spyder — front three-quarter, studio"),
       img("lamborghini-huracan-evo-hire", "studio-front.jpg", "Lamborghini Huracán Evo Spyder — head-on, studio"),
@@ -906,7 +909,8 @@ export const vehicles: Vehicle[] = [
     model: "M3",
     category: "performance",
     bodyType: "saloon",
-    heroImage: img("bmw-m3-hire", "hero.jpg", "Matte blue BMW M3 with gold wheels for performance car hire at CVS Car Hire Birmingham"),
+    heroImage: img("bmw-m3-hire", "studio-wide-front.jpg", "BMW M3, front three-quarter — performance car hire from CVS Car Hire"),
+    thumbnail: img("bmw-m3-hire", "studio-side.jpg", "BMW M3, side profile, available to hire from CVS Car Hire"),
     gallery: [
       img("bmw-m3-hire", "studio-wide-front.jpg", "BMW M3 — front three-quarter, studio"),
       img("bmw-m3-hire", "studio-front.jpg", "BMW M3 — head-on, studio"),

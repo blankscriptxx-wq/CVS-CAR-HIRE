@@ -42,7 +42,6 @@ export const CITY_SERVICES: CityServiceDef[] = [
       "lamborghini-huracan-performante-spyder-hire",
       "lamborghini-urus-performante-hire",
       "audi-r8-spyder-hire",
-      "ferrari-roma-hire",
     ],
     intro: (loc) =>
       `There is nowhere quite like the right road in a supercar, and ${loc.city} puts some of the best of them within reach. CVS Car Hire brings genuine icons — Ferrari, Lamborghini and the Audi R8 — to ${loc.city}, prepared to the highest standard and ready for a day, a weekend or longer. Whether it is a landmark birthday near ${at(loc.landmarks, 0, "the city")}, a photoshoot or a driving escape beyond ${loc.city}, we help you choose the car and take care of every detail around it.`,
@@ -132,7 +131,6 @@ export const CITY_SERVICES: CityServiceDef[] = [
       "rolls-royce-ghost-hire",
       "rolls-royce-cullinan-hire",
       "mercedes-v-class-hire",
-      "bmw-4-series-convertible-hire",
     ],
     intro: (loc) =>
       `The wedding car is the entrance everyone remembers. CVS Car Hire supplies wedding cars across ${loc.city} — the timeless Rolls-Royce Ghost and Cullinan, the Mercedes V-Class for the wedding party, and elegant convertibles — self-drive or chauffeur-driven. From venues such as ${at(loc.weddingVenues, 0, "your ceremony")} to the reception, we make sure the car is as memorable as the day.`,
@@ -168,7 +166,6 @@ export const CITY_SERVICES: CityServiceDef[] = [
     eyebrow: "The Arrival",
     fleet: [
       "lamborghini-urus-performante-hire",
-      "ferrari-roma-hire",
       "mercedes-amg-g63-hire",
       "lamborghini-huracan-performante-spyder-hire",
     ],

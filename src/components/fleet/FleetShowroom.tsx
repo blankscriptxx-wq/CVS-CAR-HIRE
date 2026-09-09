@@ -52,14 +52,12 @@ const FLEET_ORDER = [
   "vw-golf-r-lapiz-blue-hire",
   "vw-golf-r-hire",
   "mercedes-amg-a35-hire",
-  "bmw-4-series-convertible-hire",
   "bmw-3-series-hire",
   "mercedes-v-class-hire",
   // — end: new supercars (photography to follow) —
   "lamborghini-revuelto-hire",
   "ferrari-sf90-hire",
   "porsche-911-gt3-rs-hire",
-  "ferrari-roma-hire",
 ];
 
 // Curated running order for the chauffeur line-up (applied to the default

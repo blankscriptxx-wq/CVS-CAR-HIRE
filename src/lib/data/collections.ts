@@ -120,7 +120,6 @@ export const collections: Collection[] = [
     ],
     vehicleSlugs: [
       "ferrari-sf90-hire",
-      "ferrari-roma-hire",
       "ferrari-purosangue-hire",
       "ferrari-488-hire",
       "ferrari-12cilindri-hire",
@@ -393,7 +392,7 @@ export const collections: Collection[] = [
       "All are offered self-drive, by the day, the weekend or the week, whether you want a fast weekend in the M3, a practical SUV for a trip, or an executive saloon for business. Deposit, mileage and minimum age are confirmed on enquiry.",
       areasServed("BMW"),
     ],
-    vehicleSlugs: ["bmw-m3-hire", "bmw-x5-hire", "bmw-3-series-hire", "bmw-4-series-convertible-hire"],
+    vehicleSlugs: ["bmw-m3-hire", "bmw-x5-hire", "bmw-3-series-hire"],
     faqs: [
       {
         question: "Which BMWs can I hire?",

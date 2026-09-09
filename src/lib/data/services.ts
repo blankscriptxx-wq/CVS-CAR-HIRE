@@ -78,7 +78,6 @@ export const services: ServiceContent[] = [
       "lamborghini-huracan-performante-spyder-hire",
       "lamborghini-urus-performante-hire",
       "audi-r8-spyder-hire",
-      "ferrari-roma-hire",
     ],
     process: [
       { title: "Choose your car & dates", body: "Tell us the supercar you have in mind and whether you need it for a day, a weekend or a week — or let us recommend one." },
@@ -125,7 +124,6 @@ export const services: ServiceContent[] = [
       "lamborghini-urus-performante-hire",
       "lamborghini-huracan-performante-spyder-hire",
       "audi-r8-spyder-hire",
-      "ferrari-roma-hire",
     ],
     process: [
       { title: "Tell us your plans", body: "Share how long you need the car, the model you have in mind and roughly how many miles you'll cover." },
@@ -212,7 +210,6 @@ export const services: ServiceContent[] = [
     occasions: ["Between cars", "Business & entrepreneurs", "Content creators", "Trying before buying", "Seasonal driving"],
     recommendedVehicles: [
       "lamborghini-urus-performante-hire",
-      "ferrari-roma-hire",
       "audi-r8-spyder-hire",
       "lamborghini-huracan-performante-spyder-hire",
     ],
@@ -308,7 +305,7 @@ export const services: ServiceContent[] = [
       "Honest advice on the right Ferrari for your occasion",
     ],
     occasions: ["Landmark birthdays", "Weddings (Purosangue)", "Photoshoots & content", "Weekend drives"],
-    recommendedVehicles: ["ferrari-sf90-hire", "ferrari-roma-hire", "ferrari-purosangue-hire", "ferrari-488-hire", "ferrari-12cilindri-hire"],
+    recommendedVehicles: ["ferrari-sf90-hire", "ferrari-purosangue-hire", "ferrari-488-hire", "ferrari-12cilindri-hire"],
     faqs: [
       { question: "Can I hire a Ferrari in Birmingham?", answer: "Yes. CVS Hire is Birmingham-based and offers Ferrari hire across the city and the West Midlands, with nationwide UK delivery available. The SF90, Roma and Purosangue are available now; tell us your dates and we'll confirm availability." },
       { question: "Is Ferrari hire self-drive or chauffeur-driven?", answer: "The SF90 and Roma are offered self-drive. The four-seat Purosangue can be hired self-drive or with a professional chauffeur, which makes it popular for weddings and events." },
@@ -601,7 +598,7 @@ export const services: ServiceContent[] = [
       "Advice on the right BMW for your occasion",
     ],
     occasions: ["Business travel", "Spirited weekends", "Family trips & airport runs", "Open-top summer drives"],
-    recommendedVehicles: ["bmw-m3-hire", "bmw-x5-hire", "bmw-4-series-convertible-hire", "bmw-3-series-hire"],
+    recommendedVehicles: ["bmw-m3-hire", "bmw-x5-hire", "bmw-3-series-hire"],
     faqs: [
       { question: "Can I hire a BMW in Birmingham?", answer: "Yes. CVS Hire is Birmingham-based and offers the BMW M3, X5, 4 Series Convertible and 3 Series for self-drive hire across the city, the West Midlands and nationwide by delivery. Tell us your dates and we'll confirm availability." },
       { question: "Which BMW is best for a weekend away?", answer: "For pure driving enjoyment, the M3. For space and comfort with the family or a group, the X5. If the weather is good, the 4 Series Convertible is hard to beat. Tell us the occasion and we'll recommend the right one." },

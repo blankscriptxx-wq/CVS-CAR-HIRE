@@ -59,7 +59,7 @@ export const locations: LocationContent[] = [
     businessDistricts: ["Mayfair", "The City", "Canary Wharf", "Knightsbridge"],
     landmarks: ["The West End", "Hyde Park", "The Shard", "Harrods"],
     occasions: ["Weddings", "Corporate & premieres", "Music videos", "Weekend hire"],
-    recommendedVehicles: ["rolls-royce-cullinan-hire", "lamborghini-urus-performante-hire", "mercedes-amg-g63-hire", "ferrari-roma-hire"],
+    recommendedVehicles: ["rolls-royce-cullinan-hire", "lamborghini-urus-performante-hire", "mercedes-amg-g63-hire"],
     nearbyLocations: ["birmingham"],
     faqs: [
       { question: "Do you deliver luxury cars to London?", answer: "Yes. We deliver to London through our nationwide service — your chosen vehicle brought to your home, hotel or venue, subject to availability. Contact us with your address and dates." },
@@ -141,7 +141,7 @@ export const locations: LocationContent[] = [
     businessDistricts: ["Leicester city centre", "Meridian Business Park"],
     landmarks: ["King Power Stadium", "Highcross", "National Space Centre"],
     occasions: ["Weddings", "Proms", "Corporate", "Celebrations"],
-    recommendedVehicles: ["lamborghini-urus-performante-hire", "mercedes-amg-g63-hire", "range-rover-sport-hire", "ferrari-roma-hire"],
+    recommendedVehicles: ["lamborghini-urus-performante-hire", "mercedes-amg-g63-hire", "range-rover-sport-hire"],
     nearbyLocations: ["coventry", "nottingham", "birmingham"],
     faqs: [
       { question: "Do you deliver to Leicester?", answer: "Yes — Leicester is an easy journey from our Birmingham base, so delivery and collection are straightforward. Contact us to check availability." },
@@ -249,7 +249,7 @@ export const locations: LocationContent[] = [
     businessDistricts: ["Liverpool Business District", "Royal Albert Dock", "Liverpool ONE"],
     landmarks: ["Royal Albert Dock", "Royal Liver Building", "Anfield", "Sefton Park"],
     occasions: ["Weddings", "Proms", "Corporate events", "Celebrations"],
-    recommendedVehicles: ["rolls-royce-cullinan-hire", "lamborghini-urus-performante-hire", "audi-r8-spyder-hire", "ferrari-roma-hire"],
+    recommendedVehicles: ["rolls-royce-cullinan-hire", "lamborghini-urus-performante-hire", "audi-r8-spyder-hire"],
     nearbyLocations: ["manchester", "leeds"],
     faqs: [
       { question: "Do you deliver to Liverpool?", answer: "Yes — Liverpool is covered by our nationwide delivery service, subject to vehicle and location. Get in touch with your date and address to confirm." },
@@ -303,7 +303,7 @@ export const locations: LocationContent[] = [
     businessDistricts: ["Temple Quay", "Bristol Harbourside", "Cabot Circus"],
     landmarks: ["Clifton Suspension Bridge", "Bristol Harbourside", "SS Great Britain"],
     occasions: ["Weddings", "Proms", "Corporate events", "Celebrations"],
-    recommendedVehicles: ["rolls-royce-cullinan-hire", "lamborghini-urus-performante-hire", "mercedes-amg-g63-hire", "ferrari-roma-hire"],
+    recommendedVehicles: ["rolls-royce-cullinan-hire", "lamborghini-urus-performante-hire", "mercedes-amg-g63-hire"],
     nearbyLocations: ["cardiff"],
     faqs: [
       { question: "Do you deliver luxury cars to Bristol?", answer: "Yes — Bristol is covered by our nationwide delivery service, subject to vehicle and location. Share your date and address and we'll confirm." },
@@ -357,7 +357,7 @@ export const locations: LocationContent[] = [
     businessDistricts: ["Cardiff Bay", "Callaghan Square", "Cardiff city centre"],
     landmarks: ["Principality Stadium", "Cardiff Castle", "Cardiff Bay", "Bute Park"],
     occasions: ["Weddings", "Proms", "Corporate events", "Celebrations"],
-    recommendedVehicles: ["rolls-royce-cullinan-hire", "lamborghini-huracan-performante-spyder-hire", "mercedes-amg-g63-hire", "ferrari-roma-hire"],
+    recommendedVehicles: ["rolls-royce-cullinan-hire", "lamborghini-huracan-performante-spyder-hire", "mercedes-amg-g63-hire"],
     nearbyLocations: ["bristol"],
     faqs: [
       { question: "Do you deliver luxury cars to Cardiff and South Wales?", answer: "Yes — Cardiff is covered by our nationwide delivery service, subject to vehicle and location. Share your date and address and we'll confirm." },
@@ -466,7 +466,7 @@ export const locations: LocationContent[] = [
     businessDistricts: ["Central Milton Keynes (CMK)", "Kents Hill Business Park"],
     landmarks: ["thecentre:mk", "Stadium MK", "Xscape", "Bletchley Park"],
     occasions: ["Weddings", "Proms", "Corporate events", "Celebrations", "Weekend hire"],
-    recommendedVehicles: ["lamborghini-urus-performante-hire", "ferrari-roma-hire", "mercedes-amg-g63-hire", "rolls-royce-cullinan-hire"],
+    recommendedVehicles: ["lamborghini-urus-performante-hire", "mercedes-amg-g63-hire", "rolls-royce-cullinan-hire"],
     nearbyLocations: ["birmingham"],
     faqs: [
       { question: "Do you deliver luxury cars to Milton Keynes?", answer: "Yes — MK is a straight run down the M1 from our Birmingham base, so delivery and collection are simple. We deliver to your home, hotel or venue, subject to vehicle and location." },
@@ -494,7 +494,7 @@ export const locations: LocationContent[] = [
     businessDistricts: ["Oxford city centre", "Oxford Science Park", "Botley Road"],
     landmarks: ["The dreaming spires", "Blenheim Palace", "Ashmolean Museum", "Radcliffe Camera"],
     occasions: ["Weddings", "Celebrations", "Corporate & college events", "Weekend hire"],
-    recommendedVehicles: ["rolls-royce-cullinan-hire", "ferrari-roma-hire", "lamborghini-urus-performante-hire", "mercedes-amg-g63-hire"],
+    recommendedVehicles: ["rolls-royce-cullinan-hire", "lamborghini-urus-performante-hire", "mercedes-amg-g63-hire"],
     nearbyLocations: ["birmingham"],
     faqs: [
       { question: "Do you deliver luxury cars to Oxford?", answer: "Yes — we deliver to Oxford and across Oxfordshire through our nationwide service via the M40, bringing your chosen vehicle to your home, hotel or venue, subject to availability." },

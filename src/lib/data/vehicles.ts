@@ -86,7 +86,7 @@ export const vehicles: Vehicle[] = [
     monthlyPriceFrom: 8900,
     excessMileageCharge: 2.0,
     recommendedOccasions: ["self-drive", "birthday", "production", "weekend"],
-    relatedVehicles: ["audi-r8-spyder-hire", "ferrari-roma-hire", "lamborghini-urus-performante-hire"],
+    relatedVehicles: ["audi-r8-spyder-hire", "lamborghini-urus-performante-hire"],
     metaTitle: "Lamborghini Huracán Performante Spyder Hire | CVS Car Hire",
     metaDescription:
       "Hire the Lamborghini Huracán Performante Spyder in Birmingham. Self-drive supercar hire with nationwide UK delivery. Check availability with CVS Car Hire.",
@@ -152,7 +152,7 @@ export const vehicles: Vehicle[] = [
     monthlyPriceFrom: 6500,
     excessMileageCharge: 1.85,
     recommendedOccasions: ["self-drive", "weekend", "birthday", "production"],
-    relatedVehicles: ["lamborghini-huracan-performante-spyder-hire", "ferrari-roma-hire", "bmw-4-series-convertible-hire"],
+    relatedVehicles: ["lamborghini-huracan-performante-spyder-hire"],
     knowledgeFaqs: [
       { question: "What engine does the Audi R8 Spyder have?", answer: "The R8 Spyder is powered by a naturally aspirated 5.2-litre V10 — closely related to the Lamborghini Huracán's engine — producing around 570–620 PS depending on version, driving all four wheels through quattro all-wheel drive." },
       { question: "How fast is the Audi R8 Spyder?", answer: "Audi quotes 0–100 km/h (0–62 mph) in around 3.4–3.5 seconds and a top speed above 320 km/h (roughly 200 mph), with the roof down for open-top drama." },
@@ -219,7 +219,7 @@ export const vehicles: Vehicle[] = [
     monthlyPriceFrom: 8900,
     excessMileageCharge: 2.0,
     recommendedOccasions: ["self-drive", "wedding", "production", "corporate", "weekend"],
-    relatedVehicles: ["mercedes-amg-g63-hire", "rolls-royce-cullinan-hire", "ferrari-roma-hire"],
+    relatedVehicles: ["mercedes-amg-g63-hire", "rolls-royce-cullinan-hire"],
     knowledgeFaqs: [
       { question: "What is the difference between the Urus Performante and the standard Urus?", answer: "The Urus Performante is the more focused, driver-oriented version: it is lighter, lower and stiffer than the standard Urus, with more power (around 666 PS), revised styling and a sharper chassis aimed at on-road performance." },
       { question: "What engine does the Lamborghini Urus Performante have?", answer: "The Urus Performante uses a 4.0-litre twin-turbo V8 producing around 666 PS (about 657 bhp), driving all four wheels through an eight-speed automatic gearbox." },
@@ -881,7 +881,9 @@ export const vehicles: Vehicle[] = [
     selfDriveAvailable: true,
     chauffeurAvailable: false,
     availabilityStatus: "available",
-    featured: true,
+    featured: false,
+    // Archived — removed from the live fleet listing (kept for reference).
+    showInFleet: false,
     recommendedOccasions: ["self-drive", "weekend", "birthday"],
     relatedVehicles: ["audi-r8-spyder-hire", "audi-rs3-hire", "vw-golf-r-hire"],
     metaTitle: "BMW 4 Series Convertible Hire Birmingham | CVS Car Hire",
@@ -980,7 +982,7 @@ export const vehicles: Vehicle[] = [
     weeklyPriceFrom: 5000,
     monthlyPriceFrom: 8900,
     recommendedOccasions: ["self-drive", "birthday", "production", "weekend"],
-    relatedVehicles: ["lamborghini-huracan-performante-spyder-hire", "audi-r8-spyder-hire", "ferrari-roma-hire"],
+    relatedVehicles: ["lamborghini-huracan-performante-spyder-hire", "audi-r8-spyder-hire"],
     metaTitle: "Lamborghini Huracán Evo Spyder Hire | CVS Car Hire",
     metaDescription:
       "Hire the Lamborghini Huracán Evo Spyder in Birmingham with CVS Car Hire. Self-drive supercar hire, nationwide UK delivery available. Check availability today.",
@@ -1037,7 +1039,8 @@ export const vehicles: Vehicle[] = [
     model: "A 35",
     category: "performance",
     bodyType: "hatchback",
-    heroImage: img("mercedes-amg-a35-hire", "hero.jpg", "Black Mercedes-AMG A 35 for performance car hire at CVS Car Hire Birmingham"),
+    heroImage: img("mercedes-amg-a35-hire", "studio-wide-front.jpg", "Black Mercedes-AMG A 35, front three-quarter — performance car hire from CVS Car Hire"),
+    thumbnail: img("mercedes-amg-a35-hire", "studio-rear-3q.jpg", "Black Mercedes-AMG A 35, rear three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("mercedes-amg-a35-hire", "studio-wide-front.jpg", "Mercedes-AMG A 35 — front three-quarter, studio"),
       img("mercedes-amg-a35-hire", "studio-front.jpg", "Mercedes-AMG A 35 — head-on, studio"),
@@ -1146,7 +1149,8 @@ export const vehicles: Vehicle[] = [
     edition: "M Sport",
     category: "prestige",
     bodyType: "saloon",
-    heroImage: img("bmw-3-series-hire", "hero.jpg", "Grey BMW 3 Series M Sport for prestige car hire at CVS Car Hire Birmingham"),
+    heroImage: img("bmw-3-series-hire", "studio-wide-front.jpg", "Grey BMW 3 Series M Sport, front three-quarter — prestige car hire from CVS Car Hire"),
+    thumbnail: img("bmw-3-series-hire", "studio-rear-3q.jpg", "Grey BMW 3 Series M Sport, rear three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("bmw-3-series-hire", "studio-wide-front.jpg", "BMW 3 Series M Sport — front three-quarter, studio"),
       img("bmw-3-series-hire", "studio-front.jpg", "BMW 3 Series M Sport — head-on, studio"),
@@ -1187,7 +1191,7 @@ export const vehicles: Vehicle[] = [
     weeklyPriceFrom: 800,
     monthlyPriceFrom: 1800,
     recommendedOccasions: ["self-drive", "corporate", "weekend"],
-    relatedVehicles: ["bmw-4-series-convertible-hire", "mercedes-glc-43-amg-hire", "bmw-x5-hire"],
+    relatedVehicles: [ "mercedes-glc-43-amg-hire", "bmw-x5-hire"],
     metaTitle: "BMW 3 Series M Sport Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the BMW 3 Series M Sport in Birmingham with CVS Car Hire. Self-drive prestige saloon, nationwide UK delivery available. Check availability today.",
@@ -1217,7 +1221,8 @@ export const vehicles: Vehicle[] = [
     selfDriveAvailable: true,
     chauffeurAvailable: false,
     availabilityStatus: "available",
-    // Intentionally not featured — kept off the homepage featured strip.
+    // Archived — removed from the live fleet listing (kept for reference).
+    showInFleet: false,
     recommendedOccasions: ["self-drive", "weekend", "production", "birthday"],
     relatedVehicles: ["lamborghini-huracan-performante-spyder-hire", "audi-r8-spyder-hire", "lamborghini-urus-performante-hire"],
     metaTitle: "Ferrari Roma Hire Birmingham | CVS Car Hire",
@@ -1240,8 +1245,8 @@ export const vehicles: Vehicle[] = [
     model: "Revuelto",
     category: "supercar",
     bodyType: "coupe",
-    heroImage: img("lamborghini-revuelto-hire", "hero.jpg", "Blue Lamborghini Revuelto V12 hybrid, front three-quarter — supercar hire from CVS Car Hire"),
-    thumbnail: img("lamborghini-revuelto-hire", "rear-3q.jpg", "Blue Lamborghini Revuelto V12 hybrid, rear three-quarter, available to hire from CVS Car Hire"),
+    heroImage: img("lamborghini-revuelto-hire", "studio-wide-front.jpg", "Blue Lamborghini Revuelto V12 hybrid, front three-quarter — supercar hire from CVS Car Hire"),
+    thumbnail: img("lamborghini-revuelto-hire", "studio-rear-3q.jpg", "Blue Lamborghini Revuelto V12 hybrid, rear three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("lamborghini-revuelto-hire", "studio-wide-front.jpg", "Lamborghini Revuelto — front three-quarter, studio"),
       img("lamborghini-revuelto-hire", "studio-front.jpg", "Lamborghini Revuelto — head-on, studio"),
@@ -1469,7 +1474,7 @@ export const vehicles: Vehicle[] = [
     status: "incoming",
     showInFleet: false,
     recommendedOccasions: ["self-drive", "birthday", "production", "weekend"],
-    relatedVehicles: ["ferrari-sf90-hire", "lamborghini-huracan-sto-hire", "ferrari-roma-hire"],
+    relatedVehicles: ["ferrari-sf90-hire", "lamborghini-huracan-sto-hire"],
     knowledgeFaqs: [
       { question: "What engine does the Ferrari 488 have?", answer: "The 488 uses a 3.9-litre twin-turbo V8 producing around 670 PS (about 661 bhp). It marked Ferrari's return to turbocharging for its core mid-engined supercar and won multiple International Engine of the Year awards." },
       { question: "How fast is the Ferrari 488?", answer: "Ferrari quotes 0–100 km/h (0–62 mph) in around 3.0 seconds and a top speed of about 330 km/h (roughly 205 mph)." },
@@ -1605,7 +1610,7 @@ export const vehicles: Vehicle[] = [
     status: "incoming",
     showInFleet: false,
     recommendedOccasions: ["self-drive", "weekend", "production", "birthday"],
-    relatedVehicles: ["ferrari-sf90-hire", "ferrari-purosangue-hire", "ferrari-roma-hire"],
+    relatedVehicles: ["ferrari-sf90-hire", "ferrari-purosangue-hire"],
     knowledgeFaqs: [
       { question: "What engine does the Ferrari 12Cilindri have?", answer: "As the name suggests, the 12Cilindri uses a naturally aspirated 6.5-litre V12 producing around 830 PS (about 819 bhp), revving to 9,500 rpm — with no turbocharging or hybrid assistance." },
       { question: "How fast is the Ferrari 12Cilindri?", answer: "Ferrari claims 0–100 km/h (0–62 mph) in around 2.9 seconds and a top speed above 340 km/h (roughly 211 mph)." },

@@ -28,17 +28,19 @@ const hireTypes = [
 // mid-and-lower (Purosangue/Phantom in the middle; Revuelto/SF90/GT3 RS toward
 // the end) until their photos land — at which point they can be promoted here.
 const FLEET_ORDER = [
+  // Interleaved so no two adjacent cars share a body type or camera angle
+  // (coupe / SUV / box-SUV / saloon rotate; G-Wagens and Range Rovers spread out).
   "rolls-royce-cullinan-hire",
   "lamborghini-huracan-performante-spyder-hire",
   "lamborghini-urus-performante-hire",
+  "audi-r8-spyder-hire",
   "mercedes-amg-g63-hire",
+  "range-rover-vogue-hire",
+  "lamborghini-huracan-evo-hire",
+  "range-rover-sport-hire",
   "mercedes-amg-g63-red-hire",
   "rolls-royce-ghost-hire",
-  "audi-r8-spyder-hire",
-  "lamborghini-huracan-evo-hire",
   "range-rover-svr-hire",
-  "range-rover-vogue-hire",
-  "range-rover-sport-hire",
   "bmw-x5-hire",
   "bmw-m3-hire",
   "audi-rs3-hire",

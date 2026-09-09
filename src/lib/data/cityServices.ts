@@ -89,7 +89,7 @@ export const CITY_SERVICES: CityServiceDef[] = [
         answer: `Both — many of our vehicles are available self-drive or chauffeur-driven in ${loc.city}. Tell us the occasion and we'll recommend the right option.`,
       },
     ],
-    metaTitle: (loc) => `Luxury Car Hire ${loc.city} | Prestige Hire | CVS Car Hire`,
+    metaTitle: (loc) => `Luxury Car Hire ${loc.city} | Prestige | CVS Car Hire`,
     metaDescription: (loc) =>
       `Luxury car hire in ${loc.city} — Rolls-Royce, Lamborghini, Mercedes-AMG and more, self-drive or chauffeur from CVS Car Hire.`,
   },
@@ -229,7 +229,7 @@ export const CITY_SERVICES: CityServiceDef[] = [
         answer: `Yes — the V-Class seats up to eight in comfort, ideal for wedding parties, corporate groups and events across ${loc.city}. Self-drive on a standard licence or add a professional chauffeur.`,
       },
     ],
-    metaTitle: (loc) => `Mercedes V-Class Hire ${loc.city} | 8 Seater | CVS Car Hire`,
+    metaTitle: (loc) => `Mercedes V-Class Hire ${loc.city} | 8-Seat | CVS Car Hire`,
     metaDescription: (loc) =>
       `Mercedes V-Class hire in ${loc.city} — luxury 8-seater, self-drive or chauffeur, for airport transfers, weddings and corporate groups.`,
   },

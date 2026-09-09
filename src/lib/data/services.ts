@@ -96,7 +96,7 @@ export const services: ServiceContent[] = [
     ],
     metaTitle: "Short-Term Supercar Hire | CVS Car Hire",
     metaDescription:
-      "Short-term supercar hire in Birmingham and across the UK — hire a Ferrari, Lamborghini or Audi R8 for a day, a weekend or a week. Clear rates, nationwide delivery.",
+      "Short-term supercar hire in Birmingham and the UK — a Ferrari, Lamborghini or Audi R8 for a day, weekend or week, with nationwide delivery.",
   },
   {
     slug: "long-term-supercar-hire",
@@ -166,7 +166,7 @@ export const services: ServiceContent[] = [
     related: ["supercar-subscription", "long-term-hire", "short-term-supercar-hire", "nationwide-delivery"],
     metaTitle: "Long-Term Supercar Hire | CVS Car Hire",
     metaDescription:
-      "Long-term supercar hire in Birmingham and across the UK — Ferrari, Lamborghini and more by the week or month. The supercar experience without ownership or depreciation.",
+      "Long-term supercar hire in Birmingham and the UK — Ferrari, Lamborghini and more by the week or month, without ownership or depreciation.",
   },
   {
     slug: "supercar-subscription",
@@ -226,7 +226,7 @@ export const services: ServiceContent[] = [
     related: ["long-term-supercar-hire", "long-term-hire", "short-term-supercar-hire"],
     metaTitle: "Supercar Subscription | CVS Car Hire",
     metaDescription:
-      "Supercar subscription in the UK — one all-in monthly rate for a genuine supercar, with the freedom to extend or switch. The flexible alternative to leasing or buying.",
+      "Supercar subscription in the UK — one all-in monthly rate for a genuine supercar, with the freedom to extend or switch. A flexible alternative to leasing.",
   },
   {
     slug: "luxury-car-hire",
@@ -743,7 +743,7 @@ export const services: ServiceContent[] = [
     ],
     metaTitle: "Luxury SUV & 4x4 Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Luxury SUV and 4x4 hire in Birmingham and nationwide. Rolls-Royce Cullinan, Mercedes G63 G-Wagon, Range Rover, Lamborghini Urus and more, self-drive or chauffeur.",
+      "Luxury SUV and 4x4 hire in Birmingham and nationwide — Rolls-Royce Cullinan, Mercedes G-Wagon, Range Rover, Lamborghini Urus and more.",
   },
   {
     slug: "chauffeur-hire",
@@ -832,7 +832,7 @@ export const services: ServiceContent[] = [
     ],
     metaTitle: "Prom Car Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Prom car hire in Birmingham. Head-turning supercars and luxury 4x4s — Lamborghini, Ferrari, G-Wagon — chauffeur-driven for a safe, unforgettable night. Book early.",
+      "Prom car hire in Birmingham — head-turning supercars and 4x4s (Lamborghini, Ferrari, G-Wagon), chauffeur-driven for a safe, unforgettable night.",
   },
   {
     slug: "corporate-car-hire",
@@ -862,7 +862,7 @@ export const services: ServiceContent[] = [
     related: ["v-class-hire", "long-term-v-class-hire", "chauffeur-hire", "airport-transfer"],
     metaTitle: "Executive Car Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Executive and corporate car hire in Birmingham and nationwide. Prestige vehicles for executive travel, self-drive or chauffeur, with long-term and monthly business options.",
+      "Executive and corporate car hire in Birmingham and nationwide — prestige vehicles, self-drive or chauffeur, with long-term and monthly options.",
   },
   {
     slug: "v-class-hire",
@@ -915,9 +915,9 @@ export const services: ServiceContent[] = [
       { question: "Can I hire a V-Class for a wedding?", answer: "Absolutely — the V-Class is a favourite for keeping the wedding party together, self-drive or chauffeur-driven. Ask about pairing it with one of our luxury cars for the couple." },
     ],
     related: ["short-term-v-class-hire", "long-term-v-class-hire", "chauffeur-hire", "airport-transfer", "corporate-car-hire"],
-    metaTitle: "Mercedes V-Class Group Hire | Airport & Events | CVS Car Hire",
+    metaTitle: "Mercedes V-Class Group Hire | Airport | CVS Car Hire",
     metaDescription:
-      "Mercedes V-Class hire in Birmingham — luxury 8-seater people carrier, self-drive or chauffeur, for airport transfers, weddings and corporate groups. Nationwide UK delivery.",
+      "Mercedes V-Class hire in Birmingham — luxury 8-seater, self-drive or chauffeur, for airport transfers, weddings and groups. Nationwide delivery.",
   },
   {
     slug: "short-term-v-class-hire",
@@ -965,7 +965,7 @@ export const services: ServiceContent[] = [
     related: ["v-class-hire", "long-term-v-class-hire", "airport-transfer", "wedding-car-hire", "chauffeur-hire"],
     metaTitle: "Short-Term V-Class Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Short-term Mercedes V-Class hire in Birmingham — daily and weekend rates on a luxury 8-seater, self-drive or chauffeur, for weddings, airports and group trips. Nationwide delivery.",
+      "Short-term Mercedes V-Class hire in Birmingham — daily and weekend rates on a luxury 8-seater for weddings, airports and group trips.",
   },
   {
     slug: "long-term-v-class-hire",
@@ -1018,7 +1018,7 @@ export const services: ServiceContent[] = [
     related: ["v-class-hire", "short-term-v-class-hire", "long-term-hire", "corporate-car-hire", "nationwide-delivery"],
     metaTitle: "Long-Term V-Class Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Long-term Mercedes V-Class hire in Birmingham — flexible weekly and monthly rental on a luxury 8-seater, a simple alternative to leasing. For business, family and events. UK delivery.",
+      "Long-term Mercedes V-Class hire in Birmingham — flexible weekly and monthly rental on a luxury 8-seater, for business, family and events.",
   },
   {
     slug: "airport-transfer",
@@ -1120,7 +1120,7 @@ export const services: ServiceContent[] = [
     related: ["long-term-supercar-hire", "long-term-v-class-hire", "supercar-subscription", "corporate-car-hire", "nationwide-delivery"],
     metaTitle: "Long-Term Car Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Long-term car hire in Birmingham — flexible monthly car rental and subscription for premium vehicles, a simple alternative to leasing or contract hire. UK delivery.",
+      "Long-term car hire in Birmingham — flexible monthly rental and subscription for premium vehicles, an alternative to leasing or contract hire.",
   },
   {
     slug: "nationwide-delivery",

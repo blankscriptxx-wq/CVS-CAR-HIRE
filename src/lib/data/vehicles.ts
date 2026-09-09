@@ -81,7 +81,7 @@ export const vehicles: Vehicle[] = [
     excessMileageCharge: 2.0,
     recommendedOccasions: ["self-drive", "birthday", "production", "weekend"],
     relatedVehicles: ["audi-r8-spyder-hire", "ferrari-roma-hire", "lamborghini-urus-performante-hire"],
-    metaTitle: "Lamborghini Huracán Performante Spyder Hire Birmingham | CVS Car Hire",
+    metaTitle: "Lamborghini Huracán Performante Spyder Hire | CVS Car Hire",
     metaDescription:
       "Hire the Lamborghini Huracán Performante Spyder in Birmingham. Self-drive supercar hire with nationwide UK delivery. Check availability with CVS Car Hire.",
   },
@@ -329,7 +329,7 @@ export const vehicles: Vehicle[] = [
       { question: "How fast is the Rolls-Royce Cullinan?", answer: "Rolls-Royce quotes 0–100 km/h (0–62 mph) in around 5.2 seconds, with the top speed limited to 250 km/h (155 mph) — though the Cullinan is built for serene comfort rather than speed." },
       { question: "Is the Rolls-Royce Cullinan good for weddings?", answer: "Yes — the Cullinan's commanding presence and limousine-quality rear cabin make it one of the most requested luxury SUVs for weddings and VIP arrivals, offered chauffeur-driven." },
     ],
-    metaTitle: "Rolls-Royce Cullinan Chauffeur Hire Birmingham | CVS Car Hire",
+    metaTitle: "Rolls-Royce Cullinan Chauffeur Hire | CVS Car Hire",
     metaDescription:
       "Chauffeur-driven Rolls-Royce Cullinan hire in Birmingham with CVS Car Hire — weddings, corporate and occasions. Nationwide UK delivery.",
   },
@@ -826,7 +826,7 @@ export const vehicles: Vehicle[] = [
     monthlyPriceFrom: 8900,
     recommendedOccasions: ["self-drive", "birthday", "production", "weekend"],
     relatedVehicles: ["lamborghini-huracan-performante-spyder-hire", "audi-r8-spyder-hire", "ferrari-roma-hire"],
-    metaTitle: "Lamborghini Huracán Evo Spyder Hire Birmingham | CVS Car Hire",
+    metaTitle: "Lamborghini Huracán Evo Spyder Hire | CVS Car Hire",
     metaDescription:
       "Hire the Lamborghini Huracán Evo Spyder in Birmingham with CVS Car Hire. Self-drive supercar hire, nationwide UK delivery available. Check availability today.",
   },
@@ -1293,7 +1293,7 @@ export const vehicles: Vehicle[] = [
     ],
     metaTitle: "Land Rover Defender Hire UK | CVS Car Hire",
     metaDescription:
-      "Land Rover Defender hire is coming soon to CVS Hire — the reinvented luxury 4x4 icon. Register your interest and we'll confirm availability as soon as it arrives.",
+      "Land Rover Defender hire is coming soon to CVS Hire — the reinvented luxury 4x4 icon. Register your interest for availability.",
   },
   {
     id: "lamborghini-huracan-sto",
@@ -1327,7 +1327,7 @@ export const vehicles: Vehicle[] = [
     ],
     metaTitle: "Lamborghini Huracán STO Hire UK | CVS Car Hire",
     metaDescription:
-      "Lamborghini Huracán STO hire is coming soon to CVS Hire — the road-legal, rear-drive racing V10. Register your interest and we'll confirm availability on arrival.",
+      "Lamborghini Huracán STO hire is coming soon to CVS Hire — the road-legal, rear-drive racing V10. Register your interest for availability.",
   },
   {
     id: "lamborghini-temerario",
@@ -1361,7 +1361,7 @@ export const vehicles: Vehicle[] = [
     ],
     metaTitle: "Lamborghini Temerario Hire UK | CVS Car Hire",
     metaDescription:
-      "Lamborghini Temerario hire is coming soon to CVS Hire — the all-new V8 hybrid successor to the Huracán. Register your interest and we'll confirm availability on arrival.",
+      "Lamborghini Temerario hire is coming soon to CVS Hire — the all-new V8 hybrid successor to the Huracán. Register your interest for availability.",
   },
   {
     id: "ferrari-12cilindri",
@@ -1396,7 +1396,7 @@ export const vehicles: Vehicle[] = [
     ],
     metaTitle: "Ferrari 12Cilindri Hire UK | CVS Car Hire",
     metaDescription:
-      "Ferrari 12Cilindri hire is coming soon to CVS Hire — the naturally aspirated front-engined V12 grand tourer. Register your interest and we'll confirm availability on arrival.",
+      "Ferrari 12Cilindri hire is coming soon to CVS Hire — the naturally aspirated front-engined V12 grand tourer. Register your interest for availability.",
   },
   {
     id: "rolls-royce-cullinan-series-2",
@@ -1432,7 +1432,7 @@ export const vehicles: Vehicle[] = [
     ],
     metaTitle: "Rolls-Royce Cullinan Series II Hire UK | CVS Car Hire",
     metaDescription:
-      "Rolls-Royce Cullinan Series II hire is coming soon to CVS Hire — the updated luxury SUV flagship. Register your interest and we'll confirm availability on arrival.",
+      "Rolls-Royce Cullinan Series II hire is coming soon to CVS Hire — the updated luxury SUV flagship. Register your interest for availability.",
   },
   {
     id: "rolls-royce-spectre",
@@ -1467,7 +1467,7 @@ export const vehicles: Vehicle[] = [
     ],
     metaTitle: "Rolls-Royce Spectre Hire UK | CVS Car Hire",
     metaDescription:
-      "Rolls-Royce Spectre hire is coming soon to CVS Hire — the marque's first all-electric luxury coupé. Register your interest and we'll confirm availability on arrival.",
+      "Rolls-Royce Spectre hire is coming soon to CVS Hire — the marque's first all-electric luxury coupé. Register your interest for availability.",
   },
   {
     id: "rolls-royce-dawn",
@@ -1502,7 +1502,7 @@ export const vehicles: Vehicle[] = [
     ],
     metaTitle: "Rolls-Royce Dawn Hire UK | Register Interest | CVS Car Hire",
     metaDescription:
-      "Rolls-Royce Dawn hire is coming soon to CVS Hire — the open-top four-seat luxury drophead. Register your interest and we'll confirm availability on arrival.",
+      "Rolls-Royce Dawn hire is coming soon to CVS Hire — the open-top four-seat luxury drophead. Register your interest for availability.",
   },
   {
     id: "lamborghini-aventador-svj",
@@ -1536,7 +1536,7 @@ export const vehicles: Vehicle[] = [
     ],
     metaTitle: "Lamborghini Aventador SVJ Hire UK | CVS Car Hire",
     metaDescription:
-      "Lamborghini Aventador SVJ hire is coming soon to CVS Hire — the extreme naturally aspirated V12 flagship. Register your interest and we'll confirm availability on arrival.",
+      "Lamborghini Aventador SVJ hire is coming soon to CVS Hire — the extreme naturally aspirated V12 flagship. Register your interest for availability.",
   },
 ];
 

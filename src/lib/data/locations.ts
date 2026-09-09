@@ -39,7 +39,7 @@ export const locations: LocationContent[] = [
     ],
     metaTitle: "Car Hire Birmingham | Luxury & Supercar | CVS Car Hire",
     metaDescription:
-      "Car hire in Birmingham — luxury, supercar, prestige and performance car hire from CVS Car Hire. Established 2014, 50+ vehicles, self-drive or chauffeur, with local delivery across the West Midlands.",
+      "Luxury, supercar and prestige car hire in Birmingham — established 2014, 50+ vehicles, self-drive or chauffeur, with West Midlands delivery.",
     geo: { lat: 52.4862, lng: -1.8904 },
   },
   {
@@ -65,7 +65,7 @@ export const locations: LocationContent[] = [
       { question: "Do you deliver luxury cars to London?", answer: "Yes. We deliver to London through our nationwide service — your chosen vehicle brought to your home, hotel or venue, subject to availability. Contact us with your address and dates." },
       { question: "Can I hire a supercar in London for the weekend?", answer: "Yes, many of our supercars are available for weekend hire in London via delivery. Get in touch to confirm the car and dates." },
     ],
-    metaTitle: "Luxury Car Hire London | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire London | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury and supercar hire delivered across London. Ferrari, Lamborghini, Rolls-Royce and more, self-drive or chauffeur, subject to availability.",
     geo: { lat: 51.5072, lng: -0.1276 },
@@ -92,7 +92,7 @@ export const locations: LocationContent[] = [
     faqs: [
       { question: "Do you deliver luxury cars to Manchester?", answer: "Yes — Manchester is covered by our nationwide delivery service, subject to vehicle and location. Contact us with your dates and address to confirm." },
     ],
-    metaTitle: "Luxury Car Hire Manchester | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Manchester | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury and supercar hire delivered to Manchester. Lamborghini, Mercedes G63, Rolls-Royce and more, self-drive or chauffeur. Subject to availability. Check now.",
     geo: { lat: 53.4808, lng: -2.2426 },
@@ -119,7 +119,7 @@ export const locations: LocationContent[] = [
     faqs: [
       { question: "Do you deliver to Coventry?", answer: "Yes — Coventry is close to our Birmingham base, so local delivery and collection are quick and simple. Get in touch to check availability for your date." },
     ],
-    metaTitle: "Luxury Car Hire Coventry | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Coventry | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury, wedding and prom car hire in Coventry & Warwickshire. Local delivery from our Birmingham base. Self-drive and chauffeur.",
     geo: { lat: 52.4068, lng: -1.5197 },
@@ -146,7 +146,7 @@ export const locations: LocationContent[] = [
     faqs: [
       { question: "Do you deliver to Leicester?", answer: "Yes — Leicester is an easy journey from our Birmingham base, so delivery and collection are straightforward. Contact us to check availability." },
     ],
-    metaTitle: "Luxury Car Hire Leicester | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Leicester | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury, wedding and prom car hire in Leicester & Leicestershire. Delivery from our Birmingham base. Self-drive and chauffeur.",
     geo: { lat: 52.6369, lng: -1.1398 },
@@ -173,7 +173,7 @@ export const locations: LocationContent[] = [
     faqs: [
       { question: "Do you deliver to Nottingham?", answer: "Yes — Nottingham is served by our delivery service, with an easy route from our Birmingham base. Get in touch to confirm availability." },
     ],
-    metaTitle: "Luxury Car Hire Nottingham | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Nottingham | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury, wedding and prom car hire in Nottingham & Nottinghamshire. Delivery from our Birmingham base. Self-drive and chauffeur.",
     geo: { lat: 52.9548, lng: -1.1581 },
@@ -200,7 +200,7 @@ export const locations: LocationContent[] = [
     faqs: [
       { question: "Do you deliver to Wolverhampton?", answer: "Yes — Wolverhampton is part of our home region, so local delivery and collection are quick and simple. Contact us to check your date." },
     ],
-    metaTitle: "Luxury Car Hire Wolverhampton | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Wolverhampton | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury, wedding and prom car hire in Wolverhampton & the Black Country. Local delivery from our Birmingham base. Self-drive and chauffeur. Check availability.",
     geo: { lat: 52.5862, lng: -2.1288 },
@@ -227,7 +227,7 @@ export const locations: LocationContent[] = [
     faqs: [
       { question: "Do you deliver luxury cars to Leeds?", answer: "Yes — Leeds is covered by our nationwide delivery service, subject to vehicle and location. Share your dates and address and we'll confirm." },
     ],
-    metaTitle: "Luxury Car Hire Leeds | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Leeds | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury, supercar, wedding and prom car hire in Leeds. Nationwide delivery from CVS Car Hire, self-drive and chauffeur. Check availability.",
     geo: { lat: 53.8008, lng: -1.5491 },
@@ -254,7 +254,7 @@ export const locations: LocationContent[] = [
     faqs: [
       { question: "Do you deliver to Liverpool?", answer: "Yes — Liverpool is covered by our nationwide delivery service, subject to vehicle and location. Get in touch with your date and address to confirm." },
     ],
-    metaTitle: "Luxury Car Hire Liverpool | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Liverpool | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury, supercar, wedding and prom car hire in Liverpool. Nationwide delivery from CVS Car Hire, self-drive and chauffeur. Check availability.",
     geo: { lat: 53.4084, lng: -2.9916 },
@@ -281,7 +281,7 @@ export const locations: LocationContent[] = [
     faqs: [
       { question: "Can I hire a supercar to drive in the Peak District?", answer: "Yes — Sheffield sits right on the Peak District, a favourite for driving days. We deliver across the city, subject to vehicle and location. Get in touch to check availability." },
     ],
-    metaTitle: "Luxury Car Hire Sheffield | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Sheffield | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury, supercar, wedding and prom car hire in Sheffield & the Peak District. Nationwide delivery from CVS Car Hire. Check availability.",
     geo: { lat: 53.3811, lng: -1.4701 },
@@ -308,7 +308,7 @@ export const locations: LocationContent[] = [
     faqs: [
       { question: "Do you deliver luxury cars to Bristol?", answer: "Yes — Bristol is covered by our nationwide delivery service, subject to vehicle and location. Share your date and address and we'll confirm." },
     ],
-    metaTitle: "Luxury Car Hire Bristol | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Bristol | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury, supercar, wedding and prom car hire in Bristol. Nationwide delivery from CVS Car Hire, self-drive and chauffeur. Check availability.",
     geo: { lat: 51.4545, lng: -2.5879 },
@@ -335,7 +335,7 @@ export const locations: LocationContent[] = [
     faqs: [
       { question: "Do you deliver to Newcastle and the North East?", answer: "Yes — Newcastle is covered by our nationwide delivery service, subject to vehicle and location. Get in touch with your date and address to confirm." },
     ],
-    metaTitle: "Luxury Car Hire Newcastle | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Newcastle | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury, supercar, wedding and prom car hire in Newcastle upon Tyne. Nationwide delivery from CVS Car Hire. Check availability.",
     geo: { lat: 54.9783, lng: -1.6178 },
@@ -362,7 +362,7 @@ export const locations: LocationContent[] = [
     faqs: [
       { question: "Do you deliver luxury cars to Cardiff and South Wales?", answer: "Yes — Cardiff is covered by our nationwide delivery service, subject to vehicle and location. Share your date and address and we'll confirm." },
     ],
-    metaTitle: "Luxury Car Hire Cardiff | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Cardiff | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury, supercar, wedding and prom car hire in Cardiff. Nationwide delivery from CVS Car Hire, self-drive and chauffeur. Check availability.",
     geo: { lat: 51.4816, lng: -3.1791 },
@@ -389,7 +389,7 @@ export const locations: LocationContent[] = [
     faqs: [
       { question: "Do you deliver to Derby?", answer: "Yes — Derby is within easy reach of our Birmingham base, so delivery and collection are quick. Nationwide delivery is also available, subject to vehicle and location." },
     ],
-    metaTitle: "Luxury Car Hire Derby | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Derby | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury, supercar, wedding and prom car hire in Derby. Delivery from our Birmingham base, self-drive and chauffeur. Check availability.",
     geo: { lat: 52.9228, lng: -1.4767 },
@@ -416,7 +416,7 @@ export const locations: LocationContent[] = [
     faqs: [
       { question: "Do you deliver to Stoke-on-Trent?", answer: "Yes — Stoke sits on the M6 within easy reach of our Birmingham base, so delivery and collection are quick. Nationwide delivery is also available, subject to vehicle and location." },
     ],
-    metaTitle: "Luxury Car Hire Stoke-on-Trent | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Stoke-on-Trent | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury, supercar, wedding and prom car hire in Stoke-on-Trent & Staffordshire. Delivery from our Birmingham base. Check availability.",
     geo: { lat: 53.0027, lng: -2.1794 },
@@ -444,7 +444,7 @@ export const locations: LocationContent[] = [
       { question: "Do you deliver luxury cars to Solihull?", answer: "Yes — Solihull is right beside our Birmingham base, so local collection and delivery to Solihull, Shirley, Dorridge and Knowle are quick and easy. Nationwide delivery is also available, subject to vehicle and location." },
       { question: "Can I hire a car near Birmingham Airport or the NEC?", answer: "Absolutely — both sit on Solihull's edge and we regularly deliver for arrivals and events there. Tell us your pick-up point and dates and we'll confirm." },
     ],
-    metaTitle: "Luxury Car Hire Solihull | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Solihull | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury, supercar, wedding and prom car hire in Solihull — self-drive or chauffeur, with fast local delivery from our nearby Birmingham base. Check availability.",
     geo: { lat: 52.4118, lng: -1.7776 },
@@ -472,7 +472,7 @@ export const locations: LocationContent[] = [
       { question: "Do you deliver luxury cars to Milton Keynes?", answer: "Yes — MK is a straight run down the M1 from our Birmingham base, so delivery and collection are simple. We deliver to your home, hotel or venue, subject to vehicle and location." },
       { question: "Can I hire a supercar in Milton Keynes for the weekend?", answer: "Yes — many of our supercars are available for weekend hire in Milton Keynes via delivery. Get in touch to confirm the car and dates." },
     ],
-    metaTitle: "Luxury Car Hire Milton Keynes | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Milton Keynes | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury and supercar hire delivered across Milton Keynes — Lamborghini, Ferrari, Rolls-Royce and more, self-drive or chauffeur, subject to availability.",
     geo: { lat: 52.0406, lng: -0.7594 },
@@ -500,7 +500,7 @@ export const locations: LocationContent[] = [
       { question: "Do you deliver luxury cars to Oxford?", answer: "Yes — we deliver to Oxford and across Oxfordshire through our nationwide service via the M40, bringing your chosen vehicle to your home, hotel or venue, subject to availability." },
       { question: "Can I hire a wedding car for an Oxfordshire venue?", answer: "Absolutely — the Cotswolds and Oxfordshire have some of the country's finest wedding venues, and we regularly deliver wedding cars there. Share your date and venue and we'll confirm." },
     ],
-    metaTitle: "Luxury Car Hire Oxford | Supercar Hire | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Oxford | Supercars | CVS Car Hire",
     metaDescription:
       "Luxury and supercar hire delivered across Oxford & Oxfordshire — Rolls-Royce, Ferrari, Lamborghini and more, self-drive or chauffeur. Check availability.",
     geo: { lat: 51.7520, lng: -1.2577 },

@@ -80,7 +80,7 @@ export const journalPosts: JournalPost[] = [
       { type: "h3", text: "Plan ahead" },
       { type: "p", text: "Share your brief early — the concept, the look, the dates — and we'll put together the right options. The car should serve the story, and we'll help you get it right." },
     ],
-    metaTitle: "Choosing Luxury Cars for Music Videos & Content | CVS Car Hire",
+    metaTitle: "Luxury Cars for Music Videos & Content | CVS Car Hire",
     metaDescription:
       "How artists and directors use luxury and supercars to elevate music videos and content. Production car hire from CVS Car Hire, Birmingham.",
   },
@@ -114,7 +114,7 @@ export const journalPosts: JournalPost[] = [
     ],
     metaTitle: "Audi RS3 vs Audi R8 Spyder: Which to Hire? | CVS Car Hire",
     metaDescription:
-      "Audi RS3 vs Audi R8 Spyder — which should you hire? Compare the cult five-cylinder super-hatch with the V10 supercar, and choose the right Audi hire for your day.",
+      "Audi RS3 vs R8 Spyder — which to hire? Compare the five-cylinder super-hatch with the V10 supercar and choose the right Audi for your day.",
   },
   {
     slug: "how-much-does-it-cost-to-hire-a-supercar",
@@ -172,7 +172,7 @@ export const journalPosts: JournalPost[] = [
       { type: "h3", text: "Make the entrance of the night" },
       { type: "p", text: "Tell us your date, your venue and the car you have in mind, and we'll take care of the rest. It's a photograph — and a memory — that lasts far longer than the evening itself." },
     ],
-    metaTitle: "The Complete Guide to Prom Car Hire in Birmingham | CVS Car Hire",
+    metaTitle: "Guide to Prom Car Hire in Birmingham | CVS Car Hire",
     metaDescription:
       "Everything you need for prom car hire in Birmingham — choosing the car, how delivery works, chauffeur options and when to book. From CVS Car Hire.",
   },
@@ -198,7 +198,7 @@ export const journalPosts: JournalPost[] = [
     ],
     metaTitle: "Lamborghini Urus vs Huracán: Which to Hire? | CVS Car Hire",
     metaDescription:
-      "Lamborghini Urus vs Huracán — the super-SUV or the V10 supercar? Compare both and choose the right Lamborghini hire for your occasion. From CVS Car Hire, Birmingham.",
+      "Lamborghini Urus vs Huracán — super-SUV or V10 supercar? Compare both and choose the right Lamborghini hire for your occasion.",
   },
   {
     slug: "how-to-hire-a-g-wagon-birmingham",
@@ -244,7 +244,7 @@ export const journalPosts: JournalPost[] = [
       { type: "h3", text: "Secure your date" },
       { type: "p", text: "Wedding dates — especially summer Saturdays — book up months ahead. Share your date and venue and we'll confirm availability and help you choose the Rolls-Royce that fits your day." },
     ],
-    metaTitle: "Rolls-Royce Cullinan vs Ghost: Wedding Car Guide | CVS Car Hire",
+    metaTitle: "Cullinan vs Ghost: Wedding Car Guide | CVS Car Hire",
     metaDescription:
       "Rolls-Royce Cullinan vs Ghost for your wedding — compare the timeless saloon and the commanding SUV, and choose your wedding car. From CVS Car Hire, Birmingham.",
   },
@@ -268,7 +268,7 @@ export const journalPosts: JournalPost[] = [
       { type: "h3", text: "Not sure? Just ask" },
       { type: "p", text: "Share your plans and we'll suggest whether self-drive or chauffeur suits best, and confirm availability for your dates." },
     ],
-    metaTitle: "Self-Drive vs Chauffeur Hire: Which Is Right for You? | CVS Car Hire",
+    metaTitle: "Self-Drive vs Chauffeur Hire Explained | CVS Car Hire",
     metaDescription:
       "Self-drive or chauffeur-driven luxury car hire — which suits your occasion? A simple guide to choosing, from CVS Car Hire, Birmingham.",
   },
@@ -342,9 +342,9 @@ export const journalPosts: JournalPost[] = [
       { type: "h3", text: "Explore long-term hire" },
       { type: "p", text: "Tell us the car, the duration and roughly the mileage you need, and we'll put together the right arrangement. It's the supercar experience — on your terms." },
     ],
-    metaTitle: "Long-Term Supercar Hire: The Smart Alternative to Buying | CVS Car Hire",
+    metaTitle: "Long-Term Supercar Hire vs Buying a Car | CVS Car Hire",
     metaDescription:
-      "Long-term supercar hire explained — the flexible, monthly alternative to leasing or buying, with no deposit, depreciation or resale. From CVS Car Hire, Birmingham.",
+      "Long-term supercar hire explained — the flexible monthly alternative to leasing or buying, with no deposit, depreciation or resale.",
   },
   {
     slug: "lamborghini-revuelto-vs-ferrari-sf90",
@@ -377,7 +377,7 @@ export const journalPosts: JournalPost[] = [
     ],
     metaTitle: "Lamborghini Revuelto vs Ferrari SF90 | CVS Car Hire",
     metaDescription:
-      "Lamborghini Revuelto vs Ferrari SF90 compared — engine, power, performance and character — to help you choose which hybrid flagship to hire. CVS Hire, Birmingham & UK.",
+      "Lamborghini Revuelto vs Ferrari SF90 — engine, power, performance and character, to help you choose which hybrid flagship to hire.",
   },
   {
     slug: "lamborghini-urus-vs-mercedes-g63",
@@ -410,7 +410,7 @@ export const journalPosts: JournalPost[] = [
     ],
     metaTitle: "Lamborghini Urus vs Mercedes G63 | CVS Car Hire",
     metaDescription:
-      "Lamborghini Urus Performante vs Mercedes-AMG G63 compared — performance, character and presence — to help you choose which super-SUV to hire. CVS Hire, Birmingham & UK.",
+      "Urus Performante vs Mercedes-AMG G63 — performance, character and presence, to help you choose which super-SUV to hire.",
   },
   {
     slug: "ferrari-purosangue-vs-rolls-royce-cullinan",
@@ -474,7 +474,7 @@ export const journalPosts: JournalPost[] = [
       { href: "/fleet/lamborghini-huracan-sto-hire", label: "Lamborghini Huracán STO" },
       { href: "/services/supercar-hire", label: "Supercar hire" },
     ],
-    metaTitle: "Porsche 911 GT3 RS vs Lamborghini Huracán STO | CVS Car Hire",
+    metaTitle: "Porsche GT3 RS vs Lamborghini Huracán STO | CVS Car Hire",
     metaDescription:
       "Porsche 911 GT3 RS vs Lamborghini Huracán STO compared — naturally aspirated engines, aero and focus — to help you choose. CVS Hire, Birmingham & UK.",
   },

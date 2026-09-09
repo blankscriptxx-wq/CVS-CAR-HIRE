@@ -99,7 +99,7 @@ export const collections: Collection[] = [
     eyebrow: "Ferrari Hire",
     metaTitle: "Ferrari Models to Hire | CVS Car Hire",
     metaDescription:
-      "Ferrari hire in Birmingham and nationwide — the SF90 hybrid flagship, the Roma grand tourer and the four-seat Purosangue, self-drive or chauffeur, with UK delivery.",
+      "Ferrari hire in Birmingham and nationwide — the SF90, the Roma grand tourer and the four-seat Purosangue, self-drive or chauffeur.",
     keywords: [
       "ferrari hire",
       "ferrari hire birmingham",
@@ -519,7 +519,7 @@ export const collections: Collection[] = [
     eyebrow: "Land Rover Hire",
     metaTitle: "Land Rover Models to Hire | CVS Car Hire",
     metaDescription:
-      "Explore the Land Rover models to hire with CVS Hire — the reinvented Defender joining soon, plus the Range Rover Vogue, Sport and SVR available now, in Birmingham and nationwide.",
+      "Land Rover hire in Birmingham and nationwide — the reinvented Defender joining soon, plus the Range Rover Vogue, Sport and SVR available now.",
     keywords: [
       "land rover hire",
       "land rover defender hire",

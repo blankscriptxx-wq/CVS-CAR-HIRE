@@ -48,7 +48,7 @@ export const services: ServiceContent[] = [
       { question: "Do you deliver supercars outside Birmingham?", answer: "Nationwide UK delivery is available on many vehicles, subject to the car and the location. Contact us and we'll confirm for your area." },
       { question: "What do I need to hire a supercar?", answer: "Requirements such as minimum age, licence and deposit vary by vehicle. Start a conversation with our team and we'll talk you through exactly what's needed for your chosen car." },
     ],
-    metaTitle: "Supercar Hire Birmingham | Ferrari, Lamborghini & More | CVS Car Hire",
+    metaTitle: "Supercar Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Self-drive supercar hire in Birmingham and across the UK. Ferrari, Lamborghini and more from CVS Car Hire. Nationwide delivery available. Check availability.",
   },
@@ -94,9 +94,9 @@ export const services: ServiceContent[] = [
       { question: "Can I hire a supercar for a week?", answer: "Yes — as well as daily and weekend hire, we offer weekly rates that work out better value for a longer stay. Tell us the car and your dates and we'll confirm the weekly price." },
       { question: "Is weekend supercar hire available near me?", answer: "We're based in Birmingham and cover the West Midlands directly, with nationwide UK delivery for weekend hire. Tell us where you are and we'll confirm we can reach you." },
     ],
-    metaTitle: "Short-Term Supercar Hire | Daily & Weekend Ferrari & Lamborghini Hire | CVS Car Hire",
+    metaTitle: "Short-Term Supercar Hire | CVS Car Hire",
     metaDescription:
-      "Short-term supercar hire in Birmingham and across the UK — hire a Ferrari, Lamborghini or Audi R8 for a day, a weekend or a week. Clear rates, nationwide delivery. Check availability.",
+      "Short-term supercar hire in Birmingham and across the UK — hire a Ferrari, Lamborghini or Audi R8 for a day, a weekend or a week. Clear rates, nationwide delivery.",
   },
   {
     slug: "long-term-supercar-hire",
@@ -164,9 +164,9 @@ export const services: ServiceContent[] = [
       },
     ],
     related: ["supercar-subscription", "long-term-hire", "short-term-supercar-hire", "nationwide-delivery"],
-    metaTitle: "Long-Term Supercar Hire | Monthly Ferrari & Lamborghini Hire UK | CVS Car Hire",
+    metaTitle: "Long-Term Supercar Hire | CVS Car Hire",
     metaDescription:
-      "Long-term supercar hire in Birmingham and across the UK — Ferrari, Lamborghini and more by the week or month. The supercar experience without ownership or depreciation. Check availability.",
+      "Long-term supercar hire in Birmingham and across the UK — Ferrari, Lamborghini and more by the week or month. The supercar experience without ownership or depreciation.",
   },
   {
     slug: "supercar-subscription",
@@ -224,9 +224,9 @@ export const services: ServiceContent[] = [
       { question: "Is there a minimum term?", answer: "Subscriptions are arranged monthly, so commitments are short and flexible. Share your plans and we'll tailor the terms around you." },
     ],
     related: ["long-term-supercar-hire", "long-term-hire", "short-term-supercar-hire"],
-    metaTitle: "Supercar Subscription | Monthly Supercar Hire & Leasing Alternative | CVS",
+    metaTitle: "Supercar Subscription | CVS Car Hire",
     metaDescription:
-      "Supercar subscription in the UK — one all-in monthly rate for a genuine supercar, with the freedom to extend or switch. The flexible alternative to leasing or buying. Check availability.",
+      "Supercar subscription in the UK — one all-in monthly rate for a genuine supercar, with the freedom to extend or switch. The flexible alternative to leasing or buying.",
   },
   {
     slug: "luxury-car-hire",
@@ -263,9 +263,9 @@ export const services: ServiceContent[] = [
       { question: "Is there luxury car hire near me?", answer: "We're based in Birmingham and cover the West Midlands directly, with nationwide UK delivery from London and Manchester to Leeds, Bristol and beyond. Tell us where you are and we'll confirm we can reach you." },
       { question: "How much is luxury car hire?", answer: "It depends on the car — from performance models and prestige SUVs to supercars — with clear daily, weekend, weekly and monthly rates. Message us your dates and chosen vehicle and we'll confirm the exact price." },
     ],
-    metaTitle: "Luxury Car Hire Birmingham | Prestige & Supercar Rental | CVS Car Hire",
+    metaTitle: "Luxury Car Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Luxury car hire in Birmingham and across the UK. Self-drive and chauffeur luxury car rental from a fleet of 50+ prestige, supercar and performance vehicles. Check availability.",
+      "Luxury car hire in Birmingham and across the UK. Self-drive and chauffeur luxury car rental from a fleet of 50+ prestige, supercar and performance vehicles.",
   },
   {
     slug: "ferrari-hire",
@@ -317,9 +317,9 @@ export const services: ServiceContent[] = [
       { question: "Can a Ferrari be delivered to me?", answer: "Yes — nationwide UK delivery is available, subject to vehicle and location. We'll deliver to your home, hotel or venue and confirm the delivery charge with your quote." },
     ],
     related: ["lamborghini-hire", "supercar-hire", "luxury-car-hire", "wedding-car-hire"],
-    metaTitle: "Ferrari Hire Birmingham | Self-Drive & Chauffeur Ferrari Hire | CVS Hire",
+    metaTitle: "Ferrari Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Ferrari hire in Birmingham and nationwide — self-drive the SF90 and Roma, self-drive or chauffeur the Purosangue. Concours preparation, UK delivery. Check availability with CVS Hire.",
+      "Ferrari hire in Birmingham and nationwide — self-drive the SF90 and Roma, self-drive or chauffeur the Purosangue. Concours preparation, UK delivery.",
   },
   {
     slug: "lamborghini-hire",
@@ -371,9 +371,9 @@ export const services: ServiceContent[] = [
       { question: "Can a Lamborghini be delivered to me?", answer: "Yes — nationwide UK delivery is available, subject to vehicle and location, to your home, hotel or venue. We'll confirm the delivery charge with your quote." },
     ],
     related: ["ferrari-hire", "supercar-hire", "luxury-car-hire", "production-car-hire"],
-    metaTitle: "Lamborghini Hire Birmingham | Self-Drive & Chauffeur Lamborghini Hire | CVS Hire",
+    metaTitle: "Lamborghini Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Lamborghini hire in Birmingham and nationwide — the Revuelto, Urus Performante and Huracán, self-drive or chauffeur-driven, with UK delivery. Check availability with CVS Hire.",
+      "Lamborghini hire in Birmingham and nationwide — the Revuelto, Urus Performante and Huracán, self-drive or chauffeur-driven, with UK delivery.",
   },
   {
     slug: "rolls-royce-hire",
@@ -425,9 +425,9 @@ export const services: ServiceContent[] = [
       { question: "Which Rolls-Royce is best for a wedding?", answer: "The Phantom is the ultimate flagship arrival, the Ghost is the timeless wedding saloon, and the Cullinan brings commanding SUV presence. We'll help you choose for your venue and style." },
     ],
     related: ["wedding-car-hire", "chauffeur-hire", "luxury-car-hire", "corporate-car-hire"],
-    metaTitle: "Rolls-Royce Hire Birmingham | Chauffeur Wedding Car Hire | CVS Hire",
+    metaTitle: "Rolls-Royce Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Rolls-Royce hire in Birmingham and nationwide — chauffeur-driven Phantom, Cullinan and Ghost for weddings, milestones and executive travel. Check availability with CVS Hire.",
+      "Rolls-Royce hire in Birmingham and nationwide — chauffeur-driven Phantom, Cullinan and Ghost for weddings, milestones and executive travel.",
   },
   {
     slug: "audi-hire",
@@ -471,7 +471,7 @@ export const services: ServiceContent[] = [
       { question: "How old do I need to be to hire an Audi?", answer: "The R8 Spyder has a minimum age of 25. Requirements for the RS3 are confirmed on enquiry, as they vary by vehicle. Get in touch and we'll talk you through exactly what's needed." },
     ],
     related: ["performance-car-hire", "supercar-hire", "luxury-car-hire"],
-    metaTitle: "Audi Hire Birmingham | R8 Spyder & RS3 Self-Drive Hire | CVS Hire",
+    metaTitle: "Audi Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Audi hire in Birmingham and nationwide — self-drive the R8 Spyder V10 supercar and the RS3 super-hatch, with UK delivery. Check availability with CVS Hire.",
   },
@@ -517,9 +517,9 @@ export const services: ServiceContent[] = [
       { question: "How much does Mercedes hire cost?", answer: "It depends on the model and duration, from the A35 up to the G63, with clear daily, weekend and longer rates. Message us your dates and chosen car for an exact price." },
     ],
     related: ["luxury-4x4-hire", "v-class-hire", "wedding-car-hire", "corporate-car-hire"],
-    metaTitle: "Mercedes Hire Birmingham | G63, GLC, A35 & V-Class Hire | CVS Hire",
+    metaTitle: "Mercedes Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Mercedes hire in Birmingham and nationwide — the AMG G63, GLC 43, A35 and V-Class, self-drive or chauffeur-driven, with UK delivery. Check availability with CVS Hire.",
+      "Mercedes hire in Birmingham and nationwide — the AMG G63, GLC 43, A35 and V-Class, self-drive or chauffeur-driven, with UK delivery.",
   },
   {
     slug: "range-rover-hire",
@@ -563,9 +563,9 @@ export const services: ServiceContent[] = [
       { question: "What's the difference between the Sport and the Sport SVR?", answer: "The Range Rover Sport is the athletic all-rounder; the Sport SVR adds a supercharged V8 and a harder, more thrilling performance edge. Both are available to hire — tell us which suits your plans." },
     ],
     related: ["luxury-4x4-hire", "luxury-car-hire", "corporate-car-hire", "long-term-hire"],
-    metaTitle: "Range Rover Hire Birmingham | Vogue, Sport & SVR Hire | CVS Hire",
+    metaTitle: "Range Rover Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Range Rover hire in Birmingham and nationwide — the Vogue, Sport and supercharged Sport SVR, self-drive or chauffeur-driven, with UK delivery. Check availability with CVS Hire.",
+      "Range Rover hire in Birmingham and nationwide — the Vogue, Sport and supercharged Sport SVR, self-drive or chauffeur-driven, with UK delivery.",
   },
   {
     slug: "bmw-hire",
@@ -609,7 +609,7 @@ export const services: ServiceContent[] = [
       { question: "How old do I need to be to hire a BMW?", answer: "Requirements vary by model and are confirmed on enquiry, as performance cars like the M3 carry a higher minimum age than the 3 Series. Get in touch and we'll talk you through exactly what's needed." },
     ],
     related: ["performance-car-hire", "corporate-car-hire", "luxury-car-hire", "long-term-hire"],
-    metaTitle: "BMW Hire Birmingham | M3, X5, 4 Series & 3 Series | CVS Hire",
+    metaTitle: "BMW Hire Birmingham | CVS Car Hire",
     metaDescription:
       "BMW hire in Birmingham and nationwide — self-drive the M3, X5, 4 Series Convertible and 3 Series, with UK delivery. Check availability with CVS Hire.",
   },
@@ -654,7 +654,7 @@ export const services: ServiceContent[] = [
       { question: "How old do I need to be to hire the GT3 RS?", answer: "As a high-performance supercar the GT3 RS carries a higher minimum age and driving-experience requirement than a standard car. Get in touch and we'll confirm exactly what is needed." },
     ],
     related: ["supercar-hire", "performance-car-hire", "luxury-car-hire"],
-    metaTitle: "Porsche Hire Birmingham | 911 GT3 RS Self-Drive Hire | CVS Hire",
+    metaTitle: "Porsche Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Porsche hire in Birmingham and nationwide — self-drive the motorsport-bred 911 GT3 RS, with UK delivery. Check availability with CVS Hire.",
   },
@@ -682,7 +682,7 @@ export const services: ServiceContent[] = [
     faqs: [
       { question: "Which cars are best for a wedding?", answer: "Rolls-Royce models are perennial favourites, but the right choice depends on your style and party size. We're happy to advise." },
     ],
-    metaTitle: "Prestige Car Hire Birmingham | Executive & Wedding Cars | CVS Car Hire",
+    metaTitle: "Prestige Car Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Prestige car hire in Birmingham. Refined saloons and SUVs for business, weddings and occasions. Self-drive and chauffeur options. Check availability.",
   },
@@ -710,7 +710,7 @@ export const services: ServiceContent[] = [
     faqs: [
       { question: "What's the difference between a performance car and a supercar?", answer: "Performance cars deliver serious pace and character in a more usable, everyday package, while supercars prioritise outright drama and exclusivity. We can help you pick the right level of thrill." },
     ],
-    metaTitle: "Performance Car Hire Birmingham | RS3, Golf R & More | CVS Car Hire",
+    metaTitle: "Performance Car Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Self-drive performance car hire in Birmingham. Engaging, everyday-usable performance from CVS Car Hire. Nationwide delivery available. Check availability.",
   },
@@ -741,9 +741,9 @@ export const services: ServiceContent[] = [
       { question: "Can I hire an SUV or 4x4 near me?", answer: "We're based in Birmingham and cover the West Midlands directly, with nationwide UK delivery on many vehicles. Tell us your location and dates and we'll confirm we can reach you." },
       { question: "How much does luxury SUV hire cost?", answer: "It depends on the vehicle — the G63 (G-Wagon) starts from £700 per day, with Range Rover, Urus and Cullinan quoted on enquiry, and weekend, weekly and monthly rates available. Message us your dates for an exact price." },
     ],
-    metaTitle: "Luxury SUV & 4x4 Hire Birmingham | Cullinan, G-Wagon, Range Rover | CVS",
+    metaTitle: "Luxury SUV & 4x4 Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Luxury SUV and 4x4 hire in Birmingham and nationwide. Rolls-Royce Cullinan, Mercedes G63 G-Wagon, Range Rover, Lamborghini Urus and more, self-drive or chauffeur. Check availability.",
+      "Luxury SUV and 4x4 hire in Birmingham and nationwide. Rolls-Royce Cullinan, Mercedes G63 G-Wagon, Range Rover, Lamborghini Urus and more, self-drive or chauffeur.",
   },
   {
     slug: "chauffeur-hire",
@@ -769,7 +769,7 @@ export const services: ServiceContent[] = [
     faqs: [
       { question: "Can I choose the chauffeur vehicle?", answer: "Yes — tell us the occasion and party size and we'll recommend the right vehicle, or arrange the specific car you have in mind, subject to availability." },
     ],
-    metaTitle: "Chauffeur Hire Birmingham | Wedding & Executive Chauffeur | CVS Car Hire",
+    metaTitle: "Chauffeur Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Professional chauffeur hire in Birmingham for weddings, business and events. Luxury and prestige vehicles with a driver. Check availability with CVS Car Hire.",
   },
@@ -800,7 +800,7 @@ export const services: ServiceContent[] = [
       { question: "Can I hire a Rolls-Royce for my wedding in Birmingham?", answer: "Yes — the Rolls-Royce Ghost and Cullinan are our most popular wedding cars, supplied chauffeur-driven with ribbons and presentation taken care of. We serve Birmingham and Warwickshire venues, with nationwide delivery available. Share your date and venue and we'll confirm." },
       { question: "How much does wedding car hire cost?", answer: "It depends on the car, whether it's chauffeur-driven and the hours you need it for. Tell us your date, venue and the car you have in mind and we'll put together a tailored wedding quote." },
     ],
-    metaTitle: "Wedding Car Hire Birmingham | Rolls-Royce & Luxury Wedding Cars | CVS",
+    metaTitle: "Wedding Car Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Wedding car hire in Birmingham. Rolls-Royce, luxury 4x4s and chauffeur-driven options for your day. Nationwide availability. Check your date with CVS Car Hire.",
   },
@@ -830,9 +830,9 @@ export const services: ServiceContent[] = [
       { question: "Which cars are most popular for proms?", answer: "The head-turners: the Lamborghini Urus and Huracán, the Ferrari Roma and the Mercedes-AMG G63 (G-Wagon) are the most requested prom cars, delivered to home or school for the photos and the big entrance." },
       { question: "How early should I book a prom car?", answer: "As early as you can — prom season is our busiest period and the best cars and dates book up fast. Get in touch as soon as you have your date to secure the car you want." },
     ],
-    metaTitle: "Prom Car Hire Birmingham | Supercars & Luxury Prom Cars | CVS Car Hire",
+    metaTitle: "Prom Car Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Prom car hire in Birmingham. Head-turning supercars and luxury 4x4s — Lamborghini, Ferrari, G-Wagon — chauffeur-driven for a safe, unforgettable night. Book early. Check availability.",
+      "Prom car hire in Birmingham. Head-turning supercars and luxury 4x4s — Lamborghini, Ferrari, G-Wagon — chauffeur-driven for a safe, unforgettable night. Book early.",
   },
   {
     slug: "corporate-car-hire",
@@ -860,9 +860,9 @@ export const services: ServiceContent[] = [
       { question: "Is there executive car hire near me?", answer: "We're based in Birmingham and serve the West Midlands directly, with nationwide UK delivery available for corporate clients. Tell us your location and requirements and we'll confirm." },
     ],
     related: ["v-class-hire", "long-term-v-class-hire", "chauffeur-hire", "airport-transfer"],
-    metaTitle: "Executive Car Hire Birmingham | Corporate & Business Travel | CVS Car Hire",
+    metaTitle: "Executive Car Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Executive and corporate car hire in Birmingham and nationwide. Prestige vehicles for executive travel, self-drive or chauffeur, with long-term and monthly business options. Check availability.",
+      "Executive and corporate car hire in Birmingham and nationwide. Prestige vehicles for executive travel, self-drive or chauffeur, with long-term and monthly business options.",
   },
   {
     slug: "v-class-hire",
@@ -915,9 +915,9 @@ export const services: ServiceContent[] = [
       { question: "Can I hire a V-Class for a wedding?", answer: "Absolutely — the V-Class is a favourite for keeping the wedding party together, self-drive or chauffeur-driven. Ask about pairing it with one of our luxury cars for the couple." },
     ],
     related: ["short-term-v-class-hire", "long-term-v-class-hire", "chauffeur-hire", "airport-transfer", "corporate-car-hire"],
-    metaTitle: "Mercedes V-Class Hire Birmingham | 8 Seater Luxury Hire | CVS Car Hire",
+    metaTitle: "Mercedes V-Class Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Mercedes V-Class hire in Birmingham — luxury 8-seater people carrier, self-drive or chauffeur, for airport transfers, weddings and corporate groups. Nationwide UK delivery. Check availability.",
+      "Mercedes V-Class hire in Birmingham — luxury 8-seater people carrier, self-drive or chauffeur, for airport transfers, weddings and corporate groups. Nationwide UK delivery.",
   },
   {
     slug: "short-term-v-class-hire",
@@ -963,9 +963,9 @@ export const services: ServiceContent[] = [
       { question: "Do you deliver the V-Class for short hires?", answer: "Yes — we deliver across Birmingham and nationwide, to homes, hotels, venues or the airport. Tell us your pick-up point and we'll confirm." },
     ],
     related: ["v-class-hire", "long-term-v-class-hire", "airport-transfer", "wedding-car-hire", "chauffeur-hire"],
-    metaTitle: "Short-Term V-Class Hire Birmingham | Daily & Weekend 8 Seater | CVS Car Hire",
+    metaTitle: "Short-Term V-Class Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Short-term Mercedes V-Class hire in Birmingham — daily and weekend rates on a luxury 8-seater, self-drive or chauffeur, for weddings, airports and group trips. Nationwide delivery. Check availability.",
+      "Short-term Mercedes V-Class hire in Birmingham — daily and weekend rates on a luxury 8-seater, self-drive or chauffeur, for weddings, airports and group trips. Nationwide delivery.",
   },
   {
     slug: "long-term-v-class-hire",
@@ -1016,9 +1016,9 @@ export const services: ServiceContent[] = [
       { question: "Can I add a chauffeur to a long-term V-Class arrangement?", answer: "Yes — we can pair a long-term V-Class with chauffeur services for regular business or event travel. Speak to our team about a tailored arrangement." },
     ],
     related: ["v-class-hire", "short-term-v-class-hire", "long-term-hire", "corporate-car-hire", "nationwide-delivery"],
-    metaTitle: "Long-Term V-Class Hire Birmingham | Monthly 8 Seater Rental | CVS Car Hire",
+    metaTitle: "Long-Term V-Class Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Long-term Mercedes V-Class hire in Birmingham — flexible weekly and monthly rental on a luxury 8-seater, a simple alternative to leasing. For business, family and events. UK delivery. Check availability.",
+      "Long-term Mercedes V-Class hire in Birmingham — flexible weekly and monthly rental on a luxury 8-seater, a simple alternative to leasing. For business, family and events. UK delivery.",
   },
   {
     slug: "airport-transfer",
@@ -1045,7 +1045,7 @@ export const services: ServiceContent[] = [
       { question: "Which airports do you cover?", answer: "We regularly serve Birmingham Airport and can arrange transfers to other UK airports on request. Tell us your route and we'll confirm." },
     ],
     related: ["v-class-hire", "short-term-v-class-hire", "chauffeur-hire", "corporate-car-hire"],
-    metaTitle: "Airport Transfer Birmingham | Chauffeur Airport Transfers | CVS Car Hire",
+    metaTitle: "Airport Transfer Birmingham | CVS Car Hire",
     metaDescription:
       "Chauffeur-driven airport transfers in Birmingham. Executive and group vehicles, punctual and private. Serving Birmingham Airport and beyond. Check availability.",
   },
@@ -1118,9 +1118,9 @@ export const services: ServiceContent[] = [
       },
     ],
     related: ["long-term-supercar-hire", "long-term-v-class-hire", "supercar-subscription", "corporate-car-hire", "nationwide-delivery"],
-    metaTitle: "Long-Term Car Hire Birmingham | Monthly Rental & Subscription | CVS",
+    metaTitle: "Long-Term Car Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Long-term car hire in Birmingham — flexible monthly car rental and subscription for premium vehicles, a simple alternative to leasing or contract hire. UK delivery. Check availability.",
+      "Long-term car hire in Birmingham — flexible monthly car rental and subscription for premium vehicles, a simple alternative to leasing or contract hire. UK delivery.",
   },
   {
     slug: "nationwide-delivery",
@@ -1145,7 +1145,7 @@ export const services: ServiceContent[] = [
     faqs: [
       { question: "Where do you deliver?", answer: "We offer nationwide UK delivery on many vehicles, subject to the car and the location. Contact us with your address and dates and we'll confirm availability and arrangements." },
     ],
-    metaTitle: "Nationwide Luxury Car Delivery UK | CVS Car Hire Birmingham",
+    metaTitle: "Nationwide Luxury Car Delivery UK | CVS Car Hire",
     metaDescription:
       "Nationwide luxury car delivery across the UK from CVS Car Hire, Birmingham. Your chosen vehicle delivered to your door, subject to availability. Check now.",
   },

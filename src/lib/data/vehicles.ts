@@ -148,7 +148,7 @@ export const vehicles: Vehicle[] = [
       { question: "How many seats does the Audi R8 Spyder have?", answer: "The R8 Spyder is a two-seat, open-top supercar with a folding fabric roof and mid-mounted V10, offering genuine supercar theatre with Audi's everyday usability." },
       { question: "Is the Audi R8 a good supercar for beginners?", answer: "It is one of the most approachable V10 supercars: quattro all-wheel drive, predictable handling and a comfortable cabin make the R8 Spyder confidence-inspiring for a first supercar experience." },
     ],
-    metaTitle: "Audi R8 Spyder Hire Birmingham | Self-Drive Supercar Hire | CVS Car Hire",
+    metaTitle: "Audi R8 Spyder Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the Audi R8 Spyder in Birmingham with CVS Car Hire. Self-drive supercar hire, nationwide UK delivery available. Check availability today.",
   },
@@ -209,7 +209,7 @@ export const vehicles: Vehicle[] = [
       { question: "How many seats does the Lamborghini Urus have?", answer: "The Urus is a five-seat, five-door SUV with all-wheel drive, combining genuine everyday practicality and space with supercar pace." },
       { question: "Is the Lamborghini Urus practical?", answer: "Yes — that is its appeal. The Urus offers five seats, a usable boot and comfortable long-distance manners, making it a rare supercar-performance vehicle you can genuinely use every day or for a family weekend." },
     ],
-    metaTitle: "Lamborghini Urus Performante Hire Birmingham | Luxury SUV Hire | CVS Car Hire",
+    metaTitle: "Lamborghini Urus Performante Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the Lamborghini Urus Performante in Birmingham with CVS Car Hire. Self-drive and chauffeur options, nationwide UK delivery. Check availability today.",
   },
@@ -268,7 +268,7 @@ export const vehicles: Vehicle[] = [
       { question: "How many seats does a G63 have?", answer: "The G63 is a five-seat, five-door SUV with permanent all-wheel drive and three locking differentials, so it retains genuine off-road ability beneath the luxury and performance." },
       { question: "Is the G63 good for a wedding or event?", answer: "Yes — its upright, unmistakable shape and commanding presence make the G63 a favourite for weddings, music videos and high-profile arrivals, available in black or red from our fleet." },
     ],
-    metaTitle: "Mercedes G63 Hire Birmingham | G-Wagon Luxury 4x4 Hire | CVS Car Hire",
+    metaTitle: "Mercedes G63 Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the Mercedes-AMG G63 (G-Wagon) in Birmingham with CVS Car Hire. Self-drive and chauffeur options, nationwide UK delivery. Check availability today.",
   },
@@ -329,9 +329,9 @@ export const vehicles: Vehicle[] = [
       { question: "How fast is the Rolls-Royce Cullinan?", answer: "Rolls-Royce quotes 0–100 km/h (0–62 mph) in around 5.2 seconds, with the top speed limited to 250 km/h (155 mph) — though the Cullinan is built for serene comfort rather than speed." },
       { question: "Is the Rolls-Royce Cullinan good for weddings?", answer: "Yes — the Cullinan's commanding presence and limousine-quality rear cabin make it one of the most requested luxury SUVs for weddings and VIP arrivals, offered chauffeur-driven." },
     ],
-    metaTitle: "Rolls-Royce Cullinan Chauffeur Hire Birmingham | Luxury SUV | CVS Car Hire",
+    metaTitle: "Rolls-Royce Cullinan Chauffeur Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Chauffeur-driven Rolls-Royce Cullinan hire in Birmingham with CVS Car Hire — weddings, corporate and occasions. Nationwide UK delivery. Check availability today.",
+      "Chauffeur-driven Rolls-Royce Cullinan hire in Birmingham with CVS Car Hire — weddings, corporate and occasions. Nationwide UK delivery.",
   },
   {
     id: "range-rover-vogue",
@@ -381,7 +381,7 @@ export const vehicles: Vehicle[] = [
     monthlyPriceFrom: 4500,
     recommendedOccasions: ["wedding", "chauffeur", "corporate", "airport", "self-drive"],
     relatedVehicles: ["rolls-royce-cullinan-hire", "range-rover-svr-hire", "mercedes-amg-g63-hire"],
-    metaTitle: "Range Rover Vogue Hire Birmingham | Luxury 4x4 & Chauffeur | CVS Car Hire",
+    metaTitle: "Range Rover Vogue Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the 2024 Range Rover Vogue in Birmingham with CVS Car Hire. Self-drive and chauffeur options, nationwide UK delivery. Check availability today.",
   },
@@ -432,7 +432,7 @@ export const vehicles: Vehicle[] = [
     excessMileageCharge: 1.0,
     recommendedOccasions: ["self-drive", "corporate", "wedding", "weekend", "airport"],
     relatedVehicles: ["range-rover-svr-hire", "bmw-x5-hire", "mercedes-amg-g63-hire"],
-    metaTitle: "Range Rover Sport Hire Birmingham | Luxury 4x4 Hire | CVS Car Hire",
+    metaTitle: "Range Rover Sport Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the Range Rover Sport in Birmingham with CVS Car Hire. Self-drive and chauffeur options, nationwide UK delivery available. Check availability today.",
   },
@@ -483,7 +483,7 @@ export const vehicles: Vehicle[] = [
     excessMileageCharge: 1.15,
     recommendedOccasions: ["self-drive", "wedding", "production", "weekend"],
     relatedVehicles: ["range-rover-sport-hire", "mercedes-amg-g63-hire", "bmw-x5-hire"],
-    metaTitle: "Range Rover SVR Hire Birmingham | Performance Luxury 4x4 | CVS Car Hire",
+    metaTitle: "Range Rover SVR Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the Range Rover Sport SVR in Birmingham with CVS Car Hire. Self-drive and chauffeur options, nationwide UK delivery. Check availability today.",
   },
@@ -562,7 +562,7 @@ export const vehicles: Vehicle[] = [
       { question: "How many seats does the Audi RS3 have?", answer: "The RS3 is a practical five-seat, five-door car (offered as a Sportback hatch or saloon), which is a big part of its appeal — supercar-baiting pace with everyday usability." },
       { question: "Is the Audi RS3 a good first performance car to hire?", answer: "Yes — its combination of quattro grip, genuine pace and five-seat practicality makes the RS3 one of the most accessible and usable performance cars we offer, ideal for a spirited weekend." },
     ],
-    metaTitle: "Audi RS3 Hire Birmingham | Performance Car Hire | CVS Car Hire",
+    metaTitle: "Audi RS3 Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the Audi RS3 in Birmingham with CVS Car Hire. Self-drive performance car hire, nationwide UK delivery available. Check availability today.",
   },
@@ -599,7 +599,7 @@ export const vehicles: Vehicle[] = [
     excessMileageCharge: 0.75,
     recommendedOccasions: ["self-drive", "corporate", "weekend"],
     relatedVehicles: ["audi-rs3-hire", "bmw-x5-hire", "range-rover-sport-hire"],
-    metaTitle: "Mercedes GLC 43 AMG Hire Birmingham | Performance SUV | CVS Car Hire",
+    metaTitle: "Mercedes GLC 43 AMG Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the Mercedes-AMG GLC 43 in Birmingham with CVS Car Hire. Self-drive and chauffeur options, nationwide UK delivery. Check availability today.",
   },
@@ -642,7 +642,7 @@ export const vehicles: Vehicle[] = [
     excessMileageCharge: 0.9,
     recommendedOccasions: ["self-drive", "weekend"],
     relatedVehicles: ["audi-rs3-hire", "mercedes-glc-43-amg-hire", "audi-r8-spyder-hire"],
-    metaTitle: "Volkswagen Golf R Hire Birmingham | Performance Car Hire | CVS Car Hire",
+    metaTitle: "Volkswagen Golf R Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the Volkswagen Golf R in Birmingham with CVS Car Hire. Self-drive performance hire, nationwide UK delivery available. Check availability today.",
   },
@@ -681,7 +681,7 @@ export const vehicles: Vehicle[] = [
     excessMileageCharge: 0.9,
     recommendedOccasions: ["self-drive", "weekend"],
     relatedVehicles: ["vw-golf-r-hire", "audi-rs3-hire", "mercedes-glc-43-amg-hire"],
-    metaTitle: "Lapiz Blue Golf R Hire Birmingham | VW Golf R Self-Drive | CVS Car Hire",
+    metaTitle: "Lapiz Blue Golf R Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the Volkswagen Golf R in signature Lapiz Blue with CVS Car Hire, Birmingham. Self-drive performance hire, nationwide UK delivery. Check availability today.",
   },
@@ -715,9 +715,9 @@ export const vehicles: Vehicle[] = [
     featured: true,
     recommendedOccasions: ["wedding", "chauffeur", "corporate"],
     relatedVehicles: ["rolls-royce-cullinan-hire", "rolls-royce-ghost-hire", "mercedes-v-class-hire"],
-    metaTitle: "Rolls-Royce Ghost Chauffeur Hire Birmingham | Wedding & Prestige | CVS Car Hire",
+    metaTitle: "Rolls-Royce Ghost Chauffeur Hire Birmingham | CVS Car Hire",
     metaDescription:
-      "Chauffeur-driven Rolls-Royce Ghost hire in Birmingham with CVS Car Hire — the definitive wedding and prestige car. Nationwide UK delivery. Check availability today.",
+      "Chauffeur-driven Rolls-Royce Ghost hire in Birmingham with CVS Car Hire — the definitive wedding and prestige car. Nationwide UK delivery.",
   },
   // ── Convertibles ───────────────────────────────────────────
   {
@@ -743,7 +743,7 @@ export const vehicles: Vehicle[] = [
     featured: true,
     recommendedOccasions: ["self-drive", "weekend", "birthday"],
     relatedVehicles: ["audi-r8-spyder-hire", "audi-rs3-hire", "vw-golf-r-hire"],
-    metaTitle: "BMW 4 Series Convertible Hire Birmingham | Open-Top Car Hire | CVS Car Hire",
+    metaTitle: "BMW 4 Series Convertible Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the BMW 4 Series Convertible in Birmingham with CVS Car Hire. Self-drive open-top hire, nationwide UK delivery available. Check availability today.",
   },
@@ -781,7 +781,7 @@ export const vehicles: Vehicle[] = [
     excessMileageCharge: 0.8,
     recommendedOccasions: ["airport", "wedding", "corporate", "chauffeur"],
     relatedVehicles: ["range-rover-sport-hire", "bmw-x5-hire", "range-rover-vogue-hire"],
-    metaTitle: "Mercedes V-Class Hire Birmingham | Group Travel & Chauffeur | CVS Car Hire",
+    metaTitle: "Mercedes V-Class Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the Mercedes-Benz V-Class in Birmingham with CVS Car Hire. Group travel, airport transfers and chauffeur options. Check availability today.",
   },
@@ -826,7 +826,7 @@ export const vehicles: Vehicle[] = [
     monthlyPriceFrom: 8900,
     recommendedOccasions: ["self-drive", "birthday", "production", "weekend"],
     relatedVehicles: ["lamborghini-huracan-performante-spyder-hire", "audi-r8-spyder-hire", "ferrari-roma-hire"],
-    metaTitle: "Lamborghini Huracán Evo Spyder Hire Birmingham | Supercar Hire | CVS Car Hire",
+    metaTitle: "Lamborghini Huracán Evo Spyder Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the Lamborghini Huracán Evo Spyder in Birmingham with CVS Car Hire. Self-drive supercar hire, nationwide UK delivery available. Check availability today.",
   },
@@ -906,7 +906,7 @@ export const vehicles: Vehicle[] = [
     monthlyPriceFrom: 3000,
     recommendedOccasions: ["self-drive", "weekend", "birthday", "prom"],
     relatedVehicles: ["audi-rs3-hire", "vw-golf-r-hire", "mercedes-glc-43-amg-hire"],
-    metaTitle: "Mercedes-AMG A35 Hire Birmingham | Performance Car Hire | CVS Car Hire",
+    metaTitle: "Mercedes-AMG A35 Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the Mercedes-AMG A 35 in Birmingham with CVS Car Hire. Self-drive performance hatchback, nationwide UK delivery available. Check availability today.",
   },
@@ -954,7 +954,7 @@ export const vehicles: Vehicle[] = [
     monthlyPriceFrom: 6500,
     recommendedOccasions: ["self-drive", "wedding", "production", "weekend"],
     relatedVehicles: ["mercedes-amg-g63-hire", "lamborghini-urus-performante-hire", "range-rover-svr-hire"],
-    metaTitle: "Red Mercedes-AMG G63 Hire Birmingham | Self-Drive G-Wagon | CVS Car Hire",
+    metaTitle: "Red Mercedes-AMG G63 Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire this striking red Mercedes-AMG G63 (G-Wagon) in Birmingham with CVS Car Hire. Self-drive luxury 4x4, nationwide UK delivery. Check availability today.",
   },
@@ -998,7 +998,7 @@ export const vehicles: Vehicle[] = [
     monthlyPriceFrom: 1800,
     recommendedOccasions: ["self-drive", "corporate", "weekend"],
     relatedVehicles: ["bmw-4-series-convertible-hire", "mercedes-glc-43-amg-hire", "bmw-x5-hire"],
-    metaTitle: "BMW 3 Series M Sport Hire Birmingham | Prestige Car Hire | CVS Car Hire",
+    metaTitle: "BMW 3 Series M Sport Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the BMW 3 Series M Sport in Birmingham with CVS Car Hire. Self-drive prestige saloon, nationwide UK delivery available. Check availability today.",
   },
@@ -1030,7 +1030,7 @@ export const vehicles: Vehicle[] = [
     // Intentionally not featured — kept off the homepage featured strip.
     recommendedOccasions: ["self-drive", "weekend", "production", "birthday"],
     relatedVehicles: ["lamborghini-huracan-performante-spyder-hire", "audi-r8-spyder-hire", "lamborghini-urus-performante-hire"],
-    metaTitle: "Ferrari Roma Hire Birmingham | Self-Drive Supercar Hire | CVS Car Hire",
+    metaTitle: "Ferrari Roma Hire Birmingham | CVS Car Hire",
     metaDescription:
       "Hire the Ferrari Roma in Birmingham with CVS Car Hire. Self-drive supercar hire with nationwide UK delivery available. Check availability today.",
   },
@@ -1075,7 +1075,7 @@ export const vehicles: Vehicle[] = [
       { question: "What did the Revuelto replace?", answer: "The Revuelto replaced the Aventador as Lamborghini's V12 flagship, carrying the twelve-cylinder engine into the hybrid era on an all-new carbon-fibre 'monofuselage' chassis." },
       { question: "How many seats does the Lamborghini Revuelto have?", answer: "The Revuelto is a two-seat, two-door coupé with Lamborghini's signature scissor doors, and it is all-wheel drive." },
     ],
-    metaTitle: "Lamborghini Revuelto Hire | V12 Hybrid Supercar Hire UK | CVS Hire",
+    metaTitle: "Lamborghini Revuelto Hire | CVS Car Hire",
     metaDescription:
       "Hire the Lamborghini Revuelto — the 1,000bhp V12 hybrid flagship — self-drive from Birmingham with nationwide UK delivery. Check availability with CVS Hire.",
   },
@@ -1111,7 +1111,7 @@ export const vehicles: Vehicle[] = [
       { question: "Is the Ferrari SF90 all-wheel drive?", answer: "Yes. The two front electric motors give the SF90 electric all-wheel drive, which helps put its huge power down; the V8 drives the rear wheels through an eight-speed dual-clutch gearbox." },
       { question: "How many seats does the Ferrari SF90 have?", answer: "The SF90 is a two-seat mid-engined supercar, offered in Stradale (coupé) and Spider (retractable hard-top) forms." },
     ],
-    metaTitle: "Ferrari SF90 Hire | Hybrid Supercar Self-Drive Hire UK | CVS Hire",
+    metaTitle: "Ferrari SF90 Hire | CVS Car Hire",
     metaDescription:
       "Hire the Ferrari SF90 — the near-1,000bhp plug-in hybrid flagship — self-drive from Birmingham with nationwide UK delivery. Check availability with CVS Hire.",
   },
@@ -1148,9 +1148,9 @@ export const vehicles: Vehicle[] = [
       { question: "How many seats does the Ferrari Purosangue have?", answer: "Four. It has four individual seats and four doors, with the rear pair rear-hinged ('welcome doors'), and it is all-wheel drive." },
       { question: "How practical is the Ferrari Purosangue?", answer: "It is the most practical Ferrari — four full seats, four doors and a usable boot make it genuinely usable day to day and for events, while still delivering V12 performance." },
     ],
-    metaTitle: "Ferrari Purosangue Hire | V12 Four-Seat Ferrari Hire UK | CVS Hire",
+    metaTitle: "Ferrari Purosangue Hire | CVS Car Hire",
     metaDescription:
-      "Hire the Ferrari Purosangue — the first four-door, four-seat V12 Ferrari — self-drive or chauffeur-driven from Birmingham, UK delivery. Check availability with CVS Hire.",
+      "Hire the Ferrari Purosangue — the first four-door, four-seat V12 Ferrari — self-drive or chauffeur-driven from Birmingham, UK delivery.",
   },
   {
     id: "rolls-royce-phantom",
@@ -1185,9 +1185,9 @@ export const vehicles: Vehicle[] = [
       { question: "How fast is the Rolls-Royce Phantom?", answer: "Rolls-Royce quotes 0–100 km/h (0–62 mph) in around 5.3 seconds, with the top speed electronically limited to 250 km/h (155 mph) — though the Phantom is designed for serenity rather than speed." },
       { question: "What is the Phantom's ride like?", answer: "The Phantom is known for its 'magic carpet ride', using a camera-assisted air suspension that reads the road ahead to deliver an exceptionally smooth, isolated ride from the rear seat." },
     ],
-    metaTitle: "Rolls-Royce Phantom Hire | Chauffeur Wedding Car Hire UK | CVS Hire",
+    metaTitle: "Rolls-Royce Phantom Hire | CVS Car Hire",
     metaDescription:
-      "Hire the Rolls-Royce Phantom — the flagship of luxury motoring — chauffeur-driven for weddings and occasions from Birmingham, nationwide UK. Check availability with CVS Hire.",
+      "Hire the Rolls-Royce Phantom — the flagship of luxury motoring — chauffeur-driven for weddings and occasions from Birmingham, nationwide UK.",
   },
   {
     id: "porsche-911-gt3-rs",
@@ -1222,9 +1222,9 @@ export const vehicles: Vehicle[] = [
       { question: "Why does the GT3 RS have such a big rear wing?", answer: "The GT3 RS uses active, race-derived aerodynamics — including a large swan-neck rear wing with a DRS-style flap — to generate significant downforce for high-speed cornering and track stability." },
       { question: "Is the Porsche 911 GT3 RS road legal?", answer: "Yes. Despite being a motorsport-focused, track-honed car, the 911 GT3 RS is fully road legal — it's rear-wheel drive with two seats and a 9,000 rpm redline." },
     ],
-    metaTitle: "Porsche 911 GT3 RS Hire | Self-Drive Supercar Hire UK | CVS Hire",
+    metaTitle: "Porsche 911 GT3 RS Hire | CVS Car Hire",
     metaDescription:
-      "Hire the Porsche 911 GT3 RS — the road-legal, naturally aspirated track weapon — self-drive from Birmingham with nationwide UK delivery. Check availability with CVS Hire.",
+      "Hire the Porsche 911 GT3 RS — the road-legal, naturally aspirated track weapon — self-drive from Birmingham with nationwide UK delivery.",
   },
 
   // ===== INCOMING (awaiting delivery — landing pages live & indexable, hidden from Fleet) =====
@@ -1258,7 +1258,7 @@ export const vehicles: Vehicle[] = [
       { question: "What is the difference between the 488 GTB and 488 Spider?", answer: "The 488 GTB is the fixed-roof coupé; the 488 Spider is the open-top version with a retractable hard-top. Both share the same twin-turbo V8 and rear-wheel-drive layout." },
       { question: "How many seats does the Ferrari 488 have?", answer: "The 488 is a two-seat, mid-engined, rear-wheel-drive supercar." },
     ],
-    metaTitle: "Ferrari 488 Hire UK | Register Interest | CVS Hire",
+    metaTitle: "Ferrari 488 Hire UK | Register Interest | CVS Car Hire",
     metaDescription:
       "Ferrari 488 hire is coming soon to CVS Hire — the twin-turbo V8 supercar. Register your interest now and we'll confirm availability as soon as it arrives.",
   },
@@ -1291,7 +1291,7 @@ export const vehicles: Vehicle[] = [
       { question: "What body styles does the Defender come in?", answer: "The Defender is offered as the short-wheelbase 90, the mid 110 and the long-wheelbase 130, so buyers can choose between compact agility and maximum interior space." },
       { question: "Is the Land Rover Defender good off-road?", answer: "Yes — despite its luxury cabin, the Defender retains genuine capability with air suspension, wading depth around 900mm and Land Rover's Terrain Response system." },
     ],
-    metaTitle: "Land Rover Defender Hire UK | Register Interest | CVS Hire",
+    metaTitle: "Land Rover Defender Hire UK | CVS Car Hire",
     metaDescription:
       "Land Rover Defender hire is coming soon to CVS Hire — the reinvented luxury 4x4 icon. Register your interest and we'll confirm availability as soon as it arrives.",
   },
@@ -1325,7 +1325,7 @@ export const vehicles: Vehicle[] = [
       { question: "What engine does the Huracán STO have?", answer: "The STO uses a naturally aspirated 5.2-litre V10 producing around 640 PS (about 631 bhp), revving to over 8,000 rpm with a soundtrack unique to the naturally aspirated Lamborghini V10." },
       { question: "How fast is the Lamborghini Huracán STO?", answer: "Lamborghini claims 0–100 km/h (0–62 mph) in around 3.0 seconds and a top speed of about 310 km/h (roughly 193 mph)." },
     ],
-    metaTitle: "Lamborghini Huracán STO Hire UK | Register Interest | CVS Hire",
+    metaTitle: "Lamborghini Huracán STO Hire UK | CVS Car Hire",
     metaDescription:
       "Lamborghini Huracán STO hire is coming soon to CVS Hire — the road-legal, rear-drive racing V10. Register your interest and we'll confirm availability on arrival.",
   },
@@ -1359,7 +1359,7 @@ export const vehicles: Vehicle[] = [
       { question: "How high does the Temerario's engine rev?", answer: "The Temerario's twin-turbo V8 revs to a remarkable 10,000 rpm — exceptionally high for a turbocharged engine — to preserve the high-revving character Lamborghini is known for." },
       { question: "How many seats does the Lamborghini Temerario have?", answer: "The Temerario is a two-seat, mid-engined supercar with all-wheel drive, and it introduces Lamborghini's newer design language." },
     ],
-    metaTitle: "Lamborghini Temerario Hire UK | Register Interest | CVS Hire",
+    metaTitle: "Lamborghini Temerario Hire UK | CVS Car Hire",
     metaDescription:
       "Lamborghini Temerario hire is coming soon to CVS Hire — the all-new V8 hybrid successor to the Huracán. Register your interest and we'll confirm availability on arrival.",
   },
@@ -1394,7 +1394,7 @@ export const vehicles: Vehicle[] = [
       { question: "What did the Ferrari 12Cilindri replace?", answer: "The 12Cilindri is the successor to the 812 Superfast/GTS as Ferrari's front-engined V12 grand tourer, with a clean, futurist design that nods to the classic 1960s Daytona." },
       { question: "Is the Ferrari 12Cilindri front or mid-engined?", answer: "The 12Cilindri is front-mid-engined and rear-wheel drive — the classic grand-touring layout — with two seats and a choice of coupé or retractable-hard-top Spider body." },
     ],
-    metaTitle: "Ferrari 12Cilindri Hire UK | Register Interest | CVS Hire",
+    metaTitle: "Ferrari 12Cilindri Hire UK | CVS Car Hire",
     metaDescription:
       "Ferrari 12Cilindri hire is coming soon to CVS Hire — the naturally aspirated front-engined V12 grand tourer. Register your interest and we'll confirm availability on arrival.",
   },
@@ -1430,7 +1430,7 @@ export const vehicles: Vehicle[] = [
       { question: "How many seats does the Cullinan Series II have?", answer: "The Cullinan Series II is a five-seat luxury SUV (a four-seat rear-lounge configuration is also offered), with all-wheel drive and rear coach doors." },
       { question: "Is the Cullinan Series II electric?", answer: "No. The Cullinan Series II retains the V12 petrol engine. Rolls-Royce's fully electric model is the Spectre coupé." },
     ],
-    metaTitle: "Rolls-Royce Cullinan Series II Hire UK | Register Interest | CVS Hire",
+    metaTitle: "Rolls-Royce Cullinan Series II Hire UK | CVS Car Hire",
     metaDescription:
       "Rolls-Royce Cullinan Series II hire is coming soon to CVS Hire — the updated luxury SUV flagship. Register your interest and we'll confirm availability on arrival.",
   },
@@ -1465,7 +1465,7 @@ export const vehicles: Vehicle[] = [
       { question: "How much power does the Rolls-Royce Spectre have?", answer: "The Spectre uses a dual-motor all-electric powertrain producing around 585 PS (about 577 bhp), with 0–100 km/h (0–62 mph) in approximately 4.5 seconds." },
       { question: "How many seats does the Rolls-Royce Spectre have?", answer: "The Spectre is a four-seat, two-door coupé with Rolls-Royce's signature rear-hinged coach doors and Starlight interior." },
     ],
-    metaTitle: "Rolls-Royce Spectre Hire UK | Register Interest | CVS Hire",
+    metaTitle: "Rolls-Royce Spectre Hire UK | CVS Car Hire",
     metaDescription:
       "Rolls-Royce Spectre hire is coming soon to CVS Hire — the marque's first all-electric luxury coupé. Register your interest and we'll confirm availability on arrival.",
   },
@@ -1500,7 +1500,7 @@ export const vehicles: Vehicle[] = [
       { question: "How many seats does the Rolls-Royce Dawn have?", answer: "The Dawn seats four across a two-door convertible body, and is rear-wheel drive — designed as a genuine four-seat open-top tourer rather than a two-seat roadster." },
       { question: "Is the Rolls-Royce Dawn good for a summer wedding?", answer: "Yes — as an elegant open-top four-seater, the Dawn is a striking choice for summer weddings and golden-hour drives, offered self-drive or chauffeur-driven." },
     ],
-    metaTitle: "Rolls-Royce Dawn Hire UK | Register Interest | CVS Hire",
+    metaTitle: "Rolls-Royce Dawn Hire UK | Register Interest | CVS Car Hire",
     metaDescription:
       "Rolls-Royce Dawn hire is coming soon to CVS Hire — the open-top four-seat luxury drophead. Register your interest and we'll confirm availability on arrival.",
   },
@@ -1534,7 +1534,7 @@ export const vehicles: Vehicle[] = [
       { question: "How fast is the Lamborghini Aventador SVJ?", answer: "Lamborghini claims 0–100 km/h (0–62 mph) in around 2.8 seconds and a top speed above 350 km/h (over 217 mph). In 2018 the SVJ set a production-car lap record at the Nürburgring." },
       { question: "What is ALA on the Aventador SVJ?", answer: "ALA (Aerodinamica Lamborghini Attiva) is the SVJ's active aerodynamics system, which changes downforce and can vector it side to side for sharper cornering — a key part of its record-setting performance." },
     ],
-    metaTitle: "Lamborghini Aventador SVJ Hire UK | Register Interest | CVS Hire",
+    metaTitle: "Lamborghini Aventador SVJ Hire UK | CVS Car Hire",
     metaDescription:
       "Lamborghini Aventador SVJ hire is coming soon to CVS Hire — the extreme naturally aspirated V12 flagship. Register your interest and we'll confirm availability on arrival.",
   },

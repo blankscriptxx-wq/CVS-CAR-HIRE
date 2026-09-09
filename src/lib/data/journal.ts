@@ -26,7 +26,7 @@ export const journalPosts: JournalPost[] = [
       { type: "h3", text: "Book early" },
       { type: "p", text: "Popular cars and summer dates book up quickly. Once you have your date and venue, get in touch to check availability — and we'll help you choose the car that's right for your day." },
     ],
-    metaTitle: "The Best Wedding Cars in Birmingham | CVS Car Hire Journal",
+    metaTitle: "The Best Wedding Cars in Birmingham | CVS Car Hire",
     metaDescription:
       "How to choose the best wedding car in Birmingham — from timeless Rolls-Royce to bold luxury 4x4s. Expert guidance from CVS Car Hire.",
   },
@@ -375,7 +375,7 @@ export const journalPosts: JournalPost[] = [
       { href: "/fleet/ferrari-sf90-hire", label: "Ferrari SF90" },
       { href: "/services/supercar-hire", label: "Supercar hire" },
     ],
-    metaTitle: "Lamborghini Revuelto vs Ferrari SF90 | Which to Hire | CVS Hire",
+    metaTitle: "Lamborghini Revuelto vs Ferrari SF90 | CVS Car Hire",
     metaDescription:
       "Lamborghini Revuelto vs Ferrari SF90 compared — engine, power, performance and character — to help you choose which hybrid flagship to hire. CVS Hire, Birmingham & UK.",
   },
@@ -408,7 +408,7 @@ export const journalPosts: JournalPost[] = [
       { href: "/fleet/mercedes-amg-g63-hire", label: "Mercedes-AMG G63" },
       { href: "/services/luxury-4x4-hire", label: "Luxury 4x4 hire" },
     ],
-    metaTitle: "Lamborghini Urus vs Mercedes G63 | Which Super-SUV to Hire | CVS Hire",
+    metaTitle: "Lamborghini Urus vs Mercedes G63 | CVS Car Hire",
     metaDescription:
       "Lamborghini Urus Performante vs Mercedes-AMG G63 compared — performance, character and presence — to help you choose which super-SUV to hire. CVS Hire, Birmingham & UK.",
   },
@@ -441,7 +441,7 @@ export const journalPosts: JournalPost[] = [
       { href: "/fleet/rolls-royce-cullinan-hire", label: "Rolls-Royce Cullinan" },
       { href: "/services/luxury-car-hire", label: "Luxury car hire" },
     ],
-    metaTitle: "Ferrari Purosangue vs Rolls-Royce Cullinan | Which to Hire | CVS Hire",
+    metaTitle: "Ferrari Purosangue vs Rolls-Royce Cullinan | CVS Car Hire",
     metaDescription:
       "Ferrari Purosangue vs Rolls-Royce Cullinan compared — V12 power, driving character and luxury — to help you choose which to hire. CVS Hire, Birmingham & UK.",
   },
@@ -474,7 +474,7 @@ export const journalPosts: JournalPost[] = [
       { href: "/fleet/lamborghini-huracan-sto-hire", label: "Lamborghini Huracán STO" },
       { href: "/services/supercar-hire", label: "Supercar hire" },
     ],
-    metaTitle: "Porsche 911 GT3 RS vs Lamborghini Huracán STO | Which to Hire | CVS Hire",
+    metaTitle: "Porsche 911 GT3 RS vs Lamborghini Huracán STO | CVS Car Hire",
     metaDescription:
       "Porsche 911 GT3 RS vs Lamborghini Huracán STO compared — naturally aspirated engines, aero and focus — to help you choose. CVS Hire, Birmingham & UK.",
   },

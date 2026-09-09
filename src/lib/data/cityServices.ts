@@ -59,9 +59,9 @@ export const CITY_SERVICES: CityServiceDef[] = [
         answer: loc.delivery,
       },
     ],
-    metaTitle: (loc) => `Supercar Hire ${loc.city} | Ferrari & Lamborghini Hire | CVS Car Hire`,
+    metaTitle: (loc) => `Supercar Hire ${loc.city} | Ferrari Hire | CVS Car Hire`,
     metaDescription: (loc) =>
-      `Self-drive supercar hire in ${loc.city} — Ferrari, Lamborghini and Audi R8. Delivery across ${loc.city} from CVS Car Hire, subject to availability. Check availability.`,
+      `Self-drive supercar hire in ${loc.city} — Ferrari, Lamborghini and Audi R8, delivered from CVS Car Hire. Check availability.`,
   },
   {
     slug: "luxury-car-hire",
@@ -89,9 +89,9 @@ export const CITY_SERVICES: CityServiceDef[] = [
         answer: `Both — many of our vehicles are available self-drive or chauffeur-driven in ${loc.city}. Tell us the occasion and we'll recommend the right option.`,
       },
     ],
-    metaTitle: (loc) => `Luxury Car Hire ${loc.city} | Prestige & Supercar Hire | CVS Car Hire`,
+    metaTitle: (loc) => `Luxury Car Hire ${loc.city} | Prestige Hire | CVS Car Hire`,
     metaDescription: (loc) =>
-      `Luxury car hire in ${loc.city} — Rolls-Royce, Lamborghini, Mercedes-AMG and more. Self-drive and chauffeur from CVS Car Hire, subject to availability.`,
+      `Luxury car hire in ${loc.city} — Rolls-Royce, Lamborghini, Mercedes-AMG and more, self-drive or chauffeur from CVS Car Hire.`,
   },
   {
     slug: "chauffeur-hire",
@@ -119,9 +119,9 @@ export const CITY_SERVICES: CityServiceDef[] = [
         answer: `Yes — we cover ${list(loc.airports, "your nearest airport")} and beyond. Tell us your flight details and pick-up point and we'll arrange it.`,
       },
     ],
-    metaTitle: (loc) => `Chauffeur Hire ${loc.city} | Rolls-Royce & Executive Chauffeur | CVS Car Hire`,
+    metaTitle: (loc) => `Chauffeur Hire ${loc.city} | Rolls-Royce | CVS Car Hire`,
     metaDescription: (loc) =>
-      `Chauffeur hire in ${loc.city} — Rolls-Royce, Mercedes and executive vehicles for weddings, business and airport transfers. CVS Car Hire. Check availability.`,
+      `Chauffeur hire in ${loc.city} — Rolls-Royce, Mercedes and executive cars for weddings, business and airport transfers. CVS Car Hire.`,
   },
   {
     slug: "wedding-car-hire",
@@ -157,9 +157,9 @@ export const CITY_SERVICES: CityServiceDef[] = [
         answer: `As early as possible — popular cars and summer Saturdays in ${loc.city} book up months ahead. Get in touch as soon as you have your date to secure your first choice.`,
       },
     ],
-    metaTitle: (loc) => `Wedding Car Hire ${loc.city} | Rolls-Royce Wedding Cars | CVS Car Hire`,
+    metaTitle: (loc) => `Wedding Car Hire ${loc.city} | Rolls-Royce | CVS Car Hire`,
     metaDescription: (loc) =>
-      `Wedding car hire in ${loc.city} — Rolls-Royce Ghost & Cullinan, Mercedes V-Class and convertibles. Self-drive or chauffeur from CVS Car Hire. Check availability.`,
+      `Wedding car hire in ${loc.city} — Rolls-Royce Ghost & Cullinan and Mercedes V-Class, self-drive or chauffeur from CVS Car Hire.`,
   },
   {
     slug: "prom-car-hire",
@@ -195,9 +195,9 @@ export const CITY_SERVICES: CityServiceDef[] = [
         answer: `The Lamborghini Urus and Huracán, the Ferrari Roma and the Mercedes-AMG G63 (G-Wagon) are the most-requested prom cars in ${loc.city} — delivered for the photos and the big entrance.`,
       },
     ],
-    metaTitle: (loc) => `Prom Car Hire ${loc.city} | Supercar Prom Arrivals | CVS Car Hire`,
+    metaTitle: (loc) => `Prom Car Hire ${loc.city} | Supercars | CVS Car Hire`,
     metaDescription: (loc) =>
-      `Prom car hire in ${loc.city} — Lamborghini, Ferrari and the Mercedes-AMG G 63 delivered for the big arrival. CVS Car Hire, subject to availability. Check availability.`,
+      `Prom car hire in ${loc.city} — Lamborghini, Ferrari and the Mercedes-AMG G 63, delivered for the big arrival by CVS Car Hire.`,
   },
   {
     slug: "v-class-hire",
@@ -229,9 +229,9 @@ export const CITY_SERVICES: CityServiceDef[] = [
         answer: `Yes — the V-Class seats up to eight in comfort, ideal for wedding parties, corporate groups and events across ${loc.city}. Self-drive on a standard licence or add a professional chauffeur.`,
       },
     ],
-    metaTitle: (loc) => `Mercedes V-Class Hire ${loc.city} | 8 Seater Group Hire | CVS Car Hire`,
+    metaTitle: (loc) => `Mercedes V-Class Hire ${loc.city} | 8 Seater | CVS Car Hire`,
     metaDescription: (loc) =>
-      `Mercedes V-Class hire in ${loc.city} — luxury 8-seater, self-drive or chauffeur, for airport transfers, weddings and corporate groups. CVS Car Hire, subject to availability. Check availability.`,
+      `Mercedes V-Class hire in ${loc.city} — luxury 8-seater, self-drive or chauffeur, for airport transfers, weddings and corporate groups.`,
   },
 ];
 

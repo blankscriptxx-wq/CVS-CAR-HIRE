@@ -46,9 +46,9 @@ export const collections: Collection[] = [
     name: "Lamborghini",
     heading: "Lamborghini Hire",
     eyebrow: "Lamborghini Hire",
-    metaTitle: "Lamborghini Models to Hire | Revuelto, Urus & Huracán Fleet | CVS Hire",
+    metaTitle: "Lamborghini Models to Hire | CVS Car Hire",
     metaDescription:
-      "Lamborghini hire in Birmingham and nationwide — hire the Urus Performante and Huracán self-drive or chauffeur-driven, by the day, weekend, week or month. Check availability today.",
+      "Lamborghini hire in Birmingham and nationwide — hire the Urus Performante and Huracán self-drive or chauffeur-driven, by the day, weekend, week or month.",
     keywords: [
       "lamborghini hire",
       "lamborghini hire birmingham",
@@ -97,9 +97,9 @@ export const collections: Collection[] = [
     name: "Ferrari",
     heading: "Ferrari Hire",
     eyebrow: "Ferrari Hire",
-    metaTitle: "Ferrari Models to Hire | SF90, Roma & Purosangue Fleet | CVS Hire",
+    metaTitle: "Ferrari Models to Hire | CVS Car Hire",
     metaDescription:
-      "Ferrari hire in Birmingham and nationwide — the SF90 hybrid flagship, the Roma grand tourer and the four-seat Purosangue, self-drive or chauffeur, with UK delivery. Check availability.",
+      "Ferrari hire in Birmingham and nationwide — the SF90 hybrid flagship, the Roma grand tourer and the four-seat Purosangue, self-drive or chauffeur, with UK delivery.",
     keywords: [
       "ferrari hire",
       "ferrari hire birmingham",
@@ -148,9 +148,9 @@ export const collections: Collection[] = [
     name: "Rolls-Royce",
     heading: "Rolls-Royce Hire",
     eyebrow: "Rolls-Royce Hire",
-    metaTitle: "Rolls-Royce Models to Hire | Phantom, Cullinan & Ghost Fleet | CVS Hire",
+    metaTitle: "Rolls-Royce Models to Hire | CVS Car Hire",
     metaDescription:
-      "Rolls-Royce hire in Birmingham and nationwide — chauffeur-driven Phantom, Cullinan and Ghost for weddings, corporate and occasions. UK delivery. Check availability.",
+      "Rolls-Royce hire in Birmingham and nationwide — chauffeur-driven Phantom, Cullinan and Ghost for weddings, corporate and occasions. UK delivery.",
     keywords: [
       "rolls royce hire",
       "rolls royce hire birmingham",
@@ -199,7 +199,7 @@ export const collections: Collection[] = [
     name: "Mercedes G-Wagon",
     heading: "G-Wagon Hire",
     eyebrow: "G-Wagon Hire",
-    metaTitle: "G-Wagon Hire Birmingham | Mercedes G63 AMG Hire | CVS Car Hire",
+    metaTitle: "G-Wagon Hire Birmingham | CVS Car Hire",
     metaDescription:
       "G-Wagon hire in Birmingham and nationwide. Hire the Mercedes-AMG G63 (G-Wagon) in black or red, self-drive or chauffeur, from £700/day. Check availability.",
     keywords: [
@@ -241,7 +241,7 @@ export const collections: Collection[] = [
     name: "Range Rover",
     heading: "Range Rover Hire",
     eyebrow: "Range Rover Hire",
-    metaTitle: "Range Rover Models to Hire | Vogue, Sport & SVR Fleet | CVS Hire",
+    metaTitle: "Range Rover Models to Hire | CVS Car Hire",
     metaDescription:
       "Range Rover hire in Birmingham and nationwide — the Vogue, Sport and SVR, self-drive or chauffeur, by day, weekend, week or month. Check availability today.",
     keywords: [
@@ -278,7 +278,7 @@ export const collections: Collection[] = [
     name: "Audi",
     heading: "Audi Hire",
     eyebrow: "Audi Hire",
-    metaTitle: "Audi Models to Hire | R8 Spyder & RS3 Fleet | CVS Hire",
+    metaTitle: "Audi Models to Hire | R8 Spyder & RS3 Fleet | CVS Car Hire",
     metaDescription:
       "Audi hire in Birmingham and nationwide — the R8 Spyder supercar and the RS3, self-drive by day, weekend or week, with UK delivery. Check availability today.",
     keywords: [
@@ -412,7 +412,7 @@ export const collections: Collection[] = [
     name: "Mercedes-Benz",
     heading: "Mercedes Hire",
     eyebrow: "Mercedes Hire",
-    metaTitle: "Mercedes Models to Hire | G63, GLC, A35 & V-Class Fleet | CVS Hire",
+    metaTitle: "Mercedes Models to Hire | CVS Car Hire",
     metaDescription:
       "Mercedes hire in Birmingham and nationwide — the AMG G63, GLC 43, A35 and V-Class, self-drive or chauffeur, by day, weekend or longer. Check availability today.",
     keywords: [
@@ -459,9 +459,9 @@ export const collections: Collection[] = [
     name: "Porsche",
     heading: "Porsche Hire",
     eyebrow: "Porsche Hire",
-    metaTitle: "Porsche Hire UK | Porsche 911 GT3 RS Hire | CVS Hire",
+    metaTitle: "Porsche Hire UK | Porsche 911 GT3 RS Hire | CVS Car Hire",
     metaDescription:
-      "Porsche hire in Birmingham and nationwide — self-drive the 911 GT3 RS, the road-legal, naturally aspirated track weapon. UK delivery. Check availability with CVS Hire.",
+      "Porsche hire in Birmingham and nationwide — self-drive the 911 GT3 RS, the road-legal, naturally aspirated track weapon. UK delivery.",
     keywords: [
       "porsche hire",
       "porsche hire uk",
@@ -517,7 +517,7 @@ export const collections: Collection[] = [
     name: "Land Rover",
     heading: "Land Rover Hire",
     eyebrow: "Land Rover Hire",
-    metaTitle: "Land Rover Models to Hire | Defender & Range Rover | CVS Hire",
+    metaTitle: "Land Rover Models to Hire | CVS Car Hire",
     metaDescription:
       "Explore the Land Rover models to hire with CVS Hire — the reinvented Defender joining soon, plus the Range Rover Vogue, Sport and SVR available now, in Birmingham and nationwide.",
     keywords: [

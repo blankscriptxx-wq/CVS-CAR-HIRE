@@ -45,6 +45,7 @@ const FLEET_ORDER = [
   "bmw-m3-hire",
   "audi-rs3-hire",
   "mercedes-glc-43-amg-hire",
+  "rolls-royce-ghost-white-hire",
   // — middle: new cars (photography to follow) —
   "ferrari-purosangue-hire",
   "rolls-royce-phantom-hire",
@@ -68,6 +69,7 @@ const CHAUFFEUR_ORDER = [
   "rolls-royce-ghost-hire",
   "mercedes-v-class-hire",
   "range-rover-vogue-hire",
+  "rolls-royce-ghost-white-hire",
   "lamborghini-urus-performante-hire",
   "mercedes-amg-g63-hire",
 ];

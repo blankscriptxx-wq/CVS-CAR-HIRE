@@ -28,36 +28,38 @@ const hireTypes = [
 // mid-and-lower (Purosangue/Phantom in the middle; Revuelto/SF90/GT3 RS toward
 // the end) until their photos land — at which point they can be promoted here.
 const FLEET_ORDER = [
-  // Interleaved so no two adjacent cars share a body type or camera angle
-  // (coupe / SUV / box-SUV / saloon rotate; G-Wagens and Range Rovers spread out).
+  // Curated showroom order. Interleaved so no two adjacent cars share a body
+  // type or camera angle (SUV / supercar / saloon / hatch rotate), and colours
+  // are spread (reds, whites and the two Ghosts / Golf Rs / G-Wagens never sit
+  // side by side). Leads with the fully-photographed halo cars; the three cars
+  // still awaiting their CVS studio shoot sit at the end until their photos land.
   "rolls-royce-cullinan-hire",
-  "lamborghini-huracan-performante-spyder-hire",
-  "lamborghini-urus-performante-hire",
-  "audi-r8-spyder-hire",
+  "lamborghini-revuelto-hire",
   "mercedes-amg-g63-hire",
+  "ferrari-sf90-hire",
   "range-rover-vogue-hire",
   "lamborghini-huracan-evo-hire",
-  "range-rover-sport-hire",
   "rolls-royce-ghost-hire",
-  "mercedes-amg-g63-red-hire",
+  "lamborghini-urus-performante-hire",
+  "audi-r8-spyder-hire",
   "range-rover-svr-hire",
-  "bmw-x5-hire",
   "bmw-m3-hire",
-  "audi-rs3-hire",
-  "mercedes-glc-43-amg-hire",
+  "mercedes-amg-g63-red-hire",
+  "lamborghini-huracan-performante-spyder-hire",
+  "range-rover-sport-hire",
   "rolls-royce-ghost-white-hire",
-  // — middle: new cars (photography to follow) —
-  "ferrari-purosangue-hire",
-  "rolls-royce-phantom-hire",
+  "audi-rs3-hire",
+  "bmw-x5-hire",
   "vw-golf-r-lapiz-blue-hire",
+  "mercedes-glc-43-amg-hire",
   "vw-golf-r-hire",
-  "mercedes-amg-a35-hire",
   "bmw-3-series-hire",
+  "mercedes-amg-a35-hire",
   "mercedes-v-class-hire",
-  // — end: new supercars (photography to follow) —
-  "lamborghini-revuelto-hire",
-  "ferrari-sf90-hire",
+  // — end: awaiting CVS studio photography —
+  "ferrari-purosangue-hire",
   "porsche-911-gt3-rs-hire",
+  "rolls-royce-phantom-hire",
 ];
 
 // Curated running order for the chauffeur line-up (applied to the default
@@ -70,6 +72,8 @@ const CHAUFFEUR_ORDER = [
   "rolls-royce-ghost-white-hire",
   "lamborghini-urus-performante-hire",
   "mercedes-amg-g63-hire",
+  "ferrari-purosangue-hire",
+  "rolls-royce-phantom-hire",
 ];
 
 export function FleetShowroom({ vehicles }: { vehicles: Vehicle[] }) {

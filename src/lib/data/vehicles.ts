@@ -100,7 +100,7 @@ export const vehicles: Vehicle[] = [
     category: "supercar",
     bodyType: "convertible",
     heroImage: img("audi-r8-spyder-hire", "pro-courtyard.jpg", "Blue Audi R8 Spyder V10 in a contemporary courtyard at dusk — self-drive supercar hire from CVS Car Hire"),
-    thumbnail: img("audi-r8-spyder-hire", "pro-coast.jpg", "Blue Audi R8 Spyder V10 on a coastal road, rear three-quarter, available to hire from CVS Car Hire"),
+    thumbnail: img("audi-r8-spyder-hire", "front-3q.jpg", "Blue Audi R8 Spyder V10, front three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("audi-r8-spyder-hire", "studio-wide-front.jpg", "Audi R8 Spyder — front three-quarter, studio"),
       img("audi-r8-spyder-hire", "studio-front.jpg", "Audi R8 Spyder — head-on, studio"),
@@ -174,7 +174,7 @@ export const vehicles: Vehicle[] = [
     category: "luxury-4x4",
     bodyType: "suv",
     heroImage: img("lamborghini-urus-performante-hire", "pro-tower-bridge.jpg", "Yellow Lamborghini Urus Performante by Tower Bridge, London — luxury super-SUV hire from CVS Car Hire"),
-    thumbnail: img("lamborghini-urus-performante-hire", "pro-mayfair.jpg", "Yellow Lamborghini Urus Performante on a Mayfair street at night, rear three-quarter, available to hire from CVS Car Hire"),
+    thumbnail: img("lamborghini-urus-performante-hire", "pro-tower-bridge.jpg", "Yellow Lamborghini Urus Performante by Tower Bridge, side profile, available to hire from CVS Car Hire"),
     gallery: [
       img("lamborghini-urus-performante-hire", "studio-wide-front.jpg", "Lamborghini Urus Performante — front three-quarter, studio"),
       img("lamborghini-urus-performante-hire", "studio-front.jpg", "Lamborghini Urus Performante — head-on, studio"),
@@ -375,7 +375,7 @@ export const vehicles: Vehicle[] = [
     category: "luxury-4x4",
     bodyType: "suv",
     heroImage: img("range-rover-vogue-hire", "g-manor.jpg", "Matte black Range Rover Vogue outside a country manor — luxury 4x4 and chauffeur hire from CVS Car Hire"),
-    thumbnail: img("range-rover-vogue-hire", "pro-city-night.jpg", "Matte black Range Rover Vogue in the City of London at night, rear three-quarter, available to hire from CVS Car Hire"),
+    thumbnail: img("range-rover-vogue-hire", "pro-courtyard.jpg", "Matte black Range Rover Vogue, front three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("range-rover-vogue-hire", "studio-wide-front.jpg", "Land Rover Range Rover Vogue — front three-quarter, studio"),
       img("range-rover-vogue-hire", "studio-front.jpg", "Land Rover Range Rover Vogue — head-on, studio"),
@@ -433,7 +433,7 @@ export const vehicles: Vehicle[] = [
     category: "luxury-4x4",
     bodyType: "suv",
     heroImage: img("range-rover-sport-hire", "pro-royal-exchange.jpg", "Range Rover Sport at the Royal Exchange, London — luxury 4x4 hire from CVS Car Hire Birmingham"),
-    thumbnail: img("range-rover-sport-hire", "pro-coast.jpg", "Range Rover Sport on a coastal road, rear three-quarter, available to hire from CVS Car Hire"),
+    thumbnail: img("range-rover-sport-hire", "front-brick.jpg", "Range Rover Sport, front three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("range-rover-sport-hire", "studio-wide-front.jpg", "Land Rover Range Rover Sport — front three-quarter, studio"),
       img("range-rover-sport-hire", "studio-front.jpg", "Land Rover Range Rover Sport — head-on, studio"),
@@ -489,7 +489,7 @@ export const vehicles: Vehicle[] = [
     category: "luxury-4x4",
     bodyType: "suv",
     heroImage: img("range-rover-svr-hire", "hero.jpg", "Matte black Range Rover Sport SVR at a country manor — performance 4x4 hire from CVS Car Hire"),
-    thumbnail: img("range-rover-svr-hire", "pro-estate.jpg", "Matte black Range Rover Sport SVR, side profile at a country estate, available to hire from CVS Car Hire"),
+    thumbnail: img("range-rover-svr-hire", "front.jpg", "Matte black Range Rover Sport SVR, front three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("range-rover-svr-hire", "studio-wide-front.jpg", "Land Rover Range Rover Sport SVR — front three-quarter, studio"),
       img("range-rover-svr-hire", "studio-front.jpg", "Land Rover Range Rover Sport SVR — head-on, studio"),
@@ -546,7 +546,7 @@ export const vehicles: Vehicle[] = [
     category: "luxury-4x4",
     bodyType: "suv",
     heroImage: img("bmw-x5-hire", "studio-wide-front.jpg", "White BMW X5, front three-quarter — luxury SUV hire from CVS Car Hire"),
-    thumbnail: img("bmw-x5-hire", "studio-rear-3q.jpg", "White BMW X5, rear three-quarter, available to hire from CVS Car Hire"),
+    thumbnail: img("bmw-x5-hire", "studio-wide-front.jpg", "White BMW X5, front three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("bmw-x5-hire", "studio-wide-front.jpg", "BMW X5 — front three-quarter, studio"),
       img("bmw-x5-hire", "studio-front.jpg", "BMW X5 — head-on, studio"),
@@ -689,7 +689,7 @@ export const vehicles: Vehicle[] = [
     category: "performance",
     bodyType: "hatchback",
     heroImage: img("vw-golf-r-hire", "studio-wide-front.jpg", "White Volkswagen Golf R, front three-quarter — performance car hire from CVS Car Hire"),
-    thumbnail: img("vw-golf-r-hire", "studio-rear-3q.jpg", "White Volkswagen Golf R, rear three-quarter, available to hire from CVS Car Hire"),
+    thumbnail: img("vw-golf-r-hire", "studio-wide-front.jpg", "White Volkswagen Golf R, front three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("vw-golf-r-hire", "studio-wide-front.jpg", "White Volkswagen Golf R — front three-quarter, studio"),
       img("vw-golf-r-hire", "studio-front.jpg", "White Volkswagen Golf R — head-on, studio"),
@@ -740,7 +740,7 @@ export const vehicles: Vehicle[] = [
     bodyType: "hatchback",
     newArrival: true,
     heroImage: img("vw-golf-r-lapiz-blue-hire", "studio-wide-front.jpg", "Lapiz Blue Volkswagen Golf R, front three-quarter — performance car hire from CVS Car Hire"),
-    thumbnail: img("vw-golf-r-lapiz-blue-hire", "studio-rear-3q.jpg", "Lapiz Blue Volkswagen Golf R, rear three-quarter, available to hire from CVS Car Hire"),
+    thumbnail: img("vw-golf-r-lapiz-blue-hire", "studio-side.jpg", "Lapiz Blue Volkswagen Golf R, side profile, available to hire from CVS Car Hire"),
     gallery: [
       img("vw-golf-r-lapiz-blue-hire", "studio-wide-front.jpg", "Lapiz Blue Volkswagen Golf R — front three-quarter, studio"),
       img("vw-golf-r-lapiz-blue-hire", "studio-front.jpg", "Lapiz Blue Volkswagen Golf R — head-on, studio"),
@@ -900,7 +900,7 @@ export const vehicles: Vehicle[] = [
     category: "group-travel",
     bodyType: "mpv",
     heroImage: img("mercedes-v-class-hire", "studio-wide-front.jpg", "Black Mercedes-Benz V-Class, front three-quarter — group travel hire from CVS Car Hire"),
-    thumbnail: img("mercedes-v-class-hire", "studio-rear-3q.jpg", "Black Mercedes-Benz V-Class, rear three-quarter, available to hire from CVS Car Hire"),
+    thumbnail: img("mercedes-v-class-hire", "studio-wide-front.jpg", "Black Mercedes-Benz V-Class, front three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("mercedes-v-class-hire", "studio-wide-front.jpg", "Mercedes-Benz V-Class — front three-quarter, studio"),
       img("mercedes-v-class-hire", "studio-front.jpg", "Mercedes-Benz V-Class — head-on, studio"),
@@ -949,7 +949,7 @@ export const vehicles: Vehicle[] = [
     category: "supercar",
     bodyType: "convertible",
     heroImage: img("lamborghini-huracan-evo-hire", "studio-wide-front.jpg", "Lamborghini Huracán Evo Spyder, front three-quarter — supercar hire from CVS Car Hire"),
-    thumbnail: img("lamborghini-huracan-evo-hire", "studio-rear-3q.jpg", "Lamborghini Huracán Evo Spyder, rear three-quarter, available to hire from CVS Car Hire"),
+    thumbnail: img("lamborghini-huracan-evo-hire", "studio-wide-front.jpg", "Lamborghini Huracán Evo Spyder, front three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("lamborghini-huracan-evo-hire", "studio-wide-front.jpg", "Lamborghini Huracán Evo Spyder — front three-quarter, studio"),
       img("lamborghini-huracan-evo-hire", "studio-front.jpg", "Lamborghini Huracán Evo Spyder — head-on, studio"),
@@ -995,7 +995,7 @@ export const vehicles: Vehicle[] = [
     category: "performance",
     bodyType: "saloon",
     heroImage: img("bmw-m3-hire", "studio-wide-front.jpg", "BMW M3, front three-quarter — performance car hire from CVS Car Hire"),
-    thumbnail: img("bmw-m3-hire", "studio-side.jpg", "BMW M3, side profile, available to hire from CVS Car Hire"),
+    thumbnail: img("bmw-m3-hire", "studio-elevated-front.jpg", "BMW M3, elevated front three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("bmw-m3-hire", "studio-wide-front.jpg", "BMW M3 — front three-quarter, studio"),
       img("bmw-m3-hire", "studio-front.jpg", "BMW M3 — head-on, studio"),
@@ -1150,7 +1150,7 @@ export const vehicles: Vehicle[] = [
     category: "prestige",
     bodyType: "saloon",
     heroImage: img("bmw-3-series-hire", "studio-wide-front.jpg", "Grey BMW 3 Series M Sport, front three-quarter — prestige car hire from CVS Car Hire"),
-    thumbnail: img("bmw-3-series-hire", "studio-rear-3q.jpg", "Grey BMW 3 Series M Sport, rear three-quarter, available to hire from CVS Car Hire"),
+    thumbnail: img("bmw-3-series-hire", "studio-elevated-front.jpg", "Grey BMW 3 Series M Sport, elevated front three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       img("bmw-3-series-hire", "studio-wide-front.jpg", "BMW 3 Series M Sport — front three-quarter, studio"),
       img("bmw-3-series-hire", "studio-front.jpg", "BMW 3 Series M Sport — head-on, studio"),
@@ -1246,7 +1246,7 @@ export const vehicles: Vehicle[] = [
     category: "supercar",
     bodyType: "coupe",
     heroImage: img("lamborghini-revuelto-hire", "studio-wide-front.jpg", "Blue Lamborghini Revuelto V12 hybrid, front three-quarter — supercar hire from CVS Car Hire"),
-    thumbnail: img("lamborghini-revuelto-hire", "studio-rear-3q.jpg", "Blue Lamborghini Revuelto V12 hybrid, rear three-quarter, available to hire from CVS Car Hire"),
+    thumbnail: img("lamborghini-revuelto-hire", "studio-side.jpg", "Blue Lamborghini Revuelto V12 hybrid, side profile, available to hire from CVS Car Hire"),
     gallery: [
       img("lamborghini-revuelto-hire", "studio-wide-front.jpg", "Lamborghini Revuelto — front three-quarter, studio"),
       img("lamborghini-revuelto-hire", "studio-front.jpg", "Lamborghini Revuelto — head-on, studio"),
@@ -1794,9 +1794,13 @@ const CATEGORY_OVERLAPS: Record<string, VehicleCategory[]> = {
   "ferrari-roma-hire": ["prestige"],
   "lamborghini-huracan-performante-spyder-hire": ["convertible"],
   "audi-r8-spyder-hire": ["convertible"],
+  "lamborghini-huracan-evo-hire": ["convertible"],
+  "ferrari-sf90-hire": ["convertible"],
   "lamborghini-urus-performante-hire": ["supercar", "performance"],
   "mercedes-amg-g63-hire": ["performance"],
+  "mercedes-amg-g63-red-hire": ["performance"],
   "rolls-royce-cullinan-hire": ["prestige"],
+  "range-rover-vogue-hire": ["prestige"],
   "range-rover-sport-hire": ["prestige"],
   "range-rover-svr-hire": ["performance"],
   "bmw-x5-hire": ["group-travel"],

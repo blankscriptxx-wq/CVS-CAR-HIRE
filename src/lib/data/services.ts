@@ -915,7 +915,7 @@ export const services: ServiceContent[] = [
       { question: "Can I hire a V-Class for a wedding?", answer: "Absolutely — the V-Class is a favourite for keeping the wedding party together, self-drive or chauffeur-driven. Ask about pairing it with one of our luxury cars for the couple." },
     ],
     related: ["short-term-v-class-hire", "long-term-v-class-hire", "chauffeur-hire", "airport-transfer", "corporate-car-hire"],
-    metaTitle: "Mercedes V-Class Hire Birmingham | CVS Car Hire",
+    metaTitle: "Mercedes V-Class Group Hire | Airport & Events | CVS Car Hire",
     metaDescription:
       "Mercedes V-Class hire in Birmingham — luxury 8-seater people carrier, self-drive or chauffeur, for airport transfers, weddings and corporate groups. Nationwide UK delivery.",
   },

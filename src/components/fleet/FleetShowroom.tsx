@@ -28,52 +28,53 @@ const hireTypes = [
 // mid-and-lower (Purosangue/Phantom in the middle; Revuelto/SF90/GT3 RS toward
 // the end) until their photos land — at which point they can be promoted here.
 const FLEET_ORDER = [
-  // Curated showroom order. The top of the grid keeps its prior sequence; six
-  // cars (Phantom, Purosangue, Revuelto, SF90, Huracán Evo, Defender) are woven
-  // into the lower third — spaced between other cars rather than clustered at
-  // the very end — so they sit low here and low in every category view (which
-  // ranks by this same order) without stacking.
-  "rolls-royce-cullinan-hire",
-  "mercedes-amg-g63-hire",
-  "porsche-911-gt3-rs-hire",
-  "range-rover-vogue-hire",
-  "rolls-royce-ghost-hire",
-  "lamborghini-urus-performante-hire",
-  "audi-r8-spyder-hire",
+  // Showroom order runs from the everyday cars at the top up to the halo cars
+  // at the bottom, so a visitor scrolls the whole grid to reach the Rolls-Royces,
+  // Ferraris and Lamborghinis — more of the page seen, more cars opened. Body
+  // types and colours still rotate (no two neighbours share either) so it reads
+  // as a deliberate build-up rather than a price list. Category views rank by
+  // this same order, so each category also climbs to its best cars.
+  "vw-golf-r-hire",
+  "bmw-3-series-hire",
+  "mercedes-amg-a35-hire",
+  "bmw-x5-hire",
+  "audi-rs3-hire",
+  "mercedes-glc-43-amg-hire",
+  "vw-golf-r-lapiz-blue-hire",
+  "land-rover-defender-hire",
+  "mercedes-v-class-hire",
   "range-rover-sport-hire",
   "bmw-m3-hire",
-  "mercedes-amg-g63-red-hire",
-  "lamborghini-huracan-performante-spyder-hire",
   "range-rover-svr-hire",
-  "rolls-royce-ghost-white-hire",
-  "audi-rs3-hire",
-  "bmw-x5-hire",
-  "vw-golf-r-lapiz-blue-hire",
-  "rolls-royce-phantom-hire",
-  "mercedes-amg-a35-hire",
-  "ferrari-purosangue-hire",
-  "vw-golf-r-hire",
-  "lamborghini-revuelto-hire",
-  "mercedes-glc-43-amg-hire",
-  "ferrari-sf90-hire",
-  "bmw-3-series-hire",
   "lamborghini-huracan-evo-hire",
-  "mercedes-v-class-hire",
-  "land-rover-defender-hire",
+  "range-rover-vogue-hire",
+  "audi-r8-spyder-hire",
+  "mercedes-amg-g63-red-hire",
+  "porsche-911-gt3-rs-hire",
+  "mercedes-amg-g63-hire",
+  "rolls-royce-ghost-white-hire",
+  "lamborghini-huracan-performante-spyder-hire",
+  "lamborghini-urus-performante-hire",
+  "rolls-royce-ghost-hire",
+  "ferrari-purosangue-hire",
+  "lamborghini-revuelto-hire",
+  "ferrari-sf90-hire",
+  "rolls-royce-phantom-hire",
+  "rolls-royce-cullinan-hire",
 ];
 
 // Curated running order for the chauffeur line-up (applied to the default
 // "Featured" sort so the chauffeur fleet always reads in this exact sequence).
 const CHAUFFEUR_ORDER = [
-  "rolls-royce-cullinan-hire",
-  "rolls-royce-ghost-hire",
   "mercedes-v-class-hire",
   "range-rover-vogue-hire",
-  "rolls-royce-ghost-white-hire",
-  "lamborghini-urus-performante-hire",
   "mercedes-amg-g63-hire",
+  "lamborghini-urus-performante-hire",
+  "rolls-royce-ghost-white-hire",
+  "rolls-royce-ghost-hire",
   "ferrari-purosangue-hire",
   "rolls-royce-phantom-hire",
+  "rolls-royce-cullinan-hire",
 ];
 
 export function FleetShowroom({ vehicles }: { vehicles: Vehicle[] }) {

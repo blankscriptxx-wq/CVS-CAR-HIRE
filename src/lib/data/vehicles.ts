@@ -636,8 +636,6 @@ export const vehicles: Vehicle[] = [
       img("mercedes-glc-43-amg-hire", "studio-wheel.jpg", "Mercedes-AMG GLC 43 — wheel detail"),
       img("mercedes-glc-43-amg-hire", "studio-headlight.jpg", "Mercedes-AMG GLC 43 — headlight detail"),
       img("mercedes-glc-43-amg-hire", "studio-rear-light.jpg", "Mercedes-AMG GLC 43 — rear light detail"),
-      img("mercedes-glc-43-amg-hire", "front.jpg", "Front three-quarter view of the Mercedes-AMG GLC 43"),
-      img("mercedes-glc-43-amg-hire", "interior.jpg", "Mercedes-AMG GLC 43 steering wheel and interior"),
     ],
     shortDescription:
       "AMG performance in a usable, refined SUV package.",
@@ -767,9 +765,6 @@ export const vehicles: Vehicle[] = [
       img("rolls-royce-ghost-hire", "studio-wheel.jpg", "Rolls-Royce Ghost — wheel detail"),
       img("rolls-royce-ghost-hire", "studio-headlight.jpg", "Rolls-Royce Ghost — headlight detail"),
       img("rolls-royce-ghost-hire", "studio-rear-light.jpg", "Rolls-Royce Ghost — rear light detail"),
-      img("rolls-royce-ghost-hire", "pair.jpg", "A pair of Rolls-Royce Ghosts in black and champagne"),
-      img("rolls-royce-ghost-hire", "rear.jpg", "Rear three-quarter view of the champagne Rolls-Royce Ghost"),
-      img("rolls-royce-ghost-hire", "interior.jpg", "Rolls-Royce Ghost rear cabin with starlight headliner"),
     ],
     shortDescription:
       "Effortless serenity — the definitive luxury saloon for weddings and occasions.",
@@ -878,13 +873,6 @@ export const vehicles: Vehicle[] = [
       img("lamborghini-huracan-evo-hire", "studio-wheel.jpg", "Lamborghini Huracán Evo Spyder — wheel detail"),
       img("lamborghini-huracan-evo-hire", "studio-headlight.jpg", "Lamborghini Huracán Evo Spyder — headlight detail"),
       img("lamborghini-huracan-evo-hire", "studio-rear-light.jpg", "Lamborghini Huracán Evo Spyder — rear light detail"),
-      img("lamborghini-huracan-evo-hire", "front.jpg", "Front three-quarter view of the red Lamborghini Huracán Evo Spyder"),
-      img("lamborghini-huracan-evo-hire", "front-roof-down.jpg", "Red Lamborghini Huracán Evo Spyder with the roof down"),
-      img("lamborghini-huracan-evo-hire", "side.jpg", "Side profile of the Lamborghini Huracán Evo Spyder"),
-      img("lamborghini-huracan-evo-hire", "rear.jpg", "Rear three-quarter view of the Lamborghini Huracán Evo Spyder"),
-      img("lamborghini-huracan-evo-hire", "rear-angle.jpg", "Rear of the red Lamborghini Huracán Evo Spyder"),
-      img("lamborghini-huracan-evo-hire", "rear-detail.jpg", "Lamborghini Huracán Evo Spyder rear detail"),
-      img("lamborghini-huracan-evo-hire", "front-static.jpg", "Red Lamborghini Huracán Evo Spyder parked"),
     ],
     shortDescription:
       "Naturally aspirated V10 drama — open-top, and finished in striking red.",
@@ -930,8 +918,6 @@ export const vehicles: Vehicle[] = [
       img("bmw-m3-hire", "studio-wheel.jpg", "BMW M3 — wheel detail"),
       img("bmw-m3-hire", "studio-headlight.jpg", "BMW M3 — headlight detail"),
       img("bmw-m3-hire", "studio-rear-light.jpg", "BMW M3 — rear light detail"),
-      img("bmw-m3-hire", "rear.jpg", "Rear three-quarter view of the matte blue BMW M3"),
-      img("bmw-m3-hire", "interior.jpg", "BMW M3 cockpit with its M steering wheel"),
     ],
     shortDescription:
       "The definitive sports saloon — savage pace with genuine everyday usability.",

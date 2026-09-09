@@ -39,7 +39,7 @@ export const journalPosts: JournalPost[] = [
     readingMinutes: 5,
     publishedAt: "2026-04-28",
     heroImage: {
-      src: "/images/fleet/lamborghini-huracan-performante-spyder-hire/g-city-night.jpg",
+      src: "/images/fleet/lamborghini-huracan-performante-spyder-hire/pro-city-night.jpg",
       alt: "A Lamborghini Huracán supercar in the city at night",
       placeholder: false,
     },
@@ -67,7 +67,7 @@ export const journalPosts: JournalPost[] = [
     readingMinutes: 4,
     publishedAt: "2026-04-10",
     heroImage: {
-      src: "/images/fleet/mercedes-amg-g63-hire/g-city-night.jpg",
+      src: "/images/fleet/mercedes-amg-g63-hire/pro-city-night.jpg",
       alt: "A black Mercedes-AMG G63 in the City of London at night",
       placeholder: false,
     },
@@ -421,7 +421,7 @@ export const journalPosts: JournalPost[] = [
     readingMinutes: 6,
     publishedAt: "2026-08-06",
     heroImage: {
-      src: "/images/fleet/rolls-royce-cullinan-hire/g-city-night.jpg",
+      src: "/images/fleet/rolls-royce-cullinan-hire/pro-city-night.jpg",
       alt: "Rolls-Royce Cullinan in the city at night",
       placeholder: false,
     },

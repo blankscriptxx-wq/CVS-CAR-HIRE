@@ -61,6 +61,7 @@ export async function generateMetadata({
     description: vehicle.metaDescription ?? vehicle.shortDescription,
     path: `/fleet/${vehicle.slug}`,
     images: vehicle.heroImage.placeholder ? undefined : [vehicle.heroImage.src],
+    imageAlt: vehicle.heroImage.placeholder ? undefined : vehicle.heroImage.alt,
   });
 }
 

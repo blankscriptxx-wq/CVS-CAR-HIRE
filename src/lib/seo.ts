@@ -14,12 +14,16 @@ export function buildMetadata(opts: {
   description: string;
   path: string;
   images?: string[];
+  imageAlt?: string;
   keywords?: string[];
 }): Metadata {
   const url = absoluteUrl(opts.path);
   const provided = opts.images?.map((i) => (i.startsWith("http") ? i : absoluteUrl(i)));
   // Fall back to the brand social image so every page has a valid share preview.
-  const images = provided && provided.length ? provided : [absoluteUrl("/brand/cvs-og.jpg")];
+  const urls = provided && provided.length ? provided : [absoluteUrl("/brand/cvs-og.jpg")];
+  // Attach descriptive alt text so the share image carries meaning for search
+  // and social, tying the page's own photograph to the page.
+  const images = urls.map((u) => ({ url: u, alt: opts.imageAlt ?? opts.title }));
   return {
     // `absolute` prevents the root layout's "%s | CVS Car Hire" template from
     // doubling the brand — our metaTitle strings already include it.
@@ -272,10 +276,24 @@ export function vehicleSchema(vehicle: Vehicle) {
   };
   // Real photography for image rich results / Google Images (hero first, then
   // gallery). Placeholders are never emitted as real images.
-  const images = [vehicle.heroImage, ...(vehicle.gallery ?? [])]
-    .filter((i) => i && !i.placeholder)
-    .map((i) => absoluteUrl(i.src));
-  if (images.length) schema.image = images;
+  const imgs = [vehicle.heroImage, ...(vehicle.gallery ?? [])].filter(
+    (i) => i && !i.placeholder,
+  );
+  if (imgs.length) {
+    // Flag the hero as the page's representative image (caption = its alt) so
+    // search engines tie this specific photograph to the page; the rest follow
+    // as plain URLs for image results / Google Images.
+    schema.image = imgs.map((i, idx) =>
+      idx === 0
+        ? {
+            "@type": "ImageObject",
+            url: absoluteUrl(i.src),
+            caption: i.alt,
+            representativeOfPage: true,
+          }
+        : absoluteUrl(i.src),
+    );
+  }
   if (vehicle.year) schema.vehicleModelDate = String(vehicle.year);
   if (vehicle.seats) schema.seatingCapacity = vehicle.seats;
   if (vehicle.doors) schema.numberOfDoors = vehicle.doors;

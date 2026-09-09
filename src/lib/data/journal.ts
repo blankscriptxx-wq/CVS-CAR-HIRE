@@ -11,8 +11,8 @@ export const journalPosts: JournalPost[] = [
     readingMinutes: 6,
     publishedAt: "2026-05-12",
     heroImage: {
-      src: "/images/journal/best-wedding-cars-birmingham/hero.jpg",
-      alt: "A luxury wedding car outside a Birmingham venue",
+      src: "/images/fleet/rolls-royce-cullinan-hire/g-manor.jpg",
+      alt: "A Rolls-Royce Cullinan wedding car at a country manor",
       placeholder: false,
     },
     body: [
@@ -39,8 +39,8 @@ export const journalPosts: JournalPost[] = [
     readingMinutes: 5,
     publishedAt: "2026-04-28",
     heroImage: {
-      src: "/images/journal/how-to-hire-a-supercar/hero.jpg",
-      alt: "A supercar prepared for self-drive hire",
+      src: "/images/fleet/lamborghini-huracan-performante-spyder-hire/g-city-night.jpg",
+      alt: "A Lamborghini Huracán supercar in the city at night",
       placeholder: false,
     },
     body: [
@@ -67,8 +67,8 @@ export const journalPosts: JournalPost[] = [
     readingMinutes: 4,
     publishedAt: "2026-04-10",
     heroImage: {
-      src: "/images/journal/luxury-cars-for-music-videos/hero.jpg",
-      alt: "A luxury car on a production set",
+      src: "/images/fleet/mercedes-amg-g63-hire/g-city-night.jpg",
+      alt: "A black Mercedes-AMG G63 in the City of London at night",
       placeholder: false,
     },
     body: [
@@ -93,8 +93,8 @@ export const journalPosts: JournalPost[] = [
     readingMinutes: 6,
     publishedAt: "2026-09-01",
     heroImage: {
-      src: "/images/fleet/audi-rs3-hire/hero.jpg",
-      alt: "Audi RS3 available for performance car hire at CVS Car Hire Birmingham",
+      src: "/images/fleet/audi-r8-spyder-hire/r-belgravia.jpg",
+      alt: "Audi R8 Spyder outside a Belgravia townhouse",
       placeholder: false,
     },
     body: [
@@ -125,8 +125,8 @@ export const journalPosts: JournalPost[] = [
     readingMinutes: 6,
     publishedAt: "2026-08-20",
     heroImage: {
-      src: "/images/fleet/ferrari-roma-hire/hero.jpg",
-      alt: "Ferrari Roma available for supercar hire at CVS Car Hire Birmingham",
+      src: "/images/fleet/audi-r8-spyder-hire/r-city-night.jpg",
+      alt: "Audi R8 Spyder supercar in the city at night",
       placeholder: false,
     },
     body: [
@@ -184,7 +184,7 @@ export const journalPosts: JournalPost[] = [
     category: "Guides",
     readingMinutes: 5,
     publishedAt: "2026-09-08",
-    heroImage: { src: "/images/fleet/lamborghini-urus-performante-hire/hero.jpg", alt: "Lamborghini Urus Performante available for hire at CVS Car Hire Birmingham", placeholder: false },
+    heroImage: { src: "/images/fleet/lamborghini-huracan-performante-spyder-hire/g-alps.jpg", alt: "Lamborghini Huracán by an alpine lake", placeholder: false },
     body: [
       { type: "p", text: "Hiring a Lamborghini is a bucket-list moment — but which one? Our two most-requested models could hardly be more different: the Urus Performante, a 641bhp super-SUV you could use every day, and the Huracán, a naturally aspirated V10 supercar built purely for drama. Here's how to pick the right one for your occasion." },
       { type: "h2", text: "The Urus Performante — everyday supercar" },
@@ -256,7 +256,7 @@ export const journalPosts: JournalPost[] = [
     category: "Guides",
     readingMinutes: 4,
     publishedAt: "2026-09-18",
-    heroImage: { src: "/images/fleet/ferrari-roma-hire/hero.jpg", alt: "Ferrari Roma available for self-drive or chauffeur hire at CVS Car Hire", placeholder: false },
+    heroImage: { src: "/images/fleet/rolls-royce-cullinan-hire/g-mayfair.jpg", alt: "Rolls-Royce Cullinan chauffeur-driven in Mayfair", placeholder: false },
     body: [
       { type: "p", text: "One of the first decisions when hiring a luxury car is whether to drive it yourself or be driven. Both have their place, and the best choice comes down to the occasion. Here's how to think about it." },
       { type: "h2", text: "When self-drive wins" },
@@ -388,9 +388,9 @@ export const journalPosts: JournalPost[] = [
     readingMinutes: 6,
     publishedAt: "2026-08-13",
     heroImage: {
-      src: "/images/journal/lamborghini-urus-vs-mercedes-g63/hero.jpg",
-      alt: "Lamborghini Urus and Mercedes-AMG G63",
-      placeholder: true,
+      src: "/images/fleet/mercedes-amg-g63-hire/g-royal-exchange.jpg",
+      alt: "Black Mercedes-AMG G63 at the Royal Exchange",
+      placeholder: false,
     },
     body: [
       { type: "p", text: "The Lamborghini Urus Performante and Mercedes-AMG G63 are the two super-SUVs we're asked for most — but they could hardly be more different. One is a low, sharp performance machine; the other is an upright icon. Both use a twin-turbo V8; the similarity mostly ends there." },
@@ -421,9 +421,9 @@ export const journalPosts: JournalPost[] = [
     readingMinutes: 6,
     publishedAt: "2026-08-06",
     heroImage: {
-      src: "/images/journal/ferrari-purosangue-vs-rolls-royce-cullinan/hero.jpg",
-      alt: "Ferrari Purosangue and Rolls-Royce Cullinan",
-      placeholder: true,
+      src: "/images/fleet/rolls-royce-cullinan-hire/g-city-night.jpg",
+      alt: "Rolls-Royce Cullinan in the city at night",
+      placeholder: false,
     },
     body: [
       { type: "p", text: "The Ferrari Purosangue and Rolls-Royce Cullinan both answer the question 'what if a supercar or a limousine had four doors?' — but from opposite directions. One is a Ferrari that happens to seat four; the other is the definitive statement of luxury with a boot." },

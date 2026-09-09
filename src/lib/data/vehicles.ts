@@ -94,7 +94,7 @@ export const vehicles: Vehicle[] = [
     category: "supercar",
     bodyType: "convertible",
     heroImage: img("audi-r8-spyder-hire", "pro-courtyard.jpg", "Blue Audi R8 Spyder V10 in a contemporary courtyard at dusk — self-drive supercar hire from CVS Car Hire"),
-    thumbnail: img("audi-r8-spyder-hire", "pro-tower-bridge.jpg", "Blue Audi R8 Spyder V10, side profile by Tower Bridge, London, available to hire from CVS Car Hire"),
+    thumbnail: img("audi-r8-spyder-hire", "pro-coast.jpg", "Blue Audi R8 Spyder V10 on a coastal road, rear three-quarter, available to hire from CVS Car Hire"),
     gallery: [
       // Studio shots first
       img("audi-r8-spyder-hire", "r-studio-front3q.jpg", "Blue Audi R8 Spyder V10, front three-quarter studio"),
@@ -280,7 +280,7 @@ export const vehicles: Vehicle[] = [
     category: "luxury-4x4",
     bodyType: "suv",
     heroImage: img("rolls-royce-cullinan-hire", "pro-estate-3q.jpg", "Black Rolls-Royce Cullinan Black Badge at a country estate, front three-quarter — luxury SUV and chauffeur hire from CVS Car Hire"),
-    thumbnail: img("rolls-royce-cullinan-hire", "g-side.jpg", "Black Rolls-Royce Cullinan Black Badge, side profile, available to hire from CVS Car Hire"),
+    thumbnail: img("rolls-royce-cullinan-hire", "pro-tower-bridge.jpg", "Black Rolls-Royce Cullinan Black Badge, side profile by Tower Bridge, London, available to hire from CVS Car Hire"),
     gallery: [
       // Studio shots first
       img("rolls-royce-cullinan-hire", "g-studio-front3q.jpg", "Black Rolls-Royce Cullinan Black Badge, front three-quarter studio"),

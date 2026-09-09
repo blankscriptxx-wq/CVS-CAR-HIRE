@@ -64,6 +64,8 @@ export default async function CollectionPage({
     mercedes: { slug: "mercedes-hire", label: "Mercedes hire service" },
     "g-wagon": { slug: "mercedes-hire", label: "Mercedes hire service" },
     "range-rover": { slug: "range-rover-hire", label: "Range Rover hire service" },
+    bmw: { slug: "bmw-hire", label: "BMW hire service" },
+    porsche: { slug: "porsche-hire", label: "Porsche hire service" },
   };
   const brandService = BRAND_SERVICE[c.slug];
 

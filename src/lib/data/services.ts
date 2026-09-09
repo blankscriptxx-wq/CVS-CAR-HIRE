@@ -568,6 +568,97 @@ export const services: ServiceContent[] = [
       "Range Rover hire in Birmingham and nationwide — the Vogue, Sport and supercharged Sport SVR, self-drive or chauffeur-driven, with UK delivery. Check availability with CVS Hire.",
   },
   {
+    slug: "bmw-hire",
+    name: "BMW Hire",
+    navLabel: "BMW Hire",
+    hero: {
+      eyebrow: "Self-Drive",
+      heading: "BMW Hire",
+      intro:
+        "Hire a BMW in Birmingham and across the UK — from the M3 super-saloon and X5 SUV to the 4 Series Convertible and executive 3 Series, self-drive with delivery to your door.",
+    },
+    overview:
+      "BMW hire with CVS spans the full range — the fire-breathing M3, the versatile X5 SUV, the open-top 4 Series Convertible and the sharp, executive 3 Series. This is the service around the cars: matching the right BMW to your occasion, immaculate preparation, and self-drive hire with delivery across Birmingham and the UK. Browse the models on our BMW collection, then talk to us to check dates.",
+    sections: [
+      {
+        heading: "How BMW hire works",
+        body: [
+          "Choose your BMW — the M3 for performance, the X5 for space and presence, the 4 Series Convertible for open-top summer driving or the 3 Series for smart everyday travel — and we'll confirm availability, requirements and the rate. Each is offered self-drive, delivered valeted, fuelled and fully insured. Minimum age, licence and deposit vary by model and are confirmed on enquiry.",
+        ],
+      },
+      {
+        heading: "Which BMW should you hire?",
+        body: [
+          "For a driver's weekend, the M3 delivers proper M-car performance. The X5 suits family trips and airport runs with room for luggage and up to five in comfort. The 4 Series Convertible is made for warm days and coastal routes, while the 3 Series is the ideal smart, economical choice for business travel and city driving.",
+        ],
+      },
+    ],
+    benefits: [
+      "The M3 super-saloon, X5 SUV, 4 Series Convertible and 3 Series",
+      "Self-drive so the day is entirely yours",
+      "Immaculate, carefully maintained cars",
+      "Delivery across Birmingham and the UK",
+      "Advice on the right BMW for your occasion",
+    ],
+    occasions: ["Business travel", "Spirited weekends", "Family trips & airport runs", "Open-top summer drives"],
+    recommendedVehicles: ["bmw-m3-hire", "bmw-x5-hire", "bmw-4-series-convertible-hire", "bmw-3-series-hire"],
+    faqs: [
+      { question: "Can I hire a BMW in Birmingham?", answer: "Yes. CVS Hire is Birmingham-based and offers the BMW M3, X5, 4 Series Convertible and 3 Series for self-drive hire across the city, the West Midlands and nationwide by delivery. Tell us your dates and we'll confirm availability." },
+      { question: "Which BMW is best for a weekend away?", answer: "For pure driving enjoyment, the M3. For space and comfort with the family or a group, the X5. If the weather is good, the 4 Series Convertible is hard to beat. Tell us the occasion and we'll recommend the right one." },
+      { question: "How much does BMW hire cost?", answer: "It depends on the model, duration and mileage, with daily, weekend and weekly rates available. Message us with the car and your dates and we'll confirm the exact price." },
+      { question: "How old do I need to be to hire a BMW?", answer: "Requirements vary by model and are confirmed on enquiry, as performance cars like the M3 carry a higher minimum age than the 3 Series. Get in touch and we'll talk you through exactly what's needed." },
+    ],
+    related: ["performance-car-hire", "corporate-car-hire", "luxury-car-hire", "long-term-hire"],
+    metaTitle: "BMW Hire Birmingham | M3, X5, 4 Series & 3 Series | CVS Hire",
+    metaDescription:
+      "BMW hire in Birmingham and nationwide — self-drive the M3, X5, 4 Series Convertible and 3 Series, with UK delivery. Check availability with CVS Hire.",
+  },
+  {
+    slug: "porsche-hire",
+    name: "Porsche Hire",
+    navLabel: "Porsche Hire",
+    hero: {
+      eyebrow: "Self-Drive",
+      heading: "Porsche Hire",
+      intro:
+        "Hire a Porsche in Birmingham and across the UK — the track-bred 911 GT3 RS, a naturally aspirated motorsport flagship, self-drive with delivery to your door.",
+    },
+    overview:
+      "Porsche hire with CVS centres on one of the most focused cars the marque has ever built — the 911 GT3 RS, a naturally aspirated, motorsport-derived flagship. This is the service around the car: immaculate preparation, guidance on getting the best from it, and self-drive hire with delivery across Birmingham and the UK. See it on our Porsche collection, then talk to us to check dates.",
+    sections: [
+      {
+        heading: "How Porsche hire works",
+        body: [
+          "Tell us your dates and we'll confirm availability, requirements and the rate for the 911 GT3 RS. It is offered self-drive, delivered valeted, fuelled and fully insured. As a high-performance car it carries a higher minimum age and driving-experience requirement, which we confirm on enquiry.",
+        ],
+      },
+      {
+        heading: "Why the 911 GT3 RS?",
+        body: [
+          "The GT3 RS is the closest thing to a road-legal race car Porsche makes — a high-revving naturally aspirated flat-six, aggressive aerodynamics and a razor-sharp chassis. It is the choice for a landmark occasion, a track-focused driving day or a content shoot where you want the most serious 911 of all.",
+        ],
+      },
+    ],
+    benefits: [
+      "The motorsport-bred 911 GT3 RS",
+      "Self-drive so the day is entirely yours",
+      "Immaculate, carefully maintained car",
+      "Delivery across Birmingham and the UK",
+      "Guidance on getting the best from it",
+    ],
+    occasions: ["Landmark birthdays", "Track-focused driving days", "Photoshoots & content", "Bucket-list experiences"],
+    recommendedVehicles: ["porsche-911-gt3-rs-hire"],
+    faqs: [
+      { question: "Can I hire a Porsche 911 GT3 RS in Birmingham?", answer: "Yes. CVS Hire is Birmingham-based and offers the Porsche 911 GT3 RS for self-drive hire across the city, the West Midlands and nationwide by delivery. Tell us your dates and we'll confirm availability." },
+      { question: "How much does Porsche GT3 RS hire cost?", answer: "It depends on the duration and mileage, with daily, weekend and weekly rates available. Message us with your dates and we'll confirm the exact price." },
+      { question: "How old do I need to be to hire the GT3 RS?", answer: "As a high-performance supercar the GT3 RS carries a higher minimum age and driving-experience requirement than a standard car. Get in touch and we'll confirm exactly what is needed." },
+    ],
+    related: ["supercar-hire", "performance-car-hire", "luxury-car-hire"],
+    metaTitle: "Porsche Hire Birmingham | 911 GT3 RS Self-Drive Hire | CVS Hire",
+    metaDescription:
+      "Porsche hire in Birmingham and nationwide — self-drive the motorsport-bred 911 GT3 RS, with UK delivery. Check availability with CVS Hire.",
+  },
+  {
     slug: "prestige-car-hire",
     name: "Prestige Car Hire",
     navLabel: "Prestige Car Hire",

@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Nationwide Luxury Car Delivery | CVS Car Hire",
   description:
-    "Nationwide UK delivery for luxury car hire. Your chosen vehicle delivered to your door, hotel or venue — subject to vehicle and location. Clear distance-based rates.",
+    "Nationwide UK delivery for luxury car hire — your chosen vehicle brought to your door, hotel or venue, with clear distance-based rates.",
   path: "/delivery",
 });
 

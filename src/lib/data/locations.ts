@@ -315,7 +315,7 @@ export const locations: LocationContent[] = [
   },
   {
     slug: "newcastle",
-    city: "Newcastle upon Tyne",
+    city: "Newcastle",
     region: "Tyne and Wear",
     nation: "England",
     intro:
@@ -337,7 +337,7 @@ export const locations: LocationContent[] = [
     ],
     metaTitle: "Luxury Car Hire Newcastle | Supercars | CVS Car Hire",
     metaDescription:
-      "Luxury, supercar, wedding and prom car hire in Newcastle upon Tyne. Nationwide delivery from CVS Car Hire. Check availability.",
+      "Luxury, supercar, wedding and prom car hire in Newcastle. Nationwide delivery from CVS Car Hire. Check availability.",
     geo: { lat: 54.9783, lng: -1.6178 },
   },
   {

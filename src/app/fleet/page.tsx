@@ -12,7 +12,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Our Fleet | Luxury, Supercar & Prestige Car Hire",
   description:
-    "Explore the CVS Car Hire fleet — supercars, luxury 4x4s, performance, prestige and convertibles for self-drive and chauffeur hire in Birmingham and across the UK.",
+    "The CVS Car Hire fleet — supercars, luxury 4x4s, performance, prestige and convertibles, self-drive or chauffeur, in Birmingham and the UK.",
   path: "/fleet",
 });
 

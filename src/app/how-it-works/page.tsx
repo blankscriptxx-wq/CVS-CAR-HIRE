@@ -11,7 +11,7 @@ import Link from "next/link";
 export const metadata: Metadata = buildMetadata({
   title: "How It Works | Simple Luxury Car Hire",
   description:
-    "How luxury car hire with CVS works — from enquiry to handover. Flexible daily, weekend, weekly and monthly rates, self-drive or chauffeur, delivery or collection.",
+    "How luxury car hire with CVS works, from enquiry to handover — daily, weekend, weekly and monthly rates, self-drive or chauffeur.",
   path: "/how-it-works",
 });
 

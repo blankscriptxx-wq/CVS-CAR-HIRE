@@ -27,7 +27,7 @@ const sans = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Luxury, Supercar & Prestige Car Hire Birmingham`,
+    default: `${siteConfig.name} | Luxury & Supercar Hire Birmingham`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Luxury, Supercar & Prestige Car Hire Birmingham`,
+    title: `${siteConfig.name} | Luxury & Supercar Hire Birmingham`,
     description: siteConfig.description,
     images: ["/brand/cvs-og.jpg"],
   },

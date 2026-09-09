@@ -12,7 +12,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Services | Luxury, Supercar, Wedding & Chauffeur Hire",
   description:
-    "Explore CVS Car Hire services — supercar, luxury, prestige and performance hire, chauffeur, weddings, proms, corporate, airport transfers, production and nationwide delivery.",
+    "CVS Car Hire services — supercar, luxury, prestige and performance hire, chauffeur, weddings, proms, corporate, airport transfers and delivery.",
   path: "/services",
 });
 

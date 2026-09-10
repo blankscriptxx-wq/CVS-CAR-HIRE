@@ -37,6 +37,7 @@ const FLEET_ORDER = [
   "vw-golf-r-hire",
   "bmw-3-series-hire",
   "mercedes-amg-a35-hire",
+  "mercedes-e-class-hire",
   "bmw-x5-hire",
   "audi-rs3-hire",
   "mercedes-glc-43-amg-hire",
@@ -66,6 +67,7 @@ const FLEET_ORDER = [
 // Curated running order for the chauffeur line-up (applied to the default
 // "Featured" sort so the chauffeur fleet always reads in this exact sequence).
 const CHAUFFEUR_ORDER = [
+  "mercedes-e-class-hire",
   "mercedes-v-class-hire",
   "range-rover-vogue-hire",
   "mercedes-amg-g63-hire",

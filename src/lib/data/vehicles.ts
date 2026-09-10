@@ -1258,9 +1258,6 @@ export const vehicles: Vehicle[] = [
       img("lamborghini-revuelto-hire", "studio-wheel.jpg", "Lamborghini Revuelto — wheel detail"),
       img("lamborghini-revuelto-hire", "studio-headlight.jpg", "Lamborghini Revuelto — headlight detail"),
       img("lamborghini-revuelto-hire", "studio-rear-light.jpg", "Lamborghini Revuelto — rear light detail"),
-      img("lamborghini-revuelto-hire", "front-3q.jpg", "Blue Lamborghini Revuelto, front three-quarter"),
-      img("lamborghini-revuelto-hire", "rear-3q.jpg", "Blue Lamborghini Revuelto, rear three-quarter"),
-      img("lamborghini-revuelto-hire", "rear.jpg", "Blue Lamborghini Revuelto, rear with quad exhausts and active wing"),
     ],
     shortDescription:
       "Sant'Agata's V12 reborn — a 1,000bhp hybrid flagship and the new benchmark for Lamborghini theatre.",

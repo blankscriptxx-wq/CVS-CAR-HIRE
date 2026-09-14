@@ -128,3 +128,14 @@
     scrollbar-width: none;
   }
 }
+
+/* On mobile the fixed sticky action bar already carries a Live chat button, and
+   the floating Aniro launcher (.oa-btn) overlaps the bar's Call button. Hide the
+   floating bubble below the md breakpoint (the sticky-bar button still opens the
+   panel by triggering the now-hidden launcher); keep it on desktop where there
+   is no action bar. */
+@media (max-width: 767px) {
+  .oa-btn {
+    display: none !important;
+  }
+}

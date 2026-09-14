@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { Analytics } from "@/components/Analytics";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import { CookieConsent } from "@/components/CookieConsent";
+import { ChatWidget } from "@/components/ChatWidget";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { organizationSchema, websiteSchema, localBusinessSchema } from "@/lib/seo";
 
@@ -89,6 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Spacer so content is never hidden behind the mobile action bar */}
         <div className="h-14 md:hidden" aria-hidden />
         <CookieConsent />
+        <ChatWidget />
         <Analytics />
         <VercelAnalytics />
       </body>

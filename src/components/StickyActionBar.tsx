@@ -1,7 +1,7 @@
 "use client";
 
-import { CallLink, LiveChatButton } from "@/components/ActionLinks";
-import { PhoneIcon, WhatsAppIcon, ArrowRight } from "@/components/ui/Icons";
+import { CallLink, LiveChatButton, ChatButton } from "@/components/ActionLinks";
+import { PhoneIcon, WhatsAppIcon, ChatIcon, ArrowRight } from "@/components/ui/Icons";
 import Link from "next/link";
 
 /**
@@ -37,9 +37,9 @@ export function StickyActionBar({
     );
   }
 
-  // Default: WhatsApp · Call.
+  // Default: WhatsApp · Live chat · Call.
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-px border-t border-line bg-black/95 backdrop-blur md:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 gap-px border-t border-line bg-black/95 backdrop-blur md:hidden">
       <LiveChatButton
         context={context}
         className="flex min-h-[56px] flex-col items-center justify-center gap-1 text-warm-white"
@@ -47,6 +47,13 @@ export function StickyActionBar({
         <WhatsAppIcon className="h-5 w-5 text-champagne" />
         <span className="text-[10px] uppercase tracking-wide2">WhatsApp</span>
       </LiveChatButton>
+      <ChatButton
+        context={context}
+        className="flex min-h-[56px] flex-col items-center justify-center gap-1 text-warm-white"
+      >
+        <ChatIcon className="h-5 w-5 text-champagne" />
+        <span className="text-[10px] uppercase tracking-wide2">Live chat</span>
+      </ChatButton>
       <CallLink
         context={context}
         className="flex min-h-[56px] flex-col items-center justify-center gap-1 text-warm-white"

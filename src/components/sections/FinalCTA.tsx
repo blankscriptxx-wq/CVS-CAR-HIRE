@@ -1,7 +1,7 @@
 import { Media } from "@/components/ui/Media";
 import { Reveal } from "@/components/ui/Reveal";
-import { LiveChatButton, CallLink } from "@/components/ActionLinks";
-import { WhatsAppIcon, PhoneIcon } from "@/components/ui/Icons";
+import { LiveChatButton, ChatButton, CallLink } from "@/components/ActionLinks";
+import { WhatsAppIcon, PhoneIcon, ChatIcon } from "@/components/ui/Icons";
 import { phoneDisplay } from "@/lib/siteConfig";
 
 /** Dramatic full-width conversion section. */
@@ -34,8 +34,14 @@ export function FinalCTA({
           <p className="mt-5 max-w-xl text-base leading-relaxed text-silver">{copy}</p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <LiveChatButton className="inline-flex min-h-[52px] items-center justify-center gap-2 bg-champagne px-8 text-xs font-medium uppercase tracking-wide2 text-black hover:bg-champagne-soft">
-              <WhatsAppIcon className="h-4 w-4" /> WhatsApp us
+            <ChatButton
+              context={{ source: "final-cta" }}
+              className="inline-flex min-h-[52px] items-center justify-center gap-2 bg-champagne px-8 text-xs font-medium uppercase tracking-wide2 text-black hover:bg-champagne-soft"
+            >
+              <ChatIcon className="h-4 w-4" /> Live chat
+            </ChatButton>
+            <LiveChatButton className="inline-flex min-h-[52px] items-center justify-center gap-2 border border-line px-8 text-xs uppercase tracking-wide2 text-warm-white hover:border-champagne">
+              <WhatsAppIcon className="h-4 w-4 text-champagne" /> WhatsApp us
             </LiveChatButton>
             <CallLink
               context={{ source: "final-cta" }}

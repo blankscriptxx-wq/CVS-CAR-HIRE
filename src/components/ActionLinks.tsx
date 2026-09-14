@@ -57,4 +57,36 @@ export function LiveChatButton({
   );
 }
 
+/**
+ * Open the Aniro live-chat panel. The widget exposes no public API, so we
+ * trigger the launcher button (`button.oa-btn`) it appends to <body>. If the
+ * panel is already open we leave it; if the widget hasn't loaded yet (e.g. the
+ * domain isn't allow-listed in Aniro) the call is a safe no-op.
+ */
+export function openLiveChat(context?: Record<string, string>) {
+  track("open_live_chat", context);
+  if (typeof document === "undefined") return;
+  const panel = document.querySelector(".oa-panel");
+  if (panel?.classList.contains("open")) return;
+  const launcher = document.querySelector<HTMLButtonElement>("button.oa-btn");
+  launcher?.click();
+}
+
+/** Live-chat button — opens the on-site Aniro chat panel. */
+export function ChatButton({
+  children,
+  className,
+  context,
+}: {
+  children: ReactNode;
+  className?: string;
+  context?: Record<string, string>;
+}) {
+  return (
+    <button type="button" className={className} onClick={() => openLiveChat(context)}>
+      {children}
+    </button>
+  );
+}
+
 export { phoneDisplay, siteConfig };

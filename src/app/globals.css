@@ -39,6 +39,16 @@
     text-wrap: balance;
   }
 
+  /* Third-party embeds (e.g. the Aniro live-chat widget) render into the light
+     DOM and inherit the site's near-white body text colour, which makes typed
+     text invisible on their light input backgrounds. Give form controls a
+     readable dark default; the site's own inputs set `text-warm-white`
+     explicitly (utilities layer) and continue to override this. */
+  input, textarea, select {
+    color: #1a1a1a;
+    caret-color: #1a1a1a;
+  }
+
   /* Respect reduced-motion — disable non-essential motion globally. */
   @media (prefers-reduced-motion: reduce) {
     *,
